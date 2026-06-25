@@ -19,8 +19,8 @@ const TYPE_LABELS = {
 };
 const DAILY_FEATURE_COUNT = 3;
 const DAILY_CULTURE_COUNT = 6;
-const RETRY_MIN_GAP = 3;
-const RETRY_MAX_GAP = 5;
+const RETRY_MIN_GAP = 2;
+const RETRY_MAX_GAP = 3;
 const HOME_FEATURES = [
   {
     id: "feature-mgoi",
