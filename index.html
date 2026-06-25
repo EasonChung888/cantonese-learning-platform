@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>粤语语音复习</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <section id="homeView" class="home-view" aria-labelledby="homeTitle">
+        <div class="home-hero">
+          <div class="home-hero-copy">
+            <div class="brand home-brand">
+              <span class="brand-mark">粤</span>
+              <div>
+                <p class="eyebrow">香港色彩 · 粤语复习总入口</p>
+                <h1 id="homeTitle">每日内容</h1>
+              </div>
+            </div>
+            <p class="home-copy">跟着 Day 顺序复习语音、常用字和句子。每一天都会保留自己的模块、错题和进度。</p>
+            <div class="home-stats" aria-label="学习进度摘要">
+              <div>
+                <strong id="homeStatDays">6</strong>
+                <span>学习日</span>
+              </div>
+              <div>
+                <strong id="homeStatTotal">0</strong>
+                <span>练习题</span>
+              </div>
+              <div>
+                <strong id="homeStatDone">0</strong>
+                <span>已完成</span>
+              </div>
+            </div>
+          </div>
+          <figure class="home-motion">
+            <img src="assets/hk-study-loop.svg" alt="香港电车和粤语学习卡片循环动图" />
+          </figure>
+        </div>
+
+        <div class="home-divider" aria-hidden="true">
+          <img src="assets/home-section-dividers.svg" alt="" />
+        </div>
+
+        <section class="home-section home-feature-section" aria-labelledby="homeFeatureTitle">
+          <div class="home-section-heading">
+            <p class="eyebrow">每日粤语表达</p>
+            <h2 id="homeFeatureTitle">今天先听这几句</h2>
+          </div>
+          <div id="homeFeatureGrid" class="home-feature-grid"></div>
+        </section>
+
+        <div class="home-divider is-rail" aria-hidden="true">
+          <img src="assets/home-divider-harbour.svg" alt="" />
+        </div>
+
+        <section class="home-section home-day-section" aria-labelledby="homeDayTitle">
+          <div class="home-section-heading">
+            <p class="eyebrow">学习入口</p>
+            <h2 id="homeDayTitle">继续你的 Day 练习</h2>
+          </div>
+          <div id="homeDayGrid" class="home-day-grid" aria-label="每日内容入口"></div>
+        </section>
+
+        <div class="home-divider is-ticket" aria-hidden="true">
+          <img src="assets/home-divider-market.svg" alt="" />
+        </div>
+
+        <section class="home-section home-culture-section" aria-labelledby="homeCultureTitle">
+          <div class="home-section-heading">
+            <p class="eyebrow">每日港味生活</p>
+            <h2 id="homeCultureTitle">今天边逛边记</h2>
+          </div>
+          <div id="homeCultureGrid" class="home-culture-grid"></div>
+        </section>
+      </section>
+
+      <aside class="sidebar" aria-label="复习模块">
+        <button id="brandHomeBtn" class="brand brand-home-button" type="button" aria-label="返回全部 Day">
+          <span class="brand-mark">粤</span>
+          <div>
+            <h1>粤语复习</h1>
+            <p>每日内容 · 语音 · 句子</p>
+          </div>
+        </button>
+
+        <nav id="moduleNav" class="module-nav"></nav>
+
+        <section class="panel compact">
+          <div class="panel-title">今日进度</div>
+          <div class="progress-ring" aria-label="今日完成率">
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="progress-copy">
+            <strong id="doneCount">0</strong>
+            <span>/</span>
+            <span id="totalCount">0</span>
+            <span>已完成</span>
+          </div>
+          <button id="resetTodayBtn" class="ghost-button" type="button">重新练习今日内容</button>
+        </section>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="activeModuleLabel">全部内容</p>
+            <h2>每日测验台</h2>
+          </div>
+          <div class="topbar-actions">
+            <button id="homeBtn" class="ghost-button compact-button" type="button">返回全部 Day</button>
+            <button id="wrongOnlyBtn" class="toggle-button" type="button">错题</button>
+            <button id="shuffleBtn" class="icon-button" type="button" aria-label="换一题" title="换一题">↻</button>
+          </div>
+        </header>
+
+        <section class="quiz-grid">
+          <article class="quiz-card" aria-live="polite">
+            <div class="quiz-meta">
+              <span id="quizCategory">类别</span>
+              <span id="quizType">题型</span>
+            </div>
+            <p id="questionPrompt" class="question-prompt">载入中...</p>
+            <div id="questionStem" class="question-stem"></div>
+            <div id="options" class="options"></div>
+            <div id="feedback" class="feedback" hidden></div>
+            <div class="quiz-actions">
+              <button id="againBtn" class="secondary-button" type="button">未熟</button>
+              <button id="knownBtn" class="primary-button" type="button">认得</button>
+            </div>
+          </article>
+
+          <aside class="study-panel">
+            <section class="panel">
+              <div class="panel-title">卡片资料</div>
+              <dl class="fact-list">
+                <div>
+                  <dt id="factTraditionalLabel">粤语</dt>
+                  <dd id="factTraditional">-</dd>
+                </div>
+                <div>
+                  <dt id="factJyutpingLabel">粤拼</dt>
+                  <dd id="factJyutping">-</dd>
+                </div>
+                <div>
+                  <dt id="factMandarinLabel">普通话</dt>
+                  <dd id="factMandarin">-</dd>
+                </div>
+              </dl>
+              <div id="examplesBlock" class="examples"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-title">错题本</div>
+              <div id="wrongList" class="wrong-list"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js?v=20260625-retry-newcards-gap"></script>
+  </body>
+</html>
