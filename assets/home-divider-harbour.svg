@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 96" role="img" aria-labelledby="title desc">
+  <title id="title">海港天星小轮分隔动图</title>
+  <desc id="desc">海港波浪、天星小轮和香港色彩圆点组成的循环分隔装饰。</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#18766f"/>
+      <stop offset=".56" stop-color="#5a9ea0"/>
+      <stop offset="1" stop-color="#c8342f"/>
+    </linearGradient>
+    <style>
+      .dash {
+        fill: none;
+        stroke: url(#sea);
+        stroke-dasharray: 24 18;
+        stroke-linecap: round;
+        stroke-width: 7;
+        animation: sail 4.4s linear infinite;
+      }
+
+      .wave {
+        fill: none;
+        stroke-dasharray: 12 14;
+        stroke-linecap: round;
+        stroke-width: 6;
+        animation: sail 3.4s linear infinite reverse;
+        opacity: .72;
+      }
+
+      .boat {
+        animation: bob 4.2s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      @keyframes sail {
+        to { stroke-dashoffset: -92; }
+      }
+
+      @keyframes bob {
+        0%, 100% { opacity: .78; transform: translateY(0); }
+        50% { opacity: 1; transform: translateY(-4px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .dash,
+        .wave,
+        .boat {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+  <rect width="1180" height="96" rx="8" fill="#eef8f6"/>
+  <path d="M42 64C160 48 250 76 370 58S604 38 746 60 996 82 1138 48" class="dash"/>
+  <path class="wave" d="M70 74C142 58 196 58 268 74S414 90 486 74" stroke="#5a9ea0"/>
+  <path class="wave" d="M702 34C762 18 822 18 882 34S1002 50 1062 34" stroke="#c8342f"/>
+  <g class="boat">
+    <path d="M506 54H672L646 76H534Z" fill="#18766f"/>
+    <rect x="546" y="30" width="86" height="28" rx="7" fill="#fffaf0" stroke="#182527" stroke-width="5"/>
+    <rect x="562" y="40" width="54" height="6" rx="3" fill="#f1bd38"/>
+  </g>
+  <circle cx="206" cy="46" r="8" fill="#f1bd38"/>
+  <circle cx="942" cy="66" r="8" fill="#c8342f"/>
+</svg>

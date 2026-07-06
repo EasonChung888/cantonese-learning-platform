@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 96" role="img" aria-labelledby="title desc">
+  <title id="title">街市招牌声波分隔动图</title>
+  <desc id="desc">街市招牌、声波线条和香港色彩圆点组成的循环分隔装饰。</desc>
+  <defs>
+    <linearGradient id="market" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#c8342f"/>
+      <stop offset=".5" stop-color="#f1bd38"/>
+      <stop offset="1" stop-color="#18766f"/>
+    </linearGradient>
+    <style>
+      .dash {
+        fill: none;
+        stroke: url(#market);
+        stroke-dasharray: 18 16;
+        stroke-linecap: round;
+        stroke-width: 8;
+        animation: buzz 3.6s linear infinite;
+      }
+
+      .wave {
+        fill: none;
+        stroke: #5a9ea0;
+        stroke-dasharray: 12 12;
+        stroke-linecap: round;
+        stroke-width: 6;
+        animation: buzz 2.8s linear infinite reverse;
+      }
+
+      .sign {
+        animation: glow 2.6s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      @keyframes buzz {
+        to { stroke-dashoffset: -82; }
+      }
+
+      @keyframes glow {
+        0%, 100% { opacity: .74; transform: translateY(0); }
+        50% { opacity: 1; transform: translateY(-3px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .dash,
+        .wave,
+        .sign {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+  <rect width="1180" height="96" rx="8" fill="#fff4e2"/>
+  <path d="M38 50H1142" fill="none" stroke="#ded3c2" stroke-width="5" stroke-linecap="round"/>
+  <path d="M58 50C112 22 166 78 220 50S328 22 382 50 490 78 544 50 652 22 706 50 814 78 868 50 976 22 1030 50 1108 62 1144 42" class="dash"/>
+  <g class="sign">
+    <rect x="156" y="20" width="104" height="42" rx="8" fill="#c8342f"/>
+    <rect x="176" y="32" width="64" height="7" rx="3.5" fill="#fffaf0"/>
+    <rect x="176" y="46" width="42" height="7" rx="3.5" fill="#f1bd38"/>
+  </g>
+  <g class="sign" style="animation-delay:.45s">
+    <rect x="760" y="22" width="132" height="42" rx="8" fill="#18766f"/>
+    <rect x="780" y="34" width="90" height="7" rx="3.5" fill="#fffaf0"/>
+    <rect x="780" y="48" width="58" height="7" rx="3.5" fill="#f1bd38"/>
+  </g>
+  <path class="wave" d="M426 78C458 58 494 58 526 78S590 98 622 78"/>
+  <circle cx="330" cy="62" r="8" fill="#18766f"/>
+  <circle cx="650" cy="36" r="8" fill="#f1bd38"/>
+  <circle cx="1044" cy="72" r="8" fill="#c8342f"/>
+</svg>

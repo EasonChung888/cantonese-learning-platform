@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="title desc">
+  <title id="title">香港粤语巴士学习循环动图</title>
+  <desc id="desc">一辆红色香港双层公共巴士经过街道路牌、巴士站牌和粤语学习卡片，旁边有声波线条循环移动。</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fbf4dd"/>
+      <stop offset=".55" stop-color="#eef8f6"/>
+      <stop offset="1" stop-color="#fffaf0"/>
+    </linearGradient>
+    <linearGradient id="busBody" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#b8242b"/>
+      <stop offset=".55" stop-color="#d84b36"/>
+      <stop offset="1" stop-color="#9f1f2d"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#193433" flood-opacity=".18"/>
+    </filter>
+    <style>
+      .line {
+        fill: none;
+        stroke: #1d3132;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 8;
+      }
+
+      .thin {
+        stroke-width: 5;
+      }
+
+      .window {
+        fill: #f2f7eb;
+        stroke: #1d3132;
+        stroke-width: 5;
+      }
+
+      .pulse {
+        animation: pulse 2.6s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      .float {
+        animation: float 4.4s ease-in-out infinite;
+      }
+
+      .bus {
+        animation: bus 5.8s ease-in-out infinite;
+      }
+
+      .wave {
+        animation: wave 2.4s ease-in-out infinite;
+      }
+
+      .wave.two {
+        animation-delay: .35s;
+      }
+
+      .spark {
+        animation: spark 2s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      .spark.two {
+        animation-delay: .55s;
+      }
+
+      @keyframes bus {
+        0%, 100% { transform: translateX(-18px); }
+        50% { transform: translateX(18px); }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-14px); }
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: .72; transform: scale(.98); }
+        50% { opacity: 1; transform: scale(1.04); }
+      }
+
+      @keyframes wave {
+        0%, 100% { opacity: .36; stroke-dashoffset: 0; }
+        50% { opacity: 1; stroke-dashoffset: -42; }
+      }
+
+      @keyframes spark {
+        0%, 100% { opacity: .45; transform: scale(.9); }
+        50% { opacity: 1; transform: scale(1.18); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pulse,
+        .float,
+        .bus,
+        .wave,
+        .spark {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="760" height="520" rx="34" fill="url(#sky)"/>
+  <circle class="pulse" cx="620" cy="94" r="54" fill="#f8c84d" opacity=".8"/>
+  <path d="M52 394H710" class="line" opacity=".14"/>
+  <path d="M90 416H664" class="line thin" opacity=".2"/>
+  <path d="M42 438H706" class="line thin" stroke="#18766f" opacity=".16"/>
+  <path d="M52 452H156M188 452H292M324 452H428M460 452H564M596 452H700" class="line thin" stroke="#f8c84d" opacity=".58"/>
+
+  <g class="float" filter="url(#softShadow)">
+    <rect x="72" y="54" width="194" height="116" rx="14" fill="#c8342f"/>
+    <path d="M92 90H246" class="line thin" stroke="#fff4d2"/>
+    <text x="102" y="132" fill="#fffaf0" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="37" font-weight="800">廣東話</text>
+    <rect x="108" y="150" width="104" height="13" rx="6" fill="#f8c84d"/>
+  </g>
+
+  <g class="float" style="animation-delay: .8s" filter="url(#softShadow)">
+    <rect x="316" y="68" width="132" height="76" rx="12" fill="#18766f"/>
+    <text x="334" y="112" fill="#fffaf0" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="28" font-weight="850">中環</text>
+    <path d="M336 130H420" class="line thin" stroke="#f8c84d"/>
+  </g>
+
+  <g class="float" style="animation-delay: .4s" filter="url(#softShadow)">
+    <rect x="488" y="152" width="164" height="122" rx="16" fill="#fffdfa"/>
+    <path d="M512 188H626" class="line thin" stroke="#c8342f"/>
+    <text x="516" y="232" fill="#1d3132" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="850">nei5 hou2</text>
+    <circle cx="630" cy="198" r="12" fill="#18766f"/>
+    <circle cx="630" cy="234" r="12" fill="#f8c84d"/>
+  </g>
+
+  <g class="float" style="animation-delay: 1.1s">
+    <path d="M82 342H126L114 390H94Z" fill="#18766f" opacity=".9"/>
+    <rect x="60" y="298" width="90" height="46" rx="8" fill="#fffdfa" stroke="#1d3132" stroke-width="5"/>
+    <text x="74" y="328" fill="#1d3132" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="850">巴士站</text>
+  </g>
+
+  <g class="bus" filter="url(#softShadow)">
+    <path d="M156 202H460C486 202 508 224 508 250V390H128V230C128 214 140 202 156 202Z" fill="url(#busBody)" stroke="#1d3132" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M146 202H478V160C478 144 466 132 450 132H176C160 132 146 144 146 160Z" fill="#c8342f" stroke="#1d3132" stroke-width="8" stroke-linejoin="round"/>
+    <rect x="168" y="154" width="92" height="26" rx="8" fill="#1d3132"/>
+    <text x="184" y="174" fill="#f8c84d" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="850">1A 尖沙咀</text>
+    <rect x="280" y="154" width="74" height="26" rx="8" class="window"/>
+    <rect x="368" y="154" width="74" height="26" rx="8" class="window"/>
+    <rect x="156" y="224" width="70" height="48" rx="8" class="window"/>
+    <rect x="244" y="224" width="70" height="48" rx="8" class="window"/>
+    <rect x="332" y="224" width="70" height="48" rx="8" class="window"/>
+    <rect x="420" y="224" width="54" height="104" rx="8" fill="#f2f7eb" stroke="#1d3132" stroke-width="5"/>
+    <path d="M148 306H478" class="line thin" stroke="#f8c84d"/>
+    <path d="M152 344H474" class="line thin" stroke="#fffdfa" opacity=".82"/>
+    <rect x="154" y="360" width="120" height="14" rx="7" fill="#f8c84d"/>
+    <text x="294" y="374" fill="#fffaf0" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="850">CANTONESE BUS</text>
+    <circle cx="220" cy="394" r="25" fill="#1d3132"/>
+    <circle cx="220" cy="394" r="10" fill="#f8c84d"/>
+    <circle cx="414" cy="394" r="25" fill="#1d3132"/>
+    <circle cx="414" cy="394" r="10" fill="#f8c84d"/>
+  </g>
+
+  <g>
+    <path class="wave" d="M564 328C585 308 608 308 630 328S676 348 698 328" fill="none" stroke="#c8342f" stroke-width="8" stroke-linecap="round" stroke-dasharray="28 16"/>
+    <path class="wave two" d="M548 370C570 350 594 350 616 370S662 390 686 370" fill="none" stroke="#18766f" stroke-width="8" stroke-linecap="round" stroke-dasharray="22 18"/>
+  </g>
+
+  <g class="spark">
+    <path d="M627 284L638 308L662 319L638 330L627 354L616 330L592 319L616 308Z" fill="#f8c84d"/>
+  </g>
+  <g class="spark two">
+    <path d="M98 234L106 250L122 258L106 266L98 282L90 266L74 258L90 250Z" fill="#c8342f"/>
+  </g>
+</svg>
