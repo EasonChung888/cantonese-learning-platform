@@ -29,8 +29,8 @@ const DAY_ORDER = [
   { id: "day27", label: "Day 27", topic: "食在香港" },
   { id: "day28", label: "Day 28", topic: "“女人街”" },
   { id: "day29", label: "Day 29", topic: "“居者有其屋”" },
-  { id: "day30", label: "Day 30", topic: "貪字變貧字" },
-  { id: "day31", label: "Day 31", topic: "話説移民" }
+  { id: "day30", label: "Day 30", topic: "贪字变贫字" },
+  { id: "day31", label: "Day 31", topic: "话说移民" }
 ];
 const DEFAULT_MODULE_ORDER = ["全部內容", "聲母", "韻母", "聲調", "常用字表", "句子"];
 const CHAPTER_BOOK_MODULE_ORDER = ["全部內容", "課文", "重點詞彙", "補充語彙", "重點理解", "講解", "傳意項目介紹", "練習", "粵字辨認", "短文朗讀"];
