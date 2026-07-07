@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>粤语语音复习</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260708-progress-tools" />
   </head>
   <body>
     <div id="app" class="app-shell">
@@ -33,6 +33,12 @@
                 <span>已完成</span>
               </div>
             </div>
+            <div class="progress-tools" aria-label="进度备份工具">
+              <button id="exportProgressBtn" class="secondary-button progress-tool-button" type="button">导出进度</button>
+              <button id="importProgressBtn" class="ghost-button progress-tool-button" type="button">导入旧进度</button>
+              <input id="importProgressFile" type="file" accept="application/json,.json" hidden />
+            </div>
+            <p id="progressToolStatus" class="progress-tool-status" role="status" aria-live="polite"></p>
           </div>
           <figure class="home-motion">
             <img src="assets/hk-study-loop.svg" alt="香港电车和粤语学习卡片循环动图" />
@@ -160,7 +166,7 @@
       </main>
     </div>
 
-    <script src="data.js?v=20260707-day31"></script>
-    <script src="app.js?v=20260707-day31"></script>
+    <script src="data.js?v=20260708-progress-tools"></script>
+    <script src="app.js?v=20260708-progress-tools"></script>
   </body>
 </html>

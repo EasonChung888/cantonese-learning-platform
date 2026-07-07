@@ -157,12 +157,13 @@ let activeDay = "day1";
 let activeModule = "全部內容";
 let wrongOnly = false;
 let currentQuestion = null;
-let state = loadState();
+let state = null;
 let homeMode = true;
 let expandedHomeCard = null;
 
 const items = window.STUDY_ITEMS;
 const byId = new Map(items.map((item) => [item.id, item]));
+state = loadState();
 const sentenceAudio = new Audio();
 let speechUtterance = null;
 const TRADITIONAL_TO_SIMPLIFIED = {
@@ -1083,6 +1084,10 @@ const els = {
   homeStatDays: document.querySelector("#homeStatDays"),
   homeStatTotal: document.querySelector("#homeStatTotal"),
   homeStatDone: document.querySelector("#homeStatDone"),
+  exportProgressBtn: document.querySelector("#exportProgressBtn"),
+  importProgressBtn: document.querySelector("#importProgressBtn"),
+  importProgressFile: document.querySelector("#importProgressFile"),
+  progressToolStatus: document.querySelector("#progressToolStatus"),
   homeBtn: document.querySelector("#homeBtn"),
   brandHomeBtn: document.querySelector("#brandHomeBtn"),
   moduleNav: document.querySelector("#moduleNav"),
@@ -1132,6 +1137,152 @@ function loadState() {
 
 function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function validItemId(id) {
+  return byId.has(id);
+}
+
+function objectValue(value) {
+  return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+}
+
+function cleanBooleanMap(value) {
+  return Object.fromEntries(
+    Object.entries(objectValue(value)).filter(([id, enabled]) => validItemId(id) && enabled)
+  );
+}
+
+function cleanFamiliarity(value) {
+  return Object.fromEntries(
+    Object.entries(objectValue(value))
+      .filter(([id, level]) => validItemId(id) && Number.isFinite(Number(level)))
+      .map(([id, level]) => [id, Math.max(-3, Math.min(5, Number(level)))])
+  );
+}
+
+function cleanRetry(value) {
+  return Object.fromEntries(
+    Object.entries(objectValue(value))
+      .filter(([id, retry]) => validItemId(id) && retry && typeof retry === "object")
+      .map(([id, retry]) => {
+        const remaining = Number(retry.newCardsUntilDue ?? retry.due ?? retryGap());
+        const repeats = Number(retry.repeats || 0);
+        return [id, {
+          newCardsUntilDue: Math.max(0, Number.isFinite(remaining) ? remaining : retryGap()),
+          due: Math.max(0, Number.isFinite(remaining) ? remaining : retryGap()),
+          repeats: Math.max(0, Number.isFinite(repeats) ? repeats : 0)
+        }];
+      })
+  );
+}
+
+function cleanSessions(value) {
+  return Object.fromEntries(
+    Object.entries(objectValue(value)).map(([key, session]) => {
+      const source = objectValue(session);
+      const seen = Array.isArray(source.seen) ? source.seen.filter(validItemId) : [];
+      const current = objectValue(source.current);
+      return [key, {
+        seen: [...new Set(seen)],
+        current: validItemId(current.itemId) && typeof current.type === "string"
+          ? { itemId: current.itemId, type: current.type }
+          : null
+      }];
+    })
+  );
+}
+
+function sanitizeProgressState(value) {
+  return {
+    done: cleanBooleanMap(value?.done),
+    wrong: cleanBooleanMap(value?.wrong),
+    retry: cleanRetry(value?.retry),
+    familiarity: cleanFamiliarity(value?.familiarity),
+    sessions: cleanSessions(value?.sessions)
+  };
+}
+
+function mergeProgressState(current, imported) {
+  return sanitizeProgressState({
+    done: { ...current.done, ...imported.done },
+    wrong: { ...current.wrong, ...imported.wrong },
+    retry: { ...current.retry, ...imported.retry },
+    familiarity: { ...current.familiarity, ...imported.familiarity },
+    sessions: { ...current.sessions, ...imported.sessions }
+  });
+}
+
+function progressSummary(progressState = state) {
+  const done = Object.keys(progressState.done || {}).filter(validItemId).length;
+  const wrong = Object.keys(progressState.wrong || {}).filter(validItemId).length;
+  return { done, wrong };
+}
+
+function setProgressToolStatus(message, tone = "info") {
+  if (!els.progressToolStatus) return;
+  els.progressToolStatus.textContent = message;
+  els.progressToolStatus.dataset.tone = tone;
+}
+
+function downloadTextFile(filename, text, type = "application/json") {
+  const blob = new Blob([text], { type });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+async function exportProgress() {
+  const payload = {
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    source: location.href,
+    storageKey: STORAGE_KEY,
+    state: sanitizeProgressState(state)
+  };
+  const text = JSON.stringify(payload, null, 2);
+  const stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-");
+  downloadTextFile(`cantonese-progress-${stamp}.json`, text);
+  try {
+    await navigator.clipboard?.writeText(text);
+    setProgressToolStatus("进度已导出，也已复制到剪贴板。", "ok");
+  } catch {
+    setProgressToolStatus("进度已导出为 JSON 文件。", "ok");
+  }
+}
+
+function parseImportedProgress(text) {
+  const parsed = JSON.parse(text);
+  const source = parsed?.state && parsed?.storageKey === STORAGE_KEY ? parsed.state : parsed;
+  return sanitizeProgressState(source);
+}
+
+function importProgressFile(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    try {
+      const imported = parseImportedProgress(String(reader.result || ""));
+      const summary = progressSummary(imported);
+      if (!summary.done && !summary.wrong && !Object.keys(imported.sessions).length) {
+        throw new Error("empty-progress");
+      }
+      state = mergeProgressState(state, imported);
+      saveState();
+      render();
+      setProgressToolStatus(`已恢复 ${summary.done} 个已完成项目，错题 ${summary.wrong} 个。`, "ok");
+    } catch {
+      setProgressToolStatus("这个文件不是可用的粤语复习进度 JSON。", "error");
+    } finally {
+      els.importProgressFile.value = "";
+    }
+  });
+  reader.readAsText(file);
 }
 
 function itemDay(item) {
@@ -1906,6 +2057,13 @@ els.resetTodayBtn.addEventListener("click", () => {
   render();
 });
 
+els.exportProgressBtn.addEventListener("click", exportProgress);
+els.importProgressBtn.addEventListener("click", () => {
+  els.importProgressFile.click();
+});
+els.importProgressFile.addEventListener("change", () => {
+  importProgressFile(els.importProgressFile.files?.[0]);
+});
 els.homeBtn.addEventListener("click", navigateHome);
 els.brandHomeBtn.addEventListener("click", navigateHome);
 window.addEventListener("hashchange", syncRoute);
