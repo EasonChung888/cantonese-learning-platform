@@ -3806,6 +3806,168 @@ window.STUDY_ITEMS.push(
 );
 
 
+const day23Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day23-${id}`,
+  day: "day23",
+  module,
+  category: `22 交通運輸 · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day23Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day23-sent-${id}`,
+  day: "day23",
+  module,
+  category: `22 交通運輸 · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 來源盤點：FlipHTML5 p287-p298；p299 起為下一課「海洋公園」。
+  // 一、課文
+  day23Sentence("text-01", "課文", "課文", "香港係彈丸之地。", "heng1 gong2 hei6 dan6 yun2 ji1 dei6", "香港是弹丸之地。", ["彈丸之地"]),
+  day23Sentence("text-02", "課文", "課文", "揸架車喺港島兜個圈都唔使一個鐘。", "za1 ga3 ce1 hei2 gong2 dou2 deo1 go3 kuag1 dou1 m4 sei2 yed1 go3 zung1", "开车在港岛兜一圈也用不了一个小时。", ["揸車", "兜個圈"]),
+  day23Sentence("text-03", "課文", "課文", "之不過，全港人口密度每平方公里拉勻嚟計有成七八千人。", "ji1 bed1 guo3 qun4 gong2 yen4 heo2 med6 dou6 mui5 ping4 fong1 gung1 lei5 lai1 wen4 lei4 gei3 yeo5 xing4 ced1 bad3 qin1 yen4", "不过，全港人口密度平均每平方公里就有七八千人。", ["人口密度"]),
+  day23Sentence("text-04", "課文", "課文", "再加上香港人素以節奏快見稱，佢哋對交通運輸嘅需求就特別高。", "zoi3 ga1 seng6 heng1 gong2 yen4 sou3 yi5 jid3 zeo3 fai3 gin3 qing1 keu5 dei6 deoi3 gao1 tung1 wen6 xu1 ge3 keo4 zeo6 deg6 bid6 gou1", "再加上香港人素以节奏快见称，他们对交通运输的需求就特别高。", ["節奏快", "需求"]),
+  day23Sentence("text-05", "課文", "課文", "除咗私家車之外，公共交通主要靠幾乎伸展到全港每個角落嘅地鐵同埋巴士。", "qyu4 zo2 xi1 ga1 ce1 ji1 ngoi6 gung1 gung6 gao1 tung1 ju2 yiu3 kao3 gei1 fu4 sen1 jin2 dou3 qun4 gong2 mui5 go3 gog3 log6 ge3 dei6 tid3 tung4 mai4 ba1 xi2", "除了私家车之外，公共交通主要靠几乎伸展到全港每个角落的地铁和巴士。", ["私家車", "公共交通"]),
+  day23Sentence("text-06", "課文", "課文", "仲有電車同渡海小輪，雖然慢啲，但都好方便㗎。", "zung6 yeo5 din6 ce1 tung4 dou6 hoi2 xiu2 len4 seoi1 yin4 man6 di1 dan6 dou1 hou2 fong1 bin6 ga3", "还有电车和渡海小轮，虽然慢一点，但也很方便。", ["渡海小輪"]),
+  day23Sentence("text-07", "課文", "課文", "但係，方便得嚟亦問題多多。", "dan6 hei6 fong1 bin6 deg1 lei4 yig6 men6 tei4 do1 do1", "可是，方便之余也问题很多。", ["問題多多"]),
+  day23Sentence("text-08", "課文", "課文", "其中最突出嘅就係塞車。", "kei4 zung1 zeoi3 ded6 ced1 ge3 zeo6 hei6 seg1 ce1", "其中最突出的就是堵车。", ["塞車"]),
+  day23Sentence("text-09", "課文", "課文", "每日返工放工嘅高峰時間，好多地方嘅車直情好似蟻躪噉行。", "mui5 yed6 fan1 gung1 fong3 gung1 ge3 gou1 fung1 xi4 gan3 hou2 do1 dei6 fong1 ge3 ce1 jig6 qing4 hou2 qi5 ngei5 lan1 gem2 hang4", "每天上下班的高峰时间，许多地方的车简直像蚂蚁般爬行。", ["高峰時間", "蟻躪"]),
+  day23Sentence("text-10", "課文", "課文", "如果撞啱有乜交通意外，甚至乎天雨路滑嗰陣，成個地區就打晒困籠，簡直郁不得其正。", "yu4 guo2 zong6 ngam1 yeo5 med1 gao1 tung1 yi3 ngoi6 sem6 ji3 fu4 tin1 yu5 lou6 wad6 go2 zen6 seng4 go3 dei6 keo1 zeo6 da2 sai3 kuen3 lung2 gan2 jig6 yug1 bed1 deg1 kei4 jing3", "如果碰上发生交通意外，甚至雨天路滑的时候，整个地区就严重堵塞，简直动弹不得。", ["撞啱", "打困籠"]),
+  day23Sentence("text-11", "課文", "課文", "對外嘅交通，講起上嚟就架勢喇。", "deoi3 ngoi6 ge3 gao1 tung1 gong2 hei2 seng6 lei4 zeo6 ga3 sei3 la3", "对外的交通，说起来就了不起了。", ["架勢"]),
+  day23Sentence("text-12", "課文", "課文", "憑藉住優良嘅地理位置，香港嘅海運、陸運、空運，都非常之發達。", "peng4 jig6 ju6 yeo1 leng4 ge3 dei6 lei5 wei6 ji3 heng1 gong2 ge3 hoi2 wen6 lug6 wen6 hung1 wen6 dou1 fei1 seng4 ji1 fad3 dad6", "凭借着优良的地理位置，香港的海运、陆运、空运都非常发达。", ["海運", "陸運", "空運"]),
+  day23Sentence("text-13", "課文", "課文", "海運嚟講，香港貨櫃碼頭嘅吞吐量連年世界第一。", "hoi2 wen6 lei4 gong2 heng1 gong2 fo3 guei6 ma5 teo4 ge3 ten1 tou2 leng6 lin4 nin4 sei3 gai3 dei6 yed1", "海运来说，香港货柜码头的吞吐量连年世界第一。", ["貨櫃碼頭"]),
+  day23Sentence("text-14", "課文", "課文", "陸運嚟講，本港往返深圳、廣州嘅直通火車、直通巴士日日都開成百幾班。", "lug6 wen6 lei4 gong2 bun2 gong2 wong5 fan2 sem1 zen3 guong2 zeo1 ge3 jig6 tung1 fo2 ce1 jig6 tung1 ba1 xi2 yed6 yed6 dou1 hoi1 seng4 beg3 gei2 ban1", "陆运来说，本港往返深圳、广州的直通火车、直通巴士天天都有百多班。", ["直通火車", "直通巴士"]),
+  day23Sentence("text-15", "課文", "課文", "空運嚟講，香港雖然淨係得一個機場，平均每個鐘頭都有幾十個航班升降，同全世界差唔多兩百個城市保持直接嘅聯繫。", "hung1 wen6 lei4 gong2 heng1 gong2 seoi1 yin4 jing6 hei6 deg1 yed1 go3 gei1 ceng4 ping4 guen1 mui5 go3 zung1 teo4 dou1 yeo5 gei2 seb6 go3 hong4 ban1 xing1 gong3 tung4 qun4 sei3 gai3 ca1 m4 do1 loeng5 beg3 go3 xing4 xi2 bou2 qi4 jig6 jib3 ge3 lun4 hei6", "空运来说，香港虽然只有一个机场，平均每个小时却有几十个航班升降，并同全世界差不多两百个城市保持直接联系。", ["機場", "航班"]),
+  day23Sentence("text-16", "課文", "課文", "可以講，香港嘅成功同佢高效率嘅交通運輸係分唔開嘅。", "ho2 yi5 gong2 heng1 gong2 ge3 xing4 gung1 tung4 keu5 gou1 hao6 led2 ge3 gao1 tung1 wen6 xu1 hei6 fen1 m4 hoi1 ge3", "可以说，香港的成功同她高效率的交通运输是分不开的。", ["高效率"]),
+
+  // 二、重點詞彙
+  day23Item("vocab-zace", "重點詞彙", "重點詞彙", "揸車", "za1 ce1", "驾驶汽车", ["揸架車"]),
+  day23Item("vocab-deoguokuag", "重點詞彙", "重點詞彙", "兜個圈", "deo1 go3 kuag1", "兜个圈子", ["港島兜個圈"]),
+  day23Item("vocab-msei", "重點詞彙", "重點詞彙", "唔使", "m4 sei2", "不用；用不了", ["唔使一個鐘"]),
+  day23Item("vocab-jibedguo", "重點詞彙", "重點詞彙", "之不過", "ji1 bed1 guo3", "不过", ["之不過"]),
+  day23Item("vocab-xigace", "重點詞彙", "重點詞彙", "私家車", "xi1 ga1 ce1", "私人小轿车", ["私家車"]),
+  day23Item("vocab-goglogteo", "重點詞彙", "重點詞彙", "角落頭", "gog3 log6 teo2", "角落", ["每個角落"]),
+  day23Item("vocab-samtid", "重點詞彙", "重點詞彙", "三鐵", "sam1 tid3", "地下铁路、轻便铁路和电气化火车", ["交通"]),
+  day23Item("vocab-deglei", "重點詞彙", "重點詞彙", "（……）得嚟", "deg1 lei4", "……之余", ["方便得嚟"]),
+  day23Item("vocab-jigqing", "重點詞彙", "重點詞彙", "直情", "jig6 qing4", "简直；表示强调", ["直情好似"]),
+  day23Item("vocab-ngeilan", "重點詞彙", "重點詞彙", "好似蟻躪噉行", "hou2 qi5 ngei5 lan1 gem2 hang4", "像蚂蚁般爬行", ["塞車"]),
+  day23Item("vocab-zongngam", "重點詞彙", "重點詞彙", "撞啱", "zong6 ngam1", "碰上；正巧遇到", ["撞啱有乜交通意外"]),
+  day23Item("vocab-tinyu-louwad", "重點詞彙", "重點詞彙", "天雨路滑", "tin1 yu5 lou6 wad6", "雨天路滑", ["天雨路滑"]),
+  day23Item("vocab-dakuenlung", "重點詞彙", "重點詞彙", "打困籠", "da2 kuen3 lung2", "严重堵塞，指交通", ["打晒困籠"]),
+  day23Item("vocab-yugbeddeg", "重點詞彙", "重點詞彙", "郁不得其正", "yug1 bed1 deg1 kei4 jing3", "动弹不得", ["郁不得其正"]),
+  day23Item("vocab-gasei", "重點詞彙", "重點詞彙", "架勢", "ga3 sei3", "了不起", ["講起上嚟就架勢"]),
+
+  // 三、補充語彙
+  day23Item("supp-hungdeng", "補充語彙", "補充語彙 · 詞語", "紅燈", "hung4 deng1", "红灯", ["交通"]),
+  day23Item("supp-lugdeng", "補充語彙", "補充語彙 · 詞語", "綠燈", "lug6 deng1", "绿灯", ["交通"]),
+  day23Item("supp-cunghungdeng", "補充語彙", "補充語彙 · 詞語", "衝紅燈", "cung1 hung4 deng1", "闯红灯", ["交通"]),
+  day23Item("supp-louzeng", "補充語彙", "補充語彙 · 詞語", "路障", "lou6 zeng3", "路障", ["交通"]),
+  day23Item("supp-pagce", "補充語彙", "補充語彙 · 詞語", "泊車", "pag3 ce1", "停车", ["交通"]),
+  day23Item("supp-xudgoutung", "補充語彙", "補充語彙 · 詞語", "雪糕筒", "xud3 gou1 tung2", "交通锥", ["交通"]),
+  day23Item("supp-gaotungging", "補充語彙", "補充語彙 · 詞語", "交通警", "gao1 tung1 ging2", "交通警察", ["交通"]),
+  day23Item("supp-geosengce", "補充語彙", "補充語彙 · 詞語", "救傷車", "geo3 seng1 ce1", "救护车", ["交通"]),
+  day23Item("supp-hangyenlou", "補充語彙", "補充語彙 · 詞語", "行人路", "hang4 yen4 lou6", "人行道", ["交通"]),
+  day23Item("supp-hungxig-xiuba", "補充語彙", "補充語彙 · 詞語", "紅色小巴", "hung4 xig1 xiu2 ba1", "红色小巴", ["小巴"]),
+  day23Item("supp-lugxig-xiuba", "補充語彙", "補充語彙 · 詞語", "綠色小巴", "lug6 xig1 xiu2 ba1", "绿色小巴", ["小巴"]),
+  day23Item("supp-langheiba", "補充語彙", "補充語彙 · 詞語", "冷氣巴", "lang5 hei3 ba1", "空调巴士", ["巴士"]),
+  day23Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "山頂纜車係來往山頂同中區嘅有軌纜車。", "san1 deng2 lam6 ce1 hei6 loi4 wong5 san1 deng2 tung4 zung1 keo1 ge3 yeo5 guei2 lam6 ce1", "山顶缆车是来往山顶和中区的有轨缆车。", ["山頂纜車"]),
+  day23Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "喺一八八八年開始通車，到而家一百歲有多喇。", "hei2 yed1 bad3 bad3 bad3 nin4 hoi1 qi2 tung1 ce1 dou3 yi4 ga1 yed1 bag3 seu3 yeo5 do1 la3", "从一八八八年开始通车，到现在一百多岁了。", ["通車"]),
+  day23Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "佢日日由朝到晚載住一批批乘客上山落山。", "keu5 yed6 yed6 yeo4 jiu1 dou3 man5 zoi3 ju6 yed1 pei1 pei1 xing4 hag3 seng6 san1 log6 san1", "它每天从早到晚载着一批批乘客上山下山。", ["乘客"]),
+  day23Sentence("supp-04", "補充語彙", "補充語彙 · 句子", "由下面嘅中區花園道一直上到山頂。", "yeo4 ha6 min6 ge3 zung1 keo1 fa1 yun4 dou6 yed1 jig6 seng6 dou3 san1 deng2", "由下面的中区花园道一直上到山顶。", ["花園道"]),
+  day23Sentence("supp-05", "補充語彙", "補充語彙 · 句子", "全程十幾公里，行車十零分鐘，中途分五六個站。", "qun4 qing4 seb6 gei2 gung1 lei5 hang4 ce1 seb6 leng4 fen1 zung1 zung1 tou4 fen1 ng5 lug6 go3 zam6", "全程十几公里，行车十来分钟，中途分五六个站。", ["全程", "中途"]),
+
+  // 四、重點理解
+  day23Sentence("understanding-01", "重點理解", "重點理解 · 問題多多", "佢每次遲到都係理由多多。", "keu5 mui5 qi3 qi4 dou3 dou1 hei6 lei5 yeo4 do1 do1", "他每次迟到都有一大堆理由。", ["多多"]),
+  day23Sentence("understanding-02", "重點理解", "重點理解 · 撞啱", "琴晚佢撞啱出咗街，接唔到我嘅電話。", "kem4 man5 keu5 zong6 ngam1 ced1 zo2 gai1 jib3 m4 dou2 ngo5 ge3 din6 wa2", "不巧他昨晚出了门，没接到我的电话。", ["撞啱"]),
+  day23Sentence("understanding-03", "重點理解", "重點理解 · 撞啱", "我去到佢哋屋企，撞啱佢哋喺度食飯，真係唔好意思。", "ngo5 heo3 dou3 keu5 dei6 ug1 kei2 zong6 ngam1 keu5 dei6 hei2 dou6 xig6 fan6 zen1 hei6 m4 hou2 yi3 xi1", "我到他们家去，碰上他们正在吃饭，真是不好意思。", ["撞啱"]),
+  day23Sentence("understanding-04", "重點理解", "重點理解 · 甚至乎", "佢乜都食，甚至乎蝸牛都食。", "keu5 med1 dou1 xig6 sem6 ji3 fu4 wo1 ngeo4 dou1 xig6", "他什么都吃，连蜗牛也吃。", ["甚至乎"]),
+  day23Sentence("understanding-05", "重點理解", "重點理解 · 甚至乎", "琴晚我哋成班人唱卡拉OK，甚至乎平日唔多出聲嘅阿娟都唱埋一份。", "kem4 man5 ngo5 dei6 seng4 ban1 yen4 coeng3 ka1 la1 o1 kei1 sem6 ji3 fu4 ping4 yed6 m4 do1 ced1 xing1 ge3 a3 gyun1 dou1 coeng3 mai4 yed1 fen6", "昨晚我们一伙人唱卡拉OK，连平时不太作声的阿娟都一起唱了。", ["甚至乎"]),
+  day23Sentence("understanding-06", "重點理解", "重點理解 · 郁不得其正", "佢畀度門夾住，郁不得其正。", "keu5 bei2 dou6 mun4 gab3 ju6 yug1 bed1 deg1 kei4 jing3", "他被那道门夹住，动弹不得。", ["郁不得其正"]),
+  day23Sentence("understanding-07", "重點理解", "重點理解 · 郁不得其正", "咁多人逼喺架巴士度，個個都郁不得其正。", "gem3 do1 yen4 big1 hei2 ga3 ba1 xi2 dou6 go3 go3 dou1 yug1 bed1 deg1 kei4 jing3", "那么多人挤在巴士里，谁也动弹不了。", ["郁不得其正"]),
+  day23Sentence("understanding-08", "重點理解", "重點理解 · 得", "屋企得佢一個人。", "ug1 kei2 deg1 keu5 yed1 go3 yen4", "家里只有他一个人。", ["得"]),
+  day23Sentence("understanding-09", "重點理解", "重點理解 · 得", "我個袋得三百文。", "ngo5 go3 doi6 deg1 sam1 baag3 men1", "我口袋里只有三百块。", ["得"]),
+
+  // 五、講解：南北詞與話語標記
+  day23Sentence("explain-01", "講解", "講解 · 南北詞", "定啲嚟，唔好驚。", "deng6 di1 lei4 m4 hou2 geng1", "沉住气，不要慌。", ["驚慌"]),
+  day23Sentence("explain-02", "講解", "講解 · 南北詞", "啲人企晒喺度避雨。", "di1 yen4 kei5 sai3 hei2 dou6 bei6 yu5", "人们都站在那儿躲雨。", ["躲避"]),
+  day23Sentence("explain-03", "講解", "講解 · 南北詞", "計下條數睇下啱唔啱。", "gei3 ha5 tiu4 sou3 tei2 ha5 ngam1 m4 ngam1", "算算这笔账看看对不对。", ["計算"]),
+  day23Sentence("explain-04", "講解", "講解 · 南北詞", "我琴日就喺呢度撞到佢。", "ngo5 kem4 yed6 zeo6 hei2 ni1 dou6 zong6 dou3 keu5", "我昨天就是在这儿碰见他。", ["碰撞"]),
+  day23Sentence("culture-01", "講解", "講解 · 粵語趣談 · 有冇搞錯", "個會九點先開，你咁早就到，有冇搞錯。", "go3 wui6 geo2 dim2 xin1 hoi1 nei5 gem3 zou2 zeo6 dou3 yeo5 mou5 gau2 co3", "会议九点才开，你这么早就到，没必要吧。", ["善意提示"]),
+  day23Sentence("culture-02", "講解", "講解 · 粵語趣談 · 有冇搞錯", "約好九點㗎啦，你而家成十點至到，有冇搞錯。", "yeg3 hou2 geo2 dim2 ga3 la3 nei5 yi4 ga1 seng4 seb6 dim2 ji3 dou3 yeo5 mou5 gau2 co3", "都约好九点，你现在差不多十点才到，你怎么回事？", ["輕度不滿"]),
+  day23Sentence("culture-03", "講解", "講解 · 粵語趣談 · 有冇搞錯", "大家都到齊，得你一個冇到，有冇搞錯。", "dai6 ga1 dou1 dou3 qei4 deg1 nei5 yed1 go3 mou5 dou3 yeo5 mou5 gau2 co3", "大家都来了，就你没来，真不像话。", ["中度不滿"]),
+  day23Sentence("culture-04", "講解", "講解 · 粵語趣談 · 有冇搞錯", "我同你講過幾多次喇，你仲係遲到，有冇搞錯！", "ngo5 tung4 nei5 gong2 guo3 gei2 do1 qi3 la3 nei5 zung6 hei6 qi4 dou3 yeo5 mou5 gau2 co3", "我跟你说过多少次了，你还是迟到，什么毛病！", ["嚴重不滿"]),
+  day23Sentence("culture-05", "講解", "講解 · 粵語趣談 · 有冇搞錯", "佢咁嘅水準去參加選美，有冇搞錯。", "keu5 gem3 ge3 seoi2 zeon2 heo3 cam1 ga1 xun2 mei5 yeo5 mou5 gau2 co3", "她这样的水平也参加选美，没搞错吧。", ["嘲諷口吻"]),
+  day23Sentence("culture-06", "講解", "講解 · 粵語趣談 · 有冇搞錯", "咁嘅說話都講得出口，有冇搞錯！", "gem3 ge3 xud3 wa6 dou1 gong2 deg1 ced1 heo2 yeo5 mou5 gau2 co3", "这样的话也能说出口，去你的！", ["嚴厲批評"]),
+
+  // 六、傳意項目介紹：必須及無須（只收完整例句）
+  day23Sentence("must-01", "傳意項目介紹", "傳意項目介紹 · 必須", "你一定要喺四點鐘之前返嚟。", "nei5 yed1 ding6 yiu3 hei2 sei3 dim2 zung1 ji1 qin4 fan1 lei4", "你一定要在四点钟之前回来。", ["一定要"]),
+  day23Sentence("must-02", "傳意項目介紹", "傳意項目介紹 · 必須", "你應該回番封信畀佢。", "nei5 ying1 goi1 wui4 fan1 fung1 sen3 bei2 keu5", "你应该回封信给他。", ["應該"]),
+  day23Sentence("must-03", "傳意項目介紹", "傳意項目介紹 · 必須", "你唔好唔記得打個電話畀我呀。", "nei5 m4 hou2 m4 gei3 deg1 da2 go3 din6 wa2 bei2 ngo5 a3", "你可别忘了打个电话给我。", ["唔好唔"]),
+  day23Sentence("must-04", "傳意項目介紹", "傳意項目介紹 · 必須", "趁未認真塞車嗰陣走人，實在有咁嘅必要。", "cen3 mei6 ying6 zen1 seg1 ce1 go2 zen6 zeo2 yen4 sed6 zoi6 yeo5 gem2 ge3 bid1 yiu3", "趁还没真正堵车的时候走，实在有这个必要。", ["有咁嘅必要"]),
+  day23Sentence("must-05", "傳意項目介紹", "傳意項目介紹 · 必須", "你點都要睇下醫生至好呀。", "nei5 dim2 dou1 yiu3 tei2 ha5 yi1 sang1 ji3 hou2 a3", "你无论如何都要看医生才好。", ["點都要"]),
+  day23Sentence("must-06", "傳意項目介紹", "傳意項目介紹 · 必須", "唔理坐車定坐船，佢都要喺聽朝早趕番香港。", "m4 lei5 co5 ce1 deng6 co5 xun4 keu5 dou1 yiu3 hei2 teng1 jiu1 zou2 gon2 fan1 heng1 gong2", "不管坐车还是坐船，他都要明天早上赶回香港。", ["唔理都"]),
+  day23Sentence("must-07", "傳意項目介紹", "傳意項目介紹 · 必須", "今日嘅車飛賣晒，惟有買聽日嘅。", "gem1 yed6 ge3 ce1 fei1 mai6 sai3 wei4 yeo5 mai5 teng1 yed6 ge3", "今天的车票卖完了，只能买明天的。", ["惟有"]),
+  day23Sentence("must-08", "傳意項目介紹", "傳意項目介紹 · 必須", "前面塞車塞到冚晒，我冇法子至揀呢條路行啫。", "qin4 min6 seg1 ce1 seg1 dou3 hem6 sai3 ngo5 mou5 fad3 ji2 ji3 gan2 ni1 tiu4 lou6 hang4 ze1", "前面堵车堵得很厉害，我没办法才选这条路走。", ["冇法子至"]),
+  day23Sentence("noneed-01", "傳意項目介紹", "傳意項目介紹 · 無須", "你唔使親自嚟嘅，搵人代辦都可以。", "nei5 m4 sei2 cen1 ji6 lei4 ge3 wen2 yen4 doi6 ban6 dou1 ho2 yi5", "你不用亲自来，找人代办也可以。", ["唔使"]),
+  day23Sentence("noneed-02", "傳意項目介紹", "傳意項目介紹 · 無須", "仲有成個月先去，咁早就買定晒啲飛冇咁嘅必要。", "zung6 yeo5 seng4 go3 yud6 xin1 heo3 gem3 zou2 zeo6 mai5 ding6 sai3 di1 fei1 mou5 gem2 ge3 bid1 yiu3", "还有整整一个月才去，这么早买好票没有这个必要。", ["冇咁嘅必要"]),
+  day23Sentence("noneed-03", "傳意項目介紹", "傳意項目介紹 · 無須", "隨便去邊度都得。", "qeoi4 bin6 heo3 bin1 dou6 dou1 deg1", "随便去哪里都行。", ["隨便"]),
+  day23Sentence("noneed-04", "傳意項目介紹", "傳意項目介紹 · 無須", "去唔去，由得你。", "heo3 m4 heo3 yeo4 deg1 nei5", "去不去，由你。", ["由得你"]),
+
+  // 七、練習
+  day23Sentence("dialogue-01", "練習", "練習 · 會話聆聽", "考牌考成點呀？", "hao2 pai4 hao2 xing4 dim2 a3", "驾照考试考得怎么样？", ["考牌"]),
+  day23Sentence("dialogue-02", "練習", "練習 · 會話聆聽", "得咗，算係夠運喇。", "deg1 zo2 xun3 hei6 geo3 wen6 la3", "过了，算是够幸运了。", ["夠運"]),
+  day23Sentence("dialogue-03", "練習", "練習 · 會話聆聽", "噉咪係要賀一賀？", "gem2 mei1 hei6 yiu3 ho6 yed1 ho6", "那是不是要庆祝一下？", ["賀一賀"]),
+  day23Sentence("dialogue-04", "練習", "練習 · 會話聆聽", "冇問題，預咗你㗎喇。", "mou5 men6 tei4 yu6 zo2 nei5 ga3 la3", "没问题，早预了你。", ["預咗你"]),
+  day23Sentence("dialogue-05", "練習", "練習 · 會話聆聽", "買咗車未呀？", "mai5 zo2 ce1 mei6 a3", "买车了吗？", ["買車"]),
+  day23Sentence("dialogue-06", "練習", "練習 · 會話聆聽", "買咗架二手車揸下先。", "mai5 zo2 ga3 yi6 seo2 ce1 za1 ha5 xin1", "先买了一辆二手车开开。", ["二手車"]),
+  day23Sentence("dialogue-07", "練習", "練習 · 會話聆聽", "啫，揸車唔難，但係要揸熟架車，有道路意識就唔容易㗎。", "ze1 za1 ce1 m4 nan4 dan6 hei6 yiu3 za1 sug6 ga3 ce1 yeo5 dou6 lou6 yi3 xig1 zeo6 m4 yung4 yi6 ga3", "开车不难，但是要把车开熟，有道路意识就不容易。", ["揸熟架車", "道路意識"]),
+  day23Sentence("dialogue-08", "練習", "練習 · 會話聆聽", "我知喇，安全第一吖嘛。", "ngo5 ji1 la3 on1 qyun4 dei6 yed1 a1 ma3", "我知道，安全第一嘛。", ["安全第一"]),
+  day23Sentence("dialogue-09", "練習", "練習 · 會話聆聽", "你張機票搞掂未呀？", "nei5 zeng1 gei1 piu3 gau2 dim6 mei6 a3", "你的机票搞定了吗？", ["機票"]),
+  day23Sentence("dialogue-10", "練習", "練習 · 會話聆聽", "去程就有，回程候補。", "heo3 qing4 zeo6 yeo5 wui4 qing4 heo6 bou2", "去程有，回程候补。", ["候補"]),
+  day23Sentence("dialogue-11", "練習", "練習 · 會話聆聽", "噉，你走唔走得成㗎？", "gem2 nei5 zeo2 m4 zeo2 deg1 xing4 ga3", "那你走不走得成？", ["走得成"]),
+  day23Sentence("dialogue-12", "練習", "練習 · 會話聆聽", "連我自己都唔知。", "lin4 ngo5 ji6 gei2 dou1 m4 ji1", "连我自己都不知道。", ["唔知"]),
+  day23Sentence("dialogue-13", "練習", "練習 · 會話聆聽", "第次你要早啲攞機位至得呀。", "dei6 qi3 nei5 yiu3 zou2 di1 lo2 gei1 wei6 ji3 deg1 a3", "下次你要早点拿机位才行。", ["攞機位"]),
+  day23Sentence("dialogue-14", "練習", "練習 · 會話聆聽", "點鬼知咁爆棚㗎。", "dim2 guei2 ji1 gem3 bao3 pang4 ga3", "哪知道这么爆满。", ["爆棚"]),
+  day23Sentence("dialogue-15", "練習", "練習 · 會話聆聽", "去澳洲幾時都係咁爆棚㗎啦。", "heo3 ou3 zeo1 gei2 xi4 dou1 hei6 gem3 bao3 pang4 ga3 la3", "去澳洲什么时候都是这么爆满。", ["澳洲"]),
+  day23Sentence("dialogue-16", "練習", "練習 · 會話聆聽", "而家冇計喇，惟有一個「等」字。", "yi4 ga1 mou5 gei3 la3 wei4 yeo5 yed1 go3 deng2 ji6", "现在没办法了，只有一个“等”字。", ["冇計"]),
+  day23Sentence("discussion-01", "練習", "練習 · 討論", "你返工嗰陣坐開邊種交通工具㗎？", "nei5 fan1 gung1 go2 zen6 co5 hoi1 bin1 zung2 gao1 tung1 gung1 geoi6 ga3", "你上班的时候常坐哪种交通工具？", ["交通工具"]),
+  day23Sentence("discussion-02", "練習", "練習 · 討論", "你鍾意坐巴士定係地鐵？", "nei5 zung1 yi3 co5 ba1 xi2 deng6 hei6 dei6 tid3", "你喜欢坐巴士还是地铁？", ["巴士", "地鐵"]),
+  day23Sentence("discussion-03", "練習", "練習 · 討論", "塞車大家都怕怕，你有乜嘢改善嘅意見呢？", "seg1 ce1 dai6 ga1 dou1 pa3 pa3 nei5 yeo5 med1 ye5 goi2 sin6 ge3 yi3 gin3 ne1", "堵车大家都怕，你有什么改善意见呢？", ["塞車", "改善"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
+  day23Item("char-za", "粵字辨認", "粵字辨認 · 課文用字", "揸", "za1", "驾驶；拿着", ["揸車"]),
+  day23Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["交通運輸嘅需求"]),
+  day23Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["慢啲"]),
+  day23Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺港島"]),
+  day23Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["噉行"]),
+  day23Item("char-ze", "粵字辨認", "粵字辨認 · 課文用字", "啫", "ze1", "而已；语气助词", ["行啫"]),
+  day23Item("char-hem", "粵字辨認", "粵字辨認 · 課文用字", "冚", "hem6", "全部；盖住", ["冚晒"]),
+  day23Item("char-la", "粵字辨認", "粵字辨認 · 課文用字", "喇", "la3", "表示变化或提醒的语气助词", ["冇計喇"]),
+
+  // 八、短文朗讀
+  day23Sentence("reading-01", "短文朗讀", "短文朗讀", "香港係東南亞最大嘅貿易港口。", "heng1 gong2 hei6 dung1 nam4 a3 zeoi3 dai6 ge3 mau6 yeg6 gong2 heo2", "香港是东南亚最大的贸易港口。", ["貿易港口"]),
+  day23Sentence("reading-02", "短文朗讀", "短文朗讀", "工商金融嘅活動十分之頻繁、活躍，而香港人又素以節奏快、效率高見稱，因此對於交通運輸嘅需求特別高。", "gung1 seng1 gem1 yung4 ge3 wud6 dung6 seb6 fen1 ji1 pen4 fan4 wud6 yeg6 yi4 heng1 gong2 yen4 yeo6 sou3 yi5 jid3 zeo3 fai3 hao6 led2 gou1 gin3 qing1 yen1 qi2 deoi3 yu1 gao1 tung1 wen6 xu1 ge3 seo1 keo4 deg6 bid6 gou1", "工商金融活动十分频繁、活跃，而香港人又素以节奏快、效率高见称，因此对于交通运输的需求特别高。", ["頻繁", "效率"]),
+  day23Sentence("reading-03", "短文朗讀", "短文朗讀", "事實上，香港無論對內同對外嘅交通都好發達，交通設施相當先進。", "xi6 sed6 seng6 heng1 gong2 mou4 leon6 deoi3 noi6 tung4 deoi3 ngoi6 ge3 gao1 tung1 dou1 hou2 fad3 dad6 gao1 tung1 qid3 xi1 seng1 dong1 xin1 zeon3", "事实上，香港无论对内和对外的交通都很发达，交通设施相当先进。", ["交通設施"]),
+  day23Sentence("reading-04", "短文朗讀", "短文朗讀", "市內公共交通四通八達，服務手段之多、服務時間之長、服務費用之低廉、服務管理之有效，連世界上好多先進國家都及唔上。", "xi5 noi6 gung1 gung6 gao1 tung1 sei3 tung1 bad3 dad6 fug6 mou6 seo2 dyun6 ji1 do1 fug6 mou6 xi4 gan3 ji1 qeng4 fug6 mou6 fei3 yung6 ji1 dei1 lim4 fug6 mou6 gun2 lei5 ji1 yeo5 hao6 lin4 sei3 gai3 seng6 hou2 do1 xin1 zeon3 guog3 ga1 dou1 keb6 m4 seng6", "市内公共交通四通八达，服务手段多、服务时间长、服务费用低廉、服务管理有效，连世界上很多先进国家都比不上。", ["四通八達", "低廉"]),
+  day23Sentence("reading-05", "短文朗讀", "短文朗讀", "對外交通，海運又好、陸運又好、空運又好，都日見頻繁。", "deoi3 ngoi6 gao1 tung1 hoi2 wen6 yeo6 hou2 lug6 wen6 yeo6 hou2 hung1 wen6 yeo6 hou2 dou1 yed6 gin3 pen4 fan4", "对外交通，海运也好、陆运也好、空运也好，都日益频繁。", ["對外交通"]),
+  day23Sentence("reading-06", "短文朗讀", "短文朗讀", "香港喺全世界貨櫃港中高踞首位。", "heng1 gong2 hei2 qun4 sei3 gai3 fo3 guei6 gong2 zung1 gou1 geoi3 seo2 wei6", "香港在全世界货柜港中高居首位。", ["貨櫃港"]),
+  day23Sentence("reading-07", "短文朗讀", "短文朗讀", "往返中國內地嘅陸運有增無減，而航空嘅直航航線連接住世界七十幾個大城市。", "wong5 fan2 zung1 guog3 noi6 dei6 ge3 lug6 wen6 yeo5 zeng1 mou4 gam2 yi4 hong4 hung1 ge3 jig6 hong4 hong4 xin3 lin4 jib3 ju6 sei3 gai3 ced1 seb6 gei2 go3 dai6 xing4 xi2", "往返中国内地的陆运有增无减，而航空直航航线连接着世界七十几个大城市。", ["直航航線"]),
+  day23Sentence("reading-08", "短文朗讀", "短文朗讀", "可以噉講，香港嘅地理位置同經濟模式決定咗佢必須大力發展交通運輸先至能夠生存落去。", "ho2 yi5 gem2 gong2 heng1 gong2 ge3 dei6 lei5 wei6 ji3 tung4 ging1 zei3 mou4 xig1 kud3 ding6 zo2 keu5 bid1 xeo1 dai6 lig6 fad3 jin2 gao1 tung1 wen6 xu1 xin1 ji3 neng4 geo3 sang1 qun4 log6 heo3", "可以这样说，香港的地理位置和经济模式决定了她必须大力发展交通运输才能生存下去。", ["經濟模式"])
+);
+
+
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
 });
