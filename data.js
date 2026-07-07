@@ -3036,6 +3036,188 @@ window.STUDY_ITEMS.push(
   day18Sentence("reading-08", "短文朗讀", "短文朗讀", "安排好行程，包你滿意而歸。", "on1 pai4 hou2 hang4 qing4 bao1 nei5 mun5 yi3 yi4 guei1", "安排好行程，包你满意而归。", ["短文朗讀"])
 );
 
+const day19Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day19-${id}`,
+  day: "day19",
+  module,
+  category: `18 搵工跳槽 · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day19Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day19-sent-${id}`,
+  day: "day19",
+  module,
+  category: `18 搵工跳槽 · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 一、課文
+  day19Sentence("text-01", "課文", "課文", "喺香港要搵工睇嚟好容易，報紙嘅「求職廣場」日日都有好多請人嘅廣告。", "hei2 heng1 gong2 yiu3 wen2 gung1 tei2 lei4 hou2 yung4 yi6 bou3 ji2 ge3 keo4 jig1 guong2 ceng4 yed6 yed6 dou1 yeo5 hou2 do1 ceng2 yen4 ge3 guong2 gou3", "在香港找工作看来很容易，报纸上的“求职广场”天天都有很多招聘广告。", ["搵工", "求職廣場"]),
+  day19Sentence("text-02", "課文", "課文", "公司擴大業務啦，人員流動啦，好多時都會有空缺。", "gung1 xi1 kuog3 dai6 yib6 mou6 la1 yen4 yun4 leo4 dung6 la1 hou2 do1 xi4 dou1 wui5 yeo5 hung1 kued3", "公司扩大业务、人员流动，很多时候都会有空缺。", ["擴大業務", "空缺"]),
+  day19Sentence("text-03", "課文", "課文", "我都想轉工，你哋公司請唔請人呀？", "ngo5 dou1 seng2 jun3 gung1 nei5 dei6 gung1 xi1 ceng2 m4 ceng2 yen4 a3", "我也想换工作，你们公司招不招人？", ["轉工", "請人"]),
+  day19Sentence("text-04", "課文", "課文", "你想入我哋呢行呀？其實，你咁有經驗，大把公司爭住要，早就應該跳槽啦。", "nei5 seng2 yeb6 ngo5 dei6 ni1 hong4 a4 kei4 sed6 nei5 gem3 yeo5 ging1 yim6 dai6 ba2 gung1 xi1 zang1 ju6 yiu3 zou2 zeo6 ying1 goi1 tiu3 cou4 la1", "你想入我们这一行吗？其实，你这么有经验，多的是公司争着要，早就应该跳槽了。", ["呢行", "大把", "跳槽"]),
+  day19Sentence("text-05", "課文", "課文", "至弊我學歷唔及得人呢。", "ji3 bei6 ngo5 hog6 lig6 m4 keb6 deg1 yen4 ne1", "最糟的是我的学历比不上别人。", ["至弊", "唔及得人"]),
+  day19Sentence("text-06", "課文", "課文", "你都讀咗個遙距學位啦。況且，好多公司請人都好睇重經驗同實際能力㗎。", "nei5 dou1 dug6 zo2 go3 yiu4 keu5 hog6 wei2 la1 fong3 ce2 hou2 do1 gung1 xi1 ceng2 yen4 dou1 hou2 tei2 cung5 ging1 yim6 tung4 sed6 zei1 neng4 lig6 ga3", "你也读了一个远程学位。况且，很多公司招聘都很看重经验和实际能力。", ["遙距學位", "睇重"]),
+  day19Sentence("text-07", "課文", "課文", "而家好多公司都發展內地市場，佢哋都要請駐內地嘅人員。", "yi4 ga1 hou2 do1 gung1 xi1 dou1 fad3 jin2 noi6 dei6 xi5 ceng4 keu5 dei6 dou1 yiu3 ceng2 ju3 noi6 dei6 ge3 yen4 yun4", "现在很多公司都发展内地市场，他们都要招聘驻内地的人员。", ["內地市場", "駐內地"]),
+  day19Sentence("text-08", "課文", "課文", "如果有行政管理才能，又有內地經商經驗，又識普通話，……呢啲人才就好搶手。", "yu4 guo2 yeo5 hang4 jing3 gun2 lei5 coi4 neng4 yeo6 yeo5 noi6 dei6 ging1 seng1 ging1 yim6 yeo6 xig1 pou2 tung1 wa2 ni1 di1 yen4 coi4 zeo6 hou2 coeng2 seo2", "如果有行政管理才能，又有内地经商经验，还会说普通话，这些人才就很抢手。", ["行政管理", "搶手"]),
+  day19Sentence("text-09", "課文", "課文", "要長期離開屋企，好多人都唔願做。", "yiu3 coeng4 kei4 lei4 hoi1 ug1 kei2 hou2 do1 yen4 dou1 m4 yun6 zou6", "要长期离开家，很多人都不愿意做。", ["長期", "唔願"]),
+  day19Sentence("text-10", "課文", "課文", "所以呢啲職位，通常薪酬都高好多。", "so2 yi5 ni1 di1 jig1 wei6 tung1 seng4 sen1 ceo4 dou1 gou1 hou2 do1", "所以这些职位，通常薪酬都高很多。", ["職位", "薪酬"]),
+  day19Sentence("text-11", "課文", "課文", "好多營業代表或者中國部主管之類嘅職位，條件都好吸引。", "hou2 do1 ying4 yib6 doi6 biu2 wag6 ze2 zung1 guog3 bou6 ju2 gun2 ji1 leu6 ge3 jig1 wei6 tiu4 gin2 dou1 hou2 keb1 yen5", "很多营业代表或中国部主管之类的职位，条件都很吸引。", ["營業代表", "中國部主管"]),
+  day19Sentence("text-12", "課文", "課文", "有額外嘅薪金津貼，假期又會多啲，公司又包食住同香港、內地來回交通費，仲有其他好多福利，都唔錯㗎。", "yeo5 ngag6 ngoi6 ge3 sen1 gem1 zen1 tib3 ga3 kei4 yeo6 wui5 do1 di1 gung1 xi1 yeo6 bao1 xig6 ju6 tung4 heng1 gong2 noi6 dei6 loi4 wui4 gao1 tung1 fei3 zung6 yeo5 kei4 ta1 hou2 do1 fug1 lei6 dou1 m4 co3 ga3", "有额外的薪金津贴，假期也较多，公司还包食宿和香港、内地往返交通费，另外还有很多福利，都很不错。", ["薪金津貼", "包食住", "福利"]),
+  day19Sentence("text-13", "課文", "課文", "講到我都心郁郁添。", "gong2 dou3 ngo5 dou1 sem1 yug1 yug1 tim1", "说得我也心动了。", ["心郁郁", "添"]),
+  day19Sentence("text-14", "課文", "課文", "你又未結婚，冇顧慮，啲老闆都特別鍾意啲啦，你諗下係唔係啦？", "nei5 yeo6 mei6 gid3 fen1 mou5 gu3 leu6 di1 lou5 ban2 dou1 deg6 bid6 zung1 yi3 di1 la1 nei5 nem2 ha5 hei6 m4 hei6 la3", "你又没有结婚，没有顾虑，老板们都特别喜欢这类人，你想想是不是？", ["冇顧慮", "諗下"]),
+  day19Sentence("text-15", "課文", "課文", "又係噃。好，一於返去寫求職信先。", "yeo6 hei6 bo3 hou2 yed1 yu1 fan1 heo3 se2 keo4 jig1 seon3 xin1", "倒也是。好，我这就回去写求职信。", ["又係噃", "求職信"]),
+
+  // 二、重點詞彙
+  day19Item("vocab-wengung", "重點詞彙", "重點詞彙", "搵工", "wen2 gung1", "找工作；求职", ["搵工"]),
+  day19Item("vocab-jungung", "重點詞彙", "重點詞彙", "轉工", "jun3 gung1", "换一份新工作", ["想轉工"]),
+  day19Item("vocab-tiucou", "重點詞彙", "重點詞彙", "跳槽", "tiu3 cou4", "转到新的公司或机构工作", ["搵工跳槽"]),
+  day19Item("vocab-jibei", "重點詞彙", "重點詞彙", "至弊", "ji3 bei6", "最糟；最吃亏；最麻烦", ["至弊我學歷唔及得人"]),
+  day19Item("vocab-mkebdegyen", "重點詞彙", "重點詞彙", "唔及得人", "m4 keb6 deg1 yen4", "比不上别人", ["學歷唔及得人"]),
+  day19Item("vocab-teicung", "重點詞彙", "重點詞彙", "睇重", "tei2 cung5", "看重", ["睇重經驗"]),
+  day19Item("vocab-myun", "重點詞彙", "重點詞彙", "唔願", "m4 yun6", "不愿意", ["唔願做"]),
+  day19Item("vocab-senceo", "重點詞彙", "重點詞彙", "薪酬", "sen1 ceo4", "工资待遇", ["薪酬都高好多"]),
+  day19Item("vocab-semyugyug", "重點詞彙", "重點詞彙", "心郁郁", "sem1 yug1 yug1", "心动", ["講到我都心郁郁"]),
+  day19Item("vocab-yeoheibo", "重點詞彙", "重點詞彙", "又係噃", "yeo6 hei6 bo3", "说来倒也是", ["又係噃"]),
+
+  // 三、補充語彙
+  day19Item("supp-application", "補充語彙", "補充語彙 · 詞語", "申請表", "sen1 qing2 biu2", "申请表", ["填申請表"]),
+  day19Item("supp-resume", "補充語彙", "補充語彙 · 詞語", "個人履歷", "go3 yen4 lei5 lig6", "个人简历", ["個人履歷"]),
+  day19Item("supp-qualification", "補充語彙", "補充語彙 · 詞語", "資歷", "ji1 lig6", "资历", ["工作資歷"]),
+  day19Item("supp-interview", "補充語彙", "補充語彙 · 詞語", "見工", "gin3 gung1", "求职面试", ["去見工"]),
+  day19Item("supp-contract", "補充語彙", "補充語彙 · 詞語", "合約雇員", "heb6 yeg3 gu3 yun4", "合同雇员", ["合約雇員"]),
+  day19Item("supp-poach", "補充語彙", "補充語彙 · 詞語", "挖角", "wad3 gog3", "挖走别家雇员", ["公司挖角"]),
+  day19Item("supp-agency", "補充語彙", "補充語彙 · 詞語", "職業介紹", "jig1 yib6 gai3 xiu6", "职业介绍", ["職業介紹所"]),
+  day19Item("supp-mpf", "補充語彙", "補充語彙 · 詞語", "公積金", "gung1 jig1 gem1", "公积金", ["公積金"]),
+  day19Item("supp-housing", "補充語彙", "補充語彙 · 詞語", "房屋津貼", "fong4 ug1 zen1 tib3", "住房津贴", ["房屋津貼"]),
+  day19Item("supp-medical", "補充語彙", "補充語彙 · 詞語", "醫療保險", "yi1 liu4 bou2 him2", "医疗保险", ["醫療保險"]),
+  day19Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "潮流興跳槽。", "qiu4 leo4 hing1 tiu3 cou4", "现在流行跳槽。", ["潮流", "跳槽"]),
+  day19Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "不過諗清楚自己嘅條件同興趣先。", "bed1 guo3 nem5 qing1 co2 ji6 gei2 ge3 tiu4 gin2 tung4 hing3 ceo3 xin1", "不过先要考虑清楚自己的条件和兴趣。", ["諗清楚", "興趣"]),
+  day19Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "唔好以為東家唔打打西家，實掂。", "m4 hou2 yi5 wei4 dung1 ga1 m4 da2 da2 sei1 ga1 sed6 dim6", "别以为东家不干就去西家，一定行得通。", ["東家唔打打西家", "實掂"]),
+  day19Sentence("supp-04", "補充語彙", "補充語彙 · 句子", "況且，跳嚟跳去，自己冇晒積累。", "fong3 ce2 tiu3 lei4 tiu3 heo3 ji6 gei2 mou5 sai3 jig1 leu6", "况且，跳来跳去，自己就没有积累了。", ["跳嚟跳去", "積累"]),
+  day19Sentence("supp-05", "補充語彙", "補充語彙 · 句子", "冇積累即係冇實力，冇優勢。", "mou5 jig1 leu6 jig1 hei6 mou5 sed6 lig6 mou5 yeo1 sei3", "没有积累就等于没有实力、没有优势。", ["冇積累", "冇優勢"]),
+
+  // 四、重點理解
+  day19Sentence("understanding-01", "重點理解", "重點理解 · 疑問助詞「呀」", "你想唔想去呀？", "nei5 seng2 m4 seng2 heo3 a3", "你想不想去？", ["呀（第三聲）"]),
+  day19Sentence("understanding-02", "重點理解", "重點理解 · 疑問助詞「呀」", "你唔想去呀？", "nei5 m4 seng2 heo3 a4", "你不想去吗？", ["呀（第四聲）"]),
+  day19Sentence("understanding-03", "重點理解", "重點理解 · 疑問助詞「呀」", "你去邊度呀？", "nei5 heo3 bin1 dou6 a3", "你去哪里？", ["呀（第三聲）"]),
+  day19Sentence("understanding-04", "重點理解", "重點理解 · 疑問助詞「呀」", "你去灣仔呀？", "nei5 heo3 wan1 zei2 a4", "你去湾仔吗？", ["呀（第四聲）"]),
+  day19Sentence("understanding-05", "重點理解", "重點理解 · 跳槽", "你早就應該搵工跳槽。", "nei5 zou2 zeo6 ying1 goi1 wen2 gung1 tiu3 cou4", "你早就应该换工作了。", ["搵工跳槽"]),
+  day19Sentence("understanding-06", "重點理解", "重點理解 · 跳槽", "佢上個月已經跳槽去咗第二個電視台。", "keu5 soeng6 go3 yud6 yi5 ging1 tiu3 cou4 heo3 zo2 dai6 yi6 go3 din6 xi6 toi4", "她上个月已经跳槽到另一家电视台。", ["跳槽"]),
+  day19Sentence("understanding-07", "重點理解", "重點理解 · 至……", "咁多人之中，至／最肥嗰個係佢。", "gem3 do1 yen4 ji1 zung1 ji3 zeoi3 fei4 go2 go3 hei6 keu5", "这么多人之中，最胖的就是他。", ["至", "最"]),
+  day19Item("understanding-eyes", "重點理解", "重點理解 · 名詞＋重疊襯字", "眼金金", "ngan5 gem1 gem1", "目不转睛地盯着", ["眼金金"]),
+  day19Item("understanding-mouth", "重點理解", "重點理解 · 名詞＋重疊襯字", "口多多", "heo2 do1 do1", "多嘴多舌", ["口多多"]),
+  day19Item("understanding-head", "重點理解", "重點理解 · 名詞＋重疊襯字", "頭耷耷", "teo4 dab1 dab1", "耷拉着脑袋", ["頭耷耷"]),
+  day19Item("understanding-face", "重點理解", "重點理解 · 名詞＋重疊襯字", "面紅紅", "min6 hung4 hung4", "红着脸", ["面紅紅"]),
+  day19Sentence("understanding-08", "重點理解", "重點理解 · 又係噃", "你噉講，佢實唔鍾意啦，你諗下係唔係啦？", "nei5 gem2 gong2 keu5 sed6 m4 zung1 yi3 la1 nei5 nem2 ha5 hei6 m4 hei6 la3", "你这样说，他当然不高兴了，你想想是不是？", ["又係噃"]),
+  day19Sentence("understanding-09", "重點理解", "重點理解 · 又係噃", "又係噃。", "yeo6 hei6 bo3", "说来倒也是。", ["又係噃"]),
+  day19Sentence("understanding-10", "重點理解", "重點理解 · 又係噃", "你點解唔星期三去啫？", "nei5 dim2 gai2 m4 sing1 kei4 sam1 heo3 ze1", "你为什么不星期三去？", ["點解", "啫"]),
+
+  // 五、講解：粵語讀音
+  day19Item("pron-amount", "講解", "講解 · 粵語讀音 · êng 韻母", "份量／數量", "fen6 leng6 sou3 leng6", "分量／数量", ["êng 韻母"]),
+  day19Item("pron-sheet", "講解", "講解 · 粵語讀音 · êng 韻母", "一張／開張", "yed1 zeng1 hoi1 zeng1", "一张／开张", ["êng 韻母"]),
+  day19Item("pron-common", "講解", "講解 · 粵語讀音 · êng 韻母", "常用／常見", "seng4 yung6 seng4 gin3", "常用／常见", ["êng 韻母"]),
+  day19Item("pron-fragrant", "講解", "講解 · 粵語讀音 · êng 韻母", "香港／檀香", "heng1 gong2 tan4 heng1", "香港／檀香", ["êng 韻母"]),
+  day19Item("pron-same", "講解", "講解 · 粵語讀音 · êng 韻母", "樣貌／一樣", "yeng6 mao6 yed1 yeng6", "样貌／一样", ["êng 韻母"]),
+  day19Item("pron-jiangzhang", "講解", "講解 · 粵語讀音 · 同音字", "將／張", "zeng1", "“将”和“张”在粤语中同音", ["將來", "張開"]),
+  day19Item("pron-jiangxiangzhang", "講解", "講解 · 粵語讀音 · 同音字", "匠／象／丈", "zeng6", "“匠”“象”“丈”在粤语中同音", ["石匠", "大象", "一丈"]),
+  day19Item("pron-changqiangxiang", "講解", "講解 · 粵語讀音 · 同音字", "長／牆／詳", "ceng4", "“长”“墙”“详”在粤语中同音", ["長短", "牆紙", "詳細"]),
+  day19Item("pron-shangxiang", "講解", "講解 · 粵語讀音 · 同音字", "商／相", "seng1", "“商”和“相”在粤语中同音", ["商量", "相信"]),
+  day19Item("pron-rangyang", "講解", "講解 · 粵語讀音 · 同音字", "讓／樣", "yeng6", "“让”和“样”在粤语中同音", ["禮讓", "樣本"]),
+  day19Item("pron-window", "講解", "講解 · 粵語讀音 · 例外", "窗／雙", "ceng1 seng1", "普通话含 uang 韵、粤语读 êng 韵的例字", ["窗", "雙"]),
+  day19Sentence("pron-01", "講解", "講解 · 發音練習", "我哋呢班人，有姓張，姓楊，姓梁，姓蔣，冇姓常，姓向，姓香，姓姜。", "ngo5 dei6 ni1 ban1 yen4 yeo5 xing3 zeng1 xing3 yeng4 xing3 leng4 xing3 zeng2 mou5 xing3 seng4 xing3 heng3 xing3 heng1 xing3 geng1", "我们这班人里，有人姓张、姓杨、姓梁、姓蒋，没有人姓常、姓向、姓香、姓姜。", ["êng 韻母"]),
+  day19Sentence("pron-02", "講解", "講解 · 發音練習", "姜導演講，電影《長江》得咗兩項金像獎。", "geng1 dou6 yin2 gong2 din6 ying2 ceng4 gong1 deg1 zo2 leng5 hong6 gem1 zeng6 zeng2", "姜导演说，电影《长江》得了两项金像奖。", ["êng 韻母"]),
+
+  // 五、講解：表示強調的格式
+  day19Sentence("grammar-01", "講解", "講解 · 語法 · （乜）……都係假", "佢唔應承就乜都係假。", "keu5 m4 ying1 sing4 zeo6 med1 dou1 hei6 ga2", "他不答应，别的都免谈。", ["乜都係假"]),
+  day19Sentence("grammar-02", "講解", "講解 · 語法 · （乜）……都係假", "我攰到死，去邊度都係假。", "ngo5 gui6 dou3 sei2 heo3 bin1 dou6 dou1 hei6 ga2", "我累得够呛，哪里都不想去。", ["都係假"]),
+  day19Sentence("grammar-03", "講解", "講解 · 語法 · ……都似", "而家都七點三個字喇，我睇佢唔嚟都似。", "yi4 ga1 dou1 ced1 dim2 sam1 go3 ji6 la3 ngo5 tei2 keu5 m4 lei4 dou1 qi5", "现在已经七点十五分了，我看他没准不来了。", ["都似"]),
+  day19Sentence("grammar-04", "講解", "講解 · 語法 · ……都似", "幾日都唔見佢，我睇佢病咗都似。", "gei2 yed6 dou1 m4 gin3 keu5 ngo5 tei2 keu5 beng6 zo2 dou1 qi5", "几天没看见他，我看他准是病了。", ["都似"]),
+  day19Sentence("grammar-05", "講解", "講解 · 語法 · ……都話唔定", "個天變晒，一陣間落雨都話唔定。", "go3 tin1 bin3 sai3 yed1 zen6 gan1 log6 yu5 dou1 wa6 m4 ding6", "变天了，待会儿说不好会下雨。", ["都話唔定"]),
+  day19Sentence("grammar-06", "講解", "講解 · 語法 · ……都話唔定", "我聽日先至返嚟都話唔定。", "ngo5 ting1 yed6 xin1 ji3 fan1 lei4 dou1 wa6 m4 ding6", "没准儿我明天才回来。", ["都話唔定"]),
+
+  // 五、講解：粵語趣談
+  day19Item("culture-ceotleong", "講解", "講解 · 粵語趣談", "出糧", "ced1 loeng4", "发工资", ["出糧"]),
+  day19Sentence("culture-01", "講解", "講解 · 粵語趣談", "你哋邊日出糧㗎？", "nei5 dei6 bin1 yed6 ced1 loeng4 ga3", "你们哪天发工资？", ["出糧"]),
+  day19Item("culture-pegpao", "講解", "講解 · 粵語趣談", "劈炮", "peg3 pao3", "愤而辞职", ["劈炮"]),
+  day19Sentence("culture-02", "講解", "講解 · 粵語趣談", "估唔到佢真係劈炮喎。", "gu2 m4 dou2 keu5 zen1 hei6 peg3 pao3 wo3", "想不到他竟然甩手不干。", ["劈炮"]),
+  day19Item("culture-yengung", "講解", "講解 · 粵語趣談", "人工", "yen4 gung1", "工资", ["人工"]),
+  day19Sentence("culture-03", "講解", "講解 · 粵語趣談", "一個月得萬鬆啲人工咋。", "yed1 go3 yud6 deg1 man6 sung1 di1 yen4 gung1 za3", "一个月工资才一万多一点。", ["人工", "萬鬆啲"]),
+  day19Item("culture-ceotleilou", "講解", "講解 · 粵語趣談", "出嚟撈", "ced1 lei4 lou1", "在外干活谋生", ["出嚟撈"]),
+  day19Sentence("culture-04", "講解", "講解 · 粵語趣談", "出嚟撈話咁易咩。", "ced1 lei4 lou1 wa6 gem3 yi6 me1", "在外工作哪有那么容易。", ["出嚟撈"]),
+  day19Item("culture-ngaugung", "講解", "講解 · 粵語趣談", "打份牛工", "da2 fen6 ngeo4 gung1", "干十分劳累的工作", ["打份牛工"]),
+  day19Sentence("culture-05", "講解", "講解 · 粵語趣談", "讀書少，打份牛工啫。", "dug6 syu1 xiu2 da2 fen6 ngeo4 gung1 ze1", "读书少，只能干粗重繁杂的工作。", ["打份牛工"]),
+  day19Item("culture-keengauwenma", "講解", "講解 · 粵語趣談", "騎牛搵馬", "ke4 ngeo4 wen2 ma5", "暂且安于现状，伺机换工作", ["騎牛搵馬"]),
+  day19Sentence("culture-06", "講解", "講解 · 粵語趣談", "做住呢份工先，騎牛搵馬吖嘛。", "zou6 ju6 ni1 fen6 gung1 xin1 ke4 ngeo4 wen2 ma5 a1 ma3", "先做着这份工作，有机会再跳槽。", ["騎牛搵馬"]),
+  day19Item("culture-teksaigoeg", "講解", "講解 · 粵語趣談", "做到踢晒腳", "zou6 dou3 teg3 sai3 goeg3", "工作忙得团团转", ["做到踢晒腳"]),
+  day19Sentence("culture-07", "講解", "講解 · 粵語趣談", "一個人打理咁多嘢，做到踢晒腳。", "yed1 go3 yen4 da2 lei5 gem3 do1 ye5 zou6 dou3 teg3 sai3 goeg3", "一个人料理这么多事情，忙得团团转。", ["做到踢晒腳"]),
+  day19Item("culture-sogsaihei", "講解", "講解 · 粵語趣談", "做到索晒氣", "zou6 dou3 sog3 sai3 hei3", "工作忙得喘不过气", ["做到索晒氣"]),
+  day19Sentence("culture-08", "講解", "講解 · 粵語趣談", "一做做咗十個鐘，做到索晒氣。", "yed1 zou6 zou6 zo2 seb6 go3 zung1 zou6 dou3 sog3 sai3 hei3", "一干就是十个小时，忙得喘不过气。", ["做到索晒氣"]),
+  day19Item("culture-caolouban", "講解", "講解 · 粵語趣談", "炒老闆魷魚", "cao2 lou5 ban2 yeo4 yu2", "主动辞职的自谑说法", ["炒老闆魷魚"]),
+  day19Sentence("culture-09", "講解", "講解 · 粵語趣談", "係老闆炒你魷魚，定係你炒老闆魷魚呀？", "hei6 lou5 ban2 cao2 nei5 yeo4 yu2 ding6 hei6 nei5 cao2 lou5 ban2 yeo4 yu2 a3", "是老板解雇你，还是你主动辞职？", ["炒魷魚", "炒老闆魷魚"]),
+
+  // 六、傳意項目介紹：同意（只收完整例句）
+  day19Sentence("agree-01", "傳意項目介紹", "傳意項目介紹 · 充分同意", "畀我睇下。——好㗎。", "bei2 ngo5 tei2 ha5 hou2 ga3", "给我看一下。——好。", ["好／好㗎"]),
+  day19Sentence("agree-02", "傳意項目介紹", "傳意項目介紹 · 充分同意", "呢齣戲真係好睇。——係呀。", "ni1 ceot1 hei3 zen1 hei6 hou2 tei2 hei6 a3", "这出戏真好看。——是啊。", ["係／係呀"]),
+  day19Sentence("agree-03", "傳意項目介紹", "傳意項目介紹 · 充分同意", "你聽日準時七點到。——得。", "nei5 ting1 yed6 zeon2 xi4 ced1 dim2 dou3 deg1", "你明天准时七点到。——行。", ["得"]),
+  day19Sentence("agree-04", "傳意項目介紹", "傳意項目介紹 · 充分同意", "搵佢去實輸啦。——我都係噉話啦。", "wen2 keu5 heo3 sed6 syu1 la1 ngo5 dou1 hei6 gem2 wa6 la3", "找他去肯定会输。——我也是这么说。", ["我都係噉話"]),
+  day19Sentence("agree-05", "傳意項目介紹", "傳意項目介紹 · 勉強同意", "我哋去，你留喺度吖。——又好。", "ngo5 dei6 heo3 nei5 leo4 hei2 dou6 a1 yeo6 hou2", "我们去，你留在这里吧。——也好。", ["又好"]),
+  day19Sentence("agree-06", "傳意項目介紹", "傳意項目介紹 · 勉強同意", "你唔去又見唔到佢啫。——噉又係。", "nei5 m4 heo3 yeo6 gin3 m4 dou2 keu5 ze1 gem2 yeo6 hei6", "你不去又见不到他。——这倒也是。", ["噉又係"]),
+
+  // 七、練習
+  day19Item("exercise-sebseu", "練習", "練習 · 選擇讀音", "濕碎", "seb1 seu3", "零碎", ["選出正確讀音"]),
+  day19Item("exercise-didsid", "練習", "練習 · 選擇讀音", "的骰", "did1 sid1", "小巧玲珑", ["選出正確讀音"]),
+  day19Item("exercise-cunbou", "練習", "練習 · 選擇讀音", "穿煲", "cun1 bou1", "露馅儿", ["選出正確讀音"]),
+  day19Item("exercise-qixin", "練習", "練習 · 選擇讀音", "黐線", "qi1 xin3", "电话线交搭在一起；神经病", ["選出正確讀音"]),
+  day19Item("exercise-seixi", "練習", "練習 · 選擇讀音", "晒士", "sei1 xi2", "尺寸", ["選出正確讀音"]),
+  day19Sentence("ex-word-01", "練習", "練習 · 拼音詞語辨認", "呢架車仔係去銅鑼灣嘅。", "ni1 ga3 ce1 zei2 hei6 heo3 tung4 lo4 wan4 ge3", "这辆小车是去铜锣湾的。", ["車仔", "銅鑼灣"]),
+  day19Sentence("ex-word-02", "練習", "練習 · 拼音詞語辨認", "呢個天時話變就變。", "ni1 go3 tin1 xi4 wa6 bin3 zeo6 bin3", "这个天气说变就变。", ["話變就變"]),
+  day19Sentence("ex-word-03", "練習", "練習 · 拼音詞語辨認", "佢啱啱行開咗。", "keu5 ngam1 ngam1 hang4 hoi1 zo2", "他刚刚走开了。", ["啱啱", "行開"]),
+  day19Sentence("ex-word-04", "練習", "練習 · 拼音詞語辨認", "等一陣你再打嚟啦。", "deng2 yed1 zen6 nei5 zoi3 da2 lei4 la1", "等一会儿你再打来吧。", ["等一陣"]),
+  day19Item("exercise-phonetics-01", "練習", "練習 · 音標次序", "da／dai／dei／tei／ten／tem／zem／zeb／keb／heb", "da dai dei tei ten tem zem zeb keb heb", "按顺序朗读音标", ["音標次序"]),
+  day19Item("exercise-phonetics-02", "練習", "練習 · 音標次序", "leb／lib／lid／yid／yin／yiu／yi／qi／xi／séi／séng", "leb lib lid yid yin yiu yi qi xi séi séng", "按顺序朗读音标", ["音標次序"]),
+  day19Item("exercise-phonetics-03", "練習", "練習 · 音標次序", "sing／song／sung／gung／gug／kug／pug／pud／pui／pun", "sing song sung gung gug kug pug pud pui pun", "按顺序朗读音标", ["音標次序"]),
+  day19Item("exercise-phonetics-04", "練習", "練習 · 音標次序", "wun／wu／wa／wan／can／cao／ceo／qiu／coi／o", "wun wu wa wan can cao ceo qiu coi o", "按顺序朗读音标", ["音標次序"]),
+  day19Item("exercise-phonetics-05", "練習", "練習 · 音標次序", "u／yu／xu／xun／xud／xin／xid／sên／sêd／zên／zêu／zêg／zêng", "u yu xu xun xud xin xid sên sêd zên zêu zêg zêng", "按顺序朗读音标", ["音標次序"]),
+  day19Sentence("ex-01", "練習", "練習 · 實況問答", "如果想搵工，你會點樣做？", "yu4 guo2 seng2 wen2 gung1 nei5 wui5 dim2 yeng6 zou6", "如果想找工作，你会怎么做？", ["搵工"]),
+  day19Sentence("ex-02", "練習", "練習 · 實況問答", "喺香港搵工係唔係好容易？", "hei2 heng1 gong2 wen2 gung1 hei6 m4 hei6 hou2 yung4 yi6", "在香港找工作是不是很容易？", ["搵工"]),
+  day19Sentence("ex-03", "練習", "練習 · 實況問答", "你試過搵工未？你有乜經驗？", "nei5 xi3 guo3 wen2 gung1 mei6 nei5 yeo5 med1 ging1 yim6", "你试过找工作吗？你有什么经验？", ["搵工", "經驗"]),
+  day19Sentence("ex-04", "練習", "練習 · 實況問答", "喺香港搵工，你覺得學歷緊要定係經驗緊要？", "hei2 heng1 gong2 wen2 gung1 nei5 gog3 deg1 hog6 lig6 gen2 yiu3 ding6 hei6 ging1 yim6 gen2 yiu3", "在香港找工作，你觉得学历重要还是经验重要？", ["學歷", "經驗"]),
+  day19Sentence("ex-05", "練習", "練習 · 實況問答", "你認為自己邊樣好啲？", "nei5 ying6 wei4 ji6 gei2 bin1 yeng6 hou2 di1", "你认为自己哪方面更好？", ["邊樣"]),
+  day19Sentence("ex-06", "練習", "練習 · 實況問答", "長駐內地嘅工作，有冇吸引人嘅地方？", "coeng4 ju3 noi6 dei6 ge3 gung1 zog3 yeo5 mou5 keb1 yen5 yen4 ge3 dei6 fong1", "长期驻内地的工作，有没有吸引人的地方？", ["長駐內地"]),
+  day19Sentence("ex-07", "練習", "練習 · 實況問答", "點解唔係咁多人肯做？", "dim2 gai2 m4 hei6 gem3 do1 yen4 heng2 zou6", "为什么不是很多人愿意做？", ["點解"]),
+  day19Sentence("ex-08", "練習", "練習 · 實況問答", "你而家份工有乜嘢福利？", "nei5 yi4 ga1 fen6 gung1 yeo5 med1 ye5 fug1 lei6", "你现在这份工作有什么福利？", ["福利"]),
+  day19Sentence("ex-09", "練習", "練習 · 實況問答", "你最希望有乜嘢福利？", "nei5 zeoi3 hei1 mong6 yeo5 med1 ye5 fug1 lei6", "你最希望有什么福利？", ["福利"]),
+  day19Sentence("ex-10", "練習", "練習 · 實況問答", "申請一份工有乜嘢手續？", "sen1 qing2 yed1 fen6 gung1 yeo5 med1 ye5 seo2 zug6", "申请一份工作有什么手续？", ["申請", "手續"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
+  day19Item("char-wen", "粵字辨認", "粵字辨認 · 課文用字", "搵", "wen2", "找", ["搵工"]),
+  day19Item("char-dei", "粵字辨認", "粵字辨認 · 課文用字", "哋", "dei6", "表示复数的人称后缀", ["你哋", "佢哋"]),
+  day19Item("char-keu", "粵字辨認", "粵字辨認 · 課文用字", "佢", "keu5", "他；她；它", ["佢哋"]),
+  day19Item("char-mou", "粵字辨認", "粵字辨認 · 課文用字", "冇", "mou5", "没有", ["冇顧慮"]),
+  day19Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["噉話"]),
+  day19Item("char-bo", "粵字辨認", "粵字辨認 · 課文用字", "噃", "bo3", "表示提醒或领悟的语气助词", ["又係噃"]),
+
+  // 八、短文朗讀
+  day19Sentence("reading-01", "短文朗讀", "短文朗讀", "香港嘅報紙，好多都有請人嘅廣告，有的報紙嘅「求職廣場」或者「招聘」專頁有十幾版咁多。", "heng1 gong2 ge3 bou3 ji2 hou2 do1 dou1 yeo5 ceng2 yen4 ge3 guong2 gou3 yeo5 di1 bou3 ji2 ge3 keo4 jig1 guong2 ceng4 wag6 ze2 jiu1 ping3 jun1 yib6 yeo5 seb6 gei2 ban2 gem3 do1", "香港的报纸很多都有招聘广告，有些报纸的“求职广场”或“招聘”专页有十几版那么多。", ["求職廣場", "招聘專頁"]),
+  day19Sentence("reading-02", "短文朗讀", "短文朗讀", "要搵工嘅話，打開份報紙睇下就得啦，真係好方便。", "yiu3 wen2 gung1 ge3 wa6 da2 hoi1 fen6 bou3 ji2 tei2 ha5 zeo6 deg1 la3 zen1 hei6 hou2 fong1 bin6", "要找工作的话，打开报纸看一看就行，真的很方便。", ["搵工", "報紙"]),
+  day19Sentence("reading-03", "短文朗讀", "短文朗讀", "好多公司都有人員流失嘅問題，成日都有職位空缺。", "hou2 do1 gung1 xi1 dou1 yeo5 yen4 yun4 leo4 sed1 ge3 men6 tei4 seng4 yed6 dou1 yeo5 jig1 wei6 hung1 kued3", "很多公司都有人才流失的问题，经常都有职位空缺。", ["人員流失", "職位空缺"]),
+  day19Sentence("reading-04", "短文朗讀", "短文朗讀", "而啲打工仔，又興時不時轉下工，有好啲嘅職位，就跳槽過去。", "yi4 di1 da2 gung1 zei2 yeo6 hing1 xi4 bed1 xi4 jun3 ha5 gung1 yeo5 hou2 di1 ge3 jig1 wei6 zeo6 tiu3 cou4 guo3 heo3", "而上班族又流行时不时换工作，有更好的职位就跳槽过去。", ["打工仔", "跳槽"]),
+  day19Sentence("reading-05", "短文朗讀", "短文朗讀", "喺香港搵工，經驗同學歷都好緊要，所以，好多人一便做嘢，一便都去讀番個學位，攞番張文憑，噉以後搵工身價就會高一皮。", "hei2 heng1 gong2 wen2 gung1 ging1 yim6 tung4 hog6 lig6 dou1 hou2 gen2 yiu3 so2 yi5 hou2 do1 yen4 yed1 bin6 zou6 ye5 yed1 bin6 dou1 heo3 dug6 fan1 go3 hog6 wei2 lo2 fan1 zeng1 men4 peng4 gem2 yi5 heo6 wen2 gung1 sen1 ga3 zeo6 wui5 gou1 yed1 pei4", "在香港找工作，经验和学历都很重要，所以很多人一边工作，一边去读一个学位、拿一张文凭，这样以后求职身价就会高一截。", ["經驗", "學歷", "文憑", "身價"])
+);
+
 
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
