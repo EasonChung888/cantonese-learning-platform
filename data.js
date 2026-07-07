@@ -4669,6 +4669,182 @@ window.STUDY_ITEMS.push(
 );
 
 
+const day28Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day28-${id}`,
+  day: "day28",
+  module,
+  category: `27 “女人街” · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day28Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day28-sent-${id}`,
+  day: "day28",
+  module,
+  category: `27 “女人街” · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 來源盤點：FlipHTML5 p346-p357；p358 已進入下一課「居者有其屋」。
+  // 一、課文
+  day28Sentence("title-01", "課文", "課文", "「女人街」直到而家仲係通菜街嗰段最旺。", "neu5 yen2 gai1 jig6 dou3 yi4 ga1 zung6 hei6 tung1 coi3 gai1 go2 dyun6 zeoi3 wong6", "“女人街”直到现在仍是通菜街那一段最兴盛。", ["標題頁題句"]),
+  day28Sentence("text-01", "課文", "課文", "香港係商品極之豐富嘅消費城市，有「購物天堂」之稱。", "heng1 gong2 hei6 seng1 ben2 gig6 ji1 fung1 fu3 ge3 xiu1 fei3 xing4 xi5 yeo5 geo3 med6 tin1 tong4 ji1 qing1", "香港是商品极其丰富的消费城市，有“购物天堂”之称。", ["購物天堂"]),
+  day28Sentence("text-02", "課文", "課文", "大商場、小商店假假地都過萬間。", "dai6 seng1 ceng4 xiu2 seng1 dim3 ga2 ga2 dei2 dou1 guo3 man6 gaan1", "大商场、小商店少说也超过一万家。", ["假假地"]),
+  day28Sentence("text-03", "課文", "課文", "各式各樣嘅招牌幾乎遮天蔽日。", "gog3 xig1 gog3 yeng6 ge3 jiu1 pai4 gei1 fu4 ze1 tin1 bei3 yed6", "各式各样的招牌几乎遮天蔽日。", ["招牌"]),
+  day28Sentence("text-04", "課文", "課文", "店舖出售嘅貨物嚟自全世界，品種繁多、色彩斑斕，令人眼花繚亂，目不暇接。", "dim3 pou3 ced1 seo6 ge3 fo3 med6 lei4 ji6 qun4 sei3 gai3 ben2 zung2 fan4 do1 xig1 coi2 baan1 laan6 ling6 yen4 ngaan5 fa1 liu4 lyun6 mug6 bed1 ha4 jib3", "店铺出售的货物来自全世界，品种繁多、色彩斑斓，令人眼花缭乱，目不暇接。", ["貨物", "眼花繚亂"]),
+  day28Sentence("text-05", "課文", "課文", "喺鬧市，有為富裕階層開設嘅豪華商場。", "hei2 naau6 xi5 yeo5 wei6 fu3 yu6 gai1 ceng4 hoi1 qid3 ge3 hou4 wa4 seng1 ceng4", "在闹市，有为富裕阶层开设的豪华商场。", ["豪華商場"]),
+  day28Sentence("text-06", "課文", "課文", "亦有面向一般市民嘅價廉物美嘅露天攤檔，譬如講，「女人街」。", "yig6 yeo5 min6 heng3 yed1 bun1 xi5 men4 ge3 ga3 lim4 med6 mei5 ge3 lou6 tin1 tan1 dong3 pei3 yu4 gong2 neu5 yen2 gai1", "也有面向一般市民的、价廉物美的露天摊档，比如“女人街”。", ["露天攤檔"]),
+  day28Sentence("text-07", "課文", "課文", "打開九龍地圖，你係搵唔到「女人街」呢個街名嘅。", "da2 hoi1 geo2 lung4 dei6 tou4 nei5 hei6 wen2 m4 dou2 neu5 yen2 gai1 ni1 go3 gai1 meng2 ge3", "打开九龙地图，你是找不到“女人街”这个街名的。", ["九龍地圖"]),
+  day28Sentence("text-08", "課文", "課文", "事關呢個名係泛指通菜街左近嘅露天市場。", "xi6 guan1 ni1 go3 meng2 hei6 fan3 ji2 tung1 coi3 gai1 zo2 gen2 ge3 lou6 tin1 xi5 ceng4", "因为这个名称泛指通菜街附近的露天市场。", ["通菜街"]),
+  day28Sentence("text-09", "課文", "課文", "由於初初大部分嘅攤檔都係賣女性用品、衣物、服飾為主，「女人街」呢個名就不脛而走。", "yeo4 yu1 co1 co1 dai6 bou6 fen6 ge3 tan1 dong3 dou1 hei6 maai6 neu5 xing3 yung6 ben2 yi1 med6 fug6 xig1 wei4 ju2 neu5 yen2 gai1 ni1 go3 meng2 zeo6 bed1 ging3 yi4 zeo2", "由于初期大部分摊档都是卖女性用品、衣物服饰为主，“女人街”这个名字就不胫而走。", ["初初", "不脛而走"]),
+  day28Sentence("text-10", "課文", "課文", "不少外地遊客甚至慕名而來。", "bed1 xiu2 ngoi6 dei6 yeo4 hag3 sem6 ji3 mou6 ming4 yi4 loi4", "不少外地游客甚至慕名而来。", ["慕名而來"]),
+  day28Sentence("text-11", "課文", "課文", "「女人街」嘅「街頭」靠近亞皆老街，「街尾」落到去登打士街。", "neu5 yen2 gai1 ge3 gai1 teo4 kao3 gen6 a3 gai1 lou5 gai1 gai1 mei5 log6 dou3 heo3 deng1 da2 xi6 gai1", "“女人街”的“街头”靠近亚皆老街，“街尾”一直到登打士街。", ["街頭", "街尾"]),
+  day28Sentence("text-12", "課文", "課文", "直到而家仲係通菜街嗰段最旺。", "jig6 dou3 yi4 ga1 zung6 hei6 tung1 coi3 gai1 go2 dyun6 zeoi3 wong6", "直到现在，还是通菜街那一段最兴盛。", ["通菜街"]),
+  day28Sentence("text-13", "課文", "課文", "總共有攤檔四百幾個，而店舖就有百幾間。", "zung2 gung6 yeo5 tan1 dong3 sei3 baag3 gei2 go3 yi4 dim3 pou3 zeo6 yeo5 baag3 gei2 gaan1", "总共有摊档四百多个，而商店就有一百来家。", ["攤檔"]),
+  day28Sentence("text-14", "課文", "課文", "啲攤檔一般中午十二點鐘先至開，一直到午夜過後仲大有「檔」在。", "di1 tan1 dong3 yed1 bun1 zung1 ng5 seb6 yi6 dim2 zung1 xin1 ji3 hoi1 yed1 jig6 dou3 ng5 ye6 guo3 heo6 zung6 dai6 yeo5 dong3 zoi6", "那些摊档一般中午十二点才开始营业，一直到过了午夜仍大有“档”在。", ["開", "檔"]),
+  day28Sentence("text-15", "課文", "課文", "佢哋賣嘅嘢，勝在一個「平」字，而且有價講。", "keu5 dei6 maai6 ge3 ye5 xing3 zoi6 yed1 go3 peng4 ji6 yi4 ce2 yeo5 ga3 gong2", "他们售卖的东西以“便宜”取胜，而且可以讨价还价。", ["勝在", "有價講"]),
+  day28Sentence("text-16", "課文", "課文", "近幾年嚟，「女人街」開始以售賣適合於後生仔女嘅平價服裝為主。", "gen6 gei2 nin4 lei4 neu5 yen2 gai1 hoi1 qi2 yi5 seo6 maai6 xig1 heb6 yu1 heo6 sang1 zei2 neu5 ge3 peng4 ga3 fug6 zong1 wei4 ju2", "近几年来，“女人街”开始以售卖适合年轻男女的平价服装为主。", ["平價服裝"]),
+  day28Sentence("text-17", "課文", "課文", "無論係服裝定係飾物，都標榜新潮。", "mou4 leon6 hei6 fug6 zong1 ding6 hei6 xig1 med6 dou1 biu1 bong2 sen1 qiu4", "无论是服装还是饰物，都标榜新潮。", ["新潮"]),
+  day28Sentence("text-18", "課文", "課文", "令到咁耐歷史嘅「女人街」依然朝氣勃勃。", "ling6 dou3 gem3 noi6 lig6 xi2 ge3 neu5 yen2 gai1 yi1 yin4 jiu1 hei3 bud6 bud6", "使得历史那么久的“女人街”依然朝气勃勃。", ["朝氣勃勃"]),
+
+  // 二、重點詞彙
+  day28Item("vocab-gigji", "重點詞彙", "重點詞彙", "極之", "gig6 ji1", "十分；非常", ["極之豐富"]),
+  day28Item("vocab-gagadei", "重點詞彙", "重點詞彙", "假假地", "ga2 ga2 dei2", "少说；至少", ["假假地都過萬間"]),
+  day28Item("vocab-tandong", "重點詞彙", "重點詞彙", "攤檔", "tan1 dong3", "摊子；摊市", ["露天攤檔"]),
+  day28Item("vocab-zogen", "重點詞彙", "重點詞彙", "左近", "zo2 gen2", "附近", ["通菜街左近"]),
+  day28Item("vocab-coco", "重點詞彙", "重點詞彙", "初初", "co1 co1", "初期", ["初初大部分"]),
+  day28Item("vocab-logdouheo", "重點詞彙", "重點詞彙", "落到去", "log6 dou3 heo3", "一直到", ["街尾落到去"]),
+  day28Item("vocab-wong", "重點詞彙", "重點詞彙", "旺", "wong6", "兴盛；火红", ["最旺"]),
+  day28Item("vocab-hoi", "重點詞彙", "重點詞彙", "開", "hoi1", "开始营业", ["先至開"]),
+  day28Item("vocab-xingzoi", "重點詞彙", "重點詞彙", "勝在", "xing3 zoi6", "以……取胜；优点在于……", ["勝在一個「平」字"]),
+  day28Item("vocab-yeogagong", "重點詞彙", "重點詞彙", "有價講", "yeo5 ga3 gong2", "可以讨价还价", ["有價講"]),
+  day28Item("vocab-heosangzeineu", "重點詞彙", "重點詞彙", "後生仔女", "heo6 sang1 zei2 neu5", "青年男女；晚辈", ["後生仔女"]),
+  day28Item("vocab-pengga", "重點詞彙", "重點詞彙", "平價", "peng4 ga3", "廉价", ["平價服裝"]),
+
+  // 三、補充語彙
+  day28Item("supp-ngagqing", "補充語彙", "補充語彙 · 詞語", "呃秤", "ngag1 qing3", "短斤缺两；秤上骗人", ["購物"]),
+  day28Item("supp-jidteo", "補充語彙", "補充語彙 · 詞語", "折頭", "jid1 teo4", "折扣", ["購物"]),
+  day28Item("supp-zaoqin", "補充語彙", "補充語彙 · 詞語", "找錢", "zao2 qin2", "找钱", ["購物"]),
+  day28Item("supp-seosendi", "補充語彙", "補充語彙 · 詞語", "收順啲", "seo1 sen6 di1", "收便宜一点；少收一点", ["購物"]),
+  day28Item("supp-maigueizo", "補充語彙", "補充語彙 · 詞語", "買貴咗", "mai5 guei3 zo2", "买贵了", ["購物"]),
+  day28Item("supp-zeoguei", "補充語彙", "補充語彙 · 詞語", "走鬼", "zeo2 guei2", "小贩躲避执法人员", ["街邊貨"]),
+  day28Item("supp-daigamga", "補充語彙", "補充語彙 · 詞語", "大減價", "dai6 gam2 ga3", "大减价", ["購物"]),
+  day28Item("supp-yeoweiga", "補充語彙", "補充語彙 · 詞語", "優惠價", "yeo1 wei6 ga3", "优惠价", ["購物"]),
+  day28Item("supp-deggafadseo", "補充語彙", "補充語彙 · 詞語", "特價發售", "deg6 ga3 fad3 seo6", "特价发售", ["購物"]),
+  day28Item("supp-gungxifo", "補充語彙", "補充語彙 · 詞語", "公司貨", "gung1 xi1 fo3", "行货；公司货", ["購物"]),
+  day28Item("supp-gaibinfo", "補充語彙", "補充語彙 · 詞語", "街邊貨", "gai1 bin1 fo3", "街边货", ["購物"]),
+  day28Item("supp-geomethod", "補充語彙", "補充語彙 · 詞語", "購物中心", "geo3 med6 zung1 sem1", "购物中心", ["補充詞語"]),
+  day28Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "所謂「賊店」係指嗰啲慣常呃顧客嘅舖頭。", "so2 wei6 cag6 dim3 hei6 ji2 go2 di1 gun3 seng4 ngag1 gu3 hag3 ge3 pou3 teo2", "所谓“贼店”是指那些惯常欺骗顾客的店铺。", ["賊店"]),
+  day28Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "佢哋一般係賣音響、攝影器材同電器為主。", "keu5 dei6 yed1 bun1 hei6 maai6 yem1 heng2 xib3 ying2 hei3 coi4 tung4 din6 hei3 wei4 ju2", "它们一般以卖音响、摄影器材和电器为主。", ["音響", "電器"]),
+  day28Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "呃人嘅手法極之卑鄙，如同搶錢。", "ngag1 yen4 ge3 seo2 fad3 gig6 ji1 bei1 pei2 yu4 tung4 ceng2 qin2", "骗人的手法极其卑鄙，如同抢钱。", ["呃人"]),
+  day28Sentence("supp-04", "補充語彙", "補充語彙 · 句子", "市民如發現被騙，應該立即向消委會舉報，以保護香港「購物天堂」嘅聲譽。", "xi5 men4 yu4 fad3 yin6 bei6 pin3 ying1 goi1 lab6 jig1 heng3 xiu1 wei2 wui2 geoi2 bou3 yi5 bou2 wu6 heng1 gong2 geo3 med6 tin1 tong4 ge3 xing1 yu6", "市民如果发现被骗，应该立即向消委会举报，以保护香港“购物天堂”的声誉。", ["消委會", "聲譽"]),
+
+  // 四、重點理解
+  day28Item("understanding-gigji", "重點理解", "重點理解 · 極之", "極之", "gig6 ji1", "副词，表示程度很高，相当于“很、非常”", ["極之開心"]),
+  day28Sentence("understanding-01", "重點理解", "重點理解 · 極之", "嗰日大家玩得極之開心。", "go2 yed6 dai6 ga1 waan2 deg1 gig6 ji1 hoi1 sem1", "那天大家玩得非常开心。", ["極之"]),
+  day28Sentence("understanding-02", "重點理解", "重點理解 · 極之", "等極你都唔嚟，大家極之失望。", "deng2 gig6 nei5 dou1 m4 lei4 dai6 ga1 gig6 ji1 sed1 mong6", "等了半天你也不来，大家非常失望。", ["等極"]),
+  day28Item("understanding-gagadei", "重點理解", "重點理解 · 假假地", "假假地", "ga2 ga2 dei2", "副词，含“往少里说、最低限度、至少”等意思", ["假假地都"]),
+  day28Sentence("understanding-03", "重點理解", "重點理解 · 假假地", "而家一層樓假假地都賣成二三百萬喇。", "yi4 ga1 yed1 ceng4 leo4 ga2 ga2 dei2 dou1 maai6 seng4 yi6 sam1 baag3 man6 la3", "现在一个住宅单位少说也卖二三百万。", ["二三百萬"]),
+  day28Sentence("understanding-04", "重點理解", "重點理解 · 假假地", "佢假假地都叫做留過學，唔憂搵唔到嘢做嘅。", "keu5 ga2 ga2 dei2 dou1 giu3 zou6 leo4 guo3 hog6 m4 yeo1 wen2 m4 dou2 ye5 zou6 ge3", "不管怎么说，他也算留过学，不愁找不到工作。", ["留過學"]),
+  day28Item("understanding-wong", "重點理解", "重點理解 · 旺", "旺", "wong6", "形容营业兴盛；也可说旺月、旺舖、生意好旺", ["旺唔起嚟"]),
+  day28Sentence("understanding-05", "重點理解", "重點理解 · 旺", "嗰度唔就腳，一直旺唔起嚟。", "go2 dou6 m4 zeo6 goek3 yed1 jig6 wong6 m4 hei2 lei4", "那儿交通不方便，生意一直没起色。", ["唔就腳"]),
+  day28Item("understanding-xingzoi", "重點理解", "重點理解 · 勝在", "勝在", "xing3 zoi6", "谓词性短语，表示一方取胜或成功的主要原因", ["勝在資歷高"]),
+  day28Sentence("understanding-06", "重點理解", "重點理解 · 勝在", "佢見成呢份工，係勝在資歷高啲。", "keu5 gin3 seng4 ni1 fen6 gung1 hei6 xing3 zoi6 ji1 lig6 gou1 di1", "他获聘的主要因素是资历高一些。", ["資歷"]),
+  day28Sentence("understanding-07", "重點理解", "重點理解 · 勝在", "佢間公司生意幾旺，勝在售後服務好。", "keu5 gaan1 gung1 xi1 seng1 yi3 gei2 wong6 xing3 zoi6 seo6 heo6 fug6 mou6 hou2", "他的公司生意不错，主要原因在于售后服务好。", ["售後服務"]),
+  day28Item("understanding-lingdou", "重點理解", "重點理解 · 令到", "令到", "ling6 dou3", "连词，用于说明事情产生的结果，相当于“使得”", ["令到"]),
+  day28Sentence("understanding-08", "重點理解", "重點理解 · 令到", "佢冇嚟到，令到我哋開會都開唔成。", "keu5 mou5 lei4 dou3 ling6 dou3 ngo5 dei6 hoi1 wui6 dou1 hoi1 m4 seng4", "他没有来，结果我们开不成会。", ["開會"]),
+  day28Sentence("understanding-09", "重點理解", "重點理解 · 令到", "佢哋出便嘈喧巴閉，令到我想睇書都睇唔落去。", "keu5 dei6 ceot1 bin6 cou4 hyun1 ba1 bai3 ling6 dou3 ngo5 seng2 tei2 syu1 dou1 tei2 m4 log6 heo3", "他们在外面吵吵闹闹，使得我想看书都看不下去。", ["嘈喧巴閉"]),
+
+  // 五、講解：外來詞與粵語趣談
+  day28Item("loan-sofa", "講解", "講解 · 外來詞", "梳化", "so1 fa3", "沙发；英语 sofa 的香港音译", ["sofa"]),
+  day28Item("loan-ons", "講解", "講解 · 外來詞", "安士", "on1 xi6", "盎司；英语 ounce 的香港音译", ["ounce"]),
+  day28Item("loan-lei", "講解", "講解 · 外來詞", "哩", "lei1", "英里旧称；香港惯用长度单位", ["mile"]),
+  day28Item("loan-postcard", "講解", "講解 · 外來詞", "甫士咭", "pou2 xi6 kad1", "明信片；英语 postcard 的香港音译", ["postcard"]),
+  day28Item("loan-familyplan", "講解", "講解 · 外來詞", "家庭計劃", "ga1 ting4 gai3 waag6", "计划生育", ["漢語詞"]),
+  day28Item("loan-dj", "講解", "講解 · 外來詞", "唱片騎師", "coeng3 pin2 kei4 xi1", "唱片节目播音员", ["DJ"]),
+  day28Item("loan-tincoffee", "講解", "講解 · 外來詞", "一罐咖啡", "yed1 gun3 ga3 fe1", "一听咖啡", ["tin"]),
+  day28Item("loan-mosaic", "講解", "講解 · 外來詞", "紙皮石", "ji2 pei4 seg6", "马赛克", ["mosaic"]),
+  day28Item("culture-bagua", "講解", "講解 · 粵語趣談 · 八卦", "八卦", "bad3 gwa3", "以捕风捉影的方式传递信息；也可表示多管闲事或探听", ["粵語趣談"]),
+  day28Item("culture-bat", "講解", "講解 · 粵語趣談 · 八卦", "八", "bad3", "八卦作动词时的缩略说法，指瞎聊或打听", ["八兩句"]),
+  day28Item("culture-batgwagwa", "講解", "講解 · 粵語趣談 · 八卦", "八八卦卦", "bad3 bad3 gwa3 gwa3", "搬弄是非、到处传话的重叠式用法", ["重疊式"]),
+  day28Sentence("culture-01", "講解", "講解 · 粵語趣談 · 八卦", "唔使你咁八卦。", "m4 sei2 nei5 gem3 bad3 gwa3", "用不着你多管闲事。", ["八卦"]),
+  day28Sentence("culture-02", "講解", "講解 · 粵語趣談 · 八卦", "最好就乜嘢都唔同佢講，你都知佢幾八卦。", "zeoi3 hou2 zeo6 med1 ye5 dou1 m4 tung4 keu5 gong2 nei5 dou1 ji1 keu5 gei2 bad3 gwa3", "最好什么都别跟她说，你也知道她多爱说人闲话。", ["八卦"]),
+  day28Sentence("culture-03", "講解", "講解 · 粵語趣談 · 八卦", "佢開始八卦起嚟，想知道我點解鍾意李小姐。", "keu5 hoi1 qi2 bad3 gwa3 hei2 lei4 seng2 ji1 dou6 ngo5 dim2 gaai2 zung1 yi3 lei5 xiu2 ze2", "她开始问这问那，想知道我为什么喜欢李小姐。", ["八卦起嚟"]),
+  day28Sentence("culture-04", "講解", "講解 · 粵語趣談 · 八卦", "佢點解會離婚？我唔想八卦問人。", "keu5 dim2 gaai2 wui5 lei4 fen1 ngo5 m4 seng2 bad3 gwa3 men6 yen4", "她怎么会离婚？我不想探听人家的私事。", ["八卦問人"]),
+  day28Sentence("culture-05", "講解", "講解 · 粵語趣談 · 八卦", "佢成日八八卦卦，整到人哋好唔自在。", "keu5 seng4 yed6 bad3 bad3 gwa3 gwa3 jing2 dou3 yen4 dei6 hou2 m4 ji6 zoi6", "她就爱搬弄是非，令人感觉很不舒服。", ["八八卦卦"]),
+  day28Sentence("culture-06", "講解", "講解 · 粵語趣談 · 八", "有冇時間呀？八兩句吖？", "yeo5 mou5 xi4 gan3 a3 bad3 loeng5 geoi3 a1", "有没有时间？聊两句怎么样？", ["八兩句"]),
+  day28Sentence("culture-07", "講解", "講解 · 粵語趣談 · 八", "有冇同佢八到啲乜嘢呀？", "yeo5 mou5 tung4 keu5 bad3 dou3 di1 med1 ye5 a3", "有没有从她那里打听到什么？", ["八到"]),
+
+  // 六、傳意項目介紹：道歉（只收完整例句）
+  day28Sentence("apology-01", "傳意項目介紹", "傳意項目介紹 · 道歉", "對唔住，我出一出去就返嚟。", "deoi3 m4 jyu6 ngo5 ced1 yed1 ced1 heo3 zeo6 fan1 lei4", "对不起，我出去一下就回来。", ["對唔住"]),
+  day28Sentence("apology-02", "傳意項目介紹", "傳意項目介紹 · 道歉", "唔好意思，我嚟遲咗。", "m4 hou2 yi3 xi1 ngo5 lei4 qi4 zo2", "不好意思，我来迟了。", ["唔好意思"]),
+  day28Sentence("apology-03", "傳意項目介紹", "傳意項目介紹 · 道歉", "招呼唔到，你唔好見怪噃。", "jiu1 fu1 m4 dou2 nei5 m4 hou2 gin3 gwaai3 bo3", "招呼不到，你不要见怪。", ["唔好見怪"]),
+  day28Sentence("apology-04", "傳意項目介紹", "傳意項目介紹 · 道歉", "你咁賞面嚟食飯，冇乜好餸，請你多多包涵。", "nei5 gem3 soeng2 min6 lei4 xig6 fan6 mou5 med1 hou2 sung3 qing2 nei5 do1 do1 bao1 haam4", "你这么赏脸来吃饭，没什么好菜，请你多多包涵。", ["多多包涵"]),
+  day28Sentence("apology-05", "傳意項目介紹", "傳意項目介紹 · 道歉", "我琴日唔記得打電話畀你，阻咗你好多時間喺度等我，請你原諒。", "ngo5 kem4 yed6 m4 gei3 deg1 da2 din6 wa6 bei2 nei5 zo2 zo2 nei5 hou2 do1 xi4 gan3 hei2 dou6 deng2 ngo5 qing2 nei5 yun4 loeng6", "我昨天忘记给你打电话，耽误了你很多时间在这里等我，请你原谅。", ["請你原諒"]),
+  day28Sentence("apology-06", "傳意項目介紹", "傳意項目介紹 · 道歉", "嗰日我講啲說話係冇心嘅，請你唔好介意。", "go2 yed6 ngo5 gong2 di1 xud3 wa6 hei6 mou5 sem1 ge3 qing2 nei5 m4 hou2 gaai3 yi3", "那天我讲的话是无心的，请你不要介意。", ["唔好介意"]),
+  day28Sentence("apology-07", "傳意項目介紹", "傳意項目介紹 · 道歉", "我成日嚟問問題，真係麻煩晒。", "ngo5 seng4 yed6 lei4 men6 men6 tei4 zen1 hei6 ma4 fan4 sai3", "我整天来问问题，真是麻烦你了。", ["麻煩晒"]),
+  day28Sentence("apology-08", "傳意項目介紹", "傳意項目介紹 · 道歉", "我哋本來想坐一坐就走，結果一坐就坐咗咁耐，真係滾攪晒。", "ngo5 dei6 bun2 loi4 seng2 co5 yed1 co5 zeo6 zeo2 gid3 guo2 yed1 co5 zeo6 co5 zo2 gem3 noi6 zen1 hei6 guen2 gaau2 sai3", "我们本来想坐一坐就走，结果一坐就坐了这么久，真是打扰了。", ["滾攪晒"]),
+  day28Sentence("apology-09", "傳意項目介紹", "傳意項目介紹 · 道歉應答", "你使乜買咁多嘢嚟呀，咪咁客氣啦。", "nei5 sei2 med1 mai5 gem3 do1 ye5 lei4 a3 mei1 gem3 hag3 hei3 la1", "你何必买这么多东西来，不要这么客气。", ["咪客氣"]),
+  day28Sentence("apology-10", "傳意項目介紹", "傳意項目介紹 · 道歉應答", "唔見咗你支筆，對唔住。", "m4 gin3 zo2 nei5 ji1 bed1 deoi3 m4 jyu6", "弄丢了你的笔，对不起。", ["對唔住"]),
+  day28Sentence("apology-11", "傳意項目介紹", "傳意項目介紹 · 道歉應答", "唔緊要。", "m4 gen2 yiu3", "不要紧。", ["應答"]),
+
+  // 七、練習
+  day28Sentence("dialogue-01", "練習", "練習 · 會話聆聽", "都咁夜咯，去邊度買啫？", "dou1 gem3 ye6 lo3 heo3 bin1 dou6 mai5 ze1", "都这么晚了，去哪里买呢？", ["會話"]),
+  day28Sentence("dialogue-02", "練習", "練習 · 會話聆聽", "嘩，「七．十一」吖嘛。", "waa1 ced1 seb6 yed1 a1 ma3", "哇，“七·十一”嘛。", ["七．十一"]),
+  day28Sentence("dialogue-03", "練習", "練習 · 會話聆聽", "講係噉講，呢度左近有冇先？", "gong2 hei6 gem2 gong2 ni1 dou6 zo2 gen2 yeo5 mou5 xin1", "话是这么说，这附近有没有呢？", ["左近"]),
+  day28Sentence("dialogue-04", "練習", "練習 · 會話聆聽", "「梗有一間喺左近」啦。", "geng2 yeo5 yed1 gaan1 hei2 zo2 gen2 la1", "“总有一家在附近”啦。", ["便利店口號"]),
+  day28Sentence("dialogue-05", "練習", "練習 · 會話聆聽", "喂，真係有冇啫？", "wai3 zen1 hei6 yeo5 mou5 ze1", "喂，到底有没有呢？", ["有冇啫"]),
+  day28Sentence("dialogue-06", "練習", "練習 · 會話聆聽", "有呀！我同你一齊去吖，好唔好？", "yeo5 a3 ngo5 tung4 nei5 yed1 cei4 heo3 a1 hou2 m4 hou2", "有啊！我和你一起去，好不好？", ["一齊去"]),
+  day28Sentence("dialogue-07", "練習", "練習 · 會話聆聽", "好，好。等我開定張購物清單先。", "hou2 hou2 deng2 ngo5 hoi1 ding6 zeng1 geo3 med6 qing1 daan1 xin1", "好，好。让我先开好购物清单。", ["購物清單"]),
+  day28Sentence("dialogue-08", "練習", "練習 · 會話聆聽", "行喇，嗰度乜都有。", "haang4 la3 go2 dou6 med1 dou1 yeo5", "走吧，那里什么都有。", ["乜都有"]),
+  day28Sentence("dialogue-09", "練習", "練習 · 會話聆聽", "哈，你個泳鏡幾好睇噃，同你前幾日嗰個唔同嘅。", "ha1 nei5 go3 wing6 geng3 gei2 hou2 tei2 bo3 tung4 nei5 qin4 gei2 yed6 go2 go3 m4 tung4 ge3", "哈，你的泳镜挺好看，和你前几天那个不一样。", ["泳鏡"]),
+  day28Sentence("dialogue-10", "練習", "練習 · 會話聆聽", "哦，呢個我琴日先買之嘛。", "o2 ni1 go3 ngo5 kem4 yed6 xin1 mai5 ji1 ma3", "哦，这个我昨天才买的。", ["琴日"]),
+  day28Sentence("dialogue-11", "練習", "練習 · 會話聆聽", "睇睇點好法先。", "tei2 tei2 dim2 hou2 fad3 xin1", "先看看好在哪里。", ["好法"]),
+  day28Sentence("dialogue-12", "練習", "練習 · 會話聆聽", "我貪佢防霧功能好。", "ngo5 taam1 keu5 fong4 mou6 gung1 neng4 hou2", "我看中它防雾功能好。", ["防霧"]),
+  day28Sentence("dialogue-13", "練習", "練習 · 會話聆聽", "即係點呀？可以吸收晒個鏡裏頭嘅水氣呀？", "jig1 hei6 dim2 a3 ho2 yi5 keb1 seo1 sai3 go3 geng3 leoi5 teo4 ge3 seoi2 hei3 a3", "就是说怎样？可以吸收镜子里面的水气吗？", ["水氣"]),
+  day28Sentence("dialogue-14", "練習", "練習 · 會話聆聽", "係呀，我試過㗎喇，咪係游水嗰陣睇嘢睇清楚啲囉。", "hei6 a3 ngo5 qi3 guo3 ga3 la3 mei1 hei6 yeo4 seoi2 go2 zen6 tei2 ye5 tei2 qing1 co2 di1 lo1", "是啊，我试过了，就是游泳的时候看东西看得清楚些。", ["游水"]),
+  day28Sentence("dialogue-15", "練習", "練習 · 會話聆聽", "我呢個唔好，游得兩游就入水，入咗水就正一係矇查查嘞。", "ngo5 ni1 go3 m4 hou2 yeo4 deg1 loeng5 yeo4 zeo6 yeb6 seoi2 yeb6 zo2 seoi2 zeo6 jing3 yed1 hei6 mung4 caa4 caa4 la3", "我这个不好，游两下就进水，一进水就真是模模糊糊了。", ["矇查查"]),
+  day28Sentence("dialogue-16", "練習", "練習 · 會話聆聽", "呢隻係新嘢嚟㗎嘛，一於去買番隻啦。", "ni1 zeg3 hei6 sen1 ye5 lei4 ga3 ma3 yed1 yu1 heo3 mai5 fan1 zeg3 la1", "这个是新东西，干脆去买一个吧。", ["新嘢"]),
+  day28Sentence("discussion-01", "練習", "練習 · 討論", "人哋話，香港係「購物天堂」，你同唔同意吖？", "yen4 dei6 wa6 heng1 gong2 hei6 geo3 med6 tin1 tong4 nei5 tung4 m4 tung4 yi3 a1", "别人说香港是“购物天堂”，你同不同意？", ["討論"]),
+  day28Sentence("discussion-02", "練習", "練習 · 討論", "香港嘅女人街你行勻未呀？", "heng1 gong2 ge3 neu5 yen2 gai1 nei5 haang4 wan4 mei6 a3", "香港的女人街你逛遍了没有？", ["女人街"]),
+  day28Sentence("discussion-03", "練習", "練習 · 討論", "近你屋企嗰間「七．十一」便利店你有冇幫襯過？", "gen6 nei5 ug1 kei2 go2 gaan1 ced1 seb6 yed1 bin6 lei6 dim3 nei5 yeo5 mou5 bong1 cen3 guo3", "你家附近那间“七·十一”便利店你有没有光顾过？", ["便利店"]),
+  day28Sentence("discussion-04", "練習", "練習 · 討論", "你會向佢哋提啲乜嘢意見改善一下服務呢？", "nei5 wui5 heng3 keu5 dei6 tei4 di1 med1 ye5 yi3 gin3 goi2 sin6 yed1 ha5 fug6 mou6 ne1", "你会向他们提什么意见来改善一下服务呢？", ["改善服務"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文和會話中的粵語專用字。
+  day28Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["商品極之豐富嘅消費城市"]),
+  day28Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["啲攤檔"]),
+  day28Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺鬧市"]),
+  day28Item("char-keu", "粵字辨認", "粵字辨認 · 課文用字", "佢", "keu5", "他/她/它", ["佢哋賣嘅嘢"]),
+  day28Item("char-dei", "粵字辨認", "粵字辨認 · 課文用字", "哋", "dei6", "们", ["佢哋"]),
+  day28Item("char-go", "粵字辨認", "粵字辨認 · 課文用字", "嗰", "go2", "那", ["嗰段最旺"]),
+  day28Item("char-ze", "粵字辨認", "粵字辨認 · 課文用字", "啫", "ze1", "语气助词，罢了/呢", ["買啫"]),
+  day28Item("char-ga", "粵字辨認", "粵字辨認 · 課文用字", "㗎", "ga3", "语气助词", ["試過㗎喇"]),
+
+  // 八、短文朗讀
+  day28Sentence("reading-01", "短文朗讀", "短文朗讀", "1981年，香港出現咗第一間「七．十一」便利店。", "yed1 geo2 bad3 yed1 nin4 heng1 gong2 ced1 yin6 zo2 dei6 yed1 gaan1 ced1 seb6 yed1 bin6 lei6 dim3", "1981年，香港出现了第一家“七·十一”便利店。", ["七．十一"]),
+  day28Sentence("reading-02", "短文朗讀", "短文朗讀", "時至今日，佢已經超過二百卅幾間分店，遍及港九。", "xi4 ji3 gem1 yed6 keu5 yi5 ging1 qiu1 guo3 yi6 baag3 sa1 seb6 gei2 gaan1 fen1 dim3 pin3 geb6 gong2 geo2", "时至今日，它已经超过二百三十多家分店，遍及港九。", ["頁影字形推定為「二百卅幾間」"]),
+  day28Sentence("reading-03", "短文朗讀", "短文朗讀", "呢類廿四小時營業嘅商店啱啱出現嗰陣，香港唔少人對佢嘅發展都唔樂觀。", "ni1 leoi6 yaa6 sei3 xiu2 xi4 ying4 yib6 ge3 seng1 dim3 ngam1 ngam1 ced1 yin6 go2 zen6 heng1 gong2 m4 xiu2 yen4 deoi3 keu5 ge3 fad3 jin2 dou1 m4 log6 gun1", "这类二十四小时营业的商店刚出现的时候，香港不少人对它的发展都不乐观。", ["廿四小時"]),
+  day28Sentence("reading-04", "短文朗讀", "短文朗讀", "首先，由於間舖頭要維持廿四小時服務，皮費肯定比較高，貨品售價相應亦會貴一啲。", "seo2 xin1 yeo4 yu1 gaan1 pou3 teo4 yiu3 wei4 qi4 yaa6 sei3 xiu2 xi4 fug6 mou6 pei4 fei3 heng2 ding6 bei2 gaau3 gou1 fo3 ben2 seo6 ga3 seng1 ying3 yig6 wui5 gwai3 yed1 di1", "首先，由于店铺要维持二十四小时服务，成本肯定比较高，货品售价相应也会贵一点。", ["皮費"]),
+  day28Sentence("reading-05", "短文朗讀", "短文朗讀", "其次，半夜三更舂去買啲零碎嘢嘅人有幾多，大家心中都有乜數。", "kei4 qi3 bun3 ye6 sam1 gang1 zung1 heo3 mai5 di1 ling4 seoi3 ye5 ge3 yen4 yeo5 gei2 do1 dai6 ga1 sem1 zung1 dou1 yeo5 med1 sou3", "其次，半夜三更跑去买零碎东西的人有多少，大家心里都有数。", ["舂"]),
+  day28Sentence("reading-06", "短文朗讀", "短文朗讀", "不過事實終於說明一切，便利店好快企穩腳跟，而且有得賺。", "bed1 guo3 xi6 sed6 zung1 yu1 xud3 ming4 yed1 qid3 bin6 lei6 dim3 hou2 faai3 kei5 wen2 goek3 gen1 yi4 ce2 yeo5 deg1 zaan6", "不过事实终于说明一切，便利店很快站稳脚跟，而且有得赚。", ["企穩腳跟"]),
+  day28Sentence("reading-07", "短文朗讀", "短文朗讀", "分店不斷增加就印證咗佢哋自己嘅宣傳口號：梗有一間喺左近。", "fen1 dim3 bed1 dyun6 zeng1 ga1 zeo6 yen3 jing3 zo2 keu5 dei6 ji6 gei2 ge3 xyun1 qyun4 heo2 hou6 geng2 yeo5 yed1 gaan1 hei2 zo2 gen2", "分店不断增加就印证了它们自己的宣传口号：总有一家在附近。", ["梗有一間喺左近"]),
+  day28Sentence("reading-08", "短文朗讀", "短文朗讀", "便利店嘅成功，原因固然係多方面嘅，但最重要嗰條就係佢哋能夠自始至終貫徹「顧客第一」嘅原則。", "bin6 lei6 dim3 ge3 seng4 gung1 yun4 yen1 gu3 yin4 hei6 do1 fong1 min6 ge3 dan6 zeoi3 zung6 yiu3 go2 tiu4 zeo6 hei6 keu5 dei6 neng4 geo3 ji6 qi2 ji3 zung1 gun3 qid3 gu3 hag3 dei6 yed1 ge3 yun4 zeg1", "便利店的成功，原因当然是多方面的，但最重要的一条就是它们能够自始至终贯彻“顾客第一”的原则。", ["顧客第一"]),
+  day28Sentence("reading-09", "短文朗讀", "短文朗讀", "從選址靠近繁盛街道到從不間斷嘅服務都令到一般市民對佢哋產生親切感。", "cung4 xyun2 ji2 kao3 gen6 fan4 xing6 gai1 dou6 dou3 cung4 bed1 gaan3 dyun6 ge3 fug6 mou6 dou1 ling6 dou3 yed1 bun1 xi5 men4 deoi3 keu5 dei6 qyun2 seng1 cen1 qid3 gem2", "从选址靠近繁盛街道到从不间断的服务，都使一般市民对它们产生亲切感。", ["親切感"]),
+  day28Sentence("reading-10", "短文朗讀", "短文朗讀", "另外，佢哋仲設有其他零售商店冇嘅服務，譬如：買咖啡可以自斟自飲，買公仔點心亦可以自己加溫調味食用，方便得嚟又夠晒梳乎。", "ling6 ngoi6 keu5 dei6 zung6 qid3 yeo5 kei4 ta1 ling4 seo6 seng1 dim3 mou5 ge3 fug6 mou6 pei3 yu4 mai5 ga3 fe1 ho2 yi5 ji6 zem1 ji6 yem2 mai5 gung1 zei2 dim2 sem1 yig6 ho2 yi5 ji6 gei2 ga1 wen1 tiu4 mei6 xig6 yung6 fong1 bin6 deg1 lei4 yeo6 geo3 sai3 so1 fu4", "另外，它们还设有其他零售商店没有的服务，比如买咖啡可以自斟自饮，买公仔点心也可以自己加温调味食用，方便之余又够舒服。", ["梳乎"])
+);
+
+
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
 });
