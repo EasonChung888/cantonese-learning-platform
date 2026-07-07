@@ -3968,6 +3968,176 @@ window.STUDY_ITEMS.push(
 );
 
 
+const day24Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day24-${id}`,
+  day: "day24",
+  module,
+  category: `23 海洋公園 · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day24Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day24-sent-${id}`,
+  day: "day24",
+  module,
+  category: `23 海洋公園 · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 來源盤點：FlipHTML5 p299-p310；p311 起為下一課「黃大仙」。
+  // 一、課文
+  day24Sentence("text-01", "課文", "課文", "嚟香港嘅遊客無論係嚟度假定係嚟公幹，都會畀呢度優美嘅旅遊環境所吸引。", "lei4 heng1 gong2 ge3 yeo4 hag3 mou4 leon6 hei6 lei4 dou6 ga3 deng6 hei6 lei4 gung1 gon3 dou1 wui5 bei2 ni1 dou6 yeo1 mei5 ge3 leu5 yeo4 wan4 ging2 so2 keb1 yen5", "到香港来的游客，无论是来度假还是办理公事，都会给这里优美的旅游环境所吸引。", ["遊客", "公幹"]),
+  day24Sentence("text-02", "課文", "課文", "查實香港嘅旅遊環境大致上可分為港市風情、名勝古蹟、文化旅遊、海灣泳灘、郊野風光同埋離島遊蹤等方面。", "ca4 sed6 heng1 gong2 ge3 leu5 yeo4 wan4 ging2 dai6 ji3 seng6 ho2 fen1 wei4 gong2 xi5 fung1 qing4 ming4 sing3 gu2 jig1 men4 fa3 leu5 yeo4 hoi2 wan1 wing6 tan1 gao1 ye5 fung1 guong1 tung4 mai4 lei4 dou2 yeo4 zung1 deng2 fong1 min6", "其实，香港的旅游环境大致上可分为港市风情、名胜古迹、文化旅游、海滨浴场、郊野风光和离岛游踪等方面。", ["查實", "旅遊環境"]),
+  day24Sentence("text-03", "課文", "課文", "譬如講，內地自由行抑或跟團嘅人士，實會有選擇噉睇勻晒呢六個方面。", "pei3 yu4 gong2 noi6 dei6 ji6 yeo4 hang4 yeg6 wag6 gen1 tyun4 ge3 yen4 xi6 sed6 wui5 yeo5 xun2 zag6 gem2 tei2 wen4 sai3 ni1 lug6 go3 fong1 min6", "譬如说，内地自由行或者跟团的人士，一定会有选择地领略一番这六个方面的风味。", ["自由行", "睇勻晒"]),
+  day24Sentence("text-04", "課文", "課文", "其中，海洋公園、淺水灣、大嶼山寶蓮寺嘅天壇大佛更加係必遊之地。", "kei4 zung1 hoi2 yeng4 gung1 yun2 qin2 seu2 wan1 dai6 yu4 san1 bou2 lin4 ji2 ge3 tin1 tan4 dai6 fed6 geng3 ga1 hei6 bid1 yeo4 ji1 dei6", "其中，海洋公园、浅水湾、大屿山宝莲寺的天坛大佛更是必游之地。", ["必遊之地"]),
+  day24Sentence("text-05", "課文", "課文", "海洋公園喺七十年代中開放營業。", "hoi2 yeng4 gung1 yun2 hei2 ced1 seb6 nin4 doi6 zung1 hoi1 fong3 ying4 yib6", "海洋公园在七十年代中开放营业。", ["海洋公園"]),
+  day24Sentence("text-06", "課文", "課文", "目的係：一嚟向遊客提供一個具有園林勝景嘅娛樂天地，二嚟係向佢哋展示環境保護同動物保育嘅趣味性。", "mug6 dig1 hei6 yed1 lei4 heng3 yeo4 hag3 tei4 gung1 yed1 go3 geoi6 yeo5 yun4 lem4 sing3 ging2 ge3 yu4 log6 tin1 dei6 yi6 lei4 hei6 heng3 keu5 dei6 jin2 xi6 wan4 ging2 bou2 wu6 tung4 dung6 med6 bou2 yug6 ge3 qyu3 mei6 sing3", "目的是：一来向游客提供一个具有园林胜景的娱乐天地，二来是向他们展示环境保护和动物保育的趣味性。", ["一嚟", "二嚟"]),
+  day24Sentence("text-07", "課文", "課文", "海洋公園環山而建，分山上、山下兩部分。", "hoi2 yeng4 gung1 yun2 wan4 san1 yi4 gin3 fen1 san1 seng6 san1 ha6 loeng5 bou6 fen6", "海洋公园环山而建，分山上、山下两部分。", ["環山而建"]),
+  day24Sentence("text-08", "課文", "課文", "兩部分之間遊客可以坐高空吊車往返，十分過癮。", "loeng5 bou6 fen6 ji1 gan1 yeo4 hag3 ho2 yi5 co5 gou1 hung1 diu3 ce1 wong5 fan2 seb6 fen1 guo3 yen5", "两部分之间游客可以乘高空吊车往返，十分刺激。", ["高空吊車", "過癮"]),
+  day24Sentence("text-09", "課文", "課文", "山上值得一遊嘅包括以海洋動物為主題嘅海洋天地。", "san1 seng6 jig6 deg1 yed1 yeo4 ge3 bao1 kud3 yi5 hoi2 yeng4 dung6 med6 wei4 ju2 tei4 ge3 hoi2 yeng4 tin1 dei6", "山上值得一游的包括以海洋动物为主题的海洋天地。", ["值得一遊"]),
+  day24Sentence("text-10", "課文", "課文", "嗰度唔單止有海洋劇場，一家大細齊齊睇海豚表演，仲有機動遊戲可以玩。", "go2 dou6 m4 dan1 ji2 yeo5 hoi2 yeng4 kek6 ceng4 yed1 ga1 dai6 sei3 cei4 cei4 tei2 hoi2 tyun4 biu2 yin5 zung6 yeo5 gei1 dung6 yeo4 hei3 ho2 yi5 wan2", "那里不仅有海洋剧场，一家大小一起看海豚表演，还有机动游戏可以玩儿。", ["唔單止", "齊齊"]),
+  day24Sentence("text-11", "課文", "課文", "你夠膽咪坐上瘋狂過山車，嚇自己一餐死。", "nei5 geo3 dam2 mei6 co5 seng6 fung1 kuong4 guo3 san1 ce1 hag3 ji6 gei2 yed1 can1 se2", "你胆子大可以登上疯狂过山车，吓自己半死。", ["夠膽", "一餐死"]),
+  day24Sentence("text-12", "課文", "課文", "山下入口處有海洋奇觀水族館，養養埋埋五千條五顏六色嘅魚。", "san1 ha6 yeb6 heo2 qyu3 yeo5 hoi2 yeng4 kei4 gun1 seu2 zug6 gun2 yeng5 yeng5 mai4 mai4 ng5 qin1 tiu4 ng5 ngan4 lug6 xig1 ge3 yu2", "山下入口处有海洋奇观水族馆，一共养了近五千条五颜六色的鱼。", ["水族館", "養養埋埋"]),
+  day24Sentence("text-13", "課文", "課文", "遊客可以透過巨型嘅觀賞屏盡情欣賞。", "yeo4 hag3 ho2 yi5 teo3 guo3 geoi6 ying4 ge3 gun1 seng2 ping4 zen6 qing4 yen1 seng2", "游客可以透过巨型的观赏屏尽情欣赏。", ["觀賞屏"]),
+  day24Sentence("text-14", "課文", "課文", "山下另一頭係懷舊「香港老大街」，代表住五十年前香港人嘅集體回憶。", "san1 ha6 ling6 yed1 teo4 hei6 wai4 geo6 heong1 gong2 lou5 dai6 gai1 doi6 biu2 ju6 ng5 seb6 nin4 qin4 heng1 gong2 yen4 ge3 zab6 tei2 wui4 yig1", "山下另一端是怀旧“香港老大街”，代表着五十年前香港人的集体回忆。", ["香港老大街", "集體回憶"]),
+
+  // 二、重點詞彙
+  day24Item("vocab-gunggon", "重點詞彙", "重點詞彙", "公幹", "gung1 gon3", "出差", ["嚟公幹"]),
+  day24Item("vocab-cased", "重點詞彙", "重點詞彙", "查實", "ca4 sed6", "其实", ["查實香港嘅旅遊環境"]),
+  day24Item("vocab-yeolog", "重點詞彙", "重點詞彙", "遊樂", "yeo4 log6", "游览与娱乐相结合的活动", ["娛樂天地"]),
+  day24Item("vocab-wingtan", "重點詞彙", "重點詞彙", "泳灘", "wing6 tan1", "海滨浴场", ["海灣泳灘"]),
+  day24Item("vocab-leidou", "重點詞彙", "重點詞彙", "離島", "lei4 dou2", "行政上指港岛、九龙、新界以外的岛屿", ["離島遊蹤"]),
+  day24Item("vocab-sed", "重點詞彙", "重點詞彙", "實", "sed6", "一定；肯定", ["實會"]),
+  day24Item("vocab-xunzaggem", "重點詞彙", "重點詞彙", "有選擇噉", "yeo5 xun2 zag6 gem2", "有选择地", ["有選擇噉睇"]),
+  day24Item("vocab-teiwensai", "重點詞彙", "重點詞彙", "睇勻晒", "tei2 wen4 sai3", "浏览一遍", ["睇勻晒呢六個方面"]),
+  day24Item("vocab-yedlei-yilei", "重點詞彙", "重點詞彙", "一嚟（……）二嚟（……）", "yed1 lei4 yi6 lei4", "一来……二来……", ["一嚟向遊客提供", "二嚟係向佢哋展示"]),
+  day24Item("vocab-geosaiqigig", "重點詞彙", "重點詞彙", "夠晒刺激", "geo3 sai3 qi3 gig1", "无比刺激", ["十分過癮"]),
+  day24Item("vocab-ngamwan", "重點詞彙", "重點詞彙", "啱玩", "ngam1 wan2", "适于玩耍", ["至啱玩"]),
+  day24Item("vocab-hoiyenggun", "重點詞彙", "重點詞彙", "海洋館", "hoi2 yeng4 gun2", "水族馆", ["海洋奇觀水族館"]),
+  day24Item("vocab-yengmai", "重點詞彙", "重點詞彙", "養養埋埋", "yeng5 yeng5 mai4 mai4", "总共养着", ["養養埋埋五千條魚"]),
+  day24Item("vocab-zegzei", "重點詞彙", "重點詞彙", "雀仔", "zeg3 zei2", "小鸟", ["雀仔"]),
+
+  // 三、補充語彙
+  day24Item("supp-yeoseu", "補充語彙", "補充語彙 · 詞語", "游水", "yeo4 seu2", "游泳", ["旅遊"]),
+  day24Item("supp-caidance", "補充語彙", "補充語彙 · 詞語", "踩單車", "cai2 dan1 ce1", "骑自行车", ["旅遊"]),
+  day24Item("supp-cegqyu", "補充語彙", "補充語彙 · 詞語", "赤柱", "ceg3 qu5", "赤柱", ["旅遊地名"]),
+  day24Item("supp-taiping", "補充語彙", "補充語彙 · 詞語", "太平山", "tai3 ping4 san1", "太平山", ["旅遊地名"]),
+  day24Item("supp-loucenting", "補充語彙", "補充語彙 · 詞語", "老襯亭", "lou5 cen1 ting4", "老衬亭", ["旅遊地名"]),
+  day24Item("supp-wongdaixin", "補充語彙", "補充語彙 · 詞語", "黃大仙", "wong4 dai6 xin1", "黄大仙", ["旅遊地名"]),
+  day24Item("supp-feingoshan", "補充語彙", "補充語彙 · 詞語", "飛鵝山", "fei1 ngo4 san1", "飞鹅山", ["旅遊地名"]),
+  day24Item("supp-gaoyegungyun", "補充語彙", "補充語彙 · 詞語", "郊野公園", "gao1 ye5 gung1 yun2", "郊野公园", ["旅遊地名"]),
+  day24Item("supp-fupaobidseu", "補充語彙", "補充語彙 · 詞語", "虎豹別墅", "fu2 pao3 bid6 seu6", "虎豹别墅", ["旅遊地名"]),
+  day24Item("supp-xunzyuncanteng", "補充語彙", "補充語彙 · 詞語", "旋轉餐廳", "xun4 jun2 can1 teng1", "旋转餐厅", ["旅遊"]),
+  day24Item("supp-pingmenyezungwui", "補充語彙", "補充語彙 · 詞語", "平民夜總會", "ping4 men4 ye6 zung2 wui2", "平民夜总会", ["旅遊"]),
+  day24Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "淺水灣係香港嘅消暑勝地。", "qin1 seu2 wan1 hei6 heng1 gong2 ge3 xiu1 xu2 xing3 dei6", "浅水湾是香港的消暑胜地。", ["淺水灣"]),
+  day24Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "離市區搭十零廿分鐘巴士就到。", "lei4 xi5 keo1 dab3 seb6 leng4 ya6 fen1 zung1 ba1 xi2 zeo6 dou3", "离市区坐十来二十分钟巴士就到。", ["十零廿分鐘"]),
+  day24Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "嗰度有青山綠水，環境好靚。", "go2 dou6 yeo5 qing1 san1 lug6 seu2 wan4 ging2 hou2 leng3", "那里有青山绿水，环境很美。", ["青山綠水"]),
+  day24Sentence("supp-04", "補充語彙", "補充語彙 · 句子", "一到夏天，啲人三五成群噉湧嚟。", "yed1 dou3 ha6 tin1 di1 yen4 sam1 ng5 xing4 kuen4 gem2 yung5 lei4", "一到夏天，人们三五成群地涌来。", ["三五成群"]),
+  day24Sentence("supp-05", "補充語彙", "補充語彙 · 句子", "游水啦，曬太陽啦，一家大細至啱玩。", "yeo4 seu2 la1 sai3 tai3 yeng4 la1 yed1 ga1 dai6 sei3 ji3 ngam1 wan2", "游泳啦，晒太阳啦，一家大小最适合玩。", ["游水", "曬太陽"]),
+
+  // 四、重點理解
+  day24Item("understanding-cased", "重點理解", "重點理解 · 查實", "查實", "ca4 sed6", "其实；用于修正或补充上文", ["查實係塑膠做嘅"]),
+  day24Sentence("understanding-01", "重點理解", "重點理解 · 查實", "嗰啲花睇落好似真嘅噉，查實係塑膠做嘅。", "go2 di1 fa1 tei2 log6 hou2 qi5 zen1 ge3 gem2 ca4 sed6 hei6 sou3 gaau1 zou6 ge3", "那些花看上去好像真的那样，其实是塑料做的。", ["查實"]),
+  day24Sentence("understanding-02", "重點理解", "重點理解 · 查實", "聽人話揸車去要半個鐘頭，查實我哋用咗兩個字咋。", "teng1 yen4 wa6 za1 ce1 heo3 yiu3 bun3 go3 zung1 teo4 ca4 sed6 ngo5 dei6 yung6 zo2 loeng5 go3 ji6 za3", "听人说开车去要半个小时，可我们才用了十分钟就到了。", ["兩個字"]),
+  day24Item("understanding-sed", "重點理解", "重點理解 · 實", "實／一實", "sed6 yed1 sed6", "肯定无疑；一定", ["實係佢啦"]),
+  day24Sentence("understanding-03", "重點理解", "重點理解 · 實", "邊個嚟過？", "bin1 go3 lei4 guo3", "谁来过？", ["實"]),
+  day24Sentence("understanding-04", "重點理解", "重點理解 · 實", "仲使問嘅，實係佢啦。", "zung6 sei2 men6 ge3 sed6 hei6 keu5 la1", "这还要问，肯定是他。", ["實"]),
+  day24Item("understanding-geosai", "重點理解", "重點理解 · 夠晒", "夠晒", "geo3 sai3", "强调某种性状达到相当程度", ["夠晒冷", "夠晒快"]),
+  day24Sentence("understanding-05", "重點理解", "重點理解 · 夠晒", "夠晒冷。", "geo3 sai3 lang5", "可冷了。", ["夠晒"]),
+  day24Sentence("understanding-06", "重點理解", "重點理解 · 夠晒", "夠晒快。", "geo3 sai3 fai3", "可快了。", ["夠晒"]),
+  day24Item("understanding-wen", "重點理解", "重點理解 · 勻", "勻", "wen4", "周遍；全部，常跟动词连用作补语", ["搵勻晒", "拉勻"]),
+  day24Sentence("understanding-07", "重點理解", "重點理解 · 勻", "搵勻晒個櫃桶都搵唔到。", "wen2 wen4 sai3 go3 guei6 tung2 dou1 wen2 m4 dou2", "把抽屉翻了个儿，也没找着。", ["搵勻晒"]),
+  day24Sentence("understanding-08", "重點理解", "重點理解 · 勻", "拉勻嚟計，每人出三百文。", "lai1 wen4 lei4 gei3 mui5 yen4 ced1 sam1 baag3 men1", "平均计算，每人出三百块。", ["拉勻"]),
+  day24Item("understanding-mdanzi", "重點理解", "重點理解 · 唔單止", "唔單止／唔淨止", "m4 dan1 ji2 m4 jing6 ji2", "不但；表示递加", ["唔單止我想去"]),
+  day24Sentence("understanding-09", "重點理解", "重點理解 · 唔單止", "唔單止我想去，佢都想去。", "m4 dan1 ji2 ngo5 seng2 heo3 keu5 dou1 seng2 heo3", "不光我想去，他也想去。", ["唔單止"]),
+  day24Sentence("understanding-10", "重點理解", "重點理解 · 唔單止", "佢唔單止識英文，仲識埋德文添。", "keu5 m4 dan1 ji2 xig1 ying1 men4 zung6 xig1 mai4 deg1 men4 tim1", "他不但会英文，而且也会德文。", ["仲識埋"]),
+  day24Item("understanding-aamaimai", "重點理解", "重點理解 · AA 埋埋", "AA 埋埋", "aa mai4 mai4", "单音动词重叠加埋埋，表示多项合计", ["加加埋埋", "收收埋埋"]),
+  day24Sentence("understanding-11", "重點理解", "重點理解 · AA 埋埋", "呢餐飯，連酒水，加加埋埋兩千文度啦。", "ni1 can1 fan6 lin4 zeo2 seoi2 ga1 ga1 mai4 mai4 loeng5 qin1 men1 dou6 la1", "这顿饭，连酒水，加起来总共两千块左右。", ["加加埋埋"]),
+  day24Sentence("understanding-12", "重點理解", "重點理解 · AA 埋埋", "佢鍾意藏書，結果收收埋埋成萬冊咁多。", "keu5 zung1 yi3 cong4 syu1 gid3 guo2 seo1 seo1 mai4 mai4 xing4 man6 caag3 gem3 do1", "他喜欢藏书，结果搜集起来有上万册那么多。", ["收收埋埋"]),
+
+  // 五、講解：誤導詞與粵語趣談
+  day24Item("mislead-jidmug", "講解", "講解 · 誤導詞", "節目", "jid3 mug6", "粤语指消遣活动的项目；普通话多指文艺演出或播送项目", ["誤導詞"]),
+  day24Item("mislead-singmug", "講解", "講解 · 誤導詞", "醒目", "sing2 mug6", "粤语指人机灵；普通话指形象明显、容易看清", ["誤導詞"]),
+  day24Item("mislead-medsed", "講解", "講解 · 誤導詞", "密實", "med6 sed6", "粤语指严密或严守秘密；普通话可指细密", ["誤導詞"]),
+  day24Item("mislead-qenhang", "講解", "講解 · 誤導詞", "巡行", "qen4 hang4", "粤语指群众游行；普通话指按路线到各处活动", ["誤導詞"]),
+  day24Item("culture-sangseng", "講解", "講解 · 粵語趣談 · 生性", "生性", "sang1 seng3", "懂事、争气、有出息；也可指希望行为或事件对自己有利", ["粵語趣談"]),
+  day24Item("culture-sangsangsengseng", "講解", "講解 · 粵語趣談 · 生性", "生生性性", "sang1 sang1 seng3 seng3", "好好干；规矩争气", ["粵語趣談"]),
+  day24Sentence("culture-01", "講解", "講解 · 粵語趣談 · 生性", "阿敏好生性，媽咪唔開心嗰陣，佢會氹媽咪。", "a3 men5 hou2 sang1 seng3 ma1 mi1 m4 hoi1 sem1 go2 zen6 keu5 wui5 dem6 ma1 mi1", "小敏很懂事，妈妈不开心的时候，会安慰妈妈。", ["生性"]),
+  day24Sentence("culture-02", "講解", "講解 · 粵語趣談 · 生性", "佢兩個仔女都好生性，讀書好勤力，好主動，唔識就問。", "keu5 loeng5 go3 zei2 neoi5 dou1 hou2 sang1 seng3 dug6 syu1 hou2 ken4 lig6 hou2 ju2 dung6 m4 xig1 zeo6 men6", "他两个小孩儿都很懂事，念书很努力很主动，不懂就问。", ["生性"]),
+  day24Sentence("culture-03", "講解", "講解 · 粵語趣談 · 生性", "你啱啱出嚟做嘢，要生生性性。", "nei5 ngam1 ngam1 ced1 lei4 zou6 ye5 yiu3 sang1 sang1 seng3 seng3", "你刚参加工作，要好好干，要争气。", ["生生性性"]),
+  day24Sentence("culture-04", "講解", "講解 · 粵語趣談 · 生性", "讀書唔成唔緊要，但係要生性做人。", "dug6 syu1 m4 xing4 m4 gen2 yiu3 dan6 hei6 yiu3 sang1 seng3 zou6 yen4", "成绩不好不要紧，但是一定要做个规规矩矩的人。", ["生性"]),
+  day24Sentence("culture-05", "講解", "講解 · 粵語趣談 · 生性", "佢真係唔生性嘅啫，成日群埋啲咁嘅人。", "keu5 zen1 hei6 m4 sang1 seng3 ge3 ze1 xing4 yed6 kuen4 mai4 di1 gem3 ge3 yen4", "他真没出息，整天跟那些人瞎混。", ["唔生性"]),
+  day24Sentence("culture-06", "講解", "講解 · 粵語趣談 · 生性", "望啲馬仔今晚生性啲啦。", "mong6 di1 ma5 zei2 gem1 man5 sang1 seng3 di1 la1", "但愿我下了赌注的赛马今晚能赢。", ["馬仔"]),
+
+  // 六、傳意項目介紹：囑咐（只收完整例句）
+  day24Sentence("remind-01", "傳意項目介紹", "傳意項目介紹 · 囑咐", "你快啲去快啲返至好呀。", "nei5 fai3 di1 heo3 fai3 di1 fan1 ji3 hou2 a3", "你快点去快点回来才好。", ["快啲"]),
+  day24Sentence("remind-02", "傳意項目介紹", "傳意項目介紹 · 囑咐", "你因住落雨噃，拎番把遮啦。", "nei5 yen1 ju6 log6 yu5 bo3 ling1 fan1 ba2 ze1 la1", "你当心下雨，拿回一把伞吧。", ["因住"]),
+  day24Sentence("remind-03", "傳意項目介紹", "傳意項目介紹 · 囑咐", "你因住時間噃，差唔多夠鐘喇喎。", "nei5 yen1 ju6 xi4 gan3 bo3 ca1 m4 do1 geo3 zung1 la3 wo3", "你注意时间，差不多够钟了。", ["因住時間"]),
+  day24Sentence("remind-04", "傳意項目介紹", "傳意項目介紹 · 囑咐", "要去就快啲去啦，唔係就咪去。", "yiu3 heo3 zeo6 fai3 di1 heo3 la1 m4 hei6 zeo6 mei1 heo3", "要去就快点去，不然就别去。", ["要去就快啲"]),
+  day24Sentence("remind-05", "傳意項目介紹", "傳意項目介紹 · 囑咐", "好瞓囉噃，唔係聽朝唔知醒都似。", "hou2 fan3 lo1 bo3 m4 hei6 ting1 jiu1 m4 ji1 sing2 dou1 qi5", "好好睡吧，不然明早可能醒不来。", ["好瞓"]),
+
+  // 七、練習
+  day24Sentence("dialogue-01", "練習", "練習 · 會話聆聽", "你話香港遊，邊度最好玩吖？", "nei5 wa6 heng1 gong2 yeo4 bin1 dou6 zeoi3 hou2 wan2 a1", "你说香港游，哪里最好玩？", ["香港遊"]),
+  day24Sentence("dialogue-02", "練習", "練習 · 會話聆聽", "呢啲睇心水嘅啫。", "ni1 di1 tei2 sem1 seoi2 ge3 ze1", "这些看个人喜好而已。", ["睇心水"]),
+  day24Sentence("dialogue-03", "練習", "練習 · 會話聆聽", "你好似唔係第一次參加香港遊囉喎。", "nei5 hou2 qi5 m4 hei6 dei6 yed1 qi3 cam1 ga1 heng1 gong2 yeo4 lo1 wo3", "你好像不是第一次参加香港游。", ["香港遊"]),
+  day24Sentence("dialogue-04", "練習", "練習 · 會話聆聽", "我呢次係第二次嚟喇，上次走馬看花噉都叫做睇勻晒。", "ngo5 ni1 qi3 hei6 dei6 yi6 qi3 lei4 la3 seng6 qi3 zeo2 ma5 hon3 fa1 gem2 dou1 giu3 zou6 tei2 wen4 sai3", "我这次是第二次来了，上次走马看花地也算看了一遍。", ["走馬看花", "睇勻晒"]),
+  day24Sentence("dialogue-05", "練習", "練習 · 會話聆聽", "呢次呢？", "ni1 qi3 ne1", "这次呢？", ["會話聆聽"]),
+  day24Sentence("dialogue-06", "練習", "練習 · 會話聆聽", "呢次時間上他條咗，最鍾意係去郊野公園。", "ni1 qi3 xi4 gan3 seng6 ta1 tiu4 zo2 zeoi3 zung1 yi3 hei6 heo3 gao1 ye5 gung1 yun2", "这次时间上宽裕了，最喜欢去郊野公园。", ["他條", "郊野公園"]),
+  day24Sentence("dialogue-07", "練習", "練習 · 會話聆聽", "哈，點解？", "ha1 dim2 gai2", "哈，为什么？", ["會話聆聽"]),
+  day24Sentence("dialogue-08", "練習", "練習 · 會話聆聽", "冇乜點解，年輕一族梗係鍾意空氣清新、無拘無束嘅大自然環境喇嘛。", "mou5 med1 dim2 gai2 nin4 hing1 yed1 zug6 gang2 hei6 zung1 yi3 hung1 hei3 qing1 sen1 mou4 keoi1 mou4 qyug1 ge3 dai6 ji6 yin4 wan4 ging2 la1 ma3", "没什么为什么，年轻一族当然喜欢空气清新、无拘无束的大自然环境嘛。", ["年輕一族", "無拘無束"]),
+  day24Sentence("dialogue-09", "練習", "練習 · 會話聆聽", "乜香港咁多節嘅？", "med1 heng1 gong2 gem3 do1 jid3 ge3", "香港怎么这么多节？", ["美食節", "藝術節"]),
+  day24Sentence("dialogue-10", "練習", "練習 · 會話聆聽", "乜嘢美食節、藝術節又盛。", "med1 ye5 mei5 xig6 jid3 nged6 sed6 jid3 yeo6 sing6", "什么美食节、艺术节之类。", ["又盛"]),
+  day24Sentence("dialogue-11", "練習", "練習 · 會話聆聽", "哦，香港嘅天然景點唔多，旅遊協會唔度定啲橋點會吸引到多啲外地遊客吖。", "o2 heng1 gong2 ge3 tin1 yin4 ging2 dim2 m4 do1 leu5 yeo4 hip3 wui6 m4 dog6 ding6 di1 kiu2 dim2 wui5 keb1 yen5 dou3 do1 di1 ngoi6 dei6 yeo4 hag3 a1", "哦，香港的天然景点不多，旅游协会不预先设计些花样怎么会吸引到更多外地游客呢。", ["度橋", "外地遊客"]),
+  day24Sentence("dialogue-12", "練習", "練習 · 會話聆聽", "噉又係。", "gem2 yeo6 hei6", "那倒也是。", ["會話聆聽"]),
+  day24Sentence("dialogue-13", "練習", "練習 · 會話聆聽", "照計本地旅遊係應該儘量突出香港所具有嘅中西文化結合嘅特點嘅。", "jiu3 gei3 bun2 dei6 leu5 yeo4 hei6 ying1 goi1 zeon6 loeng6 ded6 ced1 heng1 gong2 so2 geoi6 yeo5 ge3 zung1 sei1 men4 fa3 gid3 heb6 ge3 deg6 dim2 ge3", "按理本地旅游应该尽量突出香港所具有的中西文化结合的特点。", ["中西文化結合"]),
+  day24Sentence("dialogue-14", "練習", "練習 · 會話聆聽", "梗係喇，呢點無煙工業賺大錢架。", "gang2 hei6 la3 ni1 dim2 mou4 yin1 gung1 yib6 zaan6 dai6 qin2 ga3", "当然了，这点无烟工业赚大钱。", ["無煙工業"]),
+  day24Sentence("dialogue-15", "練習", "練習 · 會話聆聽", "噉，嚟緊呢個六月又有乜嘢花臣呀？", "gem2 lei4 gen2 ni1 go3 lug6 yud6 yeo6 yeo5 med1 ye5 fa1 sen4 a3", "那么，接下来这个六月又有什么花样？", ["花臣"]),
+  day24Sentence("dialogue-16", "練習", "練習 · 會話聆聽", "諗都諗到啦，國際龍舟邀請賽吖嘛。", "nem2 dou1 nem2 dou3 la1 guog3 zei3 lung4 zeo1 yiu1 qing2 coi3 a1 ma3", "想都想得到，国际龙舟邀请赛嘛。", ["國際龍舟邀請賽"]),
+  day24Sentence("dialogue-17", "練習", "練習 · 會話聆聽", "國際龍舟邀請賽？", "guog3 zei3 lung4 zeo1 yiu1 qing2 coi3", "国际龙舟邀请赛？", ["國際龍舟邀請賽"]),
+  day24Sentence("dialogue-18", "練習", "練習 · 會話聆聽", "使乜講。", "sei2 med1 gong2", "还用说。", ["會話聆聽"]),
+  day24Sentence("dialogue-19", "練習", "練習 · 會話聆聽", "你未見過番鬼佬扒龍船咩？", "nei5 mei6 gin3 guo3 fan1 guei2 lou2 pa4 lung4 xun4 me1", "你没见过外国人划龙船吗？", ["番鬼佬", "扒龍船"]),
+  day24Sentence("discussion-01", "練習", "練習 · 討論", "你至鍾意行邊個山？", "nei5 ji3 zung1 yi3 hang4 bin1 go3 san1", "你最喜欢爬哪座山？", ["討論"]),
+  day24Sentence("discussion-02", "練習", "練習 · 討論", "去邊個沙灘游水？", "heo3 bin1 go3 sa1 tan1 yeo4 seu2", "去哪个沙滩游泳？", ["討論"]),
+  day24Sentence("discussion-03", "練習", "練習 · 討論", "你朋友嚟香港兩日，你準備帶佢去邊度玩？", "nei5 pang4 yeo5 lei4 heng1 gong2 loeng5 yed6 nei5 zeon2 bei6 dai3 keu5 heo3 bin1 dou6 wan2", "你朋友来香港两天，你准备带他去哪里玩？", ["討論"]),
+  day24Sentence("discussion-04", "練習", "練習 · 討論", "澳門有乜嘢好玩？", "ou3 mun4 yeo5 med1 ye5 hou2 wan2", "澳门有什么好玩？", ["討論"]),
+  day24Sentence("discussion-05", "練習", "練習 · 討論", "廣州呢？", "guong2 zeo1 ne1", "广州呢？", ["討論"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
+  day24Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["香港嘅遊客"]),
+  day24Item("char-lei", "粵字辨認", "粵字辨認 · 課文用字", "嚟", "lei4", "来", ["嚟香港"]),
+  day24Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["呢啲"]),
+  day24Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["有選擇噉"]),
+  day24Item("char-sai", "粵字辨認", "粵字辨認 · 課文用字", "晒", "sai3", "全；完", ["睇勻晒"]),
+  day24Item("char-ze", "粵字辨認", "粵字辨認 · 課文用字", "啫", "ze1", "而已；语气助词", ["心水嘅啫"]),
+  day24Item("char-me", "粵字辨認", "粵字辨認 · 課文用字", "咩", "me1", "吗；表示反问", ["龍船咩"]),
+  day24Item("char-la", "粵字辨認", "粵字辨認 · 課文用字", "喇", "la3", "表示变化或提醒的语气助词", ["梗係喇"]),
+
+  // 八、短文朗讀
+  day24Sentence("reading-01", "短文朗讀", "短文朗讀", "維多利亞港係個繁華嘅港口，船隻穿梭往來，兩岸商廈林立，五光十色，別具風格。", "wei4 do1 lei6 a3 gong2 hei6 go3 fan4 wa4 ge3 gong2 heo2 xun4 zeg3 qyun1 so1 wong5 loi4 loeng5 ngon6 soeng1 ha6 lem4 lab6 ng5 guong1 seb6 xig1 bid6 geoi6 fung1 gag3", "维多利亚港是个繁华的港口，船只穿梭往来，两岸商厦林立，五光十色，别具风格。", ["維多利亞港", "穿梭"]),
+  day24Sentence("reading-02", "短文朗讀", "短文朗讀", "可供觀光、飲食、購物嘅旅遊點唔少。", "ho2 gung1 gun1 guong1 yem2 xig6 keo3 med6 ge3 leu5 yeo4 dim2 m4 xiu2", "可供观光、饮食、购物的旅游点不少。", ["觀光", "購物"]),
+  day24Sentence("reading-03", "短文朗讀", "短文朗讀", "先講講九龍嗰便。", "xin1 gong2 gong2 geo2 lung4 go2 bin6", "先讲讲九龙那边。", ["九龍"]),
+  day24Sentence("reading-04", "短文朗讀", "短文朗讀", "首先有傍海築欄而成嘅尖東海濱公園。", "seo2 xin1 yeo5 bong6 hoi2 zug1 lan4 yi4 xing4 ge3 jim1 dung1 hoi2 ben1 gung1 yun2", "首先有傍海筑栏而成的尖东海滨公园。", ["傍海", "海濱公園"]),
+  day24Sentence("reading-05", "短文朗讀", "短文朗讀", "長長嘅散步走廊，雅靜開敞，係觀賞海港活動及港島容貌最理想嘅地方之一。", "qeng4 qeng4 ge3 san3 bou6 zeo2 long4 nga5 jing6 hoi1 cong2 hei6 gun1 seng2 hoi2 gong2 wud6 dung6 keb6 gong2 dou2 yung4 mau6 zeoi3 lei5 seng2 ge3 dei6 fong1 ji1 yed1", "长长的散步走廊，雅静开敞，是观赏海港活动及港岛容貌最理想的地方之一。", ["走廊", "開敞"]),
+  day24Sentence("reading-06", "短文朗讀", "短文朗讀", "海濱公園嘅一頭係原來象徵九龍嘅尖沙咀火車站鐘樓，隔籬冇幾遠就係天星碼頭同埋海洋中心。", "hoi2 ben1 gung1 yun2 ge3 yed1 teo4 hei6 yun4 loi4 zeng6 jing1 geo2 lung4 ge3 jim1 sa1 zeoi2 fo2 ce1 zam6 zung1 leo4 gag3 lei4 mou5 gei2 yun5 zeo6 hei6 tin1 sing1 ma5 teo4 tung4 mai4 hoi2 yeng4 zung1 sem1", "海滨公园的一头是原来象征九龙的尖沙咀火车站钟楼，隔壁没多远就是天星码头和海洋中心。", ["鐘樓", "天星碼頭"]),
+  day24Sentence("reading-07", "短文朗讀", "短文朗讀", "嗰度有度好：靜得嚟有動感。", "go2 dou6 yeo5 dou6 hou2 jing6 deg1 lei4 yeo5 dung6 gem2", "那里有个好处：静中有动感。", ["靜得嚟有動感"]),
+  day24Sentence("reading-08", "短文朗讀", "短文朗讀", "香港呢便呢，由東望去西，有銅鑼灣嘅鬧市，有坐落喺灣仔、樓高七十八層嘅智能大廈——中環廣場，然後係中環中銀大廈以及上環港澳碼頭。", "heng1 gong2 ni1 bin6 ne1 yeo4 dung1 mong6 heo3 sei1 yeo5 tung4 lo4 wan1 ge3 nao6 xi5 yeo5 co6 log6 hei2 wan1 zei2 leo4 gou1 ced1 seb6 bad3 ceng4 ge3 ji3 neng4 dai6 ha6 zung1 wan4 guong2 ceng4 yin4 heo6 hei6 zung1 wan4 zung1 ngan4 dai6 ha6 yi5 keb6 seng6 wan4 gong2 ou3 ma5 teo4", "香港这边，由东望去西，有铜锣湾的闹市，有坐落在湾仔、楼高七十八层的智能大厦中环广场，然后是中环中银大厦以及上环港澳码头。", ["銅鑼灣", "中環廣場"]),
+  day24Sentence("reading-09", "短文朗讀", "短文朗讀", "太平山就正正喺佢哋嘅上面。", "tai3 ping4 san1 zeo6 jing3 jing3 hei2 keu5 dei6 ge3 seng6 min6", "太平山就正在它们的上面。", ["太平山"]),
+  day24Sentence("reading-10", "短文朗讀", "短文朗讀", "你同你嗰位朋友喺海拔 380 米嘅山頂餐廳蹭過枱腳未？", "nei5 tung4 nei5 go2 wei6 pang4 yeo5 hei2 hoi2 bad6 sam1 baag3 bad3 seb6 mai5 ge3 san1 deng2 can1 teng1 yang3 guo3 toi2 goek3 mei6", "你和你那位朋友在海拔 380 米的山顶餐厅蹭过桌脚没有？", ["蹭", "枱腳"]),
+  day24Sentence("reading-11", "短文朗讀", "短文朗讀", "未就第日快啲去新落成嘅山頂餐廳卜位，食完晚飯，居高臨下欣賞香港之夜嘅迷人景色真係邊度都唔使去咯。", "mei6 zeo6 dei6 yed6 fai3 di1 heo3 sen1 log6 xing4 ge3 san1 deng2 can1 teng1 bug1 wei2 xig6 yun4 man5 fan6 geoi1 gou1 lem4 ha6 yen1 seng2 heng1 gong2 ji1 ye6 ge3 mei4 yen4 ging2 xig1 zen1 hei6 bin1 dou6 dou1 m4 sei2 heo3 log3", "没有就改天快点去新落成的山顶餐厅订位，吃完晚饭，居高临下欣赏香港之夜的迷人景色，真是哪儿都不用去了。", ["卜位", "居高臨下"])
+);
+
+
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
 });

@@ -22,7 +22,8 @@ const DAY_ORDER = [
   { id: "day20", label: "Day 20", topic: "打“九九九”" },
   { id: "day21", label: "Day 21", topic: "香港话" },
   { id: "day22", label: "Day 22", topic: "报纸" },
-  { id: "day23", label: "Day 23", topic: "交通运输" }
+  { id: "day23", label: "Day 23", topic: "交通运输" },
+  { id: "day24", label: "Day 24", topic: "海洋公园" }
 ];
 const DEFAULT_MODULE_ORDER = ["全部內容", "聲母", "韻母", "聲調", "常用字表", "句子"];
 const CHAPTER_BOOK_MODULE_ORDER = ["全部內容", "課文", "重點詞彙", "補充語彙", "重點理解", "講解", "傳意項目介紹", "練習", "粵字辨認", "短文朗讀"];
@@ -655,6 +656,22 @@ const TRADITIONAL_TO_SIMPLIFIED = {
   線: "线",
   專: "专",
   頁: "页",
+  觀: "观",
+  樂: "乐",
+  遊: "游",
+  覽: "览",
+  廈: "厦",
+  碼: "码",
+  樓: "楼",
+  總: "总",
+  藝: "艺",
+  賽: "赛",
+  鵝: "鹅",
+  鳥: "鸟",
+  廳: "厅",
+  勝: "胜",
+  華: "华",
+  囑: "嘱",
   憑: "凭"
 };
 
