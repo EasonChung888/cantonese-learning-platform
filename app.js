@@ -18,7 +18,8 @@ const DAY_ORDER = [
   { id: "day16", label: "Day 16", topic: "清洁香港" },
   { id: "day17", label: "Day 17", topic: "找学校" },
   { id: "day18", label: "Day 18", topic: "晨运" },
-  { id: "day19", label: "Day 19", topic: "找工作与跳槽" }
+  { id: "day19", label: "Day 19", topic: "找工作与跳槽" },
+  { id: "day20", label: "Day 20", topic: "打“九九九”" }
 ];
 const DEFAULT_MODULE_ORDER = ["全部內容", "聲母", "韻母", "聲調", "常用字表", "句子"];
 const CHAPTER_BOOK_MODULE_ORDER = ["全部內容", "課文", "重點詞彙", "補充語彙", "重點理解", "講解", "傳意項目介紹", "練習", "粵字辨認", "短文朗讀"];
