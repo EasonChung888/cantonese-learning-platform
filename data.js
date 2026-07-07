@@ -4138,6 +4138,179 @@ window.STUDY_ITEMS.push(
 );
 
 
+const day25Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day25-${id}`,
+  day: "day25",
+  module,
+  category: `24 黃大仙 · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day25Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day25-sent-${id}`,
+  day: "day25",
+  module,
+  category: `24 黃大仙 · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 來源盤點：FlipHTML5 p311-p321；p322 起為下一課「電視文化」。
+  // 一、課文
+  day25Sentence("title-01", "課文", "課文", "喺香港，香火最盛嘅係九龍嘅黃大仙廟。", "hei2 heng1 gong2 heng1 fo2 zeoi3 xing6 ge3 hei6 geo2 lung4 ge3 wong4 dai6 xin1 miu2", "在香港，香火最盛的是九龙的黄大仙庙。", ["黃大仙廟"]),
+  day25Sentence("text-01", "課文", "課文", "「無事不登三寶殿」，呢句說話係人都識講啦。", "mou4 xi6 bed1 deng1 sam1 bou2 din6 ni1 geoi3 xud3 wa6 hei6 yen4 dou1 xig1 gong2 la1", "“无事不登三宝殿”，这句话谁都知道。", ["三寶殿"]),
+  day25Sentence("text-02", "課文", "課文", "之所謂「三寶」係指佛寶、法寶同僧寶三位，分別象徵過去、現在同將來噉話喎。", "ji1 so2 wei6 sam1 bou2 hei6 ji2 fed6 bou2 fad3 bou2 tung4 zeng1 bou2 sam1 wei2 fen1 bid6 zeng6 jing1 guo3 heo3 yin6 zoi6 tung4 zeng1 loi4 gem2 wa6 wo5", "所谓“三宝”是指佛宝、法宝和僧宝三位，据说分别象征过去、现在和将来。", ["之所謂", "噉話喎"]),
+  day25Sentence("text-03", "課文", "課文", "反正，世間遇上疑難事，啲人都會登殿參拜。", "fan2 jing3 sei3 gan1 yu6 seng6 yi4 nan4 xi6 di1 yen4 dou1 wui5 deng1 din6 cam1 bai3", "反正，世间遇上疑难事，人们都会登殿参拜。", ["參拜"]),
+  day25Sentence("text-04", "課文", "課文", "有事必求神，無事求保佑吖嘛。", "yeo5 xi6 bid1 keo4 sen4 mou4 xi6 keo4 bou2 yeo6 a1 ma3", "有事一定求神，没事也求保佑嘛。", ["求神", "保佑"]),
+  day25Sentence("text-05", "課文", "課文", "喺香港人生活當中，宗教活動始終佔據住重要地位。", "hei2 heng1 gong2 yen4 seng1 wud6 dong1 zung1 zung1 gao3 wud6 dung6 qi2 zung1 jim3 geoi3 ju6 zung6 yiu3 dei6 wei6", "在香港人的生活中，宗教活动始终占据着重要地位。", ["宗教活動"]),
+  day25Sentence("text-06", "課文", "課文", "供奉菩薩嘅廟宇就有成千座，名目多不勝數。", "gung1 fung6 pou4 sad3 ge3 miu6 yu5 zeo6 yeo5 seng4 qin1 zo6 ming4 mug6 do1 bed1 xing1 sou2", "供奉菩萨的庙宇就有上千座，名目多得数不清。", ["廟宇"]),
+  day25Sentence("text-07", "課文", "課文", "香火最盛嘅係九龍嘅黃大仙廟。", "heng1 fo2 zeoi3 xing6 ge3 hei6 geo2 lung4 ge3 wong4 dai6 xin1 miu2", "香火最盛的是九龙的黄大仙庙。", ["香火"]),
+  day25Sentence("text-08", "課文", "課文", "每年嘅香油錢收入達八位數字。", "mui5 nin4 ge3 heng1 yeo4 qin2 seo1 yeb6 dad6 bad3 wei2 sou3 ji6", "每年的香油钱收入达到八位数。", ["香油錢", "八位數字"]),
+  day25Sentence("text-09", "課文", "課文", "逢年過節，前嚟參拜嘅善男信女逼到冚晒。", "fung4 nin4 guo3 jid3 qin4 lei4 cam1 bai3 ge3 xin6 nam4 seon3 neoi5 big1 dou3 hem6 sai3", "逢年过节，前来参拜的善男信女挤得水泄不通。", ["逼到冚晒"]),
+  day25Sentence("text-10", "課文", "課文", "佢哋個個拎住啲香燭、生果、佳餚，甚至乎成隻燒豬，擺喺廟前嘅空地度上香跪拜。", "keu5 dei6 go3 go3 ling1 ju6 di1 heng1 zug1 sang1 guo2 gai1 ngao4 sem6 ji3 fu4 seng4 zeg3 xiu1 ju1 bai2 hei2 miu2 qin4 ge3 hung1 dei6 dou6 seng6 heng1 guei6 bai3", "他们人人拿着香烛、水果、佳肴，甚至整只烧猪，摆在庙前空地上上香跪拜。", ["拎", "生果", "燒豬"]),
+  day25Sentence("text-11", "課文", "課文", "久而久之，「有求必應黃大仙」嘅名就不脛而走。", "geo2 yi4 geo2 ji1 yeo5 keo4 bid1 ying3 wong4 dai6 xin1 ge3 meng2 zeo6 bed1 ging3 yi4 zeo2", "久而久之，“有求必应黄大仙”的名声就不胫而走。", ["有求必應"]),
+  day25Sentence("text-12", "課文", "課文", "噉，啲人求乜嘢呢？", "gem2 di1 yen4 keo4 med1 ye5 ne1", "那么，人们求什么呢？", ["求乜嘢"]),
+  day25Sentence("text-13", "課文", "課文", "大老闆求發大財，小市民求發橫財，學生哥求升入名校，警察大佬求逢凶化吉、立功受獎。", "dai6 lou5 ban2 keo4 fad3 dai6 coi4 xiu2 xi5 men4 keo4 fad3 wang4 coi4 hog6 sang1 go1 keo4 xing1 yeb6 ming4 hao6 ging2 cad3 dai6 lou2 keo4 fung4 hung1 fa3 ged1 lab6 gung1 seo6 zeng2", "大老板求发财，小市民求发横财，学生求考上名校，警察求逢凶化吉、立功受奖。", ["橫財", "學生哥"]),
+  day25Sentence("text-14", "課文", "課文", "上香膜拜之後，例牌去求籤。", "seng6 heng1 mou4 bai3 ji1 heo6 lei6 pai2 heo3 keo4 qim1", "上香膜拜之后，照例去求签。", ["例牌", "求籤"]),
+  day25Sentence("text-15", "課文", "課文", "好彩嘅，求到上上籤。", "hou2 coi2 ge3 keo4 dou2 seng6 seng6 qim1", "幸运的话，会求到上上签。", ["好彩"]),
+  day25Sentence("text-16", "課文", "課文", "運氣欠佳嘅，可能求到下下籤。", "wen6 hei3 him3 gai1 ge3 ho2 neng4 keo4 dou2 ha6 ha6 qim1", "运气欠佳的，可能求到下下签。", ["下下籤"]),
+  day25Sentence("text-17", "課文", "課文", "靈唔靈驗，大家係心知肚明嘅。", "ling4 m4 ling4 yin6 dai6 ga1 hei6 sem1 ji1 tou5 ming4 ge3", "灵不灵验，大家心里都有数。", ["心知肚明"]),
+
+  // 二、重點詞彙
+  day25Item("vocab-jisowei", "重點詞彙", "重點詞彙", "之所謂", "ji1 so2 wei6", "所谓", ["之所謂「三寶」"]),
+  day25Item("vocab-gemwawo", "重點詞彙", "重點詞彙", "噉話喎", "gem2 wa6 wo5", "据说；用于句末转述或提醒", ["將來噉話喎"]),
+  day25Item("vocab-henggongdei", "重點詞彙", "重點詞彙", "香港地", "heng1 gong2 dei2", "香港这个地方，尤其指人文意义上的香港", ["香港地"]),
+  day25Item("vocab-hengyeoqin", "重點詞彙", "重點詞彙", "香油錢", "heng1 yeo4 qin2", "花费在祭祀神佛用的香烛和灯油的钱", ["香油錢收入"]),
+  day25Item("vocab-badweisouji", "重點詞彙", "重點詞彙", "八位數字", "bad3 wei2 sou3 ji6", "指多于一千万块钱", ["收入達八位數字"]),
+  day25Item("vocab-bigdouhemsai", "重點詞彙", "重點詞彙", "逼到冚晒", "big1 dou3 hem6 sai3", "挤得水泄不通", ["善男信女逼到冚晒"]),
+  day25Item("vocab-ling", "重點詞彙", "重點詞彙", "拎", "ling1", "提；拿", ["拎住啲香燭"]),
+  day25Item("vocab-sangguo", "重點詞彙", "重點詞彙", "生果", "sang1 guo2", "水果", ["香燭、生果"]),
+  day25Item("vocab-xiuju", "重點詞彙", "重點詞彙", "燒豬", "xiu1 ju1", "烤猪", ["成隻燒豬"]),
+  day25Item("vocab-dou", "重點詞彙", "重點詞彙", "（……）度", "dou6", "处；地方，用作处所词缀", ["空地度"]),
+  day25Item("vocab-wangcoi", "重點詞彙", "重點詞彙", "橫財", "wang4 coi4", "意外得来的钱财，不一定指不正当所得", ["發橫財"]),
+  day25Item("vocab-hogsanggo", "重點詞彙", "重點詞彙", "學生哥", "hog6 sang1 go1", "学生，带昵称色彩", ["學生哥求升入名校"]),
+  day25Item("vocab-gingcaddailou", "重點詞彙", "重點詞彙", "警察大佬", "ging2 cad3 dai6 lou2", "警察的口语称呼", ["警察大佬求逢凶化吉"]),
+  day25Item("vocab-leipai", "重點詞彙", "重點詞彙", "例牌", "lei6 pai2", "一向的做法；老例", ["例牌去求籤"]),
+  day25Item("vocab-houcoi", "重點詞彙", "重點詞彙", "好彩", "hou2 coi2", "幸运；走运", ["好彩嘅"]),
+  day25Item("vocab-gaglei", "重點詞彙", "重點詞彙", "隔籬", "gag3 lei4", "隔壁；附近", ["隔籬"]),
+  day25Item("vocab-gaisenqim", "重點詞彙", "重點詞彙", "解神籤", "gai2 sen4 qim1", "解说神赐的签", ["解神籤"]),
+  day25Item("vocab-semjitouming", "重點詞彙", "重點詞彙", "心知肚明", "sem1 ji1 tou5 ming4", "心中有数", ["大家係心知肚明"]),
+
+  // 三、補充語彙
+  day25Item("supp-senxin", "補充語彙", "補充語彙 · 詞語", "神仙", "sen4 xin1", "神仙", ["宗教"]),
+  day25Item("supp-wansen", "補充語彙", "補充語彙 · 詞語", "還神", "wan4 sen4", "还神；向神明还愿", ["宗教"]),
+  day25Item("supp-teojyuheng", "補充語彙", "補充語彙 · 詞語", "頭炷香", "teo4 ju6 heng1", "头炷香", ["原書圖像為「炷」"]),
+  day25Item("supp-dougao", "補充語彙", "補充語彙 · 詞語", "道教", "dou6 gao3", "道教", ["宗教"]),
+  day25Item("supp-fedgao", "補充語彙", "補充語彙 · 詞語", "佛教", "fed6 gao3", "佛教", ["宗教"]),
+  day25Item("supp-yugao", "補充語彙", "補充語彙 · 詞語", "儒教", "yu4 gao3", "儒教", ["宗教"]),
+  day25Item("supp-teiseng", "補充語彙", "補充語彙 · 詞語", "睇相", "tei2 seng3", "看相", ["相命街"]),
+  day25Item("supp-xunmeng", "補充語彙", "補充語彙 · 詞語", "算命", "xun3 meng6", "算命", ["相命"]),
+  day25Item("supp-tinheomiu", "補充語彙", "補充語彙 · 詞語", "天后廟", "tin1 heo6 miu2", "天后庙", ["廟宇"]),
+  day25Item("supp-cegungmiu", "補充語彙", "補充語彙 · 詞語", "車公廟", "ce1 gung1 miu2", "车公庙", ["廟宇"]),
+  day25Item("supp-linfagung", "補充語彙", "補充語彙 · 詞語", "蓮花宮", "lin4 fa1 gung1", "莲花宫", ["廟宇"]),
+  day25Item("supp-gunyemmiu", "補充語彙", "補充語彙 · 詞語", "觀音廟", "gun1 yem1 miu2", "观音庙", ["原書圖像為「觀音廟」"]),
+  day25Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "天壇大佛係喺大嶼山嘅木魚峰上高。", "tin1 tan4 dai6 fed6 hei6 hei2 dai6 yu4 san1 ge3 mug6 yu4 fung1 seng6 gou1", "天坛大佛是在大屿山的木鱼峰上高处。", ["原書句式待核"]),
+  day25Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "佛像高二十三米，係當今世界上最大嘅露天青銅坐像。", "fed6 zeng6 gou1 yi6 seb6 sam1 mei5 hei6 dong1 gem1 sei3 gai3 seng6 zeoi3 dai6 ge3 lou6 tin1 qing1 tung4 zo6 zeng6", "佛像高二十三米，是当今世界上最大的露天青铜坐像。", ["天壇大佛"]),
+  day25Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "一九九三年舉行開光大典。", "yed1 geo2 geo2 sam1 nin4 geoi2 hang4 hoi1 guong1 dai6 din2", "一九九三年举行开光大典。", ["開光大典"]),
+  day25Sentence("supp-04", "補充語彙", "補充語彙 · 句子", "大佛底座有個大鐘，每日敲一百零八下，供人「消除一百零八種煩惱」。", "dai6 fed6 dei2 zo6 yeo5 go3 dai6 zung1 mui5 yed6 hao1 yed1 baag3 ling4 bad3 ha5 gung1 yen4 xiu1 qyu4 yed1 baag3 ling4 bad3 zung2 fan4 nou5", "大佛底座有个大钟，每天敲一百零八下，供人“消除一百零八种烦恼”。", ["一百零八"]),
+
+  // 四、重點理解
+  day25Item("understanding-heiyendou", "重點理解", "重點理解 · 係人都識", "係人都識／係人都知", "hei6 yen4 dou1 xig1 hei6 yen4 dou1 ji1", "谁都知道；大家都熟悉", ["係人都知"]),
+  day25Sentence("understanding-01", "重點理解", "重點理解 · 係人都知", "係人都知佢上慣電視㗎啦。", "hei6 yen4 dou1 ji1 keu5 seng6 gwaan3 din6 xi6 ga3 la1", "谁都知道他经常上电视。", ["係人都知"]),
+  day25Sentence("understanding-02", "重點理解", "重點理解 · 係人都知", "佢結過三次婚，又離過三次婚，係人都知啦。", "keu5 gid3 guo3 sam1 qi3 fen1 yeo6 lei4 guo3 sam1 qi3 fen1 hei6 yen4 dou1 ji1 la1", "她结过三次婚，又离过三次婚，谁都知道。", ["係人都知"]),
+  day25Item("understanding-ji", "重點理解", "重點理解 · 之", "之（不過）", "ji1 bed1 guo3", "连词，表示转折，可与「不過」连用", ["之我冇晒啲假期"]),
+  day25Sentence("understanding-03", "重點理解", "重點理解 · 之", "我夠想去旅行囉，之我冇晒啲假期咋嘛。", "ngo5 geo3 seng2 heo3 leu5 hang4 lo1 ji1 ngo5 mou5 sai3 di1 ga3 kei4 za3 ma3", "我也挺想去旅行，可是我的假期都用完了。", ["之"]),
+  day25Sentence("understanding-04", "重點理解", "重點理解 · 之不過", "香港話好有用㗎，之不過唔容易學。", "heng1 gong2 wa6 hou2 yeo5 yung6 ga3 ji1 bed1 guo3 m4 yung4 yi6 hog6", "香港话很有用，不过不容易学。", ["之不過"]),
+  day25Item("understanding-gemwawo", "重點理解", "重點理解 · 噉話喎", "噉話喎", "gem2 wa6 wo5", "用于句末，提醒对方或转述别人的话", ["求轉運噉話喎"]),
+  day25Sentence("understanding-05", "重點理解", "重點理解 · 噉話喎", "年初三去車公廟買個風車係求轉運噉話喎。", "nin4 co1 sam1 heo3 ce1 gung1 miu2 mai5 go3 fung1 ce1 hei6 keo4 jun2 wen6 gem2 wa6 wo5", "年初三去车公庙买个风车，据说是求转运。", ["噉話喎"]),
+  day25Sentence("understanding-06", "重點理解", "重點理解 · 噉話喎", "佢返嚟就打電話畀你噉話喎。", "keu5 fan1 lei4 zeo6 da2 din6 wa6 bei2 nei5 gem2 wa6 wo5", "他说回来就给你打电话。", ["噉話喎"]),
+  day25Item("understanding-weisoji", "重點理解", "重點理解 · X 位數字", "X 位數字", "x wei2 sou3 ji6", "对款项数额的婉称", ["六位數字"]),
+  day25Sentence("understanding-07", "重點理解", "重點理解 · X 位數字", "佢哋咁嘅薪級，年薪都有成六位數字嘅。", "keu5 dei6 gem3 ge3 sen1 keb1 nin4 sen1 dou1 yeo5 seng4 lug6 wei2 sou3 ji6 ge3", "按他们这样的薪级，年薪也有六位数。", ["六位數字"]),
+  day25Item("understanding-leipai", "重點理解", "重點理解 · 例牌", "例牌", "lei6 pai2", "表示一向的做法", ["例牌睇睇電視"]),
+  day25Sentence("understanding-08", "重點理解", "重點理解 · 例牌", "食完飯，例牌睇睇電視。", "xig6 yun4 fan6 lei6 pai2 tei2 tei2 din6 xi6", "吃完饭，照例看看电视。", ["例牌"]),
+  day25Sentence("understanding-09", "重點理解", "重點理解 · 例牌", "嗰啲建議，例牌菜嚟啫。", "go2 di1 gin3 yi5 lei6 pai2 coi3 lei4 ze1", "那些建议，只是老例罢了。", ["例牌菜"]),
+
+  // 五、講解：誤導詞與粵語趣談
+  day25Item("mislead-big", "講解", "講解 · 誤導詞", "逼", "big1", "粤语除“逼迫、逼近”等义外，也可指拥挤、挤塞", ["逼車", "逼𨋢"]),
+  day25Item("mislead-wangcoi", "講解", "講解 · 誤導詞", "橫財", "wang4 coi4", "粤语可中性地指意外得来的钱财，如合法博彩或中奖所得", ["發橫財"]),
+  day25Item("mislead-ye", "講解", "講解 · 誤導詞", "夜", "ye6", "粤语可作形容词，表示晚", ["咁夜"]),
+  day25Sentence("mislead-01", "講解", "講解 · 誤導詞", "咁夜仲出街？", "gem3 ye6 zung6 ced1 gai1", "那么晚还出去？", ["夜"]),
+  day25Item("culture-sacn", "講解", "講解 · 粵語趣談 · 沙塵", "沙塵", "sa1 cen4", "本指空气中的沙尘，也可比喻爱出风头、嚣张", ["沙塵滾滾"]),
+  day25Sentence("culture-01", "講解", "講解 · 粵語趣談 · 沙塵", "汽車經過，沙塵滾滾。", "hei3 ce1 ging1 guo3 sa1 cen4 guen2 guen2", "汽车经过，沙尘滚滚。", ["沙塵"]),
+  day25Item("culture-sacnbegfog", "講解", "講解 · 粵語趣談 · 沙塵", "沙塵白霍", "sa1 cen4 beg6 fog3", "早期强调嚣张、浮夸的四字格；原书读音页影待核", ["原書標作俗寫「白霍」"]),
+  day25Item("culture-ngaca", "講解", "講解 · 粵語趣談 · 沙塵", "牙擦擦", "nga4 caad3 caad3", "吹嘘、骄傲轻浮的样子", ["咪喺度牙擦擦"]),
+  day25Sentence("culture-02", "講解", "講解 · 粵語趣談 · 沙塵", "咪喺度牙擦擦，做出嚟睇過至知。", "mei1 hei2 dou6 nga4 caad3 caad3 zou6 ced1 lei4 tei2 guo3 ji3 ji1", "别在这里吹，做出来看看才知道。", ["牙擦擦"]),
+  day25Item("culture-ngacayao", "講解", "講解 · 粵語趣談 · 沙塵", "牙擦友", "nga4 caad3 yeo5", "骄傲轻浮、趾高气扬的人", ["粵語趣談"]),
+  day25Item("culture-jiujig", "講解", "講解 · 粵語趣談 · 沙塵", "招積", "jiu1 jig1", "自大嚣张", ["粵語趣談"]),
+  day25Item("culture-daibei", "講解", "講解 · 粵語趣談 · 沙塵", "大鼻", "dai6 bei6", "傲气十足、瞧不起人的说法", ["粵語趣談"]),
+  day25Item("culture-cyun", "講解", "講解 · 粵語趣談 · 沙塵", "串", "cyun3", "嚣张、挑衅、傲气十足", ["串到飛起"]),
+  day25Sentence("culture-03", "講解", "講解 · 粵語趣談 · 沙塵", "串到飛起！", "cyun3 dou3 fei1 hei2", "嚣张得不得了！", ["串"]),
+
+  // 六、傳意項目介紹：安慰（只收完整例句）
+  day25Sentence("comfort-01", "傳意項目介紹", "傳意項目介紹 · 安慰", "唔理做乜，有失敗點有成功吖，最緊要係唔好灰心。", "m4 lei5 zou6 med1 yeo5 sed1 bai6 dim2 yeo5 seng4 gung1 a1 zeoi3 gen2 yiu3 hei6 m4 hou2 fui1 sem1", "不管做什么，有失败才会有成功，最要紧是不要灰心。", ["唔好灰心"]),
+  day25Sentence("comfort-02", "傳意項目介紹", "傳意項目介紹 · 安慰", "睇開啲啦，呢次唔得，第次再嚟過。", "tei2 hoi1 di1 la1 ni1 qi3 m4 deg1 dei6 qi3 zoi3 lei4 guo3", "看开点吧，这次不行，下次再来。", ["睇開啲"]),
+  day25Sentence("comfort-03", "傳意項目介紹", "傳意項目介紹 · 安慰", "唔使咁傷心，你仲後生，慌有人追你咩？！", "m4 sei2 gem3 seng1 sem1 nei5 zung6 heo6 sang1 fong1 yeo5 yen4 zeoi1 nei5 me1", "不用这么伤心，你还年轻，难道还怕有人追你吗？", ["原書作「慌有人追你咩」"]),
+  day25Sentence("comfort-04", "傳意項目介紹", "傳意項目介紹 · 安慰", "你同佢緣份未到，呢個唔成，點知第日冇個更加好嘅等住你呀。", "nei5 tung4 keu5 yun4 fen6 mei6 dou3 ni1 go3 m4 xing4 dim2 ji1 dei6 yed6 mou5 go3 geng3 ga1 hou2 ge3 deng2 ju6 nei5 a3", "你和他缘分未到，这个不成，怎么知道以后没有个更好的等着你呢。", ["緣份未到"]),
+  day25Sentence("comfort-05", "傳意項目介紹", "傳意項目介紹 · 安慰", "中西醫結合，醫好嘅把握好大，你唔使咁擔心嘅。", "zung1 sei1 yi1 gid3 heb6 yi1 hou2 ge3 ba2 ag1 hou2 dai6 nei5 m4 sei2 gem3 dam1 sem1 ge3", "中西医结合，医好的把握很大，你不用这么担心。", ["唔使擔心"]),
+  day25Sentence("comfort-06", "傳意項目介紹", "傳意項目介紹 · 安慰", "既來之，則安之；靜心調養，慢慢會好番嘅。", "gei3 loi4 ji1 zeg1 on1 ji1 jing6 sem1 tiu4 yeng5 man6 man6 wui5 hou2 fan1 ge3", "既来之，则安之；静心调养，慢慢会好起来的。", ["既來之，則安之"]),
+
+  // 七、練習
+  day25Sentence("dialogue-01", "練習", "練習 · 會話聆聽", "琴日初三「赤口」冇喺車公廟撞見你嘅？", "kem4 yed6 co1 sam1 ceg3 heo2 mou5 hei2 ce1 gung1 miu2 zong6 gin3 nei5 ge3", "昨天初三“赤口”没在车公庙碰见你？", ["車公廟"]),
+  day25Sentence("dialogue-02", "練習", "練習 · 會話聆聽", "哦，我一家大細費事去沙田同人逼，咪去咗濠涌嗰間車公廟囉。", "o2 ngo5 yed1 ga1 dai6 sei3 fai3 xi6 heo3 sa1 tin4 tung4 yen4 big1 mei1 heo3 zo2 hou4 cung1 go2 gaan1 ce1 gung1 miu2 lo1", "哦，我一家大小懒得去沙田和人挤，就去了濠涌那间车公庙。", ["一家大細", "逼"]),
+  day25Sentence("dialogue-03", "練習", "練習 · 會話聆聽", "點解會諗到去到天腳底咁遠喇？", "dim2 gai2 wui5 nem2 dou3 heo3 dou3 tin1 goek3 dei2 gem3 yun5 la3", "为什么会想到去那么远的地方？", ["天腳底"]),
+  day25Sentence("dialogue-04", "練習", "練習 · 會話聆聽", "嗰度唔錯吖，照樣可以轉風車行大運。", "go2 dou6 m4 co3 a1 jiu3 yeng6 ho2 yi5 jun2 fung1 ce1 hang4 dai6 wen6", "那里不错，照样可以转风车行大运。", ["轉風車"]),
+  day25Sentence("dialogue-05", "練習", "練習 · 會話聆聽", "噉又係。", "gem2 yeo6 hei6", "那倒也是。", ["會話聆聽"]),
+  day25Sentence("dialogue-06", "練習", "練習 · 會話聆聽", "嗰度雖然靜局啲，但勝在環境優美，成家人寓拜神於旅行之中……", "go2 dou6 seoi1 yin4 jing6 gug6 di1 dan6 xing3 zoi6 wan4 ging2 yeo1 mei5 seng4 ga1 yen4 yu6 bai3 sen4 yu1 leu5 hang4 ji1 zung1", "那里虽然清静一些，但胜在环境优美，一家人把拜神放进旅行之中。", ["靜局", "寓拜神於旅行"]),
+  day25Sentence("dialogue-07", "練習", "練習 · 會話聆聽", "哈，你又諗得到嘅。", "ha1 nei5 yeo6 nem2 deg1 dou2 ge3", "哈，你还真想得到。", ["諗得到"]),
+  day25Sentence("dialogue-08", "練習", "練習 · 會話聆聽", "仲有嗰度簡樸得多，拜神祈福講誠意咋嘛，唔使下下搶住買「大炷香」嘅。", "zung6 yeo5 go2 dou6 gaan2 pog3 deg1 do1 bai3 sen4 kei4 fug1 gong2 seng4 yi3 za3 ma3 m4 sei2 ha6 ha6 ceng2 ju6 mai5 dai6 ju6 heng1 ge3", "而且那里简朴得多，拜神祈福讲诚意嘛，不用每次都抢着买“大炷香”。", ["大炷香"]),
+  day25Sentence("dialogue-09", "練習", "練習 · 會話聆聽", "你識唔識睇相㗎？", "nei5 xig1 m4 xig1 tei2 seng3 ga3", "你会不会看相？", ["睇相"]),
+  day25Sentence("dialogue-10", "練習", "練習 · 會話聆聽", "你睇我個樣似唔似識睇相吖。", "nei5 tei2 ngo5 go3 yeng6 qi5 m4 qi5 xig1 tei2 seng3 a1", "你看我这个样子像不像会看相。", ["睇相"]),
+  day25Sentence("dialogue-11", "練習", "練習 · 會話聆聽", "琴晚我無意中去咗油麻地嗰條「相命街」度。", "kem4 man5 ngo5 mou4 yi3 zung1 heo3 zo2 yeo4 ma4 dei6 go2 tiu4 seng3 meng6 gai1 dou6", "昨晚我无意中去了油麻地那条“相命街”。", ["相命街"]),
+  day25Sentence("dialogue-12", "練習", "練習 · 會話聆聽", "係咩？", "hei6 me1", "是吗？", ["會話聆聽"]),
+  day25Sentence("dialogue-13", "練習", "練習 · 會話聆聽", "同啲人傾下發覺香港地嘅相命市場都幾可觀下。", "tung4 di1 yen4 king1 ha5 fad3 gog3 heng1 gong2 dei2 ge3 seng3 meng6 xi5 ceng4 dou1 gei2 ho2 gun1 ha5", "和人聊了聊，发现香港这个地方的相命市场也挺可观。", ["相命市場"]),
+  day25Sentence("dialogue-14", "練習", "練習 · 會話聆聽", "講嚟聽下吖。", "gong2 lei4 teng1 ha5 a1", "说来听听吧。", ["講嚟聽下"]),
+  day25Sentence("dialogue-15", "練習", "練習 · 會話聆聽", "分上中下三種，上有「相命大亨」要卜定位㗎，中有「相館」，下就係相命攤檔啦。", "fen1 seng6 zung1 ha6 sam1 zung2 seng6 yeo5 seng3 meng6 dai6 hang1 yiu3 bug1 ding6 wei6 ga3 zung1 yeo5 seng3 gun2 ha6 zeo6 hei6 seng3 meng6 taan1 dong3 la1", "分上中下三种，上有“相命大亨”要预约，中有“相馆”，下就是相命摊档。", ["相命大亨", "攤檔"]),
+  day25Sentence("dialogue-16", "練習", "練習 · 會話聆聽", "哦，冇嘢嘅，正所謂「大廟有靈，細廟有準」吖嘛。", "o2 mou5 ye5 ge3 jing3 so2 wei6 dai6 miu2 yeo5 ling4 sei3 miu2 yeo5 zeon2 a1 ma3", "哦，没什么，正所谓“大庙有灵，小庙有准”嘛。", ["大廟有靈"]),
+  day25Sentence("discussion-01", "練習", "練習 · 討論", "你興唔興去黃大仙求籤㗎？", "nei5 hing3 m4 hing3 heo3 wong4 dai6 xin1 keo4 qim1 ga3", "你有没有兴趣去黄大仙求签？", ["討論"]),
+  day25Sentence("discussion-02", "練習", "練習 · 討論", "點解？", "dim2 gai2", "为什么？", ["討論"]),
+  day25Sentence("discussion-03", "練習", "練習 · 討論", "試用十句說話描寫一下新蒲崗嗰間黃大仙或者赤柱嗰間天后廟。", "qi3 yung6 seb6 geoi3 xud3 wa6 miu4 se5 yed1 ha5 sen1 pou4 gong1 go2 gaan1 wong4 dai6 xin1 wag6 ze2 ceg3 qyu5 go2 gaan1 tin1 heo6 miu2", "试用十句话描写一下新蒲岗那间黄大仙或者赤柱那间天后庙。", ["討論"]),
+  day25Sentence("discussion-04", "練習", "練習 · 討論", "你知唔知「打小人」嘅習俗？", "nei5 ji1 m4 ji1 da2 xiu2 yen4 ge3 zab6 zug6", "你知不知道“打小人”的习俗？", ["打小人"]),
+  day25Sentence("discussion-05", "練習", "練習 · 討論", "問下人然後同大家講講。", "men6 ha5 yen4 yin4 heo6 tung4 dai6 ga1 gong2 gong2", "问问别人，然后和大家讲讲。", ["討論"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
+  day25Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["黃大仙廟嘅香火"]),
+  day25Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["噉話喎"]),
+  day25Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["啲人"]),
+  day25Item("char-hem", "粵字辨認", "粵字辨認 · 課文用字", "冚", "hem6", "全部；盖住", ["冚晒"]),
+  day25Item("char-me", "粵字辨認", "粵字辨認 · 課文用字", "咩", "me1", "吗；表示反问", ["係咩"]),
+  day25Item("char-lo", "粵字辨認", "粵字辨認 · 課文用字", "囉", "lo1", "语气助词，表示提醒或判断", ["車公廟囉"]),
+  day25Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺香港"]),
+  day25Item("char-za", "粵字辨認", "粵字辨認 · 課文用字", "咋", "za3", "仅仅；罢了", ["講誠意咋嘛"]),
+
+  // 八、短文朗讀
+  day25Sentence("reading-01", "短文朗讀", "短文朗讀", "政府登記註冊顯示，香港廟宇有六百幾座，再加上未登記嘅「私家廟」，大大話話有近千座。", "jing3 fu2 deng1 gei3 zyu3 caag3 hin2 xi6 heng1 gong2 miu6 yu5 yeo5 lug6 baag3 gei2 zo6 zoi3 ga1 seng6 mei6 deng1 gei3 ge3 xi1 ga1 miu2 dai6 dai6 wa6 wa6 yeo5 gen6 qin1 zo6", "政府登记注册显示，香港庙宇有六百多座，再加上未登记的“私家庙”，大致说来有近千座。", ["廟宇"]),
+  day25Sentence("reading-02", "短文朗讀", "短文朗讀", "以七百萬人口嚟計，呢個數字足以說明拜神喺市民生活中所佔據嘅位置。", "yi5 ced1 baag3 man6 yen4 heo2 lei4 gei3 ni1 go3 sou3 ji6 zug1 yi5 xud3 ming4 bai3 sen4 hei2 xi5 men4 seng1 wud6 zung1 so2 jim3 geoi3 ge3 wei6 ji3", "以七百万人口来计算，这个数字足以说明拜神在市民生活中所占据的位置。", ["拜神"]),
+  day25Sentence("reading-03", "短文朗讀", "短文朗讀", "喺名目繁多嘅廟宇中，數量最多嘅就係「天后廟」，差唔多遍佈港九各地。", "hei2 ming4 mug6 fan4 do1 ge3 miu6 yu5 zung1 sou3 loeng6 zeoi3 do1 ge3 zeo6 hei6 tin1 heo6 miu2 ca1 m4 do1 pin3 bou3 gong2 geo2 gog3 dei6", "在名目繁多的庙宇中，数量最多的就是“天后庙”，差不多遍布港九各地。", ["天后廟"]),
+  day25Sentence("reading-04", "短文朗讀", "短文朗讀", "廟齡近則百年，年代最久遠嘅有成七百幾年，係喺赤柱嗰度。", "miu6 ling4 gen6 zeg1 baag3 nin4 nin4 doi6 zeoi3 geo2 yun5 ge3 yeo5 seng4 ced1 baag3 gei2 nin4 hei6 hei2 ceg3 qyu5 go2 dou6", "庙龄近的有百年，年代最久远的有七百多年，是在赤柱那里。", ["赤柱"]),
+  day25Sentence("reading-05", "短文朗讀", "短文朗讀", "供奉嘅天后娘娘據講係福建省莆田縣人氏，專門保佑出海漁民漁獲豐收，平安歸來。", "gung1 fung6 ge3 tin1 heo6 noeng4 noeng2 geoi3 gong2 hei6 fug1 gin3 sang2 pou4 tin4 yun6 yen4 xi6 zyun1 mun4 bou2 yeo6 ced1 hoi2 yu4 men4 yu4 wog6 fung1 seo1 ping4 on1 guei1 loi4", "供奉的天后娘娘据说是福建省莆田县人，专门保佑出海渔民渔获丰收、平安归来。", ["天后娘娘"]),
+  day25Sentence("reading-06", "短文朗讀", "短文朗讀", "以愛民護民嘅傳記人物為名興建嘅廟宇仲有「車公廟」。", "yi5 oi3 men4 wu6 men4 ge3 qyun4 gei3 yen4 med6 wei4 ming4 hing1 gin3 ge3 miu6 yu5 zung6 yeo5 ce1 gung1 miu2", "以爱民护民的传记人物为名兴建的庙宇还有“车公庙”。", ["車公廟"]),
+  day25Sentence("reading-07", "短文朗讀", "短文朗讀", "相傳宋朝有位車大元帥，不特平賊有功，而且仲會鎮疫症。", "seng1 qyun4 sung3 qiu4 yeo5 wei6 ce1 dai6 yun4 seoi3 bed1 deg6 ping4 cag6 yeo5 gung1 yi4 ce2 zung6 wui5 zen3 yig6 jing3", "相传宋朝有位车大元帅，不仅平贼有功，而且还会镇疫症。", ["車大元帥"]),
+  day25Sentence("reading-08", "短文朗讀", "短文朗讀", "喺明末嗰陣，新界疫症流行，為害鄉人。", "hei2 ming4 mud6 go2 zen6 sen1 gai3 yig6 jing3 leo4 hang4 wei4 hoi6 heng1 yen4", "在明末的时候，新界疫症流行，危害乡人。", ["疫症"]),
+  day25Sentence("reading-09", "短文朗讀", "短文朗讀", "大家於是集資興建車公廟，而廟成之日，疫症絕跡。", "dai6 ga1 yu1 xi6 zab6 ji1 hing1 gin3 ce1 gung1 miu2 yi4 miu6 xing4 ji1 yed6 yig6 jing3 jud6 jig1", "大家于是集资兴建车公庙，而庙建成之日，疫症绝迹。", ["集資興建"]),
+  day25Sentence("reading-10", "短文朗讀", "短文朗讀", "從此，為保平安、免疾病嘅人士都會擇吉造訪，許願求福。", "cung4 qi2 wei4 bou2 ping4 on1 min5 zed6 beng6 ge3 yen4 xi6 dou1 wui5 zag6 ged1 zou6 fong2 heoi2 yun6 keo4 fug1", "从此，为保平安、免疾病的人士都会择吉造访，许愿求福。", ["許願求福"])
+);
+
+
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
 });
