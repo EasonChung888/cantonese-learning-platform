@@ -3634,6 +3634,178 @@ window.STUDY_ITEMS.push(
 );
 
 
+const day22Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day22-${id}`,
+  day: "day22",
+  module,
+  category: `21 報紙 · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day22Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day22-sent-${id}`,
+  day: "day22",
+  module,
+  category: `21 報紙 · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 來源盤點：FlipHTML5 p275-p286；p273-p274 為空白/筆記頁，p287 起為下一課。
+  // 一、課文
+  day22Sentence("text-01", "課文", "課文", "俗語話齋：一百歲唔死都有新聞。", "zug6 yu5 wa6 zai1 yed1 bag3 seu3 m4 sei2 dou1 yeo5 sen1 men2", "俗话说：活到一百岁也会碰上新鲜事。", ["俗語話齋"]),
+  day22Sentence("text-02", "課文", "課文", "意思係講：而家嘅社會現象、人際關係複雜到極，以至於發生乜事都有可能。", "yi3 xi1 hei6 gong2 yi4 ga1 ge3 se5 wui2 yin6 zeng6 yen4 zei3 guan1 hei6 fug1 zab6 dou3 gig6 yi5 ji3 yu1 fad3 seng1 med1 xi6 dou1 yeo5 ho2 neng4", "意思是说，现在的社会现象、人际关系复杂极了，以至于发生什么事情都有可能。", ["複雜到極", "有可能"]),
+  day22Sentence("text-03", "課文", "課文", "發生乜事，主要係通過大眾媒介去傳播，譬如講，報紙。", "fad3 seng1 med1 xi6 ju2 yiu3 hei6 tung1 guo3 dai6 zung3 mui4 gai3 heo3 qun4 bo3 pei3 yu4 gong2 bou3 ji2", "所发生的事，主要是通过大众媒介去传播，比如说，报纸。", ["大眾媒介", "傳播"]),
+  day22Sentence("text-04", "課文", "課文", "啱先嚟香港嘅人，一般都會同意噉嘅睇法：香港報紙得個「多」字。", "ngam1 xin1 lei4 heng1 gong2 ge3 yen4 yed1 bun3 dou1 wui5 tung4 yi3 gem2 ge3 tei2 fad3 heng1 gong2 bou3 ji2 deg1 go3 do1 ji6", "刚到香港的人，一般都会同意这样的看法：香港报纸多得是。", ["啱先", "得個「多」字"]),
+  day22Sentence("text-05", "課文", "課文", "一多，係指種類多。中文、西文各種報紙大大話話都超過半百。", "yed1 do1 hei6 ji2 zung2 leoi6 do1 zung1 men4 sei1 men4 gog3 zung2 bou3 ji2 dai6 dai6 wa6 wa6 dou1 qiu1 guo3 bun3 bag3", "一多，是指种类多。中文、外文各种报纸少说也超过半百。", ["種類多", "大大話話"]),
+  day22Sentence("text-06", "課文", "課文", "二多，張數多。好似嗰啲綜合性大報，每日出成四五十張紙唔係冇噉嘅可能㗎。", "yi6 do1 zeng1 sou3 do1 hou2 qi5 go2 di1 zung1 heb6 xing3 dai6 bou3 mui5 yed6 ced1 seng4 sei3 ng5 seb6 zeng1 ji2 m4 hei6 mou5 gem2 ge3 ho2 neng4 ga3", "二多，张数多。好像那些综合性大报，每天印行四五十张纸一份并不是没有可能。", ["張數多", "綜合性大報"]),
+  day22Sentence("text-07", "課文", "課文", "從頭睇到落尾，冇兩個鐘都唔掂。", "cung4 teo4 tei2 dou3 log6 mei5 mou5 loeng5 go3 zung1 dou1 m4 dim6", "从头到尾看一遍，没有两个小时是不行的。", ["從頭睇到落尾", "唔掂"]),
+  day22Sentence("text-08", "課文", "課文", "三多，版面多，包含信息量大。", "sam1 do1 ban2 min2 do1 bao1 hem4 sen3 xig1 leng6 dai6", "三多，版面多，包含信息量大。", ["版面多"]),
+  day22Sentence("text-09", "課文", "課文", "本地新聞、內地新聞、國際新聞，固然唔在講。", "bun2 dei6 sen1 men4 noi6 dei6 sen1 men4 guog3 zei3 sen1 men4 gu3 yin4 m4 zoi6 gong2", "本地新闻、内地新闻、国际新闻，当然不用说。", ["新聞"]),
+  day22Sentence("text-10", "課文", "課文", "時事評論、風水馬經、娛樂影視，不一而足。", "xi4 xi6 ping4 len6 fung1 seu2 ma5 ging1 yu4 log6 ying2 xi6 bed1 yed1 yi4 zug1", "时事评论、风水马经、娱乐影视，不一而足。", ["馬經", "不一而足"]),
+  day22Sentence("text-11", "課文", "課文", "四多，內容多。特別要講嘅係分散喺報紙各個版面裏頭嘅專欄文化。", "sei3 do1 noi6 yung4 do1 deg6 bid6 yiu3 gong2 ge3 hei6 fen1 san3 hei2 bou3 ji2 gog3 go3 ban2 min2 leoi5 teo4 ge3 jun1 lan4 men4 fa3", "四多，内容多。特别要讲的是分散在报纸各个版面里面的专栏文化。", ["內容多", "專欄文化"]),
+  day22Sentence("text-12", "課文", "課文", "專欄文化基本上屬消費文化。", "jun1 lan4 men4 fa3 gei1 bun2 seng6 sug6 xiu1 fei3 men4 fa3", "专栏文化基本上属于消费文化。", ["專欄文化"]),
+  day22Sentence("text-13", "課文", "課文", "從飲食文化到情愛文化，從武俠文化到八卦新聞，香港社會嘅生活特徵冚唪唥都包容喺呢度。", "cung4 yem2 xig6 men4 fa3 dou3 qing4 oi3 men4 fa3 cung4 mou5 heb6 men4 fa3 dou3 bad3 gua3 sen1 men4 heng1 gong2 se5 wui2 ge3 seng1 wud6 deg6 jing1 hem6 bang6 lang6 dou1 bao1 yung4 hei2 ni1 dou6", "从饮食文化到情爱文化，从武侠文化到八卦新闻，香港社会的生活特征统统包容于此。", ["八卦新聞", "冚唪唥"]),
+  day22Sentence("text-14", "課文", "課文", "五多，觀點多。香港政府容忍不同類型報紙嘅存在，既不干預又不支援。", "ng5 do1 gun1 dim2 do1 heng1 gong2 jing3 fu2 yung4 yen2 bed1 tung4 leoi6 ying4 bou3 ji2 ge3 qun4 zoi6 gei3 bed1 gon1 yu6 yeo6 bed1 ji1 wun4", "五多，观点多。香港政府容忍不同类型报纸的存在，既不干预也不支援。", ["觀點多", "不干預"]),
+  day22Sentence("text-15", "課文", "課文", "噉就形成咗少有嘅「百家爭鳴」嘅局面。", "gem2 zeo6 ying4 xing4 zo2 xiu2 yeo5 ge3 bag3 ga1 zeng1 ming4 ge3 gug6 min6", "这样就形成了少有的“百家争鸣”的局面。", ["百家爭鳴"]),
+  day22Sentence("text-16", "課文", "課文", "六多，廣告多。搵工跳槽、旅行消遣、租售轉讓、徵購供應，無所不包。", "lug6 do1 guong2 gou3 do1 wen2 gung1 tiu3 cou4 leoi5 heng4 xiu1 hin2 zou1 seo6 jun2 yeng6 jing1 geo3 gung1 ying3 mou4 so2 bed1 bao1", "六多，广告多。求职改行、旅行消遣、租售转让、征购供应，无所不包。", ["廣告", "無所不包"]),
+  day22Sentence("text-17", "課文", "課文", "反正，報紙係商品，讀者係顧客：邊個滿足唔到顧客嘅要求就好難有生存嘅空間。", "fan2 jing3 bou3 ji2 hei6 seng1 ben2 dug6 ze2 hei6 gu3 hag3 bin1 go3 mun5 zug1 m4 dou2 gu3 hag3 ge3 yiu1 keo4 zeo6 hou2 nan4 yeo5 seng1 qun4 ge3 hung1 gan1", "反正，报纸是商品，读者是顾客：谁满足不了顾客的要求就很难有生存的空间。", ["商品", "顧客", "滿足唔到"]),
+
+  // 二、重點詞彙
+  day22Item("vocab-zugyu-wazai", "重點詞彙", "重點詞彙", "俗語話齋", "zug6 yu5 wa6 zai1", "俗话说", ["俗語話齋"]),
+  day22Item("vocab-dougig", "重點詞彙", "重點詞彙", "……到極", "dou3 gig6", "……极了", ["複雜到極"]),
+  day22Item("vocab-ngamxin", "重點詞彙", "重點詞彙", "啱先", "ngam1 xin1", "刚才", ["啱先嚟香港"]),
+  day22Item("vocab-deggodoji", "重點詞彙", "重點詞彙", "得個「多」字", "deg1 go3 do1 ji6", "数量可观；只突出“多”", ["香港報紙得個「多」字"]),
+  day22Item("vocab-seimen", "重點詞彙", "重點詞彙", "西文", "sei1 men4", "外文", ["中文、西文"]),
+  day22Item("vocab-daidaikuwa", "重點詞彙", "重點詞彙", "大大話話", "dai6 dai6 wa6 wa6", "少说也有；粗略地说", ["大大話話都超過半百"]),
+  day22Item("vocab-cungteologmei", "重點詞彙", "重點詞彙", "從頭睇到落尾", "cung4 teo4 tei2 dou3 log6 mei5", "从头到尾看一遍", ["睇到落尾"]),
+  day22Item("vocab-moudim", "重點詞彙", "重點詞彙", "冇……都唔掂", "mou5 dou1 m4 dim6", "没有……不行", ["冇兩個鐘都唔掂"]),
+  day22Item("vocab-maging", "重點詞彙", "重點詞彙", "馬經", "ma5 ging1", "赛马资料", ["風水馬經"]),
+  day22Item("vocab-badgua", "重點詞彙", "重點詞彙", "八卦新聞", "bad3 gua3 sen1 men4", "逸事风闻", ["八卦新聞"]),
+  day22Item("vocab-hembanglang", "重點詞彙", "重點詞彙", "冚唪唥", "hem6 bang6 lang6", "统统；全部", ["冚唪唥都包容"]),
+  day22Item("vocab-wengungtiucou", "重點詞彙", "重點詞彙", "搵工跳槽", "wen2 gung1 tiu3 cou4", "求职改行", ["搵工跳槽"]),
+
+  // 三、補充語彙
+  day22Item("supp-tungsense", "補充語彙", "補充語彙 · 詞語", "通訊社", "tung1 sen3 se5", "通讯社", ["新聞"]),
+  day22Item("supp-boutan", "補充語彙", "補充語彙 · 詞語", "報攤", "bou3 tan1", "报摊", ["報紙"]),
+  day22Item("supp-boufan", "補充語彙", "補充語彙 · 詞語", "報販", "bou3 fan2", "报贩", ["報紙"]),
+  day22Item("supp-dengbouji", "補充語彙", "補充語彙 · 詞語", "訂報紙", "deng6 bou3 ji2", "订报纸", ["報紙"]),
+  day22Item("supp-dengguonggou", "補充語彙", "補充語彙 · 詞語", "登廣告", "deng1 guong2 gou3", "登广告", ["廣告"]),
+  day22Item("supp-teogou", "補充語彙", "補充語彙 · 詞語", "投稿", "teo4 gou2", "投稿", ["報紙"]),
+  day22Item("supp-pinceb", "補充語彙", "補充語彙 · 詞語", "編輯", "pin1 ceb1", "编辑", ["報紙"]),
+  day22Item("supp-junlanzogga", "補充語彙", "補充語彙 · 詞語", "專欄作家", "jun1 lan4 zog3 ga1", "专栏作家", ["專欄"]),
+  day22Item("supp-senmenyenmed", "補充語彙", "補充語彙 · 詞語", "新聞人物", "sen1 men4 yen4 med2", "新闻人物", ["新聞"]),
+  day22Item("supp-jingginglentaan", "補充語彙", "補充語彙 · 詞語", "政經論壇", "jing3 ging1 len6 tan4", "政经论坛", ["論壇"]),
+  day22Item("supp-gemyungteoxi", "補充語彙", "補充語彙 · 詞語", "金融透視", "gem1 yung4 teo3 xi6", "金融透视", ["金融"]),
+  day22Item("supp-sewuidungheng", "補充語彙", "補充語彙 · 詞語", "社會動向", "se5 wui2 dung6 heng3", "社会动向", ["社會"]),
+  day22Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "有人計過，香港報紙大約有成千多個專欄。", "yeo5 yen4 gei3 guo3 heng1 gong2 bou3 ji2 dai6 yeg3 yeo5 xing4 qin1 do1 go3 jun1 lan4", "有人计算过，香港报纸大约有一千多个专栏。", ["專欄"]),
+  day22Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "唔好睇小呢啲豆腐欄咁大嘅專欄文章呀。", "m4 hou2 tei2 xiu2 ni1 di1 deo6 fu6 lan4 gem3 dai6 ge3 jun1 lan4 men4 zeng1 a3", "不要小看这些豆腐块那么大的专栏文章。", ["豆腐欄", "專欄文章"]),
+  day22Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "有感而發嘅嘢唔使寫得咁複雜嘅。", "yeo5 gem2 yi4 fad3 ge3 ye5 m4 sei2 se2 deg1 gem3 fug1 zab6 ge3", "有感而发的东西不用写得那么复杂。", ["有感而發"]),
+  day22Sentence("supp-04", "補充語彙", "補充語彙 · 句子", "文章亦唔使有頭有尾，有自己嘅見解就得㗎喇。", "men4 zeng1 yig6 m4 sei2 yeo5 teo4 yeo5 mei5 yeo5 ji6 gei2 ge3 gin3 gai2 zeo6 deg1 ga3 la3", "文章也不用有头有尾，有自己的见解就行了。", ["有頭有尾", "見解"]),
+  day22Sentence("supp-05", "補充語彙", "補充語彙 · 句子", "只要能夠引起共鳴，讀者就會歡迎。", "ji2 yiu3 neng4 geo3 yen5 hei2 gung6 ming4 dug6 ze2 zeo6 wui5 fun1 ying4", "只要能够引起共鸣，读者就会欢迎。", ["共鳴"]),
+
+  // 四、重點理解
+  day22Item("understanding-wazai", "重點理解", "重點理解 · 俗語話齋", "正如……話齋", "jeng3 yu4 wa6 zai1", "正如……所说，用于句首引用说法", ["正如阿陳話齋"]),
+  day22Sentence("understanding-01", "重點理解", "重點理解 · 啱先", "啱先邊個打電話嚟呀？", "ngam1 xin1 bin1 go3 da2 din6 wa2 lei4 a3", "刚才是谁打电话来？", ["啱先"]),
+  day22Sentence("understanding-02", "重點理解", "重點理解 · 啱先", "佢啱先仲喺度，而家唔知去咗邊？", "keu5 ngam1 xin1 zung6 hei2 dou6 yi4 ga1 m4 ji1 heo3 zo2 bin1", "他刚才还在这里，现在不知道去哪儿了。", ["啱先", "喺度"]),
+  day22Sentence("understanding-03", "重點理解", "重點理解 · 頭先", "佢唔記得頭先嘅事喇。", "keu5 m4 gei3 deg1 teo4 xin1 ge3 xi6 la3", "他把刚才的事忘了。", ["頭先"]),
+  day22Sentence("understanding-04", "重點理解", "重點理解 · 大大話話", "大大話話都使咗成千文。", "dai6 dai6 wa6 wa6 dou1 sei2 zo2 xing4 qin1 men1", "粗略地算，也花了上千块钱。", ["大大話話"]),
+  day22Item("understanding-jidou", "重點理解", "重點理解 · 滿足唔到", "照顧得到／照顧唔到", "jiu3 gu3 deg1 dou2 jiu3 gu3 m4 dou2", "照顾得了／照顾不了", ["咁多人"]),
+  day22Item("understanding-lyunhai", "重點理解", "重點理解 · 滿足唔到", "聯繫得到／聯繫唔到", "lyun4 hai6 deg1 dou2 lyun4 hai6 m4 dou2", "联系得上／联系不上", ["佢哋"]),
+
+  // 五、講解：特有詞與粵語趣談
+  day22Item("explain-wa", "講解", "講解 · 特有詞 · 語素詞", "話", "wa6", "粤语可单用为“话儿”或“说”", ["語素詞"]),
+  day22Sentence("explain-01", "講解", "講解 · 特有詞 · 語素詞", "佢嘅話你都信？", "keu5 ge3 wa6 nei5 dou1 sen3", "他的话你也相信？", ["話"]),
+  day22Sentence("explain-02", "講解", "講解 · 特有詞 · 語素詞", "佢話唔得。", "keu5 wa6 m4 deg1", "他说不行。", ["話"]),
+  day22Item("explain-yen", "講解", "講解 · 特有詞 · 語素詞", "忍", "yen2", "忍；忍受", ["語素詞"]),
+  day22Sentence("explain-03", "講解", "講解 · 特有詞 · 語素詞", "忍住啖氣，眯落水。", "yen2 ju6 daam6 hei3 mei1 log6 seoi2", "憋着一口气，潜入水中。", ["原书字形/读音待核"]),
+  day22Sentence("explain-04", "講解", "講解 · 特有詞 · 語素詞", "你咁都忍得佢嘅？", "nei5 gem3 dou1 yen2 deg1 keu5 ge3", "你竟然能忍受他这样？", ["忍得"]),
+  day22Sentence("explain-05", "講解", "講解 · 特有詞 · 語素詞", "佢高興到不得了。", "keu5 gou1 hing3 dou3 bed1 deg1 liu5", "他高兴得不得了。", ["高興"]),
+  day22Item("culture-bei", "講解", "講解 · 粵語趣談 · 髀", "髀", "bei2", "大腿；也可引申为像腿一样的支撑部分", ["古漢語詞"]),
+  day22Item("culture-daibei", "講解", "講解 · 粵語趣談 · 髀", "大髀", "dai6 bei2", "大腿", ["拍大髀"]),
+  day22Sentence("culture-01", "講解", "講解 · 粵語趣談 · 髀", "我隻大髀抽筋。", "ngo5 zeg3 dai6 bei2 ceo1 gen1", "我的大腿抽筋。", ["大髀"]),
+  day22Sentence("culture-02", "講解", "講解 · 粵語趣談 · 髀", "女仔人家坐低唔好椏開隻髀。", "neoi5 zei2 yen4 ga1 co5 dei1 m4 hou2 a1 hoi1 zeg3 bei2", "女孩子坐下不要叉开大腿。", ["椏開", "原书读音待核"]),
+  day22Item("culture-gekgud", "講解", "講解 · 粵語趣談 · 髀", "腳骨", "gek3 gued1", "小腿", ["打出腳骨"]),
+  day22Sentence("culture-03", "講解", "講解 · 粵語趣談 · 髀", "打出腳骨。", "da2 ced1 gek3 gued1", "露出小腿。", ["腳骨"]),
+  day22Item("culture-geibei", "講解", "講解 · 粵語趣談 · 髀", "雞髀／鴨髀", "gei1 bei2 aab3 bei2", "鸡腿／鸭腿", ["動物的腿"]),
+  day22Item("culture-soengbeifan", "講解", "講解 · 粵語趣談 · 髀", "雙髀飯", "soeng1 bei2 fan6", "鸡、鸭腿双拼的盖饭", ["髀"]),
+  day22Item("culture-ngangengbei", "講解", "講解 · 粵語趣談 · 髀", "眼鏡髀", "ngan5 geng3 bei2", "眼镜腿儿", ["支撐部分"]),
+  day22Item("culture-geobeiga", "講解", "講解 · 粵語趣談 · 髀", "狗髀架", "geo2 bei2 ga3", "墙壁或柜壁上的三角支架", ["支撐部分"]),
+  day22Item("culture-geibeida", "講解", "講解 · 粵語趣談 · 髀", "雞髀打人牙骹軟", "gei1 bei2 da2 yen4 nga4 gau1 yun5", "吃了别人的嘴软", ["熟語"]),
+  day22Item("culture-menbei", "講解", "講解 · 粵語趣談 · 髀", "蚊髀點同牛髀比", "men1 bei2 dim2 tung4 ngeo4 bei2 bei2", "实力相差悬殊，不可相提并论", ["熟語"]),
+
+  // 六、傳意項目介紹：可能（只收完整例句）
+  day22Sentence("possible-01", "傳意項目介紹", "傳意項目介紹 · 可能", "三句鐘做齊晒啲嘢，有可能。", "sam1 geoi3 zung1 zou6 qei4 sai3 di1 ye5 yeo5 ho2 neng4", "三个小时把事情全做完，有可能。", ["有可能"]),
+  day22Sentence("possible-02", "傳意項目介紹", "傳意項目介紹 · 可能", "啲人等到最後一分鐘先決定，唔係冇噉嘅可能㗎。", "di1 yen4 deng2 dou3 zeoi3 heo6 yed1 fen1 zung1 xin1 kud3 ding6 m4 hei6 mou5 gem2 ge3 ho2 neng4 ga3", "那些人等到最后一分钟才决定，并不是没有这样的可能。", ["唔係冇噉嘅可能"]),
+  day22Sentence("possible-03", "傳意項目介紹", "傳意項目介紹 · 可能", "個會八月份開嘅可能性都幾大下。", "go3 wui6 bad3 yud6 fen6 hoi1 ge3 ho2 neng4 xing3 dou1 gei2 dai6 ha5", "会议八月份开的可能性也挺大。", ["可能性都幾大下"]),
+  day22Sentence("possible-04", "傳意項目介紹", "傳意項目介紹 · 可能", "個會延期開，極之可能。", "go3 wui6 yin4 kei4 hoi1 gig6 ji1 ho2 neng4", "会议延期开，极有可能。", ["極之可能"]),
+  day22Sentence("possible-05", "傳意項目介紹", "傳意項目介紹 · 可能", "個會提前開嘅可能性唔大。", "go3 wui6 tei4 qin4 hoi1 ge3 ho2 neng4 xing3 m4 dai6", "会议提前开的可能性不大。", ["可能性唔大"]),
+  day22Sentence("possible-06", "傳意項目介紹", "傳意項目介紹 · 可能", "個會能唔能夠如期開，都話唔埋。", "go3 wui6 neng4 m4 neng4 geo3 yu4 kei4 hoi1 dou1 wa6 m4 mai4", "会议能不能如期开，都说不准。", ["話唔埋"]),
+  day22Sentence("possible-07", "傳意項目介紹", "傳意項目介紹 · 可能", "經已決定嘅嘢好難話改就改嘅。", "ging1 yi5 kud3 ding6 ge3 ye5 hou2 nan4 wa6 goi2 zeo6 goi2 ge3", "已经决定的事很难说改就改。", ["好難"]),
+  day22Sentence("possible-08", "傳意項目介紹", "傳意項目介紹 · 不可能", "咁短時間約齊晒啲人，冇乜可能嘅噃。", "gem3 duen2 xi4 gan3 yeg3 qei4 sai3 di1 yen4 mou5 med1 ho2 neng4 ge3 bo3", "这么短时间约齐所有人，不太可能。", ["冇乜可能"]),
+  day22Sentence("possible-09", "傳意項目介紹", "傳意項目介紹 · 不可能", "五百文就搞掂呢條數，你就想。", "ng5 baag3 men1 zeo6 gau2 dim6 ni1 tiu4 sou3 nei5 zeo6 seng2", "五百块就搞定这笔账，你想得美。", ["你就想"]),
+  day22Sentence("possible-10", "傳意項目介紹", "傳意項目介紹 · 不可能", "臨時又變，講笑搵第樣。", "lem4 xi4 yeo6 bin3 gong2 xiu3 wen2 dei6 yeng6", "临时又变，说笑也找别的吧。", ["講笑搵第樣"]),
+
+  // 七、練習
+  day22Sentence("dialogue-01", "練習", "練習 · 會話聆聽", "你睇開乜嘢報紙㗎？", "nei5 tei2 hoi1 med1 ye5 bou3 ji2 ga3", "你平时看什么报纸？", ["會話聆聽"]),
+  day22Sentence("dialogue-02", "練習", "練習 · 會話聆聽", "《成報》，你呢？", "sing4 bou3 nei5 ne1", "《成报》，你呢？", ["成報"]),
+  day22Sentence("dialogue-03", "練習", "練習 · 會話聆聽", "《明報》。點解你鍾意睇《成報》嘅？", "ming4 bou3 dim2 gai2 nei5 zung1 yi3 tei2 sing4 bou3 ge3", "《明报》。为什么你喜欢看《成报》？", ["明報", "成報"]),
+  day22Sentence("dialogue-04", "練習", "練習 · 會話聆聽", "追佢啲專欄小說囉。", "zeoi1 keu5 di1 jun1 lan4 xiu2 xud3 lo1", "追它的专栏小说。", ["專欄小說"]),
+  day22Sentence("dialogue-05", "練習", "練習 · 會話聆聽", "你又點解鍾意睇《明報》嘅？", "nei5 yeo6 dim2 gai2 zung1 yi3 tei2 ming4 bou3 ge3", "你又为什么喜欢看《明报》？", ["明報"]),
+  day22Sentence("dialogue-06", "練習", "練習 · 會話聆聽", "佢逢星期三有「時事追擊」。", "keu5 fung4 xing1 kei4 sam1 yeo5 xi4 xi6 zeoi1 gig1", "它每逢星期三有“时事追击”。", ["時事追擊"]),
+  day22Sentence("dialogue-07", "練習", "練習 · 會話聆聽", "我好鍾意呢個版㗎。", "ngo5 hou2 zung1 yi3 ni1 go3 ban2 ga3", "我很喜欢这个版。", ["版"]),
+  day22Sentence("dialogue-08", "練習", "練習 · 會話聆聽", "哦，「時事追擊」，我耐唔中會睇下，都幾好㗎。", "o2 xi4 xi6 zeoi1 gig1 ngo5 noi6 m4 zung1 wui5 tei2 ha5 dou1 gei2 hou2 ga3", "哦，“时事追击”，我偶尔会看一下，也挺好的。", ["耐唔中"]),
+  day22Sentence("dialogue-09", "練習", "練習 · 會話聆聽", "係呀。", "hei6 a3", "是啊。", ["會話聆聽"]),
+  day22Sentence("dialogue-10", "練習", "練習 · 會話聆聽", "我鍾意睇啲有深度嘅現實報導，從中可以形成自己嘅觀點。", "ngo5 zung1 yi3 tei2 di1 yeo5 sem1 dou6 ge3 yin6 sed6 bou3 dou6 cung4 zung1 ho2 yi5 ying4 xing4 ji6 gei2 ge3 gun1 dim2", "我喜欢看有深度的现实报道，从中可以形成自己的观点。", ["現實報導", "觀點"]),
+  day22Sentence("dialogue-11", "練習", "練習 · 會話聆聽", "噉又係。", "gem2 yeo6 hei6", "那倒也是。", ["噉又係"]),
+  day22Sentence("dialogue-12", "練習", "練習 · 會話聆聽", "我成盤生意喺內地，梗係睇《文匯報》。", "ngo5 seng4 pun4 sang1 yi3 hei2 noi6 dei6 gang2 hei6 tei2 men4 wui6 bou3", "我整盘生意都在内地，当然看《文汇报》。", ["文匯報"]),
+  day22Sentence("dialogue-13", "練習", "練習 · 會話聆聽", "貼士多呀？", "tib3 xi6 do1 a3", "提示很多吗？", ["貼士"]),
+  day22Sentence("dialogue-14", "練習", "練習 · 會話聆聽", "冇錯。大嘅唔講，後日有冇直通車飛上廣州呀，你睇「文匯」咪知囉。", "mou5 co3 dai6 ge3 m4 gong2 heo6 yed6 yeo5 mou5 jig6 tung1 ce1 fei1 seng6 guong2 zeo1 a3 nei5 tei2 men4 wui6 mei1 ji1 lo1", "没错。大的不说，后天有没有直通车票去广州，你看“文汇”就知道了。", ["直通車飛"]),
+  day22Sentence("dialogue-15", "練習", "練習 · 會話聆聽", "真係乜都有？", "zen1 hei6 med1 dou1 yeo5", "真的什么都有？", ["乜都有"]),
+  day22Sentence("dialogue-16", "練習", "練習 · 會話聆聽", "我唔敢講乜都有，但係，你知啦，同內地做生意，資料動態掌握得越多梗係越好㗎。", "ngo5 m4 gem2 gong2 med1 dou1 yeo5 dan6 hei6 nei5 ji1 la1 tung4 noi6 dei6 zou6 sang1 yi3 ji1 liu6 dung6 tai3 zeng2 ag1 deg1 yud6 do1 gang2 hei6 yud6 hou2 ga3", "我不敢说什么都有，但是你知道，和内地做生意，资料动态掌握得越多当然越好。", ["資料動態"]),
+  day22Sentence("dialogue-17", "練習", "練習 · 會話聆聽", "唔係淨係睇「文匯」咪呀？", "m4 hei6 jing6 hei6 tei2 men4 wui6 mei1 a3", "不是只看“文汇”吧？", ["淨係"]),
+  day22Sentence("dialogue-18", "練習", "練習 · 會話聆聽", "除咗「文匯」，我每日仲要睇多三兩份報紙添。", "qyu4 zo2 men4 wui6 ngo5 mui5 yed6 zung6 yiu3 tei2 do1 sam1 loeng5 fen6 bou3 ji2 tim1", "除了“文汇”，我每天还要多看两三份报纸。", ["三兩份報紙"]),
+  day22Sentence("dialogue-19", "練習", "練習 · 會話聆聽", "香港就勝在信息靈通。", "heng1 gong2 zeo6 sing3 zoi6 sen3 xig1 ling4 tung1", "香港就胜在信息灵通。", ["信息靈通"]),
+  day22Sentence("discussion-01", "練習", "練習 · 討論", "講講你睇開邊份報紙？", "gong2 gong2 nei5 tei2 hoi1 bin1 fen6 bou3 ji2", "说说你平时看哪份报纸？", ["討論"]),
+  day22Sentence("discussion-02", "練習", "練習 · 討論", "你鍾意睇佢裏頭嘅邊版？", "nei5 zung1 yi3 tei2 keu5 leoi5 teo4 ge3 bin1 ban2", "你喜欢看它里面的哪个版？", ["討論"]),
+  day22Sentence("discussion-03", "練習", "練習 · 討論", "點解呢？", "dim2 gai2 ne1", "为什么呢？", ["討論"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
+  day22Item("char-ngam", "粵字辨認", "粵字辨認 · 課文用字", "啱", "ngam1", "刚刚；合适；对", ["啱先"]),
+  day22Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["噉嘅睇法"]),
+  day22Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["噉嘅可能"]),
+  day22Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["嗰啲"]),
+  day22Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺報紙"]),
+  day22Item("char-tei", "粵字辨認", "粵字辨認 · 課文用字", "睇", "tei2", "看", ["睇報紙"]),
+  day22Item("char-mei", "粵字辨認", "粵字辨認 · 課文用字", "咪", "mei1", "不是；就", ["咪知囉"]),
+  day22Item("char-bei", "粵字辨認", "粵字辨認 · 課文用字", "髀", "bei2", "大腿", ["大髀"]),
+
+  // 八、短文朗讀
+  day22Sentence("reading-01", "短文朗讀", "短文朗讀", "香港到底有幾多間報紙，各方統計不一。", "heng1 gong2 dou3 dei2 yeo5 gei2 do1 gan1 bou3 ji2 gog3 fong1 tung2 gei3 bed1 yed1", "香港到底有多少家报纸，各方统计不一。", ["報紙"]),
+  day22Sentence("reading-02", "短文朗讀", "短文朗讀", "而且，點先至算係份報紙，講法亦不一。", "yi4 ce2 dim2 xin1 ji3 xun3 hei6 fen6 bou3 ji2 gong2 fad3 yig6 bed1 yed1", "而且，怎样才算一份报纸，说法也不一。", ["講法"]),
+  day22Sentence("reading-03", "短文朗讀", "短文朗讀", "譬如講，馬經影視之類，你話係唔係報紙吖？", "pei3 yu4 gong2 ma5 ging1 ying2 xi6 ji1 leoi6 nei5 wa6 hei6 m4 hei6 bou3 ji2 a1", "比如说，马经影视之类，你说算不算报纸？", ["馬經影視"]),
+  day22Sentence("reading-04", "短文朗讀", "短文朗讀", "總之，綜合各方嘅講法，香港每日嘅報紙發行量係喺二百萬至三百萬份之間。", "zung2 ji1 zung1 heb6 gog3 fong1 ge3 gong2 fad3 heng1 gong2 mui5 yed6 ge3 bou3 ji2 fad3 heng4 loeng6 hei6 hei2 yi6 baag3 man6 ji3 sam1 baag3 man6 fen6 ji1 gan1", "总之，综合各方的说法，香港每天的报纸发行量在二百万到三百万份之间。", ["發行量"]),
+  day22Sentence("reading-05", "短文朗讀", "短文朗讀", "即係話，兩三個人就有份報紙。", "jig1 hei6 wa6 loeng5 sam1 go3 yen4 zeo6 yeo5 fen6 bou3 ji2", "也就是说，两三个人就有一份报纸。", ["即係話"]),
+  day22Sentence("reading-06", "短文朗讀", "短文朗讀", "噉嚟睇，報業嘅競爭咪話唔激烈。", "gem2 lei4 tei2 bou3 yib6 ge3 ging6 zang1 mei1 wa6 m4 gig1 lid6", "这样看来，报业的竞争不能说不激烈。", ["競爭"]),
+  day22Sentence("reading-07", "短文朗讀", "短文朗讀", "激烈競爭嘅最大目標就係爭取最大嘅發行量。", "gig1 lid6 ging6 zang1 ge3 zeoi3 dai6 mug6 biu1 zeo6 hei6 zang1 qeu2 zeoi3 dai6 ge3 fad3 heng4 loeng6", "激烈竞争的最大目标就是争取最大的发行量。", ["發行量"]),
+  day22Sentence("reading-08", "短文朗讀", "短文朗讀", "道理好簡單，發行量越大就越有人幫襯你賣廣告，廣告賣得越多，利潤就越大。", "dou6 lei5 hou2 gan2 dan1 fad3 heng4 loeng6 yud6 dai6 zeo6 yud6 yeo5 yen4 bong1 cen3 nei5 mai6 guong2 gou3 guong2 gou3 mai6 deg1 yud6 do1 lei6 yen6 zeo6 yud6 dai6", "道理很简单，发行量越大就越有人帮你卖广告，广告卖得越多，利润就越大。", ["幫襯", "利潤"]),
+  day22Sentence("reading-09", "短文朗讀", "短文朗讀", "而香港報紙嘅收入，廣告一般要佔一半以上。", "yi4 heng1 gong2 bou3 ji2 ge3 seo1 yeb6 guong2 gou3 yed1 bun1 yiu3 jim3 yed1 bun3 yi5 seng6", "而香港报纸的收入，广告一般要占一半以上。", ["收入", "廣告"]),
+  day22Sentence("reading-10", "短文朗讀", "短文朗讀", "擴大發行量，主要係靠內容吸引讀者，尤其係靠嗰啲同讀者嘅品味相符合、同讀者嘅生活息息相關嘅內容。", "kuog3 dai6 fad3 heng4 loeng6 ju2 yiu3 hei6 kao3 noi6 yung4 keb1 yen5 dug6 ze2 yeo4 kei4 hei6 kao3 go2 di1 tung4 dug6 ze2 ge3 ben2 mei6 seng1 fu4 heb6 tung4 dug6 ze2 ge3 sang1 wud6 xig1 xig1 seng1 guan1 ge3 noi6 yung4", "扩大发行量，主要靠内容吸引读者，尤其靠那些同读者品味相符合、同读者生活息息相关的内容。", ["讀者", "品味"]),
+  day22Sentence("reading-11", "短文朗讀", "短文朗讀", "於是乎，為咗搵料，為咗搶先登出獨家新聞，啲記者夠晒辛苦，左撲右撲，由早撲到晚。", "yu1 xi6 fu4 wei6 zo2 wen2 liu2 wei6 zo2 ceng2 xin1 deng1 ced1 dug6 ga1 sen1 men4 di1 gei3 ze2 geo3 sai3 san1 fu2 zo2 pog1 yeo6 pog1 yeo4 zou2 pog1 dou3 man5", "于是，为了找材料，为了抢先登出独家新闻，记者们非常辛苦，东奔西跑，从早忙到晚。", ["搵料", "搶先", "左撲右撲"]),
+  day22Sentence("reading-12", "短文朗讀", "短文朗讀", "無他，喺香港，報紙係商品，報館係企業，佢只能夠喺競爭中求生存，求發展。", "mou4 ta1 hei2 heng1 gong2 bou3 ji2 hei6 seng1 ben2 bou3 gun2 hei6 kei5 yib6 keu5 ji2 neng4 geo3 hei2 ging6 zang1 zung1 keo4 sang1 qun4 keo4 fad3 jin2", "没有别的原因，在香港，报纸是商品，报馆是企业，它只能在竞争中求生存、求发展。", ["商品", "企業"])
+);
+
+
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
 });
