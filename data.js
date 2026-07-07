@@ -4311,6 +4311,172 @@ window.STUDY_ITEMS.push(
 );
 
 
+const day26Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day26-${id}`,
+  day: "day26",
+  module,
+  category: `25 電視文化 · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day26Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day26-sent-${id}`,
+  day: "day26",
+  module,
+  category: `25 電視文化 · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 來源盤點：FlipHTML5 p322-p333；p333 完成本課「電視文化」。
+  // 一、課文
+  day26Sentence("title-01", "課文", "課文", "電視仍然係目前香港居民嘅重要文化生活同消遣。", "din6 xi6 ying4 yin4 hei6 mug6 qin4 heng1 gong2 geoi1 men4 ge3 zung6 yiu3 men4 fa3 seng1 wud6 tung4 xiu1 hin2", "电视仍然是目前香港居民的重要文化生活和消遣。", ["電視文化"]),
+  day26Sentence("text-01", "課文", "課文", "香港商辦電視台數目好少，免費電視台一直只有兩間，有幾間係有線廣播嘅，都要收費。", "heng1 gong2 seng1 ban6 din6 xi6 toi4 sou3 mug6 hou2 xiu2 min5 fei3 din6 xi6 toi4 yed1 jig6 yeo5 loeng5 gaan1 yeo5 gei2 gaan1 hei6 yeo5 xin3 guong2 bo3 ge3 dou1 yiu3 seo1 fei3", "香港商办电视台数目很少，免费电视台一直只有两家，有几家是有线广播的，都要收费。", ["商辦", "收費"]),
+  day26Sentence("text-02", "課文", "課文", "最主要嘅兩個台「無線」同「亞視」都設有中、英文台，「無線」嘅分別稱為「翡翠台」同「明珠台」，「亞視」嘅分別稱為「本港台」同「國際台」。", "zeoi3 ju2 yiu3 ge3 loeng5 go3 toi4 mou4 xin3 tung4 a3 xi6 dou1 qid3 yeo5 zung1 ying1 men4 toi4 mou4 xin3 ge3 fen1 bid6 qing1 wei4 fei2 ceoi3 toi4 tung4 ming4 jyu1 toi4 a3 xi6 ge3 fen1 bid6 qing1 wei4 bun2 gong2 toi4 tung4 guog3 zei3 toi4", "最主要的两个台“无线”和“亚视”都设有中、英文台，“无线”的分别称为“翡翠台”和“明珠台”，“亚视”的分别称为“本港台”和“国际台”。", ["無線", "亞視"]),
+  day26Sentence("text-03", "課文", "課文", "呢兩個大台就吸納咗大部分嘅電視觀眾。", "ni1 loeng5 go3 dai6 toi4 zeo6 keb1 nab6 zo2 dai6 bou6 fen6 ge3 din6 xi6 gun1 zung3", "这两个大台就吸纳了大部分的电视观众。", ["觀眾"]),
+  day26Sentence("text-04", "課文", "課文", "不過，而家啲觀眾多數唔係後生仔女。", "bed1 guo3 yi4 ga1 di1 gun1 zung3 do1 sou3 m4 hei6 heo6 sang1 zei2 neoi5", "不过，现在的观众大多不是年轻人。", ["後生仔女"]),
+  day26Sentence("text-05", "課文", "課文", "噉樣講一啲都唔出奇，事關佢哋上網成風，唔得閒又冇興趣再睇乜嘢電視喇。", "gem2 yeng6 gong2 yed1 di1 dou1 m4 ced1 kei4 xi6 guan1 keu5 dei6 seng5 mong5 xing4 fung1 m4 deg1 han4 yeo6 mou5 hing3 ceoi3 zoi3 tei2 med1 ye5 din6 xi6 la3", "这样说一点也不奇怪，因为他们上网成风，没空也没兴趣再看什么电视了。", ["出奇", "事關"]),
+  day26Sentence("text-06", "課文", "課文", "但電視仍然係目前香港居民嘅重要文化生活同消遣。", "dan6 din6 xi6 ying4 yin4 hei6 mug6 qin4 heng1 gong2 geoi1 men4 ge3 zung6 yiu3 men4 fa3 seng1 wud6 tung4 xiu1 hin2", "但电视仍然是目前香港居民的重要文化生活和消遣。", ["消遣"]),
+  day26Sentence("text-07", "課文", "課文", "當然，喺一個商業社會裏頭，下下都照顧齊咁多人嘅觀點、品味、需求係冇乜可能。", "dong1 yin2 hei2 yed1 go3 seng1 yib6 se5 wui2 leoi5 teo4 ha5 ha5 dou1 jiu3 gu3 cei4 gem3 do1 yen4 ge3 gun1 dim2 ben2 mei6 seo1 keo4 hei6 mou5 med1 ho2 neng4", "当然，在一个商业社会里，事事处处都照顾到这么多人的观点、品味、需求是不大可能的。", ["下下", "冇乜可能"]),
+  day26Sentence("text-08", "課文", "課文", "但係大家都好難想像一下間冇咗電視，成個社會會變成點。", "dan6 hei6 dai6 ga1 dou1 hou2 nan4 seng2 zeng6 yed1 ha5 gan1 mou5 zo2 din6 xi6 seng4 go3 se5 wui2 wui5 bin3 seng4 dim2", "但是，大家都很难想像一下子没有电视的时候，整个社会会变成怎样。", ["一下間"]),
+  day26Sentence("text-09", "課文", "課文", "首先係外部信息嘅需求，中國新聞、國際新聞，大家都會留心睇。", "seo2 xin1 hei6 ngoi6 bou6 sen3 xig1 ge3 seo1 keo4 zung1 guog3 sen1 men4 guog3 zei3 sen1 men4 dai6 ga1 dou1 wui5 leo4 sem1 tei2", "首先是外部信息的需求，中国新闻、国际新闻，大家都会留心看。", ["新聞"]),
+  day26Sentence("text-10", "課文", "課文", "其次係內部信息嘅需求，凡係本港市民關注嘅民生問題，各台都以新聞節目、時事論壇、專題訪問等形式第一時間報導。", "kei4 qi3 hei6 noi6 bou6 sen3 xig1 ge3 seo1 keo4 fan4 hei6 bun2 gong2 xi5 men4 guan1 jyu3 ge3 men4 seng1 men6 tei4 gog3 toi4 dou1 yi5 sen1 men4 jid3 mug6 xi4 xi6 tan4 jun1 tei4 fong2 men6 deng2 ying4 xig1 dei6 yed1 xi4 gan3 bou3 dou6", "其次是内部信息的需求，凡是本港市民关注的民生问题，各台都以新闻节目、时事论坛、专题访问等形式第一时间报道。", ["第一時間"]),
+  day26Sentence("text-11", "課文", "課文", "譬如話，股市行情、物價升跌、治安秩序、交通情況，等等。", "pei3 yu4 wa6 gu2 xi5 hong4 qing4 med6 ga3 xing1 did3 ji6 on1 did6 zeo6 gao1 tung1 qing4 fong3 deng2 deng2", "譬如说，股市行情、物价升跌、治安秩序、交通情况，等等。", ["升跌"]),
+  day26Sentence("text-12", "課文", "課文", "另外，消閒節目，好似體育節目、動物世界、異國風情、時裝表演等，既增長知識，又陶冶心境，深得觀眾嘅受落。", "ling6 ngoi6 xiu1 han4 jid3 mug6 hou2 qi5 tei2 yug6 jid3 mug6 dung6 med6 sei3 gai3 yi6 guog3 fung1 qing4 xi4 zong1 biu2 yin5 deng2 gei3 zeng1 zeng2 ji3 xig1 yeo6 tou4 ye5 sem1 ging2 sem1 deg1 gun1 zung3 ge3 seo6 log6", "另外，消闲节目，如体育节目、动物世界、异国风情、时装表演等，既增长知识，又陶冶心境，深得观众欢迎。", ["受落"]),
+  day26Sentence("text-13", "課文", "課文", "最後值得一提嘅係電視廣告，形式繁多：套裝廣告啦、廣告雜誌啦、購物熱線啦，而且意念新穎，一句「不在乎天長地久，只在乎曾經擁有」風靡全港。", "zeoi3 heo6 jig6 deg1 yed1 tei4 ge3 hei6 din6 xi6 guong2 gou3 ying4 xig1 fan4 do1 tou3 zong1 guong2 gou3 la1 guong2 gou3 zab6 ji3 la1 geo3 med6 yid6 xin3 la1 yi4 ce2 yi3 nim6 sen1 wing6 yed1 geoi3 bed1 zoi6 fu4 tin1 ceng4 dei6 geo2 ji2 zoi6 fu4 ceng4 ging1 yung2 yeo5 fung1 mo1 qun4 gong2", "最后值得一提的是电视广告，形式繁多：套装广告、广告杂志、购物热线，而且意念新颖，一句“不在乎天长地久，只在乎曾经拥有”风靡全港。", ["電視廣告"]),
+  day26Sentence("text-14", "課文", "課文", "可見成功嘅電視廣告係同收視率息息相關。", "ho2 gin3 xing4 gung1 ge3 din6 xi6 guong2 gou3 hei6 tung4 seo1 xi6 led2 xig1 xig1 seng1 guan1", "可见成功的电视广告是跟收视率息息相关。", ["收視率"]),
+  day26Sentence("text-15", "課文", "課文", "而收視率高低就係一間電視台辦得是否成功嘅主要標誌。", "yi4 seo1 xi6 led2 gou1 dei1 zeo6 hei6 yed1 gaan1 din6 xi6 toi4 ban6 deg1 feo2 xing4 gung1 ge3 ju2 yiu3 biu1 ji3", "而收视率高低就是一家电视台办得是否成功的主要标志。", ["標誌"]),
+
+  // 二、重點詞彙
+  day26Item("vocab-sengban", "重點詞彙", "重點詞彙", "商辦", "seng1 ban6", "商业化经营，指牟利机构", ["商辦電視台"]),
+  day26Item("vocab-seotei", "重點詞彙", "重點詞彙", "收睇", "seo1 tei2", "收看", ["收睇電視節目"]),
+  day26Item("vocab-cedkei", "重點詞彙", "重點詞彙", "出奇", "ced1 kei4", "奇怪；奇异", ["一啲都唔出奇"]),
+  day26Item("vocab-xiguan", "重點詞彙", "重點詞彙", "事關", "xi6 guan1", "因为", ["事關佢哋上網成風"]),
+  day26Item("vocab-hahaha", "重點詞彙", "重點詞彙", "下下（都）", "ha5 ha5 dou1", "事事处处都；常常", ["下下都照顧齊"]),
+  day26Item("vocab-moumedhoneng", "重點詞彙", "重點詞彙", "冇乜可能", "mou5 med1 ho2 neng4", "不大可能", ["需求係冇乜可能"]),
+  day26Item("vocab-yedhagan", "重點詞彙", "重點詞彙", "一下間", "yed1 ha5 gan1", "一下子；一时", ["一下間冇咗電視"]),
+  day26Item("vocab-deiyedxigan", "重點詞彙", "重點詞彙", "第一時間", "dei6 yed1 xi4 gan3", "即时；尽可能快地", ["第一時間報導"]),
+  day26Item("vocab-xingdid", "重點詞彙", "重點詞彙", "升跌", "xing1 did3", "上涨和下跌，常指物价", ["物價升跌"]),
+  day26Item("vocab-seolog", "重點詞彙", "重點詞彙", "受落", "seo6 log6", "接受；欢迎", ["觀眾嘅受落"]),
+  day26Item("vocab-touzongguonggou", "重點詞彙", "重點詞彙", "套裝廣告", "tou3 zong1 guong2 gou3", "系列化广告", ["套裝廣告啦"]),
+  day26Item("vocab-yidxin", "重點詞彙", "重點詞彙", "熱線", "yid6 xin3", "服务行业为方便顾客设立的专线电话", ["購物熱線"]),
+
+  // 三、補充語彙
+  day26Item("supp-sangei", "補充語彙", "補充語彙 · 詞語", "閂機", "san1 gei1", "关机", ["電視"]),
+  day26Item("supp-juntoi", "補充語彙", "補充語彙 · 詞語", "轉台", "jun3 toi4", "转台", ["耐唔耐都轉下台"]),
+  day26Item("supp-lugying", "補充語彙", "補充語彙 · 詞語", "錄影", "lug6 ying2", "录像", ["電視"]),
+  day26Item("supp-fongdaiyingdib", "補充語彙", "補充語彙 · 詞語", "放帶／影碟", "fong3 dai2 ying2 dib6", "放录像带/影碟", ["電視"]),
+  day26Item("supp-doudai", "補充語彙", "補充語彙 · 詞語", "倒帶", "dou3 dai2", "倒带", ["錄影"]),
+  day26Item("supp-fandai", "補充語彙", "補充語彙 · 詞語", "翻帶", "fan1 dai2", "翻带；倒回带子", ["錄影"]),
+  day26Item("supp-dinxikegzab", "補充語彙", "補充語彙 · 詞語", "電視劇集", "din6 xi6 keg6 zab6", "电视剧集", ["追劇集"]),
+  day26Item("supp-zeuikegzab", "補充語彙", "補充語彙 · 詞語", "追（劇集）", "zeoi1 keg6 zab6", "追看连续剧", ["追下《包青天》"]),
+  day26Item("supp-menziymog", "補充語彙", "補充語彙 · 詞語", "中（英）文字幕", "zung1 ying1 men4 ji6 mog6", "中（英）文字幕", ["字幕"]),
+  day26Item("supp-moudapin", "補充語彙", "補充語彙 · 詞語", "武打片", "mou5 da2 pin2", "武打片", ["電影"]),
+  day26Item("supp-fowanpin", "補充語彙", "補充語彙 · 詞語", "科幻片", "fo1 wan6 pin2", "科幻片", ["電影"]),
+  day26Item("supp-geilugpin", "補充語彙", "補充語彙 · 詞語", "紀錄片", "gei3 lug6 pin2", "纪录片", ["電影"]),
+  day26Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "「香港小姐」係指喺選美活動中得冠軍榮銜嘅佳麗。", "heng1 gong2 xiu2 ze2 hei6 ji2 hei2 xun2 mei5 wud6 dung6 zung1 deg1 gun3 guen1 wing4 ham4 ge3 gai1 lei6", "“香港小姐”是指在选美活动中获得冠军荣衔的佳丽。", ["香港小姐"]),
+  day26Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "香港選美活動由一九四六年開始，到而家都已經有成六七十屆喇。", "heng1 gong2 xun2 mei5 wud6 dung6 yeo4 yed1 geo2 sei3 lug6 nin4 hoi1 qi2 dou3 yi4 ga1 dou1 yi5 ging1 yeo5 seng4 lug6 ced1 seb6 gai3 la3", "香港选美活动由一九四六年开始，到现在已经有六七十届了。", ["選美"]),
+  day26Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "選美查實係美貌同智慧並重。", "xun2 mei5 ca4 sed6 hei6 mei5 mao6 tung4 ji3 wei3 bing6 zung6", "选美其实是美貌和智慧并重。", ["查實"]),
+  day26Sentence("supp-04", "補充語彙", "補充語彙 · 句子", "美貌包括面貌、外形比例同儀態，而智慧就包括談吐對應、脾性品格，仲要有埋啲幽默感添。", "mei5 mao6 bao1 kud3 min6 mao6 ngoi6 ying4 bei2 lei6 tung4 yi4 tai3 yi4 ji3 wei3 zeo6 bao1 kud3 tam4 tou3 deoi3 ying3 pei4 xing3 ben2 gag2 zung6 yiu3 yeo5 mai4 di1 yeo1 meg6 gem2 tim1", "美貌包括面貌、外形比例和仪态，而智慧就包括谈吐应对、脾性品格，还要有点幽默感。", ["美貌", "智慧"]),
+
+  // 四、重點理解
+  day26Item("understanding-cedkei", "重點理解", "重點理解 · 出奇", "出奇", "ced1 kei4", "奇怪；奇异，多指罕见或始料不及的现象", ["真係出奇"]),
+  day26Sentence("understanding-01", "重點理解", "重點理解 · 出奇", "真係出奇喇，隻杯係噉跌落地都唔爛喎。", "zen1 hei6 ced1 kei4 la3 zeg3 buei1 hei6 gem2 did3 log6 dei6 dou1 m4 lan6 wo3", "真奇怪，那只杯子这样掉在地上也没破。", ["出奇"]),
+  day26Sentence("understanding-02", "重點理解", "重點理解 · 出奇", "踩單車唔扶住車把，有乜出奇啫。", "cai2 dan1 ce1 m4 fu4 ju6 ce1 ba2 yeo5 med1 ced1 kei4 ze1", "骑自行车不用扶车把，有什么稀奇的。", ["出奇"]),
+  day26Item("understanding-xiguan", "重點理解", "重點理解 · 事關", "事關", "xi6 guan1", "因为；表示原因或理由", ["事關我一下間搵唔到"]),
+  day26Sentence("understanding-03", "重點理解", "重點理解 · 事關", "我冇打電話過嚟，事關我一下間搵唔到公共電話。", "ngo5 mou5 da2 din6 wa6 guo3 lei4 xi6 guan1 ngo5 yed1 ha5 gan1 wen2 m4 dou2 gung1 gung6 din6 wa6", "我没有打电话过来，因为我一时找不到公共电话。", ["事關"]),
+  day26Sentence("understanding-04", "重點理解", "重點理解 · 事關", "我哋架車兜咗過大嶼先至入到新界，事關屯門嗰度大塞車。", "ngo5 dei6 ga3 ce1 deo1 zo2 guo3 dai6 yu4 xin1 ji3 yeb6 dou3 sen1 gai3 xi6 guan1 tun4 mun4 go2 dou6 dai6 seg1 ce1", "我们的车绕过大屿才进新界，因为屯门那边堵车堵得厉害。", ["原書作「過大嶼」"]),
+  day26Item("understanding-hahaha", "重點理解", "重點理解 · 下下", "下下", "ha5 ha5", "泛指事事、处处、任何时候，也可表示经常性", ["下下都求人"]),
+  day26Sentence("understanding-05", "重點理解", "重點理解 · 下下", "自己要親自郁手做下，唔好下下都求人。", "ji6 gei2 yiu3 qin1 ji6 yug1 seo2 zou6 ha5 m4 hou2 ha5 ha5 dou1 keo4 yen4", "自己要动手试试，不要事事都求人。", ["下下"]),
+  day26Sentence("understanding-06", "重點理解", "重點理解 · 下下", "要預早啲買飛，旅遊旺季下下都買唔到㗎。", "yiu3 yu6 zou2 di1 mai5 fei1 leu5 yeo4 wong6 gei3 ha5 ha5 dou1 mai5 m4 dou2 ga3", "要早点买票，旅游旺季买不到票是常有的事。", ["下下"]),
+  day26Item("understanding-seolog", "重點理解", "重點理解 · 受落", "受落", "seo6 log6", "接受；认同；欢迎，常用于被动语式", ["畀球迷受落"]),
+  day26Sentence("understanding-07", "重點理解", "重點理解 · 受落", "球隊嘅外援球員開始畀球迷受落。", "keo4 deoi6 ge3 ngoi6 wun4 keo4 yun4 hoi1 qi2 bei2 keo4 mei4 seo6 log6", "球队里的外援球员开始为球迷接受、赞赏。", ["受落"]),
+  day26Item("understanding-yedhagan", "重點理解", "重點理解 · 一下間", "一下間", "yed1 ha5 gan1", "一时；临时性或偶然性", ["一下間諗唔起"]),
+  day26Sentence("understanding-08", "重點理解", "重點理解 · 一下間", "我一下間諗唔起佢係邊個。", "ngo5 yed1 ha5 gan1 nem2 m4 hei2 keu5 hei6 bin1 go3", "我一时想不起他是谁。", ["一下間"]),
+  day26Sentence("understanding-09", "重點理解", "重點理解 · 一下間", "佢一下間醒起有個電話要打。", "keu5 yed1 ha5 gan1 sing2 hei2 yeo5 go3 din6 wa6 yiu3 da2", "他突然想起有一个电话要打。", ["醒起"]),
+
+  // 五、講解：文化詞與粵語趣談
+  day26Item("culture-lugbaokka", "講解", "講解 · 文化詞", "轆爆咭", "lug1 bao3 kad1", "信用卡额度已超过，不能再提款或购物", ["文化詞"]),
+  day26Item("culture-wenhabyu", "講解", "講解 · 文化詞", "混合語", "wen6 heb6 yu5", "学校授课夹杂使用中英双语，或用英文课本中文教授", ["文化詞"]),
+  day26Item("culture-seosen", "講解", "講解 · 文化詞", "手信", "seo2 sen3", "外游者从旅游地带回、赠送亲友的土特产礼品", ["文化詞"]),
+  day26Item("culture-acan", "講解", "講解 · 粵語趣談 · 阿燦", "阿燦", "a3 can3", "由影视角色扩展为当时社会对新移民的泛称", ["網中人"]),
+  day26Item("culture-cacang", "講解", "講解 · 粵語趣談 · 阿燦", "喳撐篤撐", "ca4 cang3 dug1 cang3", "原书说明的喜剧型音响效果之一", ["讀音按原書"]),
+  day26Item("culture-qingqingcangcang", "講解", "講解 · 粵語趣談 · 阿燦", "程程撐撐", "qing4 qing1 cang4 cang4", "原书说明的喜剧型音响效果之一", ["讀音按原書"]),
+  day26Item("culture-cango", "講解", "講解 · 粵語趣談 · 阿燦", "燦哥", "can3 go1", "由「阿燦」衍生出的仿称", ["阿燦"]),
+  day26Item("culture-canmoi", "講解", "講解 · 粵語趣談 · 阿燦", "燦妹", "can3 mui6", "由「阿燦」衍生出的仿称", ["阿燦"]),
+  day26Item("culture-biugo", "講解", "講解 · 粵語趣談 · 阿燦", "表哥", "biu2 go1", "与「燦哥」相对、品位稍高的称呼", ["粵語趣談"]),
+  day26Item("culture-biumoi", "講解", "講解 · 粵語趣談 · 阿燦", "表妹", "biu2 mui6", "与「燦妹」相对、品位稍高的称呼", ["粵語趣談"]),
+  day26Item("culture-gongcan", "講解", "講解 · 粵語趣談 · 阿燦", "港燦", "gong2 can3", "带调侃、揶揄意味的新说法", ["人仔大過港紙"]),
+  day26Item("culture-gacan", "講解", "講解 · 粵語趣談 · 阿燦", "加燦", "ga1 can3", "从加拿大回流香港者被反讥的说法", ["粵語趣談"]),
+  day26Item("culture-meican", "講解", "講解 · 粵語趣談 · 阿燦", "美燦", "mei5 can3", "从美国回流香港者被反讥的说法", ["粵語趣談"]),
+
+  // 六、傳意項目介紹：責備（只收完整例句）
+  day26Sentence("blame-01", "傳意項目介紹", "傳意項目介紹 · 責備", "點搞㗎，我明明叫你琴日搞掂晒啲嘢噃，而家至做咗一半！", "dim2 gaau2 ga3 ngo5 ming4 ming4 giu3 nei5 kem4 yed6 gaau2 dim6 sai3 di1 ye5 bo3 yi4 ga1 ji3 zou6 zo2 yed1 bun3", "怎么搞的，我明明叫你昨天把事情都办妥，现在才做了一半！", ["點搞㗎"]),
+  day26Sentence("blame-02", "傳意項目介紹", "傳意項目介紹 · 責備", "乜咁烏龍㗎，叫你買十二號嘅車飛，你買咗十一號。", "med1 gem3 wu1 lung4 ga3 giu3 nei5 mai5 seb6 yi6 hou6 ge3 ce1 fei1 nei5 mai5 zo2 seb6 yed1 hou6", "怎么这么糊涂，叫你买十二号的车票，你买了十一号。", ["烏龍"]),
+  day26Sentence("blame-03", "傳意項目介紹", "傳意項目介紹 · 責備", "點解咁漏氣㗎，架車都開走咗咯。", "dim2 gai2 gem3 leo6 hei3 ga3 ga3 ce1 dou1 hoi1 zeo2 zo2 lo3", "为什么这么泄气/不中用，车都开走了。", ["漏氣"]),
+  day26Sentence("blame-04", "傳意項目介紹", "傳意項目介紹 · 責備", "有冇搞錯呀，遲到咗成個鐘頭。", "yeo5 mou5 gaau2 co3 a3 qi4 dou3 zo2 seng4 go3 zung1 teo4", "有没有搞错，迟到了整整一个钟头。", ["有冇搞錯"]),
+  day26Sentence("blame-05", "傳意項目介紹", "傳意項目介紹 · 責備", "我都唔明你點搞嘅，借本書畀你又會唔見咗嘅。", "ngo5 dou1 m4 ming4 nei5 dim2 gaau2 ge3 ze3 bun2 syu1 bei2 nei5 yeo6 wui5 m4 gin3 zo2 ge3", "我都不明白你怎么弄的，借本书给你也会不见。", ["我都唔明你點搞"]),
+  day26Sentence("blame-06", "傳意項目介紹", "傳意項目介紹 · 責備", "明明係你唔啱，仲理由多多，噉似乎唔係幾好喎。", "ming4 ming4 hei6 nei5 m4 ngam1 zung6 lei5 yeo4 do1 do1 gem2 qi5 fu4 m4 hei6 gei2 hou2 wo3", "明明是你不对，还理由多多，这样似乎不太好。", ["噉似乎唔係幾好"]),
+
+  // 七、練習
+  day26Sentence("dialogue-01", "練習", "練習 · 會話聆聽", "電視你睇邊個台多？", "din6 xi6 nei5 tei2 bin1 go3 toi4 do1", "电视你看哪个台比较多？", ["會話聆聽"]),
+  day26Sentence("dialogue-02", "練習", "練習 · 會話聆聽", "我不嬲睇開「亞視」嘅，不過，耐唔耐都轉下台。", "ngo5 bed1 leo1 tei2 hoi1 a3 xi6 ge3 bed1 guo3 noi6 m4 noi6 dou1 jun3 ha5 toi4", "我一向看“亚视”，不过，时不时也转下台。", ["不嬲", "轉台"]),
+  day26Sentence("dialogue-03", "練習", "練習 · 會話聆聽", "我都係。", "ngo5 dou1 hei6", "我也是。", ["會話聆聽"]),
+  day26Sentence("dialogue-04", "練習", "練習 · 會話聆聽", "噉你鍾意睇邊啲節目多啲㗎？", "gem2 nei5 zung1 yi3 tei2 bin1 di1 jid3 mug6 do1 di1 ga3", "那你比较喜欢看哪些节目？", ["節目"]),
+  day26Sentence("dialogue-05", "練習", "練習 · 會話聆聽", "足球啦，英國足球、意大利足球……", "zug1 keo4 la1 ying1 guog3 zug1 keo4 yi3 dai6 lei6 zug1 keo4", "足球，英国足球、意大利足球……", ["足球"]),
+  day26Sentence("dialogue-06", "練習", "練習 · 會話聆聽", "我鍾意睇動物世界，覺得佢哋好可愛。", "ngo5 zung1 yi3 tei2 dung6 med6 sei3 gai3 gog3 deg1 keu5 dei6 hou2 ho2 oi3", "我喜欢看动物世界，觉得它们很可爱。", ["動物世界"]),
+  day26Sentence("dialogue-07", "練習", "練習 · 會話聆聽", "舊時我都追下《包青天》嘅，而家都睇到厭晒。", "geo6 xi4 ngo5 dou1 zeoi1 ha5 bou1 qing1 tin1 ge3 yi4 ga1 dou1 tei2 dou3 yim3 sai3", "以前我也追过《包青天》，现在都看厌了。", ["追劇"]),
+  day26Sentence("dialogue-08", "練習", "練習 · 會話聆聽", "我奉旨唔追劇，成日唔係打打殺殺，就係又喊又笑，無厘頭。", "ngo5 fung6 ji2 m4 zeoi1 kek6 seng4 yed6 m4 hei6 da2 da2 sad3 sad3 zeo6 hei6 yeo6 ham3 yeo6 xiu3 mou4 lei4 teo4", "我向来不追剧，整天不是打打杀杀，就是又哭又笑，无厘头。", ["奉旨", "無厘頭"]),
+  day26Sentence("dialogue-09", "練習", "練習 · 會話聆聽", "我睇電視鍾意睇廣告。", "ngo5 tei2 din6 xi6 zung1 yi3 tei2 guong2 gou3", "我看电视喜欢看广告。", ["廣告"]),
+  day26Sentence("dialogue-10", "練習", "練習 · 會話聆聽", "噉都好睇嘅。", "gem2 dou1 hou2 tei2 ge3", "那也好看。", ["會話聆聽"]),
+  day26Sentence("dialogue-11", "練習", "練習 · 會話聆聽", "幾好㗎。", "gei2 hou2 ga3", "挺好的。", ["會話聆聽"]),
+  day26Sentence("dialogue-12", "練習", "練習 · 會話聆聽", "香港電視嘅廣告有番一定水準㗎。", "heng1 gong2 din6 xi6 ge3 guong2 gou3 yeo5 fan1 yed1 ding6 seoi2 zeon2 ga3", "香港电视的广告有一定水准。", ["水準"]),
+  day26Sentence("dialogue-13", "練習", "練習 · 會話聆聽", "你鍾意睇邊停廣告呢？", "nei5 zung1 yi3 tei2 bin1 ting4 guong2 gou3 ne1", "你喜欢看哪类广告呢？", ["原書作「邊停廣告」"]),
+  day26Sentence("dialogue-14", "練習", "練習 · 會話聆聽", "啱睇就睇，睇佢哋嘅意念囉、手法囉……", "ngam1 tei2 zeo6 tei2 tei2 keu5 dei6 ge3 yi3 nim6 lo1 seo2 fad3 lo1", "合眼就看，看它们的意念、手法等等。", ["意念", "手法"]),
+  day26Sentence("dialogue-15", "練習", "練習 · 會話聆聽", "哈，有隻啤酒廣告畀人鋤，話歧視女性喎。", "ha1 yeo5 zeg3 be1 zeo2 guong2 gou3 bei2 yen4 co4 wa6 kei4 xi6 neoi5 xing3 wo3", "哈，有个啤酒广告被人批评，说歧视女性。", ["歧視女性"]),
+  day26Sentence("dialogue-16", "練習", "練習 · 會話聆聽", "歧視女性幾時都唔啱，但係人哋廣告有冇真係歧視就好難講。", "kei4 xi6 neoi5 xing3 gei2 xi4 dou1 m4 ngam1 dan6 hei6 yen4 dei6 guong2 gou3 yeo5 mou5 zen1 hei6 kei4 xi6 zeo6 hou2 nan4 gong2", "歧视女性什么时候都不对，但人家广告有没有真的歧视就很难说。", ["歧視"]),
+  day26Sentence("dialogue-17", "練習", "練習 · 會話聆聽", "動機與效果問題，好多時都係見仁見智嘅啫。", "dung6 gei1 yu5 hao6 guo2 men6 tei4 hou2 do1 xi4 dou1 hei6 gin3 yen4 gin3 ji3 ge3 ze1", "动机与效果问题，很多时候都是见仁见智而已。", ["見仁見智"]),
+  day26Sentence("discussion-01", "練習", "練習 · 討論", "呢排邊隻電視廣告你至鍾意㗎？", "ni1 pai2 bin1 zeg3 din6 xi6 guong2 gou3 nei5 ji3 zung1 yi3 ga3", "最近哪一则电视广告你最喜欢？", ["討論"]),
+  day26Sentence("discussion-02", "練習", "練習 · 討論", "你有冇試過追劇集㗎？", "nei5 yeo5 mou5 qi3 guo3 zeoi1 kek6 zab6 ga3", "你有没有试过追剧集？", ["追劇集"]),
+  day26Sentence("discussion-03", "練習", "練習 · 討論", "係追邊套呀？", "hei6 zeoi1 bin1 tou3 a3", "追的是哪一套？", ["討論"]),
+  day26Sentence("discussion-04", "練習", "練習 · 討論", "試比較一下本港幾家電視台。", "qi3 bei2 gaau3 yed1 ha5 bun2 gong2 gei2 ga1 din6 xi6 toi4", "试比较一下本港几家电视台。", ["討論"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
+  day26Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["電視觀眾嘅需求"]),
+  day26Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["啲觀眾"]),
+  day26Item("char-la", "粵字辨認", "粵字辨認 · 課文用字", "喇", "la3", "表示变化或提醒的语气助词", ["電視喇"]),
+  day26Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["噉樣講"]),
+  day26Item("char-zo", "粵字辨認", "粵字辨認 · 課文用字", "咗", "zo2", "完成体标记", ["吸納咗"]),
+  day26Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺一個商業社會"]),
+  day26Item("char-dei", "粵字辨認", "粵字辨認 · 課文用字", "哋", "dei6", "们", ["佢哋"]),
+  day26Item("char-ze", "粵字辨認", "粵字辨認 · 課文用字", "啫", "ze1", "而已；语气助词", ["見仁見智嘅啫"]),
+
+  // 八、短文朗讀
+  day26Sentence("reading-01", "短文朗讀", "短文朗讀", "而家香港幾家電視台嘅收視率，都唔係自己調查公佈嘅，都係委託專業嘅市場調查機構去調查。", "yi4 ga1 heng1 gong2 gei2 ga1 din6 xi6 toi4 ge3 seo1 xi6 led2 dou1 m4 hei6 ji6 gei2 diu6 ca4 gung1 bou3 ge3 dou1 hei6 wei2 tog3 jun1 yib6 ge3 xi5 ceng4 diu6 ca4 gei1 keo3 heo3 diu6 ca4", "现在香港几家电视台的收视率，都不是自己调查公布的，都是委托专业的市场调查机构去调查。", ["收視率"]),
+  day26Sentence("reading-02", "短文朗讀", "短文朗讀", "呢啲機構頗有聲譽，唔會立亂發佈虛假結果。", "ni1 di1 gei1 keo3 po2 yeo5 sing1 yu6 m4 wui5 lab6 lun6 fad3 bou3 heoi1 ga2 gid3 guo2", "这些机构颇有声誉，不会随便发布虚假结果。", ["聲譽"]),
+  day26Sentence("reading-03", "短文朗讀", "短文朗讀", "佢哋會堅持循正途賺錢，斷斷唔會為咗些少收買錢而使自己今後喺同行中永遠無法立足。", "keu5 dei6 wui5 gin1 qi4 cen4 jing3 tou4 zaan6 qin2 dyun6 dyun6 m4 wui5 wei6 zo2 xe1 xiu2 seo1 mai5 qin2 yi4 sei2 ji6 gei2 gem1 heo6 hei2 tung4 hong4 zung1 wing5 yun5 mou4 fad3 lab6 zug1", "他们会坚持循正途赚钱，绝不会为了一点收买钱而使自己今后在同行中永远无法立足。", ["循正途"]),
+  day26Sentence("reading-04", "短文朗讀", "短文朗讀", "電視收視率通常係一個季度調查一次。", "din6 xi6 seo1 xi6 led2 tung1 seng4 hei6 yed1 go3 gei3 dou6 diu6 ca4 yed1 qi3", "电视收视率通常是一个季度调查一次。", ["季度"]),
+  day26Sentence("reading-05", "短文朗讀", "短文朗讀", "調查辦法係將全香港劃分成幾個大區，然後根據各區人口嘅密度比例計出每區嘅被訪人數，再按照被調查者嘅性別、年齡、文化程度、職業、愛好、家庭收入、家居環境等因素作適當嘅調整。", "diu6 ca4 ban6 fad3 hei6 jeng1 qun4 heng1 gong2 waag6 fen1 seng4 gei2 go3 dai6 keo1 yin4 heo6 gen1 geoi3 gog3 keo1 yen4 heo2 ge3 med6 dou6 bei2 lei6 gei3 ced1 mui5 keo1 ge3 bei6 fong2 yen4 sou3 zoi3 on3 jiu3 bei6 diu6 ca4 ze2 ge3 xing3 bid6 nin4 ling4 men4 fa3 qing4 dou6 jig1 yib6 oi3 hou3 ga1 ting4 seo1 yeb6 ga1 geoi1 wan4 ging2 deng2 yen1 sou3 zog3 xig1 dong3 ge3 tiu4 jing2", "调查办法是将全香港划分成几个大区，然后根据各区人口的密度比例计出每区的被访人数，再按照被调查者的性别、年龄、文化程度、职业、爱好、家庭收入、家居环境等因素作适当调整。", ["調查辦法"]),
+  day26Sentence("reading-06", "短文朗讀", "短文朗讀", "調查嘅內容主要係：你琴日有冇收睇電視節目？", "diu6 ca4 ge3 noi6 yung4 ju2 yiu3 hei6 nei5 kem4 yed6 yeo5 mou5 seo1 tei2 din6 xi6 jid3 mug6", "调查的内容主要是：你昨天有没有收看电视节目？", ["收睇"]),
+  day26Sentence("reading-07", "短文朗讀", "短文朗讀", "睇嘅係邊個台嘅節目？", "tei2 ge3 hei6 bin1 go3 toi4 ge3 jid3 mug6", "看的是哪个台的节目？", ["節目"]),
+  day26Sentence("reading-08", "短文朗讀", "短文朗讀", "睇咗幾耐？", "tei2 zo2 gei2 noi6", "看了多久？", ["幾耐"]),
+  day26Sentence("reading-09", "短文朗讀", "短文朗讀", "睇咗邊啲節目？", "tei2 zo2 bin1 di1 jid3 mug6", "看了哪些节目？", ["邊啲"]),
+  day26Sentence("reading-10", "短文朗讀", "短文朗讀", "間中有冇轉下台睇第啲節目？", "gan3 zung1 yeo5 mou5 jun3 ha5 toi4 tei2 dei6 di1 jid3 mug6", "中间有没有转台看别的节目？", ["轉下台"]),
+  day26Sentence("reading-11", "短文朗讀", "短文朗讀", "等等。", "deng2 deng2", "等等。", ["短文朗讀"]),
+  day26Sentence("reading-12", "短文朗讀", "短文朗讀", "咁樣嘅調查係有其可信度嘅。", "gem3 yeng6 ge3 diu6 ca4 hei6 yeo5 kei4 ho2 seon3 dou6 ge3", "这样的调查是有其可信度的。", ["可信度"])
+);
+
+
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
 });

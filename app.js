@@ -24,7 +24,8 @@ const DAY_ORDER = [
   { id: "day22", label: "Day 22", topic: "报纸" },
   { id: "day23", label: "Day 23", topic: "交通运输" },
   { id: "day24", label: "Day 24", topic: "海洋公园" },
-  { id: "day25", label: "Day 25", topic: "黄大仙" }
+  { id: "day25", label: "Day 25", topic: "黄大仙" },
+  { id: "day26", label: "Day 26", topic: "电视文化" }
 ];
 const DEFAULT_MODULE_ORDER = ["全部內容", "聲母", "韻母", "聲調", "常用字表", "句子"];
 const CHAPTER_BOOK_MODULE_ORDER = ["全部內容", "課文", "重點詞彙", "補充語彙", "重點理解", "講解", "傳意項目介紹", "練習", "粵字辨認", "短文朗讀"];
@@ -698,6 +699,25 @@ const TRADITIONAL_TO_SIMPLIFIED = {
   疫: "疫",
   註: "注",
   遷: "迁",
+  眾: "众",
+  閒: "闲",
+  穎: "颖",
+  靡: "靡",
+  劇: "剧",
+  幕: "幕",
+  銜: "衔",
+  麗: "丽",
+  貌: "貌",
+  儀: "仪",
+  慧: "慧",
+  頗: "颇",
+  譽: "誉",
+  虛: "虚",
+  假: "假",
+  斷: "断",
+  齡: "龄",
+  歧: "歧",
+  烏: "乌",
   憑: "凭"
 };
 
