@@ -4845,6 +4845,167 @@ window.STUDY_ITEMS.push(
 );
 
 
+const day29Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day29-${id}`,
+  day: "day29",
+  module,
+  category: `28 “居者有其屋” · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day29Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day29-sent-${id}`,
+  day: "day29",
+  module,
+  category: `28 “居者有其屋” · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 來源盤點：FlipHTML5 p358-p368；p369 已進入下一課「貪字變貧字」。
+  // 一、課文
+  day29Sentence("title-01", "課文", "課文", "而家香港人大概有一半入住政府嘅公屋。", "yi4 ga1 heng1 gong2 yen4 dai6 koi3 yeo5 yed1 bun3 yeb6 ju6 jing3 fu2 ge3 gung1 ug1", "现在大概有一半香港人入住政府的公屋。", ["標題頁題句；課文第11句同句"]),
+  day29Sentence("text-01", "課文", "課文", "「居者有其屋」係大家都識嘅香港文化詞。", "geu1 ze2 yeo5 kei4 ug1 hei6 dai6 ga1 dou1 xig1 ge3 heng1 gong2 men4 fa3 qi4", "“居者有其屋”是大家都懂的香港文化词。", ["居者有其屋"]),
+  day29Sentence("text-02", "課文", "課文", "查實佢係來源於孫中山先生嘅「耕者有其田，居者有其屋」嘅大同思想。", "ca4 sed6 keu5 hei6 loi4 yun4 yu1 xun1 zung1 san1 xin1 sang1 ge3 gang1 ze2 yeo5 kei4 tin4 geu1 ze2 yeo5 kei4 ug1 ge3 dai6 tung4 xi1 seng2", "其实它是来源于孙中山先生“耕者有其田，居者有其屋”的大同思想。", ["大同思想"]),
+  day29Sentence("text-03", "課文", "課文", "香港人口稠密，喺一千零七十四平方公里嘅土地上，常住人口高達八百幾萬。", "heng1 gong2 yen4 heo2 ceo4 med6 hei2 yed1 qin1 ling4 ced1 seb6 sei3 ping4 fong1 gung1 lei5 ge3 tou2 dei6 seng4 ju6 yen4 heo2 gou1 dad6 bad3 baag3 gei2 man6", "香港人口稠密，在一千零七十四平方公里的土地上，常住人口高达八百多万。", ["人口稠密"]),
+  day29Sentence("text-04", "課文", "課文", "房屋緊缺狀況一直相當嚴重，再加上樓價一直高企不下，對於一般打工仔嚟講，淨係靠個人所得嚟買樓，實在係居者難有其屋。", "fong4 ug1 gen2 kud3 zong6 fong3 yed1 jig6 seng1 dong1 yim4 zung6 zoi3 ga1 seng5 leo4 ga3 yed1 jig6 gou1 kei2 bed1 ha6 deu3 yu1 yed1 bun1 da2 gung1 zei2 lei4 gong2 jing6 hei6 kao3 go3 yen4 so2 deg1 lei4 maai5 leo2 sed6 zoi6 hei6 geu1 ze2 nan4 yeo5 kei4 ug1", "房屋紧缺状况一直相当严重，再加上楼价一直居高不下，对于一般工薪阶层来说，光靠个人收入来买房子，实在是居者难有其屋。", ["樓價高企", "打工仔"]),
+  day29Sentence("text-05", "課文", "課文", "由一九七八年開始，政府學新加坡，慢慢噉形成咗一套較為完善嘅公屋制度。", "yeo4 yed1 geo2 ced1 bad3 nin4 hoi1 qi2 jing3 fu2 hog6 sen1 ga3 bo1 maan6 maan6 gem2 ying4 xing4 zo2 yed1 tou3 gaau3 wei4 yun4 xin6 ge3 gung1 ug1 zei3 dou6", "自一九七八年开始，政府向新加坡学习，慢慢形成了一套较为完善的公屋制度。", ["公屋制度"]),
+  day29Sentence("text-06", "課文", "課文", "至於私人樓，普通打工仔真係好難買得起。", "ji3 yu1 xi1 yen4 leo2 pou2 tung1 da2 gung1 zei2 zen1 hei6 hou2 nan4 maai5 deg1 hei2", "至于私人楼宇，普通打工仔实在负担不起。", ["私人樓"]),
+  day29Sentence("text-07", "課文", "課文", "事關樓價貴得交關，而且貴到同一般市民嘅購買能力脫咗節。", "xi6 guan1 leo4 ga3 guei3 deg1 gao1 guan1 yi4 ce2 guei3 dou3 tung4 yed1 bun1 xi5 men4 ge3 geo3 maai5 neng4 lig6 tyud3 zo2 jid3", "因为楼价贵得厉害，而且贵得跟一般市民的购买能力脱了节。", ["貴得交關"]),
+  day29Sentence("text-08", "課文", "課文", "況且銀行按揭極其限得七成，剩低三成嘅錢，再加上律師費又盛，你分分鐘要即刻攞得出一大筆嘅現金。", "fong3 ce2 ngen4 hong4 on3 kid3 gig6 kei4 han6 deg1 ced1 xing4 jing6 dei1 sam1 xing4 ge3 qin2 zoi3 ga1 seng5 leod6 xi1 fei3 yeo6 xing6 nei5 fen1 fen1 zung1 yiu3 jig1 heg1 lo2 deg1 ced1 yed1 dai6 bed1 ge3 yin6 gem1", "况且银行的抵押充其量只有七成，余下三成的钱，再加上律师费什么的，你随时要立刻拿得出一大笔现金。", ["按揭", "分分鐘"]),
+  day29Sentence("text-09", "課文", "課文", "等到你攞到鎖匙嗰陣，你就要準備節衣縮食去供樓。", "deng2 dou3 nei5 lo2 dou2 so2 xi4 go2 zen6 nei5 zeo6 yiu3 zen2 bei6 jid3 yi1 sug1 xig6 heo3 gung1 leo2", "待到你拿了钥匙那会儿，你就要准备节衣缩食去供楼。", ["鎖匙", "供樓"]),
+  day29Sentence("text-10", "課文", "課文", "一般家庭一個月閒閒地都要攞出成半嘅薪水，捱騾仔都要㗎喇，仲要好搏添呀。", "yed1 bun1 ga1 ting4 yed1 go3 yud6 han4 han2 dei2 dou1 yiu3 lo2 ced1 seng4 bun3 ge3 san1 seoi2 ngai4 leu4 zei2 dou1 yiu3 ga3 la3 zung6 yiu3 hou2 bog3 tim1 a3", "一般家庭一个月拿出一半的收入不为多，辛辛苦苦地去挣钱不在说，还要有股拼劲儿才成。", ["閒閒地", "捱騾仔"]),
+  day29Sentence("text-11", "課文", "課文", "供唔起樓嘅話，銀行收樓，路街都有份。", "gung1 m4 hei2 leo2 ge3 wa6 ngen4 hong4 seo1 leo2 meo1 gai1 dou1 yeo5 fen2", "万一供不起楼，银行收楼，那时连窝也没有一个。", ["路街都有份"]),
+
+  // 二、重點詞彙
+  day29Item("vocab-biuxing", "重點詞彙", "重點詞彙", "飆升", "biu6 xing1", "急升（价格）", ["樓價飆升"]),
+  day29Item("vocab-dagungzei", "重點詞彙", "重點詞彙", "打工仔", "da2 gung1 zei2", "工薪阶层", ["一般打工仔"]),
+  day29Item("vocab-jinghei", "重點詞彙", "重點詞彙", "淨係", "jing6 hei6", "光是", ["淨係靠個人所得"]),
+  day29Item("vocab-gueideggaoguan", "重點詞彙", "重點詞彙", "貴得交關", "guei3 deg1 gao1 guan1", "贵得厉害", ["樓價貴得交關"]),
+  day29Item("vocab-onkid", "重點詞彙", "重點詞彙", "按揭", "on3 kid3", "抵押；按揭贷款", ["銀行按揭"]),
+  day29Item("vocab-fenfenzung", "重點詞彙", "重點詞彙", "分分鐘", "fen1 fen1 zung1", "随时", ["分分鐘要即刻攞得出"]),
+  day29Item("vocab-lo", "重點詞彙", "重點詞彙", "攞", "lo2", "拿；取", ["攞到鎖匙"]),
+  day29Item("vocab-soxi", "重點詞彙", "重點詞彙", "鎖匙", "so2 xi4", "钥匙", ["攞到鎖匙"]),
+  day29Item("vocab-gungleo", "重點詞彙", "重點詞彙", "供樓", "gung1 leo2", "用分期付款方式买房子", ["去供樓"]),
+  day29Item("vocab-hanhandei", "重點詞彙", "重點詞彙", "閒閒地", "han4 han2 dei2", "随便；不为多", ["閒閒地都要攞出成半嘅薪水"]),
+  day29Item("vocab-ngaileuzei", "重點詞彙", "重點詞彙", "捱騾仔", "ngai4 leu4 zei2", "辛辛苦苦地谋生", ["捱騾仔都要㗎喇"]),
+  day29Item("vocab-bog", "重點詞彙", "重點詞彙", "搏", "bog3", "拼命干活儿；拼一把", ["好搏"]),
+  day29Item("vocab-seoleo", "重點詞彙", "重點詞彙", "收樓", "seo1 leo2", "收回业权", ["銀行收樓"]),
+  day29Item("vocab-meogai", "重點詞彙", "重點詞彙", "路街", "meo1 gai1", "露宿", ["路街都有份"]),
+  day29Item("vocab-douyeofen", "重點詞彙", "重點詞彙", "（……）都有份", "dou1 yeo5 fen2", "可能；也有份儿", ["遲到都有份"]),
+
+  // 三、補充語彙
+  day29Item("supp-zouju", "補充語彙", "補充語彙 · 詞語", "租住", "zou1 ju6", "租住", ["住屋"]),
+  day29Item("supp-gaozou", "補充語彙", "補充語彙 · 詞語", "交租", "gao1 zou1", "交租", ["租樓"]),
+  day29Item("supp-caiheng", "補充語彙", "補充語彙 · 詞語", "差餉", "cai1 heng2", "差饷；房产税费", ["住屋費用"]),
+  day29Item("supp-medyib", "補充語彙", "補充語彙 · 詞語", "物業", "med6 yib6", "物业", ["物業管理"]),
+  day29Item("supp-tintouteng", "補充語彙", "補充語彙 · 詞語", "田土廳", "tin4 tou2 teng1", "田土厅；土地注册处", ["樓宇登記"]),
+  day29Item("supp-deicanginggei", "補充語彙", "補充語彙 · 詞語", "地產經紀", "dei6 can2 ging1 gei2", "地产经纪", ["買樓"]),
+  day29Item("supp-leiyenfei", "補充語彙", "補充語彙 · 詞語", "釐印費", "lei4 yen1 fei3", "厘印费；印花税费", ["買樓費用"]),
+  day29Item("supp-gunleifei", "補充語彙", "補充語彙 · 詞語", "管理費", "gun2 lei5 fei3", "管理费", ["屋苑管理費"]),
+  day29Item("supp-seozugfei", "補充語彙", "補充語彙 · 詞語", "手續費", "seo2 zug6 fei3", "手续费", ["按揭手續費"]),
+  day29Item("supp-geujuwaanging", "補充語彙", "補充語彙 · 詞語", "居住環境", "geu1 ju6 wan4 ging2", "居住环境", ["居住環境"]),
+  day29Item("supp-fongugzentib", "補充語彙", "補充語彙 · 詞語", "房屋津貼", "fong4 ug1 zen1 tib3", "房屋津贴", ["房屋津貼"]),
+  day29Item("supp-jijigeuug", "補充語彙", "補充語彙 · 詞語", "自置居屋", "ji6 ji3 geu1 ug1", "自置居屋", ["自置居所"]),
+  day29Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "供樓有甜有苦。", "gung1 leo2 yeo5 tim4 yeo5 fu2", "供楼有甜有苦。", ["供樓"]),
+  day29Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "甜嘅就係唔止有瓦遮頭咁簡單，身份象徵啦，社會地位啦，親友讚賞啦，等等。", "tim4 ge3 zeo6 hei6 m4 ji2 yeo5 nga5 ze1 teo4 gem3 gaan2 daan1 san1 fen2 zoeng6 jing1 la1 se5 wui2 dei6 wei6 la1 cen1 yeo5 zaan3 soeng2 la1 deng2 deng2", "甜的就是不止有瓦遮头那么简单，还有身份象征、社会地位、亲友赞赏等等。", ["瓦遮頭"]),
+  day29Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "苦嘅就係孭上一身債，而且債期長，啲錢一下周轉唔到就如同跌落氹度浸死。", "fu2 ge3 zeo6 hei6 me1 soeng5 yed1 san1 zaai3 yi4 ce2 zaai3 kei4 coeng4 di1 qin2 yed1 ha5 zeo1 zyun2 m4 dou2 zeo6 yu4 tung4 did3 log6 tam5 dou6 zem6 sei2", "苦的就是背上一身债，而且债期长，钱一下周转不了就像掉进水坑里淹死。", ["孭債", "周轉唔到"]),
+
+  // 四、重點理解
+  day29Item("understanding-gaoguan", "重點理解", "重點理解 · 交關", "交關", "gao1 guan1", "表示负面程度高，带夸张色彩，相当于“得很”", ["熱得交關", "惡得（好）交關", "懵得（咁）交關"]),
+  day29Item("understanding-fenfenzung", "重點理解", "重點理解 · 分分鐘", "分分鐘", "fen1 fen1 zung1", "副词，表示随时有意想不到的负面事情发生", ["分分鐘會唔掂"]),
+  day29Sentence("understanding-01", "重點理解", "重點理解 · 分分鐘", "你煙酒過量，身體分分鐘會唔掂㗎。", "nei5 yin1 zeo2 guo3 loeng6 san1 tai2 fen1 fen1 zung1 wui5 m4 dim6 ga3", "你烟酒过量，身体随时会垮。", ["分分鐘"]),
+  day29Sentence("understanding-02", "重點理解", "重點理解 · 分分鐘", "你咁聽佢嘅說話，分分鐘領嘢。", "nei5 gem3 teng1 keu5 ge3 xud3 wa6 fen1 fen1 zung1 ling5 ye5", "你尽听他说的，没准上了他的当也不知道。", ["領嘢"]),
+  day29Sentence("understanding-03", "重點理解", "重點理解 · 分分鐘", "近排股市唔明朗，價格分分鐘會下瀉。", "gen6 paai4 gu2 xi5 m4 ming4 long5 ga3 geg3 fen1 fen1 zung1 wui5 ha6 se3", "这几天股市不明朗，价格随时会下泻。", ["股市"]),
+  day29Item("understanding-hanhandei", "重點理解", "重點理解 · 閒閒地", "閒閒地", "han4 han2 dei2", "表示在当事人没有察觉的情况下花费金钱或时间，相当于“不经意”", ["閒閒地都要三幾百文"]),
+  day29Sentence("understanding-04", "重點理解", "重點理解 · 閒閒地", "而家啲嘢咁貴，食餐飯閒閒地都要三幾百文喇。", "yi4 ga1 di1 ye5 gem3 guei3 xig6 can1 fan6 han4 han2 dei2 dou1 yiu3 sam1 gei2 baag3 men4 la3", "现在东西那么贵，上一次馆子也得三百来块钱。", ["閒閒地"]),
+  day29Sentence("understanding-05", "重點理解", "重點理解 · 閒閒地", "呢單嘢好棘手㗎，閒閒地畀你兩三日都唔一定做得完。", "ni1 daan1 ye5 hou2 gig1 seo2 ga3 han4 han2 dei2 bei2 nei5 loeng5 sam1 yed6 dou1 m4 yed1 ding6 zou6 deg1 yun4", "这活儿挺麻烦的，你花上两三天工夫也不见得能把它干完。", ["棘手"]),
+  day29Item("understanding-bog", "重點理解", "重點理解 · 搏", "搏", "bog3", "希望得到更佳结果而拼命去做或尝试去做", ["搏一搏", "搏壞身體"]),
+  day29Sentence("understanding-06", "重點理解", "重點理解 · 搏", "我諗住趁後生搏一搏。", "ngo5 lem2 ju6 cen3 heo6 sang1 bog3 yed1 bog3", "我想趁年轻时候闯练闯练。", ["搏一搏"]),
+  day29Sentence("understanding-07", "重點理解", "重點理解 · 搏", "因住下，唔好搏到咁盡，搏壞身體噃。", "yen1 ju6 ha5 m4 hou2 bog3 dou3 gem3 zeon6 bog3 waai6 san1 tai2 bo3", "当心点儿，不要透支过度，弄坏身体。", ["搏壞身體"]),
+  day29Item("understanding-douyeofen", "重點理解", "重點理解 · ……都有份", "……都有份", "dou1 yeo5 fen2", "用在短语或小句之后，强调预设的负面可能性", ["遲到都有份"]),
+  day29Sentence("understanding-08", "重點理解", "重點理解 · ……都有份", "仲唔走，遲到都有份。", "zung6 m4 zeo2 qi4 dou3 dou1 yeo5 fen2", "还不走，要迟到了。", ["都有份"]),
+  day29Sentence("understanding-09", "重點理解", "重點理解 · ……都有份", "咁樣經營法，佢哋間公司執笠都有份。", "gem3 yeung6 ging1 ying4 faat3 keu5 dei6 gaan1 gung1 xi1 jeb1 leb1 dou1 yeo5 fen2", "这样经营下去，他们那家公司不倒闭才怪。", ["執笠"]),
+
+  // 五、講解：口語詞與粵語趣談
+  day29Item("oral-yeomougaauco", "講解", "講解 · 口語詞", "有冇搞錯", "yeo5 mou5 gaau2 co3", "口头交际常用语，可表示规劝、不赞成、不满或指责", ["有冇搞錯？"]),
+  day29Sentence("oral-01", "講解", "講解 · 口語詞", "咁早去排隊，有冇搞錯？", "gem3 zou2 heo3 paai4 deoi6 yeo5 mou5 gaau2 co3", "这么早去排队，不至于吧？", ["規勸"]),
+  day29Sentence("oral-02", "講解", "講解 · 口語詞", "咁夜仲去街，有冇搞錯？", "gem3 ye6 zung6 heo3 gai1 yeo5 mou5 gaau2 co3", "这么晚还上街，干吗呢？", ["不贊成"]),
+  day29Sentence("oral-03", "講解", "講解 · 口語詞", "咁嘅嘢都講得出口，有冇搞錯？！", "gem3 ge3 ye5 dou1 gong2 deg1 ced1 heo2 yeo5 mou5 gaau2 co3", "这种话都说得出口，太过分了吧？！", ["不滿"]),
+  day29Item("culture-jebsang", "講解", "講解 · 粵語趣談 · 執生", "執生", "jeb1 sang1", "在被动情况下不放过机会、随机应变、争取主动", ["粵語趣談"]),
+  day29Sentence("culture-01", "講解", "講解 · 粵語趣談 · 執生", "呢件事冇人幫到你，你自己執生啦。", "ni1 gin6 xi6 mou5 yen4 bong1 dou3 nei5 nei5 ji6 gei2 jeb1 sang1 la1", "这件事情没人能帮得上你，好自为之吧。", ["告誡義"]),
+  day29Sentence("culture-02", "講解", "講解 · 粵語趣談 · 執生", "車站人多秩序亂，大家注意執生。", "ce1 zaam6 yen4 do1 did6 zeoi6 lyun6 dai6 ga1 jyu3 yi3 jeb1 sang1", "车站人多秩序乱，大家要提高警觉。", ["警告義"]),
+  day29Sentence("culture-03", "講解", "講解 · 粵語趣談 · 執生", "你有壓力，我有壓力，大家執生啦。", "nei5 yeo5 aat3 lig6 ngo5 yeo5 aat3 lig6 dai6 ga1 jeb1 sang1 la1", "你有压力，我有压力，大家灵活应付吧。", ["應變義"]),
+  day29Sentence("culture-04", "講解", "講解 · 粵語趣談 · 執生", "呢個課程冇人教過，而家畀你去教，自己執生啦。", "ni1 go3 fo3 cing4 mou5 yen4 gaau3 guo3 yi4 ga1 bei2 nei5 heo3 gaau3 ji6 gei2 jeb1 sang1 la1", "这个课程没人教过，现在让你去教，自己随机应变吧。", ["應變義"]),
+  day29Sentence("culture-05", "講解", "講解 · 粵語趣談 · 執生", "條數點還，問銀行借又好，問私人借又好，自己執生啦。", "tiu4 sou3 dim2 waan4 men6 ngen4 hong4 ze3 yeo6 hou2 men6 xi1 yen4 ze3 yeo6 hou2 ji6 gei2 jeb1 sang1 la1", "这笔账怎么偿还，向银行借也好，向私人借也好，自己决定好了。", ["應變義"]),
+
+  // 六、傳意項目介紹：催促（只收完整例句）
+  day29Sentence("urge-01", "傳意項目介紹", "傳意項目介紹 · 催促", "要買就快啲買，舖頭就嚟閂門喇。", "yiu3 maai5 zeo6 faai3 di1 maai5 pou3 teo4 zeo6 lei4 saan1 mun4 la3", "要买就快点买，店铺快要关门了。", ["帶提醒語氣"]),
+  day29Sentence("urge-02", "傳意項目介紹", "傳意項目介紹 · 催促", "你因住時間噃，爭一個字夠鐘喇。", "nei5 yen1 ju6 xi4 gaan3 bo3 zeng1 yed1 go3 ji6 geo3 zung1 la3", "你留意时间，还差五分钟就到点了。", ["帶提醒語氣"]),
+  day29Sentence("urge-03", "傳意項目介紹", "傳意項目介紹 · 催促", "要去就快啲去，唔去就咪去。", "yiu3 heo3 zeo6 faai3 di1 heo3 m4 heo3 zeo6 mai5 heo3", "要去就快点去，不去就别去。", ["帶期望語氣"]),
+  day29Sentence("urge-04", "傳意項目介紹", "傳意項目介紹 · 催促", "好瞓覺囉噃，唔係聽朝起唔到身都似。", "hou2 fan3 gaau3 lo1 bo3 m4 hei6 ting1 ziu1 hei2 m4 dou2 san1 dou1 qi5", "该睡觉了，要不然明早可能起不来。", ["帶期望語氣"]),
+  day29Sentence("urge-05", "傳意項目介紹", "傳意項目介紹 · 催促", "乜你咁漏氣㗎，過晒鐘至嚟。", "med1 nei5 gem3 leo6 hei3 ga3 guo3 sai3 zung1 ji3 lei4", "你怎么这么拖沓，过了时间才来。", ["帶埋怨語氣"]),
+  day29Sentence("urge-06", "傳意項目介紹", "傳意項目介紹 · 催促", "人哋等住你嘅報告㗎喎，唔好再枉時間喇。", "yen4 dei6 deng2 ju6 nei5 ge3 bou3 gou3 ga3 wo3 m4 hou2 zoi3 wong2 xi4 gaan3 la3", "人家等着你的报告呢，不要再浪费时间了。", ["帶埋怨語氣"]),
+  day29Sentence("urge-07", "傳意項目介紹", "傳意項目介紹 · 催促", "當然係快啲好啦，噉大家都方便吖嘛。", "dong1 yin4 hei6 faai3 di1 hou2 la1 gem2 dai6 ga1 dou1 fong1 bin6 a1 ma3", "当然是快点好，这样大家都方便。", ["帶委婉語氣"]),
+  day29Sentence("urge-08", "傳意項目介紹", "傳意項目介紹 · 催促", "大家等緊你嘅噃，唔該快手啲。", "dai6 ga1 deng2 gen2 nei5 ge3 bo3 m4 goi1 faai3 seo2 di1", "大家正等着你呢，麻烦快一点。", ["帶委婉語氣"]),
+
+  // 七、練習
+  day29Sentence("dialogue-01", "練習", "練習 · 會話聆聽", "你而家住嗰層樓係租定係買㗎？", "nei5 yi4 ga1 ju6 go2 ceng4 leo2 hei6 zou1 ding6 hei6 maai5 ga3", "你现在住的那套房子是租的还是买的？", ["會話"]),
+  day29Sentence("dialogue-02", "練習", "練習 · 會話聆聽", "買嘅，而家咪供緊囉。", "maai5 ge3 yi4 ga1 mai6 gung1 gen2 lo1", "买的，现在正在供楼。", ["供緊"]),
+  day29Sentence("dialogue-03", "練習", "練習 · 會話聆聽", "月供幾多呀？", "yud6 gung1 gei2 do1 a3", "每月供多少？", ["月供"]),
+  day29Sentence("dialogue-04", "練習", "練習 · 會話聆聽", "我嗰層樓實用面積七百呎唔到，月供要成萬三銀㗎。", "ngo5 go2 ceng4 leo2 sed6 yung6 min6 jig1 ced1 baag3 cek3 m4 dou3 yud6 gung1 yiu3 seng4 man6 sam1 ngen4 ga3", "我那套房子实用面积不到七百平方尺，每月要供一万三千块。", ["實用面積", "月供"]),
+  day29Sentence("dialogue-05", "練習", "練習 · 會話聆聽", "唔係嘢少噃，噉唔係使咗你成半薪水？", "m4 hei6 ye5 xiu2 bo3 gem2 m4 hei6 sai2 zo2 nei5 seng4 bun3 san1 seoi2", "不是小数目，那不是花了你一半薪水？", ["成半薪水"]),
+  day29Sentence("dialogue-06", "練習", "練習 · 會話聆聽", "唔係你估。", "m4 hei6 nei5 gu2", "不是你以为的那么简单。", ["你估"]),
+  day29Sentence("dialogue-07", "練習", "練習 · 會話聆聽", "你點搞掂條數呀？", "nei5 dim2 gaau2 dim6 tiu4 sou3 a3", "你怎么搞定那笔账？", ["搞掂條數"]),
+  day29Sentence("dialogue-08", "練習", "練習 · 會話聆聽", "開 O.T. 囉。", "hoi1 o1 ti1 lo1", "加班呗。", ["O.T."]),
+  day29Sentence("dialogue-09", "練習", "練習 · 會話聆聽", "嚟緊呢個禮拜六有冇時間呀？", "lei4 gen2 ni1 go3 lai5 baai3 lug6 yeo5 mou5 xi4 gaan3 a3", "接下来的这个星期六有没有时间？", ["禮拜六"]),
+  day29Sentence("dialogue-10", "練習", "練習 · 會話聆聽", "嚟我新搬嗰度坐坐吖。", "lei4 ngo5 sen1 bun1 go2 dou6 co5 co5 a1", "来我新搬的地方坐坐吧。", ["新搬"]),
+  day29Sentence("dialogue-11", "練習", "練習 · 會話聆聽", "好吖。", "hou2 a1", "好啊。", ["應答"]),
+  day29Sentence("dialogue-12", "練習", "練習 · 會話聆聽", "你嗰度環境點呀？", "nei5 go2 dou6 waan4 ging2 dim2 a3", "你那边环境怎么样？", ["環境"]),
+  day29Sentence("dialogue-13", "練習", "練習 · 會話聆聽", "大啲囉。", "dai6 di1 lo1", "大一点。", ["大啲"]),
+  day29Sentence("dialogue-14", "練習", "練習 · 會話聆聽", "不過對住個商場，嘈啲。", "bed1 guo3 deoi3 ju6 go3 seng1 ceng4 cou4 di1", "不过对着商场，吵一点。", ["商場"]),
+  day29Sentence("dialogue-15", "練習", "練習 · 會話聆聽", "噉你又搬？", "gem2 nei5 yeo6 bun1", "那你还搬？", ["又搬"]),
+  day29Sentence("dialogue-16", "練習", "練習 · 會話聆聽", "我係貪佢近個女嘅學校之嘛。", "ngo5 hei6 taam1 keu5 gen6 go3 neu5 ge3 hog6 haau6 ji1 ma3", "我是图它离女儿的学校近嘛。", ["貪佢近"]),
+  day29Sentence("dialogue-17", "練習", "練習 · 會話聆聽", "你頭先話地方大啲，係點大法呀。", "nei5 teo4 xin1 wa6 dei6 fong1 dai6 di1 hei6 dim2 dai6 faat3 a3", "你刚才说地方大一点，是怎样个大法？", ["點大法"]),
+  day29Sentence("dialogue-18", "練習", "練習 · 會話聆聽", "建築面積爭啲九百呎，一廳三房。", "gin3 zug1 min6 jig1 zeng1 di1 geo2 baag3 cek3 yed1 teng1 sam1 fong4", "建筑面积差不多九百平方尺，一厅三房。", ["建築面積"]),
+  day29Sentence("dialogue-19", "練習", "練習 · 會話聆聽", "你哋一家四口住都唔錯喎。", "nei5 dei6 yed1 ga1 sei3 heo2 ju6 dou1 m4 co3 wo3", "你们一家四口住也不错。", ["一家四口"]),
+  day29Sentence("discussion-01", "練習", "練習 · 討論", "你鍾意點嘅居住環境呀？", "nei5 zung1 yi3 dim2 ge3 geu1 ju6 waan4 ging2 a3", "你喜欢怎样的居住环境？", ["討論"]),
+  day29Sentence("discussion-02", "練習", "練習 · 討論", "畀你揀嘅話，買樓好定係租樓住好？", "bei2 nei5 gaan2 ge3 wa6 maai5 leo2 hou2 ding6 hei6 zou1 leo2 ju6 hou2", "让你选的话，买楼好还是租楼住好？", ["討論"]),
+  day29Sentence("discussion-03", "練習", "練習 · 討論", "時下唔少人返內地買樓，你點睇？", "xi4 ha6 m4 xiu2 yen4 faan1 noi6 dei6 maai5 leo2 nei5 dim2 tei2", "时下不少人回内地买楼，你怎么看？", ["討論"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文、表格和會話中的粵語專用字。
+  day29Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["政府嘅公屋"]),
+  day29Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["啲錢一下周轉唔到"]),
+  day29Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺一千零七十四平方公里嘅土地上"]),
+  day29Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那样", ["慢慢噉形成咗"]),
+  day29Item("char-zo", "粵字辨認", "粵字辨認 · 課文用字", "咗", "zo2", "了", ["形成咗"]),
+  day29Item("char-dei", "粵字辨認", "粵字辨認 · 課文用字", "哋", "dei6", "们", ["你哋一家四口"]),
+  day29Item("char-m", "粵字辨認", "粵字辨認 · 課文用字", "唔", "m4", "不", ["供唔起樓嘅話"]),
+  day29Item("char-ga", "粵字辨認", "粵字辨認 · 課文用字", "㗎", "ga3", "语气助词", ["月供要成萬三銀㗎"]),
+
+  // 八、短文朗讀
+  day29Sentence("reading-01", "短文朗讀", "短文朗讀", "香港人口稠密，住屋緊缺。", "heng1 gong2 yen4 heo2 ceo4 med6 ju6 ug1 gen2 kud3", "香港人口稠密，住屋紧缺。", ["稠密"]),
+  day29Sentence("reading-02", "短文朗讀", "短文朗讀", "長期以嚟，冇人過問。", "coeng4 kei4 yi5 lei4 mou5 yen4 guo3 men6", "长期以来，没人过问。", ["過問"]),
+  day29Sentence("reading-03", "短文朗讀", "短文朗讀", "直到1953年九龍石硤尾一場大火先至使到香港政府開始正視同埋著手解決呢個社會民生問題。", "jig6 dou3 yed1 geo2 ng5 sam1 nin4 geo2 lung4 seg6 haap6 mei5 yed1 ceng4 dai6 fo2 xin1 ji3 sai2 dou3 heng1 gong2 jing3 fu2 hoi1 qi2 jing3 xi6 tung4 maai4 zoek6 seo2 gaai2 kyud3 ni1 go3 se5 wui2 men4 sang1 men6 tai4", "直到1953年九龙石硖尾一场大火才使香港政府开始正视并着手解决这个社会民生问题。", ["石硤尾大火"]),
+  day29Sentence("reading-04", "短文朗讀", "短文朗讀", "佢首先致力幫助最困難嘅家庭，建造咗一批批嘅「廉租屋」，然後開始有計劃噉興建新型屋邨。", "keu5 seo2 xin1 ji3 lig6 bong1 zo6 zeoi3 kwan3 nan4 ge3 ga1 ting4 gin3 zou6 zo2 yed1 pei1 pei1 ge3 lim4 zou1 ug1 yin4 heo6 hoi1 qi2 yeo5 gai3 waag6 gem2 hing1 gin3 sen1 yeng4 ug1 cyun1", "它首先致力帮助最困难的家庭，建造了一批批“廉租屋”，然后开始有计划地兴建新型屋邨。", ["廉租屋"]),
+  day29Sentence("reading-05", "短文朗讀", "短文朗讀", "設計嘅要求係：（一）每個家庭擁有自己嘅單位；（二）全部單位都係獨立式，即水、電、廁、廚齊備；（三）每個人居住面積唔少於32呎半。", "qid3 gai3 ge3 yiu1 keo4 hei6 yed1 mui5 go3 ga1 ting4 yung5 yeo5 ji6 gei2 ge3 daan1 wei6 yi6 qyun4 bou6 daan1 wei6 dou1 hei6 dug6 lab6 xig1 jig1 seoi2 din6 qi3 cyu4 cai4 bei6 sam1 mui5 go3 yen4 geu1 ju6 min6 jig1 m4 xiu2 yu1 sam1 seb6 yi6 cek3 bun3", "设计的要求是：一、每个家庭拥有自己的单位；二、全部单位都是独立式，即水、电、厕、厨齐备；三、每个人居住面积不少于三十二平方尺半。", ["公屋設計"]),
+  day29Sentence("reading-06", "短文朗讀", "短文朗讀", "不過，申請入住呢類公屋，一般都有入息同人口嘅限制。", "bed1 guo3 sen1 qing2 yeb6 ju6 ni1 leoi6 gung1 ug1 yed1 bun1 dou1 yeo5 yeb6 xig1 tung4 yen4 heo2 ge3 han6 ji3", "不过，申请入住这类公屋，一般都有收入和人口的限制。", ["申請公屋"]),
+  day29Sentence("reading-07", "短文朗讀", "短文朗讀", "到咗七十年代末，政府提出「居者有其屋」嘅規劃，目標係滿足嗰啲入息超過申請公屋標準而又無力購買私人樓宇嘅中下層人士嘅需求。", "dou3 zo2 ced1 seb6 nin4 doi6 mud6 jing3 fu2 tei4 ced1 geu1 ze2 yeo5 kei4 ug1 ge3 kwai1 waag6 mug6 biu1 hei6 mun5 zug1 go2 di1 yeb6 xig1 qiu1 guo3 sen1 qing2 gung1 ug1 biu1 zeon2 yi4 yeo6 mou4 lig6 kau3 maai5 xi1 yen4 leo4 yu5 ge3 zung1 ha6 ceng4 yen4 xi6 ge3 seoi1 keo4", "到了七十年代末，政府提出“居者有其屋”的规划，目标是满足那些收入超过申请公屋标准而又无力购买私人楼宇的中下层人士的需求。", ["居者有其屋規劃"]),
+  day29Sentence("reading-08", "短文朗讀", "短文朗讀", "過咗十年之後，政府又公佈「長遠房屋政策」，主動鼓勵自置居所，希望喺廿一世紀基本上解決居民嘅住屋問題。", "guo3 zo2 seb6 nin4 ji1 heo6 jing3 fu2 yeo6 gung1 bou3 coeng4 yun5 fong4 ug1 jing3 caag3 ju2 dung6 gu2 lai6 ji6 ji3 geu1 so2 hei1 mong6 hei2 yaa6 yed1 sai3 gei2 gei1 bun2 soeng6 gaai2 kyud3 geu1 men4 ge3 ju6 ug1 men6 tai4", "过了十年之后，政府又公布“长远房屋政策”，主动鼓励自置居所，希望在二十一世纪基本上解决居民的住屋问题。", ["長遠房屋政策"]),
+  day29Sentence("reading-09", "短文朗讀", "短文朗讀", "當然，香港嘅公屋政策仲有不盡人意嘅地方，但係取得嘅成績係有目共睹嘅。", "dong1 yin4 heng1 gong2 ge3 gung1 ug1 jing3 caag3 zung6 yeo5 bed1 zeon6 yen4 yi3 ge3 dei6 fong1 dan6 hei6 qyu2 deg1 ge3 seng4 jig1 hei6 yeo5 mug6 gung6 dou2 ge3", "当然，香港的公屋政策还有不尽人意的地方，但是取得的成绩是有目共睹的。", ["公屋政策"])
+);
+
+
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
 });
