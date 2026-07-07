@@ -5006,6 +5006,185 @@ window.STUDY_ITEMS.push(
 );
 
 
+const day30Item = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day30-${id}`,
+  day: "day30",
+  module,
+  category: `29 貪字變貧字 · ${subtitle}`,
+  traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["jyutping", "meaning", "reverse"]
+});
+
+const day30Sentence = (id, module, subtitle, traditional, jyutping, mandarin, examples = []) => ({
+  id: `day30-sent-${id}`,
+  day: "day30",
+  module,
+  category: `29 貪字變貧字 · ${subtitle}`,
+  simplified: mandarin,
+  traditional,
+  cantonese: traditional,
+  jyutping,
+  mandarin,
+  examples,
+  questionTypes: ["sentenceJyutping"]
+});
+
+window.STUDY_ITEMS.push(
+  // 來源盤點：FlipHTML5 p369-p380；p381 已進入下一課「話説移民」。
+  // 一、課文
+  day30Sentence("title-01", "課文", "課文", "跑馬嗰日，馬迷一入到馬場，就馬上排隊落注買番隻熱門馬。", "pao2 ma5 go2 yed6 ma5 mei4 yed1 yeb6 dou3 ma5 ceng4 zeo6 ma5 seng6 paai4 deoi6 log6 ju3 maai5 fan1 zeg3 yid6 mun5 ma5", "赛马那天，马迷一进到马场，就马上排队下注，买一匹热门马。", ["標題頁題句"]),
+  day30Sentence("text-01", "課文", "課文", "香港跑馬，除咗夏季唞暑之外，一年三季，每周兩次，即每逢禮拜三、六，或禮拜日都有馬跑。", "heng1 gong2 pao2 ma5 ceoi4 zo2 ha6 guei3 teo2 xu2 ji1 ngoi6 yed1 nin4 sam1 guei3 mui5 zeo1 loeng5 qi3 jig1 mui5 fung4 lei5 baai3 sam1 lug6 wag6 lei5 baai3 yed6 dou1 yeo5 ma5 pao2", "香港赛马，除了夏季歇伏之外，一年三季，每周两次，即每逢星期三、六，或者星期日都有赛事。", ["跑馬"]),
+  day30Sentence("text-02", "課文", "課文", "跑馬嗰日，馬迷一族都暫時拋開一切，湧去馬場，希望財神照顧，掘番啲「草皮」。", "pao2 ma5 go2 yed6 ma5 mei4 yed1 zug6 dou1 zam6 xi4 pao1 hoi1 yed1 cei3 yung2 heo3 ma5 ceng4 hei1 mong6 coi4 sen4 jiu3 gu3 gued6 fan1 di1 cou2 pei4", "比赛那天，马迷一族都暂时抛开一切，纷纷到赛马场去，希望财神照顾，发点横财。", ["掘草皮"]),
+  day30Sentence("text-03", "課文", "課文", "一入到去，就馬上排隊落注買番隻熱門馬。", "yed1 yeb6 dou3 heo3 zeo6 ma5 seng6 paai4 deoi6 log6 ju3 maai5 fan1 zeg3 yid6 mun5 ma5", "一进去，就马上排队下注，买一买热门马。", ["落注"]),
+  day30Sentence("text-04", "課文", "課文", "等到閘門一開，群馬飛奔向前，馬迷嘅心，就跟住馬蹄的得聲一齊跳動，眼都唔眨一下噉望實自己隻心水馬，個個都狂熱等待住命運嘅眷顧，等待住以小博大嘅實現。", "deng2 dou3 zaab6 mun4 yed1 hoi1 kuen4 ma5 fei1 ben1 heng3 qin4 ma5 mei4 ge3 sem1 zeo6 gen1 ju6 ma5 tei4 dig1 deg1 seng1 yed1 cei4 tiu3 dung6 ngaan5 dou1 m4 zam2 yed1 ha5 gem2 mong6 sed6 ji6 gei2 zeg3 sem1 seu2 ma5 go3 go3 dou1 kuong4 yid6 deng2 doi6 ju6 ming6 wen6 ge3 gyun3 gu3 deng2 doi6 ju6 yi5 xiu2 bog3 dai6 ge3 sed6 yin6", "等到闸门一开，群马飞奔向前，马迷的心就随着响亮的马蹄声一起跳动，眼睛也不眨一下，死盯着自己选定的马，每个人都狂热地等待着命运的眷顾，等待着以一本而图万利的实现。", ["心水馬", "以小博大"]),
+  day30Sentence("text-05", "課文", "課文", "忘形之時真係老豆姓乜都唔知。", "mong4 ying4 ji1 xi4 zen1 hei6 lou5 deo6 xing3 med1 dou1 m4 ji1", "忘形之时真是老爹姓什么都忘了。", ["老豆姓乜都唔知"]),
+  day30Sentence("text-06", "課文", "課文", "總之，馬季一開鑼，差唔多成個香港都畀「有馬則生，冇馬則死」嘅心態所麻醉。", "zung2 ji1 ma5 guei3 yed1 hoi1 lo4 ca1 m4 do1 seng4 go3 heng1 gong2 dou1 bei2 yeo5 ma5 zeg1 sang1 mou5 ma5 zeg1 sei2 ge3 sem1 tai3 so2 ma4 zeoi3", "总之，赛马季节一开始，差不多整个香港都被“有马则生，冇马则死”的心态所麻醉。", ["有馬則生，冇馬則死"]),
+  day30Sentence("text-07", "課文", "課文", "一場賽事之後，當然有輸有贏。", "yed1 ceng4 coi3 xi6 ji1 heo6 dong1 yin4 yeo5 xu1 yeo5 yeng4", "一场赛事之后，当然有输有赢。", ["賽事"]),
+  day30Sentence("text-08", "課文", "課文", "但係正所謂小數怕長計，成年累月噉計，則實係輸多贏少。", "dan6 hei6 jing3 so2 wei6 xiu2 sou3 pa3 ceng4 gei3 seng4 nin4 leu6 yud6 gem2 gei3 zeg1 sed6 hei6 xu1 do1 yeng4 xiu2", "但是，小数目加起来就成大数目，成年累月地算起来，那肯定是输多赢少。", ["小數怕長計"]),
+  day30Sentence("text-09", "課文", "課文", "嚟「掘草皮」嘅馬迷更多嘅係嚟「鋪草皮」就真。", "lei4 gued6 cou2 pei4 ge3 ma5 mei4 geng3 do1 ge3 hei6 lei4 pou1 cou2 pei4 zeo6 zen1", "梦想赢钱的马迷其实往往更多的是来输钱。", ["掘草皮", "鋪草皮"]),
+  day30Sentence("text-10", "課文", "課文", "嗨！又會咁懵嘅，好買唔買買咗嗰隻曳馬，搞到呢鋪又輸埋。", "hai4 yeo6 wui5 gem3 mung2 ge3 hou2 maai5 m4 maai5 maai5 zo2 go2 zeg3 yei5 ma5 gaau2 dou3 ni1 pou1 yeo6 xu1 maai4", "唉，怎么会那么糊涂，偏偏买上了那匹次马，弄得这回又输掉。", ["懵", "呢鋪"]),
+  day30Sentence("text-11", "課文", "課文", "呢啲噉嘅說話，講咗等於冇講。", "ni1 di1 gem2 ge3 xud3 wa6 gong2 zo2 deng2 yu1 mou5 gong2", "这样的话，说了等于没说。", ["說話"]),
+  day30Sentence("text-12", "課文", "課文", "事關對於啲賭仔嚟講，今次輸咗，下次再嚟過。", "xi6 guan1 deoi3 yu1 di1 dou2 zei2 lei4 gong2 gem1 qi3 xu1 zo2 ha6 qi3 zoi3 lei4 guo3", "因为对于那些赌徒来说，这次输了，下次再赌。", ["賭仔", "再嚟過"]),
+  day30Sentence("text-13", "課文", "課文", "只要佢哋一日諗住「總會有一次中卦，話唔埋就係呢次添」，噉，求財若渴嘅香港人就離唔開跑馬。", "ji2 yiu3 keu5 dei6 yed1 yed6 nem2 ju6 zung2 wui5 yeo5 yed1 qi3 zung3 gua3 wa6 m4 mai4 zeo6 hei6 ni1 qi3 tim1 gem2 keo4 coi4 yeog6 hod3 ge3 heng1 gong2 yen4 zeo6 lei4 m4 hoi1 pao2 ma5", "只要他们一天老想着“总会有一次中奖吧，说不定就是这一次呢”，那么，求财若渴的香港人就离不开赛马。", ["話唔埋", "求財若渴"]),
+  day30Sentence("text-14", "課文", "課文", "正所謂「馬照跑」，就構成香港文化嘅一個重要部分。", "jing3 so2 wei6 ma5 jiu3 pao2 zeo6 geo3 xing4 heng1 gong2 men4 fa3 ge3 yed1 go3 zung6 yiu3 bou6 fen6", "所谓“马照跑”，就构成香港文化的一个重要部分。", ["馬照跑"]),
+
+  // 二、重點詞彙
+  day30Item("vocab-paoma", "重點詞彙", "重點詞彙", "跑馬", "pao2 ma5", "赛马", ["香港跑馬"]),
+  day30Item("vocab-teoxu", "重點詞彙", "重點詞彙", "唞暑", "teo2 xu2", "歇伏；暑期停赛", ["夏季唞暑"]),
+  day30Item("vocab-yungheo", "重點詞彙", "重點詞彙", "湧去", "yung2 heo3", "纷纷去", ["湧去馬場"]),
+  day30Item("vocab-guedcoupei", "重點詞彙", "重點詞彙", "掘草皮", "gued6 cou2 pei4", "惯用语，指在赌马中赢钱", ["掘番啲草皮"]),
+  day30Item("vocab-logju", "重點詞彙", "重點詞彙", "落注", "log6 ju3", "下赌注", ["排隊落注"]),
+  day30Item("vocab-digdegsheng", "重點詞彙", "重點詞彙", "的得聲", "dig1 deg1 seng1", "象声词，马蹄踏地的声音", ["馬蹄的得聲"]),
+  day30Item("vocab-mongsed", "重點詞彙", "重點詞彙", "望實", "mong6 sed6", "盯着；死看着", ["望實自己隻心水馬"]),
+  day30Item("vocab-semseu", "重點詞彙", "重點詞彙", "心水", "sem1 seu2", "符合自己心意的；心意", ["心水馬"]),
+  day30Item("vocab-yixiubogdai", "重點詞彙", "重點詞彙", "以小博大", "yi5 xiu2 bog3 dai6", "以一本而图万利", ["以小博大嘅實現"]),
+  day30Item("vocab-loudeoxing", "重點詞彙", "重點詞彙", "老豆姓乜都唔知", "lou5 deo6 xing3 med1 dou1 m4 ji1", "因沉迷而忘记一切，带夸张意味", ["忘形之時"]),
+  day30Item("vocab-hoilo", "重點詞彙", "重點詞彙", "開鑼", "hoi1 lo4", "开始活动", ["馬季一開鑼"]),
+  day30Item("vocab-jingsowei", "重點詞彙", "重點詞彙", "正所謂", "jing3 so2 wei6", "开首语，用来引出谚俗语", ["正所謂"]),
+  day30Item("vocab-xiusoupacenggei", "重點詞彙", "重點詞彙", "小數怕長計", "xiu2 sou3 pa3 ceng4 gei3", "小数目加起来就成大数目", ["成年累月噉計"]),
+  day30Item("vocab-poucoupei", "重點詞彙", "重點詞彙", "鋪草皮", "pou1 cou2 pei4", "惯用语，指在赌马中输钱", ["嚟鋪草皮"]),
+  day30Item("vocab-zeozen", "重點詞彙", "重點詞彙", "（……）就真", "zeo6 zen1", "才对；用于小句后说明内容的真实性", ["鋪草皮就真"]),
+  day30Item("vocab-hai", "重點詞彙", "重點詞彙", "嗨", "hai4", "感叹词，唉", ["嗨！"]),
+  day30Item("vocab-mung", "重點詞彙", "重點詞彙", "懵", "mung2", "糊涂", ["又會咁懵嘅"]),
+  day30Item("vocab-xudwa", "重點詞彙", "重點詞彙", "說話", "xud3 wa6", "话", ["呢啲噉嘅說話"]),
+  day30Item("vocab-douzei", "重點詞彙", "重點詞彙", "賭仔", "dou2 zei2", "赌徒", ["啲賭仔"]),
+  day30Item("vocab-zoileiguo", "重點詞彙", "重點詞彙", "再嚟過", "zoi3 lei4 guo3", "再尝试一次", ["下次再嚟過"]),
+  day30Item("vocab-nemju", "重點詞彙", "重點詞彙", "諗住", "nem2 ju6", "想着；以为", ["諗住總會有一次中"]),
+  day30Item("vocab-gua", "重點詞彙", "重點詞彙", "卦", "gua3", "语气词，表示猜测", ["中卦"]),
+  day30Item("vocab-wammai", "重點詞彙", "重點詞彙", "話唔埋", "wa6 m4 mai4", "说不定", ["話唔埋就係呢次添"]),
+  day30Item("vocab-jiu", "重點詞彙", "重點詞彙", "照", "jiu3", "按照惯例或情理做某事", ["馬照跑"]),
+
+  // 三、補充語彙
+  day30Item("supp-lughebcoi", "補充語彙", "補充語彙 · 詞語", "六合彩", "lug6 heb6 coi2", "六合彩", ["買六合彩"]),
+  day30Item("supp-teojuzam", "補充語彙", "補充語彙 · 詞語", "投注站", "teo4 ju3 zam6", "投注站", ["下注"]),
+  day30Item("supp-zungzoeng", "補充語彙", "補充語彙 · 詞語", "中獎", "zung3 zoeng2", "中奖", ["中獎嗰一日"]),
+  day30Item("supp-dobouzoenggem", "補充語彙", "補充語彙 · 詞語", "多寶獎金", "do1 bou2 zoeng2 gem1", "多宝奖金", ["金多寶"]),
+  day30Item("supp-landou", "補充語彙", "補充語彙 · 詞語", "爛賭", "lan6 dou2", "烂赌；嗜赌成性", ["爛賭"]),
+  day30Item("supp-gaidou", "補充語彙", "補充語彙 · 詞語", "戒賭", "gai3 dou2", "戒赌", ["戒賭"]),
+  day30Item("supp-damazeg", "補充語彙", "補充語彙 · 詞語", "打麻雀", "da2 ma4 zeg3", "打麻将", ["麻雀癮"]),
+  day30Item("supp-daseihiun", "補充語彙", "補充語彙 · 詞語", "打四圈", "da2 sei3 hiun1", "打四圈麻将", ["打四圈"]),
+  day30Item("supp-feifadzeoudou", "補充語彙", "補充語彙 · 詞語", "非法聚賭", "fei1 fad3 zeoi6 dou2", "非法聚赌", ["聚賭"]),
+  day30Item("supp-mazeggoek", "補充語彙", "補充語彙 · 詞語", "（麻雀）腳", "ma4 zeg3 goek3", "牌脚；打麻将的搭子", ["麻雀腳"]),
+  day30Item("supp-xigwu", "補充語彙", "補充語彙 · 詞語", "食糊", "xig6 wu4", "麻将和牌", ["食糊"]),
+  day30Item("supp-xigzawu", "補充語彙", "補充語彙 · 詞語", "食詐糊", "xig6 za6 wu4", "诈和；误报和牌", ["食詐糊"]),
+  day30Sentence("supp-01", "補充語彙", "補充語彙 · 句子", "香港地有「麻雀癮」嘅，大有人在。", "heng1 gong2 dei6 yeo5 ma4 zeg3 yen5 ge3 dai6 yeo5 yen4 zoi6", "香港有麻将瘾的人大有人在。", ["麻雀癮"]),
+  day30Sentence("supp-02", "補充語彙", "補充語彙 · 句子", "或者喺屋企打，約埋親朋戚友，忙裏偷閒，閉門竹戰。", "wag6 ze2 hei2 ug1 kei2 da2 yeog3 maai4 cen1 pang4 qig1 yeo5 mong4 leoi5 teo1 han4 bei3 mun4 zug1 zin3", "或者在家里打，约上亲朋戚友，忙里偷闲，闭门竹战。", ["竹戰"]),
+  day30Sentence("supp-03", "補充語彙", "補充語彙 · 句子", "或者喺聯誼會開房打，「劈嚦啪啦」打個通宵。", "wag6 ze2 hei2 lyun4 yi4 wui2 hoi1 fong2 da2 pig1 lig1 pag1 la1 da2 go3 tung1 xiu1", "或者在联谊会开房打，劈里啪啦打一个通宵。", ["劈嚦啪啦"]),
+  day30Sentence("supp-04", "補充語彙", "補充語彙 · 句子", "酒樓嘅喜慶宴會亦唔少得一番麻雀耍樂。", "zeo2 leo4 ge3 hei2 hing3 yin3 wui6 yig6 m4 xiu2 deg1 yed1 fan1 ma4 zeg3 sa2 log6", "酒楼的喜庆宴会也少不了一番麻将娱乐。", ["麻雀耍樂"]),
+  day30Sentence("supp-05", "補充語彙", "補充語彙 · 句子", "講到明係「五時恭候，九時入席」吖嘛。", "gong2 dou3 ming4 hei6 ng5 xi4 gung1 heo6 geo2 xi4 yeb6 jig6 a1 ma3", "讲明是“五时恭候，九时入席”嘛。", ["五時恭候，九時入席"]),
+
+  // 四、重點理解
+  day30Item("understanding-aaseng", "重點理解", "重點理解 · AA聲", "AA聲", "aa1 aa1 seng1", "形容词结构，多描述情状、声状等", ["嗱嗱聲", "哼哼聲"]),
+  day30Sentence("understanding-01", "重點理解", "重點理解 · AA聲", "爭兩個字就夠鐘，你仲唔嗱嗱聲去？", "zeng1 loeng5 go3 ji6 zeo6 geo3 zung1 nei5 zung6 m4 la4 la2 seng1 heo3", "差十分钟就到点了，你还不赶紧去？", ["嗱嗱聲"]),
+  day30Sentence("understanding-02", "重點理解", "重點理解 · AA聲", "佢琴晚痛到哼哼聲，咪即刻同佢去醫院睇睇囉。", "keu5 kem4 maan5 tung3 dou3 heng4 heng2 seng1 mai6 jig1 heg1 tung4 keu5 heo3 yi1 yun2 tei2 tei2 lo1", "他昨晚痛得不住呻吟，就马上陪他到医院看看吧。", ["哼哼聲"]),
+  day30Item("understanding-semseu", "重點理解", "重點理解 · 心水", "心水", "sem1 seu2", "符合自己心意；也可表示心意或思考能力", ["心水歌", "心水清"]),
+  day30Sentence("understanding-03", "重點理解", "重點理解 · 心水", "電台啫啫播緊我隻心水歌。", "din6 toi4 ze1 ze1 bo3 gen2 ngo5 zeg3 sem1 seu2 go1", "电台正播放我喜爱的歌曲。", ["心水歌"]),
+  day30Sentence("understanding-04", "重點理解", "重點理解 · 心水", "嗰架車有型有款，啱晒你心水啦啩。", "go2 ga3 ce1 yeo5 yeng4 yeo5 fun2 ngam1 sai3 nei5 sem1 seu2 la1 gua3", "那部车外形优美，称你的心了吧。", ["心水"]),
+  day30Sentence("understanding-05", "重點理解", "重點理解 · 心水", "佢心水清，呃唔到佢㗎。", "keu5 sem1 seu2 qing1 ngag1 m4 dou3 keu5 ga3", "他心中有数，骗不了他的。", ["心水清"]),
+  day30Item("understanding-gua", "重點理解", "重點理解 · 卦", "卦", "gua3", "语气助词，表示怀疑、猜测，不十分肯定", ["禮拜三卦"]),
+  day30Sentence("understanding-06", "重點理解", "重點理解 · 卦", "嗰日係禮拜三卦。", "go2 yed6 hei6 lei5 baai3 sam1 gua3", "那天恐怕是星期三。", ["卦"]),
+  day30Sentence("understanding-07", "重點理解", "重點理解 · 卦", "聽日唔會落雨卦。", "ting1 yed6 m4 wui5 log6 yu5 gua3", "看起来明天不会下雨吧。", ["卦"]),
+  day30Item("understanding-houam4a", "重點理解", "重點理解 · 好A唔A", "好A唔A", "hou2 aa1 m4 aa1", "表示不应该做的事情倒做了，或不应该选的倒选了", ["好請唔請", "好點唔點"]),
+  day30Sentence("understanding-08", "重點理解", "重點理解 · 好A唔A", "好請唔請，請到個噉嘅人返嚟做嘢。", "hou2 qing2 m4 qing2 qing2 dou3 go3 gem2 ge3 yen4 faan1 lei4 zou6 ye5", "居然会请了这样的人回来干活。", ["好請唔請"]),
+  day30Sentence("understanding-09", "重點理解", "重點理解 · 好A唔A", "好點唔點，點埋晒啲咁辣嘅菜嚟食。", "hou2 dim2 m4 dim2 dim2 maai4 sai3 di1 gem3 laad6 ge3 coi3 lei4 xig6", "怎么点的竟都是那么辣的菜。", ["好點唔點"]),
+  day30Item("understanding-jiuverb", "重點理解", "重點理解 · 名詞照動詞", "名詞＋照＋動詞", "ming4 qi4 jiu3 dung6 qi4", "表示某种活动照常进行，不受别的因素影响", ["馬照跑", "病假人工照發"]),
+  day30Sentence("understanding-10", "重點理解", "重點理解 · 名詞照動詞", "馬照跑。", "ma5 jiu3 pao2", "马照样跑。", ["馬照跑"]),
+  day30Sentence("understanding-11", "重點理解", "重點理解 · 名詞照動詞", "病假人工照發。", "beng6 ga3 yen4 gung1 jiu3 fad3", "病假工资照发。", ["照發"]),
+  day30Sentence("understanding-12", "重點理解", "重點理解 · 名詞照動詞", "唔理人事點變動，工作照做。", "m4 lei5 yen4 xi6 dim2 bin3 dung6 gung1 zog3 jiu3 zou6", "不管人事怎样变动，工作照做。", ["照做"]),
+
+  // 五、講解：慣用語與粵語趣談
+  day30Item("idiom-xignou", "講解", "講解 · 慣用語", "食腦", "xig6 nou5", "以脑力劳动谋生", ["慣用語"]),
+  day30Item("idiom-xigseimao", "講解", "講解 · 慣用語", "食死貓", "xig6 sei2 maau1", "吃哑巴亏", ["慣用語"]),
+  day30Item("idiom-xigmaomin", "講解", "講解 · 慣用語", "食貓麵", "xig6 maau1 min6", "捏吡儿", ["慣用語"]),
+  day30Item("idiom-xigugzung", "講解", "講解 · 慣用語", "食穀種", "xig6 gug1 zung2", "吃老本儿", ["慣用語"]),
+  day30Item("idiom-xigsagmei", "講解", "講解 · 慣用語", "食塞米", "xig6 sag1 mei5", "窝囊废", ["慣用語"]),
+  day30Item("idiom-jamcou", "講解", "講解 · 慣用語", "呷醋", "haap3 cou3", "吃醋", ["跟普通話相仿"]),
+  day30Item("culture-taifung", "講解", "講解 · 粵語趣談 · 颱風", "打大風", "da2 dai6 fung1", "粤语里说刮台风、遇到热带风暴", ["現代粵語沿用"]),
+  day30Item("culture-typhoon", "講解", "講解 · 粵語趣談 · 颱風", "颱風", "toi4 fung1", "由粤语“大風”经英语 typhoon 再译入汉语的词", ["typhoon"]),
+
+  // 六、傳意項目介紹：抱怨（只收完整例句）
+  day30Sentence("complaint-01", "傳意項目介紹", "傳意項目介紹 · 抱怨別人", "乜咁遲先至嚟㗎，都成十點鐘咯。", "med1 gem3 qi4 xin1 ji3 lei4 ga3 dou1 seng4 seb6 dim2 zung1 lo3", "怎么这么晚才来，都十点钟了。", ["一般的抱怨"]),
+  day30Sentence("complaint-02", "傳意項目介紹", "傳意項目介紹 · 抱怨別人", "都冇解嘅，等咗成半個鐘頭都冇架車嚟。", "dou1 mou5 gaai2 ge3 deng2 zo2 seng4 bun3 go3 zung1 teo4 dou1 mou5 ga3 ce1 lei4", "真没办法，等了半个钟头都没有车来。", ["一般的抱怨"]),
+  day30Sentence("complaint-03", "傳意項目介紹", "傳意項目介紹 · 抱怨別人", "佢寫嘅報告亂到乜嘢噉，冇厘條理，睇極唔明。", "keu5 se2 ge3 bou3 gou3 lyun6 dou3 med1 ye5 gem2 mou5 lei4 tiu4 lei5 tei2 gig6 m4 ming4", "他写的报告乱得不得了，毫无条理，看半天也看不明白。", ["強烈的抱怨"]),
+  day30Sentence("complaint-04", "傳意項目介紹", "傳意項目介紹 · 抱怨別人", "佢做嘢鬼死咁拖拉，到而家都未做好一半。", "keu5 zou6 ye5 guei2 sei2 gem3 to1 la1 dou3 yi4 ga1 dou1 mei6 zou6 hou2 yed1 bun3", "他做事拖拉得很，到现在还没做好一半。", ["強烈的抱怨"]),
+  day30Sentence("complaint-05", "傳意項目介紹", "傳意項目介紹 · 埋怨自己", "都係自己衰啦，好揀唔揀揀咗啲咁嘅流嘢。", "dou1 hei6 ji6 gei2 seoi1 la1 hou2 gaan2 m4 gaan2 gaan2 zo2 di1 gem3 ge3 leo4 ye5", "都是自己不好，偏偏选了这些劣质东西。", ["自己做錯事而自責"]),
+  day30Sentence("complaint-06", "傳意項目介紹", "傳意項目介紹 · 埋怨自己", "吓，又會咁懵嘅，條數計少咗成百文喎。", "ha5 yeo6 wui5 gem3 mung2 ge3 tiu4 sou3 gei3 xiu2 zo2 seng4 baag3 men4 wo3", "哎呀，怎么会这么糊涂，那笔数少算了一百块。", ["因估計錯誤而自責"]),
+  day30Sentence("complaint-07", "傳意項目介紹", "傳意項目介紹 · 埋怨自己", "都怪我唔好，唔記得打電話話畀你知個會改咗期。", "dou1 gwaai3 ngo5 m4 hou2 m4 gei3 deg1 da2 din6 wa6 wa6 bei2 nei5 ji1 go3 wui6 goi2 zo2 kei4", "都怪我不好，忘记打电话告诉你会议改期了。", ["感到對不起別人而自責"]),
+
+  // 七、練習
+  day30Sentence("dialogue-01", "練習", "練習 · 會話聆聽", "你買唔買六合彩㗎？", "nei5 maai5 m4 maai5 lug6 heb6 coi2 ga3", "你买不买六合彩？", ["會話"]),
+  day30Sentence("dialogue-02", "練習", "練習 · 會話聆聽", "一時時啦。", "yed1 xi4 xi4 la1", "看时候吧。", ["一時時"]),
+  day30Sentence("dialogue-03", "練習", "練習 · 會話聆聽", "大賭傷財，小賭怡情噉解啦。", "dai6 dou2 soeng1 coi4 xiu2 dou2 yi4 qing4 gem2 gaai2 la1", "大赌伤财，小赌怡情，就是这个意思。", ["小賭怡情"]),
+  day30Sentence("dialogue-04", "練習", "練習 · 會話聆聽", "我都係噉話。", "ngo5 dou1 hei6 gem2 wa6", "我也是这么说。", ["噉話"]),
+  day30Sentence("dialogue-05", "練習", "練習 · 會話聆聽", "逢係有金多寶嗰陣，我就去買佢幾張電腦飛試試。", "fung4 hei6 yeo5 gem1 do1 bou2 go2 zen6 ngo5 zeo6 heo3 maai5 keu5 gei2 zoeng1 din6 nou5 fei1 qi3 qi3", "每逢有金多宝的时候，我就去买几张电脑票试试。", ["金多寶"]),
+  day30Sentence("dialogue-06", "練習", "練習 · 會話聆聽", "乜唔係你自己揀冧巴嘅咩？", "med1 m4 hei6 nei5 ji6 gei2 gaan2 lem1 ba1 ge3 me1", "难道不是你自己选号的吗？", ["冧巴"]),
+  day30Sentence("dialogue-07", "練習", "練習 · 會話聆聽", "六合彩嘅嘢，跑馬射蚊鬚啫，我就唔信嗰啲乜嘢旺碼乜嘢衰碼㗎。", "lug6 heb6 coi2 ge3 ye5 pao2 ma5 se6 men1 sou1 ze1 ngo5 zeo6 m4 seon3 go2 di1 med1 ye5 wong6 ma5 med1 ye5 seoi1 ma5 ga3", "六合彩这种东西只是碰运气，我就不信那些旺码衰码。", ["旺碼", "衰碼"]),
+  day30Sentence("dialogue-08", "練習", "練習 · 會話聆聽", "我淨係信我自己嘅心水碼，買親都係嗰幾個冧巴。", "ngo5 jing6 hei6 seon3 ngo5 ji6 gei2 ge3 sem1 seu2 ma5 maai5 cen1 dou1 hei6 go2 gei2 go3 lem1 ba1", "我只相信自己的心水号码，每次买都是那几个号码。", ["心水碼"]),
+  day30Sentence("dialogue-09", "練習", "練習 · 會話聆聽", "噉你試過中未吖？", "gem2 nei5 qi3 guo3 zung3 mei6 a1", "那你试中过没有？", ["中未"]),
+  day30Sentence("dialogue-10", "練習", "練習 · 會話聆聽", "精誠所至，神靈保佑，梗有中獎嗰一日嘅。", "jing1 seng4 so2 ji3 sen4 ling4 bou2 yeo6 geng2 yeo5 zung3 zoeng2 go2 yed1 yed6 ge3", "精诚所至，神灵保佑，总有中奖的一天。", ["中獎"]),
+  day30Sentence("dialogue-11", "練習", "練習 · 會話聆聽", "又去澳門搏殺呀？", "yeo6 heo3 ou3 mun4 bog3 saad3 a3", "又去澳门拼杀吗？", ["搏殺"]),
+  day30Sentence("dialogue-12", "練習", "練習 · 會話聆聽", "嗨，又係全軍覆沒……", "hai4 yeo6 hei6 qyun4 gwen1 fug1 mud6", "唉，又是全军覆没……", ["全軍覆沒"]),
+  day30Sentence("dialogue-13", "練習", "練習 · 會話聆聽", "你噉樣唔係辦法㗎噃，賭親就輸，輸咗又借錢去賭過。", "nei5 gem2 yeung6 m4 hei6 baan6 faat3 ga3 bo3 dou2 cen1 zeo6 xu1 xu1 zo2 yeo6 ze3 qin2 heo3 dou2 guo3", "你这样不是办法，逢赌就输，输了又借钱去赌。", ["賭親就輸"]),
+  day30Sentence("dialogue-14", "練習", "練習 · 會話聆聽", "「人無橫財不富」吖嘛。", "yen4 mou4 waang4 coi4 bed1 fu3 a1 ma3", "人无横财不富嘛。", ["橫財"]),
+  day30Sentence("dialogue-15", "練習", "練習 · 會話聆聽", "富貴榮華，身外物啫。", "fu3 guei3 wing4 wa4 san1 ngoi6 med6 ze1", "富贵荣华，只是身外物。", ["身外物"]),
+  day30Sentence("dialogue-16", "練習", "練習 · 會話聆聽", "成日信埋晒「小富由儉，大富由天」嘅道理唔得嘅。", "seng4 yed6 seon3 maai4 sai3 xiu2 fu3 yeo4 gim6 dai6 fu3 yeo4 tin1 ge3 dou6 lei5 m4 deg1 ge3", "整天相信“小富由俭，大富由天”的道理是不行的。", ["小富由儉，大富由天"]),
+  day30Sentence("dialogue-17", "練習", "練習 · 會話聆聽", "唔得又點？", "m4 deg1 yeo6 dim2", "不行又怎样？", ["又點"]),
+  day30Sentence("dialogue-18", "練習", "練習 · 會話聆聽", "做人嘅嘢得個「搏」字。", "zou6 yen4 ge3 ye5 deg1 go3 bog3 ji6", "做人这回事只有一个“搏”字。", ["搏"]),
+  day30Sentence("dialogue-19", "練習", "練習 · 會話聆聽", "因住「貪字得個貧」呀。", "yen1 ju6 taam1 ji6 deg1 go3 pen4 a3", "小心“贪字得个贫”。", ["貪字得個貧"]),
+  day30Sentence("dialogue-20", "練習", "練習 · 會話聆聽", "好啦，好啦，借住幾嚿水嚟開飯，得唔得呀？", "hou2 la1 hou2 la1 ze3 ju6 gei2 gau6 seoi2 lei4 hoi1 fan6 deg1 m4 deg1 a3", "好啦，好啦，先借我几百块来开饭，行不行？", ["幾嚿水"]),
+  day30Sentence("discussion-01", "練習", "練習 · 討論", "講講「小賭怡情，大賭傷財」嘅心得。", "gong2 gong2 xiu2 dou2 yi4 qing4 dai6 dou2 soeng1 coi4 ge3 sem1 deg1", "说说“小赌怡情，大赌伤财”的心得。", ["討論"]),
+  day30Sentence("discussion-02", "練習", "練習 · 討論", "由於爛賭而造成種種悲劇，香港無日無之，試講出一兩個最近發生嘅例子。", "yeo4 yu1 laan6 dou2 yi4 zou6 seng4 zung2 zung2 bei1 kek6 heng1 gong2 mou4 yed6 mou4 ji1 qi3 gong2 ced1 yed1 loeng5 go3 zeoi3 gen6 fad3 sang1 ge3 lai6 zi2", "由于烂赌而造成种种悲剧，香港天天都有，试着讲出一两个最近发生的例子。", ["討論"]),
+  day30Sentence("discussion-03", "練習", "練習 · 討論", "舉例說明一下「貪字變貧字」點解。", "geoi2 lai6 xud3 ming4 yed1 ha5 taam1 ji6 bin3 pen4 ji6 dim2 gaai2", "举例说明一下“贪字变贫字”的意思。", ["討論"]),
+
+  // 原書本課未另列「粵字辨認」頁，取本課正文和會話中的粵語專用字。
+  day30Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["命運嘅眷顧"]),
+  day30Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["啲賭仔"]),
+  day30Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺屋企打"]),
+  day30Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那样", ["成年累月噉計"]),
+  day30Item("char-zo", "粵字辨認", "粵字辨認 · 課文用字", "咗", "zo2", "了", ["輸咗"]),
+  day30Item("char-dei", "粵字辨認", "粵字辨認 · 課文用字", "哋", "dei6", "们", ["佢哋一日諗住"]),
+  day30Item("char-m", "粵字辨認", "粵字辨認 · 課文用字", "唔", "m4", "不", ["老豆姓乜都唔知"]),
+  day30Item("char-ga", "粵字辨認", "粵字辨認 · 課文用字", "㗎", "ga3", "语气助词", ["你噉樣唔係辦法㗎噃"]),
+
+  // 八、短文朗讀
+  day30Sentence("reading-01", "短文朗讀", "短文朗讀", "舊底有句老話：香港嘅權力機構三位一體，即馬會、滙豐同埋港督。", "geo6 dei2 yeo5 geoi3 lou5 wa6 heng1 gong2 ge3 kyun4 lig6 gei1 kau3 sam1 wei6 yed1 tai2 jig1 ma5 wui6 wui6 fung1 tung4 maai4 gong2 dug1", "从前有句老话：香港的权力机构三位一体，即马会、汇丰和港督。", ["權力機構"]),
+  day30Sentence("reading-02", "短文朗讀", "短文朗讀", "滙豐銀行代表經濟勢力，港督代表政治勢力，噉馬會又代表乜嘢以至於放喺第一位咁巴閉呢？", "wui6 fung1 ngen4 hong4 doi6 biu2 ging1 zai3 sai3 lig6 gong2 dug1 doi6 biu2 jing3 ji6 sai3 lig6 gem2 ma5 wui6 yeo6 doi6 biu2 med1 ye5 yi5 ji3 yu1 fong3 hei2 dai6 yed1 wei6 gem3 ba1 bai3 ne1", "汇丰银行代表经济势力，港督代表政治势力，那马会又代表什么，以至于被放在第一位那么厉害呢？", ["馬會"]),
+  day30Sentence("reading-03", "短文朗讀", "短文朗讀", "本來香港法例禁賭，但係賭馬卻係惟一合法嘅賭博。", "bun2 loi4 heng1 gong2 faat3 lai6 gem3 dou2 dan6 hei6 dou2 ma5 koek3 hei6 wai4 yed1 heb6 faat3 ge3 dou2 bog3", "本来香港法例禁赌，但是赌马却是唯一合法的赌博。", ["賭馬合法"]),
+  day30Sentence("reading-04", "短文朗讀", "短文朗讀", "既然合法，大家都可以去賭。", "gei3 yin4 heb6 faat3 dai6 ga1 dou1 ho2 yi5 heo3 dou2", "既然合法，大家都可以去赌。", ["合法"]),
+  day30Sentence("reading-05", "短文朗讀", "短文朗讀", "當然唔係話香港地個個都去賭，但係喺七百萬人嘅香港，假假地都有成百幾萬馬迷。", "dong1 yin4 m4 hei6 wa6 heng1 gong2 dei6 go3 go3 dou1 heo3 dou2 dan6 hei6 hei2 ced1 baag3 man6 yen4 ge3 heng1 gong2 ga2 ga2 dei2 dou1 yeo5 seng4 baag3 gei2 man6 ma5 mei4", "当然不是说香港每个人都去赌，但是在七百万人口的香港，少说也有一百多万马迷。", ["馬迷"]),
+  day30Sentence("reading-06", "短文朗讀", "短文朗讀", "呢啲馬迷抱住發財加埋求刺激嘅心理，喺一九九○年至一九九一年度總共落咗四百七十幾億港紙嘅賭注。", "ni1 di1 ma5 mei4 pou5 ju6 fad3 coi4 ga1 maai4 keo4 qi3 gig1 ge3 sem1 lei5 hei2 yed1 geo2 geo2 ling4 nin4 ji3 yed1 geo2 geo2 yed1 nin4 dou6 zung2 gung6 log6 zo2 sei3 baag3 ced1 seb6 gei2 yik1 gong2 ji2 ge3 dou2 ju3", "这些马迷抱着发财加上求刺激的心理，在一九九○年至一九九一年度总共下了四百七十多亿港元的赌注。", ["博彩稅"]),
+  day30Sentence("reading-07", "短文朗讀", "短文朗讀", "當中香港政府抽咗差唔多六十幾億港紙嘅博彩稅，佔咗當年政府稅收總額嘅百分之八。", "dong1 zung1 heng1 gong2 jing3 fu2 ceo1 zo2 ca1 m4 do1 lug6 seb6 gei2 yik1 gong2 ji2 ge3 bog3 coi2 seoi3 zim3 zo2 dong1 nin4 jing3 fu2 seoi3 seo1 zung2 ngag6 ge3 baag3 fen1 ji1 bad3", "当中香港政府抽了差不多六十多亿港元的博彩税，占了当年政府税收总额的百分之八。", ["博彩稅"]),
+  day30Sentence("reading-08", "短文朗讀", "短文朗讀", "噉，你話唔巴閉就假。", "gem2 nei5 wa6 m4 ba1 bai3 zeo6 ga2", "这样，你说不厉害就是假的。", ["巴閉"]),
+  day30Sentence("reading-09", "短文朗讀", "短文朗讀", "馬會唔單止係全港最大嘅納稅人，又係除港府之外全港最大嘅雇主，全職同兼職員工約莫有成二萬人。", "ma5 wui6 m4 daan1 ji2 hei6 qyun4 gong2 zeoi3 dai6 ge3 naap6 seoi3 yen4 yeo6 hei6 ceoi4 gong2 fu2 ji1 ngoi6 qyun4 gong2 zeoi3 dai6 ge3 gu3 jyu2 qyun4 jig1 tung4 gim1 jig1 yun4 gung1 yeog3 mog6 yeo5 seng4 yi6 man6 yen4", "马会不单是全港最大的纳税人，也是除了港府之外全港最大的雇主，全职和兼职员工约有两万人。", ["納稅人", "雇主"]),
+  day30Sentence("reading-10", "短文朗讀", "短文朗讀", "馬會仲係全港最大嘅慈善家，成億成億噉捐出嚟起乜起物。", "ma5 wui6 zung6 hei6 qyun4 gong2 zeoi3 dai6 ge3 qi4 sin6 ga1 seng4 yik1 seng4 yik1 gem2 gyun1 ced1 lei4 hei2 med1 hei2 med6", "马会还是全港最大的慈善家，成亿成亿地捐出来兴建各种设施。", ["慈善家"]),
+  day30Sentence("reading-11", "短文朗讀", "短文朗讀", "最後，馬會係求財若渴嘅香港人嘅精神支柱之一。", "zeoi3 heo6 ma5 wui6 hei6 keo4 coi4 yeog6 hod3 ge3 heng1 gong2 yen4 ge3 jing1 sen4 ji1 qyu5 ji1 yed1", "最后，马会是求财若渴的香港人的精神支柱之一。", ["精神支柱"]),
+  day30Sentence("reading-12", "短文朗讀", "短文朗讀", "噉樣睇馬會，上面嗰句講馬會、滙豐同港督嘅說話，就一啲都唔奇啦。", "gem2 yeung6 tei2 ma5 wui6 soeng6 min6 go2 geoi3 gong2 ma5 wui6 wui6 fung1 tung4 gong2 dug1 ge3 xud3 wa6 zeo6 yed1 di1 dou1 m4 kei4 la1", "这样看马会，上面那句讲马会、汇丰和港督的话，就一点也不奇怪了。", ["馬會"])
+);
+
+
 window.STUDY_ITEMS.forEach((item) => {
   if (!item.day) item.day = "day1";
 });
