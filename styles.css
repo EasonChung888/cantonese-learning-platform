@@ -181,6 +181,47 @@ button {
   color: var(--warn);
 }
 
+.home-section-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section-jump-button {
+  display: inline-grid;
+  gap: 2px;
+  min-width: 118px;
+  min-height: 54px;
+  padding: 9px 13px;
+  border: 1px solid rgba(24, 118, 111, 0.24);
+  border-radius: 8px;
+  background: rgba(223, 241, 239, 0.78);
+  color: var(--accent-strong);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(28, 39, 40, 0.06);
+  transition: border-color 140ms ease, transform 140ms ease, background 140ms ease;
+}
+
+.section-jump-button:hover {
+  border-color: rgba(24, 118, 111, 0.62);
+  background: rgba(223, 241, 239, 0.96);
+  transform: translateY(-2px);
+}
+
+.section-jump-button strong {
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.15;
+}
+
+.section-jump-button span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
 .home-motion {
   display: grid;
   place-items: center;
@@ -510,6 +551,40 @@ button {
 
 .home-card-day {
   justify-self: start;
+}
+
+.home-day-sections {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 24px;
+}
+
+.home-day-volume {
+  scroll-margin-top: 18px;
+}
+
+.home-day-volume-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 14px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid rgba(222, 211, 194, 0.72);
+}
+
+.home-day-volume-heading h3 {
+  margin: 4px 0 0;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.05;
+}
+
+.home-day-volume-heading span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
 }
 
 .home-day-grid {
@@ -1164,6 +1239,15 @@ button {
     width: 100%;
   }
 
+  .home-section-jumps {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .section-jump-button {
+    width: 100%;
+  }
+
   .home-motion {
     padding: 8px;
   }
@@ -1199,6 +1283,16 @@ button {
 
   .home-day-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-day-sections {
+    gap: 20px;
+  }
+
+  .home-day-volume-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .home-day-card {

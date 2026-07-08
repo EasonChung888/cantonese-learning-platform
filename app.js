@@ -32,6 +32,11 @@ const DAY_ORDER = [
   { id: "day30", label: "Day 30", topic: "贪字变贫字" },
   { id: "day31", label: "Day 31", topic: "话说移民" }
 ];
+const DAY_SECTIONS = [
+  { id: "section-upper", label: "上编", start: 1, end: 11 },
+  { id: "section-middle", label: "中编", start: 12, end: 21 },
+  { id: "section-lower", label: "下编", start: 22, end: null }
+];
 const DEFAULT_MODULE_ORDER = ["全部內容", "聲母", "韻母", "聲調", "常用字表", "句子"];
 const CHAPTER_BOOK_MODULE_ORDER = ["全部內容", "課文", "重點詞彙", "補充語彙", "重點理解", "講解", "傳意項目介紹", "練習", "粵字辨認", "短文朗讀"];
 const TYPE_LABELS = {
@@ -1078,6 +1083,7 @@ const TRADITIONAL_TO_SIMPLIFIED = {
 const els = {
   app: document.querySelector("#app"),
   homeView: document.querySelector("#homeView"),
+  homeSectionJumps: document.querySelector("#homeSectionJumps"),
   homeDayGrid: document.querySelector("#homeDayGrid"),
   homeFeatureGrid: document.querySelector("#homeFeatureGrid"),
   homeCultureGrid: document.querySelector("#homeCultureGrid"),
@@ -1378,6 +1384,23 @@ function validDayIds() {
   return new Set(DAY_ORDER.map((day) => day.id));
 }
 
+function dayNumber(dayId) {
+  return Number(dayId.replace(/^day/, ""));
+}
+
+function daysForSection(section) {
+  return DAY_ORDER.filter((day) => {
+    const number = dayNumber(day.id);
+    return number >= section.start && (section.end === null || number <= section.end);
+  });
+}
+
+function dayRangeLabel(sectionDays) {
+  const first = sectionDays[0]?.label || "";
+  const last = sectionDays[sectionDays.length - 1]?.label || "";
+  return first && last ? `${first}-${last}` : "";
+}
+
 function dayFromHash() {
   const dayId = decodeURIComponent(location.hash.replace(/^#/, ""));
   return validDayIds().has(dayId) ? dayId : null;
@@ -1428,40 +1451,85 @@ function buildHomeDays() {
   els.homeStatTotal.textContent = totalItems;
   els.homeStatDone.textContent = doneItems;
 
-  DAY_ORDER.forEach((day) => {
-    const dayItems = items.filter((item) => itemDay(item) === day.id);
-    const modules = getModuleOrder(dayItems, day.id).filter((module) => module !== "全部內容");
-    const done = dayItems.filter((item) => state.done[item.id]).length;
-    const percent = dayItems.length ? Math.round((done / dayItems.length) * 100) : 0;
-    const card = document.createElement("article");
-    card.className = "home-day-card";
-    card.innerHTML = `
-      <div class="home-day-meta">
-        <span class="home-day-kicker">${escapeHtml(day.label)}</span>
-        <span>${dayItems.length} 题</span>
-      </div>
-      <div class="home-day-body">
-        <h2>${escapeHtml(day.topic)}</h2>
-        <p>${modules.map((module) => escapeHtml(toSimplified(module))).join(" · ") || "每日练习"}</p>
-      </div>
-      <div class="home-day-progress-block">
-        <div class="home-day-status">
-          <strong>${done}</strong>
-          <span>/ ${dayItems.length} 已完成</span>
+  buildHomeSectionJumps();
+
+  DAY_SECTIONS.forEach((section) => {
+    const sectionDays = daysForSection(section);
+    if (!sectionDays.length) return;
+    const group = document.createElement("section");
+    group.id = section.id;
+    group.className = "home-day-volume";
+    group.innerHTML = `
+      <div class="home-day-volume-heading">
+        <div>
+          <p class="eyebrow">${escapeHtml(dayRangeLabel(sectionDays))}</p>
+          <h3>${escapeHtml(section.label)}</h3>
         </div>
-        <div class="home-day-progress" aria-label="${escapeHtml(day.label)} 完成率 ${percent}%">
-          <span style="width: ${percent}%"></span>
-        </div>
+        <span>${sectionDays.length} 个学习日</span>
       </div>
-      <button class="primary-button home-day-button" type="button">进入 ${escapeHtml(day.label)}</button>
+      <div class="home-day-grid"></div>
     `;
-    card.querySelector("button").addEventListener("click", () => navigateToDay(day.id));
-    card.addEventListener("click", (event) => {
-      if (event.target.closest("button")) return;
-      navigateToDay(day.id);
+    const grid = group.querySelector(".home-day-grid");
+    sectionDays.forEach((day) => {
+      grid.append(buildHomeDayCard(day));
     });
-    els.homeDayGrid.append(card);
+    els.homeDayGrid.append(group);
   });
+}
+
+function buildHomeSectionJumps() {
+  if (!els.homeSectionJumps) return;
+  els.homeSectionJumps.innerHTML = "";
+  DAY_SECTIONS.forEach((section) => {
+    const sectionDays = daysForSection(section);
+    if (!sectionDays.length) return;
+    const button = document.createElement("button");
+    button.className = "section-jump-button";
+    button.type = "button";
+    button.innerHTML = `
+      <strong>${escapeHtml(section.label)}</strong>
+      <span>${escapeHtml(dayRangeLabel(sectionDays))}</span>
+    `;
+    button.addEventListener("click", () => {
+      document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    els.homeSectionJumps.append(button);
+  });
+}
+
+function buildHomeDayCard(day) {
+  const dayItems = items.filter((item) => itemDay(item) === day.id);
+  const modules = getModuleOrder(dayItems, day.id).filter((module) => module !== "全部內容");
+  const done = dayItems.filter((item) => state.done[item.id]).length;
+  const percent = dayItems.length ? Math.round((done / dayItems.length) * 100) : 0;
+  const card = document.createElement("article");
+  card.className = "home-day-card";
+  card.innerHTML = `
+    <div class="home-day-meta">
+      <span class="home-day-kicker">${escapeHtml(day.label)}</span>
+      <span>${dayItems.length} 题</span>
+    </div>
+    <div class="home-day-body">
+      <h2>${escapeHtml(day.topic)}</h2>
+      <p>${modules.map((module) => escapeHtml(toSimplified(module))).join(" · ") || "每日练习"}</p>
+    </div>
+    <div class="home-day-progress-block">
+      <div class="home-day-status">
+        <strong>${done}</strong>
+        <span>/ ${dayItems.length} 已完成</span>
+      </div>
+      <div class="home-day-progress" aria-label="${escapeHtml(day.label)} 完成率 ${percent}%">
+        <span style="width: ${percent}%"></span>
+      </div>
+    </div>
+    <button class="primary-button home-day-button" type="button">进入 ${escapeHtml(day.label)}</button>
+  `;
+  card.querySelector("button").addEventListener("click", () => navigateToDay(day.id));
+  card.addEventListener("click", (event) => {
+    if (event.target.closest("button")) return;
+    navigateToDay(day.id);
+  });
+  return card;
 }
 
 function buildHomeMagazine() {
