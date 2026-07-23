@@ -1965,15 +1965,7 @@ window.STUDY_ITEMS.push(
   day12Sentence("ex-09", "練習", "練習 · 實況問答", "你知唔知利息點計？", "nei5 ji1 m4 ji1 lei6 xig1 dim2 gai3", "你知不知道利息怎么算？", ["利息"]),
   day12Sentence("ex-10", "練習", "練習 · 實況問答", "出外便食飯簽仄得唔得？", "ceot1 ngoi6 bin6 xig6 fan6 qim1 ceg1 deg1 m4 deg1", "在外面吃饭签支票行不行？", ["簽仄"]),
 
-  // 八、粵字辨認
-  day12Item("char-hei", "粵字辨認", "粵字辨認", "喺", "hei2", "在；用于处所前", ["喺度", "喺銀行"]),
-  day12Item("char-go", "粵字辨認", "粵字辨認", "嗰", "go2", "那；那个", ["嗰便", "嗰度"]),
-  day12Item("char-lo", "粵字辨認", "粵字辨認", "攞", "lo2", "拿；取", ["攞住", "攞錢"]),
-  day12Item("char-je", "粵字辨認", "粵字辨認", "啫", "ze1", "语气词，表示“而已、罢了”", ["好簡單啫"]),
-  day12Item("char-na", "粵字辨認", "粵字辨認", "嗱", "na4", "提示、承接语气词", ["嗱，你而家"]),
-  day12Item("char-cheque", "粵字辨認", "粵字辨認", "仄", "ceg1", "cheque 的音译用字", ["簽仄"]),
-
-  // 九、短文朗讀
+  // 八、短文朗讀
   day12Sentence("reading-01", "短文朗讀", "短文朗讀", "阿新返工嗰度左近有間銀行，佢貪方便就喺嗰度開咗個戶口。", "a3 sen1 fan1 gung1 go2 dou6 zo2 gen6 yeo5 gan1 ngen4 hong4 keu5 tam1 fong1 bin6 zeo6 hei2 go2 dou6 hoi1 zo2 go3 wu6 heo2", "阿新上班那里附近有一家银行，他图方便就在那儿开了个户口。", ["短文朗讀"]),
   day12Sentence("reading-02", "短文朗讀", "短文朗讀", "嗰日佢去銀行問啲職員點開戶口。", "go2 yed6 keu5 heo3 ngen4 hong4 men6 di1 jig1 yun4 dim2 hoi1 wu6 heo2", "那天他去银行问职员怎样开户口。", ["短文朗讀"]),
   day12Sentence("reading-03", "短文朗讀", "短文朗讀", "有位小姐幫佢一一填妥啲資料。", "yeo5 wei2 xiu2 ze2 bong1 keu5 yed1 yed1 tin4 to5 di1 ji1 liu6", "有位小姐帮他一一填妥资料。", ["短文朗讀"]),
@@ -2131,15 +2123,7 @@ window.STUDY_ITEMS.push(
   day13Sentence("ex-09", "練習", "練習 · 實況問答", "你有冇買過餸？", "nei5 yeo5 mou5 mai5 guo3 sung3", "你有没有买过菜？", ["買餸"]),
   day13Sentence("ex-10", "練習", "練習 · 實況問答", "你識唔識自己整餸食？", "nei5 xig1 m4 xig1 ji6 gei2 jing2 sung3 xig6", "你会不会自己做菜吃？", ["整餸"]),
 
-  // 八、粵字辨認
-  day13Item("char-yen", "粵字辨認", "粵字辨認", "膶", "yen2", "忌讳词中用于猪肝的字", ["豬膶"]),
-  day13Item("char-geo", "粵字辨認", "粵字辨認", "嚿", "geo6", "量词，块", ["一嚿肉"]),
-  day13Item("char-ceo", "粵字辨認", "粵字辨認", "揪", "ceo1", "量词，串；哪噜", ["一揪提子"]),
-  day13Item("char-sung", "粵字辨認", "粵字辨認", "餸", "sung3", "菜肴；买菜中的菜", ["買餸", "整餸"]),
-  day13Item("char-ya", "粵字辨認", "粵字辨認", "廿", "ya6", "二十", ["廿三文"]),
-  day13Item("char-sa", "粵字辨認", "粵字辨認", "卅", "sa1", "三十", ["卅呀文"]),
-
-  // 九、短文朗讀
+  // 八、短文朗讀
   day13Sentence("reading-01", "短文朗讀", "短文朗讀", "嗰日阿新嫂去街市買餸。", "go2 yed6 a3 sen1 sou2 heo3 gai1 xi5 mai5 sung3", "那天阿新嫂去菜市场买菜。", ["短文朗讀"]),
   day13Sentence("reading-02", "短文朗讀", "短文朗讀", "佢先去買啲半肥瘦嘅豬肉，又買咗啲豬膶同埋番茄番去滾湯。", "keu5 xin1 heo3 mai5 di1 bun3 fei4 seo3 ge3 ju1 yug6 yeo6 mai5 zo2 di1 ju1 yen2 tung4 mai4 fan1 ke2 fan1 heo3 guen2 tong1", "她先去买了些半肥瘦的猪肉，又买了些猪肝和番茄回去滚汤。", ["短文朗讀"]),
   day13Sentence("reading-03", "短文朗讀", "短文朗讀", "呢隻湯好有益㗎，大人細路都啱飲。", "ni1 zeg3 tong1 hou2 yeo5 yig1 ga3 dai6 yen4 sei3 lou6 dou1 ngam1 yem2", "这种汤很有益，大人小孩都适合喝。", ["短文朗讀"]),
@@ -2308,15 +2292,7 @@ window.STUDY_ITEMS.push(
   day14Sentence("ex-09", "練習", "練習 · 實況問答", "由香港飛桂林要幾耐㗎？", "yeo4 heng1 gong2 fei1 guei3 lem4 yiu3 gei2 noi6 ga3", "从香港飞桂林要多久？", ["飛桂林"]),
   day14Sentence("ex-10", "練習", "練習 · 實況問答", "你最鍾意去邊度旅行？", "nei5 zeu3 zung1 yi3 heo3 bin1 dou6 leu5 hang4", "你最喜欢去哪儿旅行？", ["旅行"]),
 
-  // 八、粵字辨認
-  day14Item("char-heo", "粵字辨認", "粵字辨認", "去", "heo3", "去", ["去桂林"]),
-  day14Item("char-tyun", "粵字辨認", "粵字辨認", "團", "tun4", "团", ["旅行團"]),
-  day14Item("char-yun", "粵字辨認", "粵字辨認", "遠", "yun5", "远", ["好遠"]),
-  day14Item("char-deng", "粵字辨認", "粵字辨認", "訂", "deng6", "订；定金", ["落訂", "訂位"]),
-  day14Item("char-fei", "粵字辨認", "粵字辨認", "飛", "fei1", "票；飞", ["車飛", "船飛"]),
-  day14Item("char-seon", "粵字辨認", "粵字辨認", "信", "seon3", "信；手信中的信", ["手信", "守信用"]),
-
-  // 九、短文朗讀
+  // 八、短文朗讀
   day14Sentence("reading-01", "短文朗讀", "短文朗讀", "阿新佢哋睇報紙見到有間旅行社有桂林五日團，於是就約埋三個朋友一齊想趁住農曆年假期去嗰度玩下。", "a3 sen1 keu5 dei6 tei2 bou3 ji2 gin3 dou2 yeo5 gan1 leu5 hang4 se5 yeo5 guei3 lem4 ng5 yed6 tun4 yu1 xi6 zeo6 yeg3 mai4 sam1 go3 pang4 yeo5 yed1 qei4 se2 qen3 ju6 nung4 lig6 nin4 ga3 kei4 heo3 go2 dou6 wan2 ha5", "阿新他们看报纸见到有一家旅行社有桂林五日团，于是就约了三个朋友一起想趁农历年假期去那里玩一下。", ["短文朗讀"]),
   day14Sentence("reading-02", "短文朗讀", "短文朗讀", "平時桂林五日遊一個人都要成千八文左右，但係農曆年嗰陣每個人要加五百文，即係加到二千二百九呀文。", "peng4 xi4 guei3 lem4 ng5 yed6 yeo4 yed1 go3 yen4 dou1 yiu3 seng4 qin1 bad3 men1 zo2 yeo6 dan6 hei6 nung4 lig6 nin4 go2 zen6 mui5 go3 yen4 yiu3 ga1 ng5 bag3 men1 jig1 hei6 ga1 dou3 yi6 qin1 yi6 bag3 geo2 a6 men1", "平时桂林五日游一个人都要一千八百块左右，但是农历年的时候每个人要加五百块，也就是加到二千二百九十块左右。", ["短文朗讀"]),
   day14Sentence("reading-03", "短文朗讀", "短文朗讀", "五個人就要萬幾銀，香港旅行社多，冇計，係咁㗎喇。", "ng5 go3 yen4 zeo6 yiu3 man6 gei2 ngen4 heng1 gong2 leu5 hang4 se5 do1 mou5 gai3 hei6 gem2 ga3 la3", "五个人就要一万多块，香港旅行社多，没办法，就是这样了。", ["短文朗讀"]),
@@ -2501,15 +2477,7 @@ window.STUDY_ITEMS.push(
   day15Sentence("ex-08", "練習", "練習 · 實況問答", "醫生畀嘅嗰兩包藥丸係點食法㗎？", "yi1 seng1 bei2 ge3 go2 loeng5 bao1 yeg6 yun2 hei6 dim2 xig6 fad3 ga3", "医生给的那两包药丸该怎么吃？", ["藥丸", "點食法"]),
   day15Sentence("ex-09", "練習", "練習 · 實況問答", "喺香港睇醫生貴唔貴㗎？", "hei2 heng1 gong2 tei2 yi1 seng1 guei3 m4 guei3 ga3", "在香港看医生贵不贵？", ["睇醫生"]),
 
-  // 八、粵字辨認
-  day15Item("char-dim", "粵字辨認", "粵字辨認", "掂", "dim6", "妥当；顺利", ["唔掂", "講掂"]),
-  day15Item("char-fen", "粵字辨認", "粵字辨認", "瞓", "fen3", "睡", ["瞓覺", "早啲瞓"]),
-  day15Item("char-geo", "粵字辨認", "粵字辨認", "嚿", "geo6", "量词，块", ["呢嚿肉"]),
-  day15Item("char-gem", "粵字辨認", "粵字辨認", "撳", "gem6", "按", ["撳呢度"]),
-  day15Item("char-cou", "粵字辨認", "粵字辨認", "嘈", "cou4", "吵闹", ["好嘈"]),
-  day15Item("char-aa", "粵字辨認", "粵字辨認", "吖", "a1", "语气助词", ["吖嘛"]),
-
-  // 九、短文朗讀
+  // 八、短文朗讀
   day15Sentence("reading-01", "短文朗讀", "短文朗讀", "上個禮拜日個天突然凍番，阿新唔覺意冷親，夜晚發燒燒到成卅呀九度幾。", "soeng6 go3 lei5 bai3 yed6 go3 tin1 ded6 yin4 dung3 fan1 a3 sen1 m4 gog3 yi3 lang5 qen1 ye6 man5 fad3 xiu1 xiu1 dou3 seng4 sa1 a6 geo2 dou6 gei2", "上星期日天气突然转冷，阿新不小心着了凉，晚上发烧到三十九度多。", ["短文朗讀"]),
   day15Sentence("reading-02", "短文朗讀", "短文朗讀", "阿新嫂即刻同佢睇醫生，醫生同佢量血壓，探熱，之後同佢打咗一針，仲開咗啲藥丸畀佢。", "a3 sen1 sou2 jig1 hag1 tung4 keu5 tei2 yi1 seng1 yi1 seng1 tung4 keu5 loeng4 hud3 ngad3 tam3 yid6 ji1 heo6 tung4 keu5 da2 zo2 yed1 zem1 zung6 hoi1 zo2 di1 yeg6 yun2 bei2 keu5", "阿新嫂马上带他去看医生，医生给他量血压、测体温，之后打了一针，还开了些药丸给他。", ["短文朗讀"]),
   day15Sentence("reading-03", "短文朗讀", "短文朗讀", "白色嗰啲一日食四次，每次三粒，黃黃地嗰啲一日食三次，每次一粒。", "bag1 xig1 go2 di1 yed1 yed6 xig6 sei3 qi3 mui5 qi3 sam1 neb1 wong4 wong2 dei2 go2 di1 yed1 yed6 xig6 sam1 qi3 mui5 qi3 yed1 neb1", "白色的药一天吃四次，每次三粒；浅黄色的一天吃三次，每次一粒。", ["短文朗讀"]),
@@ -2656,15 +2624,7 @@ window.STUDY_ITEMS.push(
   day16Sentence("ex-09", "練習", "練習 · 實況問答", "減廢、堆填、焚化，你贊成邊樣？", "gam2 fei3 deu1 tin4 fen4 fa3 nei5 zan3 seng4 bin1 yeng6", "减废、堆填、焚化，你赞成哪一种？", ["堆填", "焚化"]),
   day16Sentence("ex-10", "練習", "練習 · 實況問答", "你認為應該點樣對付垃圾蟲？", "nei5 yin6 wai4 ying1 goi1 dim2 yeng6 deu3 fu6 lab6 sab3 cung4", "你认为应该怎样对付乱扔垃圾的人？", ["垃圾蟲"]),
 
-  // 八、粵字辨認
-  day16Item("char-king", "粵字辨認", "粵字辨認", "傾", "king1", "聊；谈", ["傾偈", "傾傾下"]),
-  day16Item("char-gei", "粵字辨認", "粵字辨認", "偈", "gei2", "话；聊天用字", ["傾偈"]),
-  day16Item("char-gem", "粵字辨認", "粵字辨認", "噉", "gem2", "这样；那么", ["噉即係"]),
-  day16Item("char-nem", "粵字辨認", "粵字辨認", "諗", "nem2", "想", ["諗計"]),
-  day16Item("char-tan", "粵字辨認", "粵字辨認", "嘆", "tan3", "享受", ["嘆茶", "嘆世界"]),
-  day16Item("char-di", "粵字辨認", "粵字辨認", "啲", "di1", "这些；一点", ["自覺啲"]),
-
-  // 九、短文朗讀
+  // 八、短文朗讀
   day16Sentence("reading-01", "短文朗讀", "短文朗讀", "香港係個大城市。", "heng1 gong2 hei6 go3 dai6 seng4 xi5", "香港是个大城市。", ["短文朗讀"]),
   day16Sentence("reading-02", "短文朗讀", "短文朗讀", "大城市有大城市嘅問題，交通啦，房屋啦，環保啦，等等。", "dai6 seng4 xi5 yeo5 dai6 seng4 xi5 ge3 men6 tei4 gao1 tung1 la1 fong4 ug1 la1 wan4 bou2 la1 deng2 deng2", "大城市有大城市的问题，交通、房屋、环保等等。", ["短文朗讀"]),
   day16Sentence("reading-03", "短文朗讀", "短文朗讀", "上個世紀八十年代起香港搞咗個「清潔香港」運動，成效唔錯。", "soeng6 go3 sei3 gei2 bad3 seb6 nin4 doi6 hei2 heng1 gong2 gao2 zo2 go3 qing1 gid3 heng1 gong2 wen6 dung6 seng4 hao6 m4 co3", "从上世纪八十年代起，香港开展了“清洁香港”运动，成效不错。", ["短文朗讀"]),
@@ -2826,14 +2786,6 @@ window.STUDY_ITEMS.push(
   day17Sentence("ex-08", "練習", "練習 · 實況問答", "你啲仔女讀嗰間學校離屋企近唔近呀？", "nei5 di1 zei2 neu5 dug6 go2 gan1 hog6 hao6 lei4 ug1 kei2 gen6 m4 gen6 a3", "你儿女读的那所学校离家近不近？", ["離屋企", "近唔近"]),
   day17Sentence("ex-09", "練習", "練習 · 實況問答", "佢哋搭乜嘢車返學呀？", "keu5 dei6 dab3 med1 ye5 ce1 fan1 hog6 a3", "他们坐什么车上学？", ["返學"]),
   day17Sentence("ex-10", "練習", "練習 · 實況問答", "同啲同學仔好唔好呀？", "tung4 di1 tung4 hog6 zei2 hou2 m4 hou2 a3", "跟同学相处得好不好？", ["同學仔"]),
-
-  // 本課原書未另列「粵字辨認」頁，以下取自本課正文中的粵語專用字。
-  day17Item("char-wen", "粵字辨認", "粵字辨認 · 課文用字", "搵", "wen2", "找", ["搵學校", "搵到"]),
-  day17Item("char-keo", "粵字辨認", "粵字辨認 · 課文用字", "叩", "keo3", "敲；叩门求学位", ["叩門"]),
-  day17Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["噉點辦", "噉又係"]),
-  day17Item("char-ze", "粵字辨認", "粵字辨認 · 課文用字", "啫", "ze1", "语气助词", ["嘅啫"]),
-  day17Item("char-mou", "粵字辨認", "粵字辨認 · 課文用字", "冇", "mou5", "没有", ["有冇", "冇問題"]),
-  day17Item("char-mai", "粵字辨認", "粵字辨認 · 課文用字", "咪", "mai5", "别；不要", ["咪住先", "咪行咁快"]),
 
   // 八、短文朗讀
   day17Sentence("reading-01", "短文朗讀", "短文朗讀", "阿新結咗婚三年先至有個女，之後又有咗個仔。", "a3 sen1 gid3 zo2 fen1 sam1 nin4 xin1 ji3 yeo5 go3 neu5 ji1 heo6 yeo6 yeo5 zo2 go3 zei2", "阿新结婚三年后才有一个女儿，之后又有了一个儿子。", ["短文朗讀"]),
@@ -3018,14 +2970,6 @@ window.STUDY_ITEMS.push(
   day18Sentence("ex-09", "練習", "練習 · 實況問答", "你鍾唔鍾意影相？", "nei5 zung1 m4 zung1 yi3 ying2 seng2", "你喜不喜欢拍照？", ["影相"]),
   day18Sentence("ex-10", "練習", "練習 · 實況問答", "你鍾意用邊隻菲林？", "nei5 zung1 yi3 yung6 bin1 zeg3 fei1 lem2", "你喜欢用哪一种胶卷？", ["菲林"]),
 
-  // 本課原書未另列「粵字辨認」頁，以下取自本課正文中的粵語專用字。
-  day18Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺戶外", "喺香港"]),
-  day18Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那样", ["噉嘅習慣"]),
-  day18Item("char-dei", "粵字辨認", "粵字辨認 · 課文用字", "哋", "dei6", "表示复数的人称后缀", ["你哋", "我哋"]),
-  day18Item("char-lei", "粵字辨認", "粵字辨認 · 課文用字", "嚟", "lei4", "来", ["嚟講", "嚟捧場"]),
-  day18Item("char-ga", "粵字辨認", "粵字辨認 · 課文用字", "㗎", "ga3", "语气助词", ["有㗎", "舒服㗎"]),
-  day18Item("char-la", "粵字辨認", "粵字辨認 · 課文用字", "喇", "la3", "表示变化或提醒的语气助词", ["真係有心喇"]),
-
   // 八、短文朗讀
   day18Sentence("reading-01", "短文朗讀", "短文朗讀", "香港人好鍾意晨運，尤其係禮拜日，大大細細，全家出動去行山。", "heng1 gong2 yen4 hou2 zung1 yi3 sen4 wen6 yeo4 kei4 hei6 lei5 bai3 yed6 dai6 dai6 sei3 sei3 qyun4 ga1 ced1 dung6 heo3 hang4 san1", "香港人很喜欢晨运，尤其是星期天，一家老小全家出动去登山。", ["短文朗讀"]),
   day18Sentence("reading-02", "短文朗讀", "短文朗讀", "事關晨運好多時就等於去行山。", "xi6 guan1 sen4 wen6 hou2 do1 xi4 zeo6 deng2 yu1 heo3 hang4 san1", "因为晨运很多时候就等于去登山。", ["短文朗讀"]),
@@ -3201,14 +3145,6 @@ window.STUDY_ITEMS.push(
   day19Sentence("ex-08", "練習", "練習 · 實況問答", "你而家份工有乜嘢福利？", "nei5 yi4 ga1 fen6 gung1 yeo5 med1 ye5 fug1 lei6", "你现在这份工作有什么福利？", ["福利"]),
   day19Sentence("ex-09", "練習", "練習 · 實況問答", "你最希望有乜嘢福利？", "nei5 zeoi3 hei1 mong6 yeo5 med1 ye5 fug1 lei6", "你最希望有什么福利？", ["福利"]),
   day19Sentence("ex-10", "練習", "練習 · 實況問答", "申請一份工有乜嘢手續？", "sen1 qing2 yed1 fen6 gung1 yeo5 med1 ye5 seo2 zug6", "申请一份工作有什么手续？", ["申請", "手續"]),
-
-  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
-  day19Item("char-wen", "粵字辨認", "粵字辨認 · 課文用字", "搵", "wen2", "找", ["搵工"]),
-  day19Item("char-dei", "粵字辨認", "粵字辨認 · 課文用字", "哋", "dei6", "表示复数的人称后缀", ["你哋", "佢哋"]),
-  day19Item("char-keu", "粵字辨認", "粵字辨認 · 課文用字", "佢", "keu5", "他；她；它", ["佢哋"]),
-  day19Item("char-mou", "粵字辨認", "粵字辨認 · 課文用字", "冇", "mou5", "没有", ["冇顧慮"]),
-  day19Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["噉話"]),
-  day19Item("char-bo", "粵字辨認", "粵字辨認 · 課文用字", "噃", "bo3", "表示提醒或领悟的语气助词", ["又係噃"]),
 
   // 八、短文朗讀
   day19Sentence("reading-01", "短文朗讀", "短文朗讀", "香港嘅報紙，好多都有請人嘅廣告，有的報紙嘅「求職廣場」或者「招聘」專頁有十幾版咁多。", "heng1 gong2 ge3 bou3 ji2 hou2 do1 dou1 yeo5 ceng2 yen4 ge3 guong2 gou3 yeo5 di1 bou3 ji2 ge3 keo4 jig1 guong2 ceng4 wag6 ze2 jiu1 ping3 jun1 yib6 yeo5 seb6 gei2 ban2 gem3 do1", "香港的报纸很多都有招聘广告，有些报纸的“求职广场”或“招聘”专页有十几版那么多。", ["求職廣場", "招聘專頁"]),
@@ -3404,16 +3340,6 @@ window.STUDY_ITEMS.push(
   day20Sentence("ex-08", "練習", "練習 · 實況問答", "你知唔知救傷車又叫做乜嘢車？", "nei5 ji1 m4 ji1 geo3 seng1 ce1 yeo6 giu3 zou6 med1 ye5 ce1", "你知不知道救护车又叫作什么车？", ["救傷車"]),
   day20Sentence("ex-09", "練習", "練習 · 實況問答", "投訴啲乜嘢事可以打「九九九」？", "teo4 sou3 di1 med1 ye5 xi6 ho2 yi5 da2 geo2 geo2 geo2", "投诉什么事情可以打“九九九”？", ["投訴"]),
   day20Sentence("ex-10", "練習", "練習 · 實況問答", "仲有係啲乜嘢情形底下，你會打「九九九」？", "zung6 yeo5 hei6 di1 med1 ye5 qing4 ying4 dei2 ha6 nei5 wui5 da2 geo2 geo2 geo2", "还有在什么情形下，你会打“九九九”？", ["情形", "九九九"]),
-
-  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
-  day20Item("char-bou", "粵字辨認", "粵字辨認 · 課文用字", "埗", "bou6", "地方；地步中的粤语用字", ["初嚟埗到"]),
-  day20Item("char-bei", "粵字辨認", "粵字辨認 · 課文用字", "畀", "bei2", "给；被", ["畀人打荷包"]),
-  day20Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["香港啲扒手"]),
-  day20Item("char-ga", "粵字辨認", "粵字辨認 · 課文用字", "㗎", "ga3", "语气助词", ["㗎喇"]),
-  day20Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["係噉嘈"]),
-  day20Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["唔同嘅人"]),
-  day20Item("char-wo", "粵字辨認", "粵字辨認 · 課文用字", "喎", "wo3", "表示提醒或语气转折", ["係喎"]),
-  day20Item("char-la", "粵字辨認", "粵字辨認 · 課文用字", "喇", "la3", "表示变化或提醒的语气助词", ["報警喇"]),
 
   // 八、短文朗讀
   day20Sentence("reading-01", "短文朗讀", "短文朗讀", "年晚嘅時候，通常啲劫案都會多啲。", "nin4 man5 ge3 xi4 heo6 tung1 seng4 di1 gib3 on3 dou1 wui5 do1 di1", "年底的时候，通常劫案都会多一些。", ["劫案"]),
@@ -3612,16 +3538,6 @@ window.STUDY_ITEMS.push(
   day21Sentence("ex-08", "練習", "練習 · 實況問答", "你講嘢會唔會中西合璧？", "nei5 gong2 ye5 wui5 m4 wui5 zung1 sei1 heb6 big1", "你说话会不会中西合璧？", ["中西合璧"]),
   day21Sentence("ex-09", "練習", "練習 · 實況問答", "點解香港人咁鍾意中英夾雜？", "dim2 gai2 heng1 gong2 yen4 gem3 zung1 yi3 zung1 ying1 gab3 zab6", "为什么香港人这么喜欢中英文夹杂？", ["中英夾雜"]),
   day21Sentence("ex-10", "練習", "練習 · 實況問答", "有邊啲香港詞語，你認為值得推廣到共同語？", "yeo5 bin1 di1 heng1 gong2 qi4 yu5 nei5 ying6 wei4 jig6 deg1 teoi1 guong2 dou3 gung6 tung4 yu5", "有哪些香港词语，你认为值得推广到共同语？", ["香港詞語", "共同語"]),
-
-  // 原書本課未另列「粵字辨認」頁，取本課正文中的粵語專用字。
-  day21Item("char-sai", "粵字辨認", "粵字辨認 · 課文用字", "晒", "sai3", "全；都；完", ["用慣晒"]),
-  day21Item("char-di", "粵字辨認", "粵字辨認 · 課文用字", "啲", "di1", "一些；的复数/量词标记", ["呢啲詞"]),
-  day21Item("char-ge", "粵字辨認", "粵字辨認 · 課文用字", "嘅", "ge3", "的", ["講嘅廣州話"]),
-  day21Item("char-me", "粵字辨認", "粵字辨認 · 課文用字", "咩", "me1", "吗；表示反问", ["唔係減價咩"]),
-  day21Item("char-hei", "粵字辨認", "粵字辨認 · 課文用字", "喺", "hei2", "在", ["喺廣州"]),
-  day21Item("char-ga", "粵字辨認", "粵字辨認 · 課文用字", "㗎", "ga3", "语气助词", ["㗎咋"]),
-  day21Item("char-gem", "粵字辨認", "粵字辨認 · 課文用字", "噉", "gem2", "这样；那么", ["好似係另一種話噉"]),
-  day21Item("char-la", "粵字辨認", "粵字辨認 · 課文用字", "喇", "la3", "表示变化或提醒的语气助词", ["唔識講中文喇"]),
 
   // 八、短文朗讀
   day21Sentence("reading-01", "短文朗讀", "短文朗讀", "喺香港，大多數人講嘅係廣州話，又即係粵語；不過一般人都話自己講嘅係廣東話。", "hei2 heng1 gong2 dai6 do1 sou3 yen4 gong2 ge3 hei6 guong2 zeo1 wa2 yeo6 jig1 hei6 yud6 yu5 bed1 guo3 yed1 bun1 yen4 dou1 wa6 ji6 gei2 gong2 ge3 hei6 guong2 dung1 wa2", "在香港，大多数人说的是广州话，也就是粤语；不过一般人都说自己说的是广东话。", ["廣州話", "粵語", "廣東話"]),
@@ -5373,6 +5289,33 @@ window.STUDY_ITEMS.push(
   day31Sentence("reading-12", "短文朗讀", "短文朗讀", "由七十年代開始，嚟到香港嘅新移民超過百萬。", "yeo4 ced1 seb6 nin4 doi6 hoi1 qi2 lei4 dou3 heng1 gong2 ge3 sen1 yi4 men4 qiu1 guo3 baag3 man6", "从七十年代开始，来到香港的新移民超过百万。", ["新移民"]),
   day31Sentence("reading-13", "短文朗讀", "短文朗讀", "佢哋無疑係建設未來香港嘅新嘅勞動大軍。", "keu5 dei6 mou4 yi4 hei6 gin3 qid3 mei6 loi4 heng1 gong2 ge3 sen1 ge3 lou4 dung6 dai6 gwen1", "他们无疑是建设未来香港的新劳动大军。", ["勞動大軍"])
 );
+
+// 下編（Day 22 起）按原書章末結構顯示：把「練習」中的兩個
+// 來源小節提升為獨立模組，並移除下編的練習／粵字辨認資料。
+window.STUDY_ITEMS = window.STUDY_ITEMS.flatMap((item) => {
+  const dayNumber = Number.parseInt(item.day?.replace("day", ""), 10);
+  if (!Number.isFinite(dayNumber) || dayNumber < 22) return [item];
+  if (item.module === "粵字辨認") return [];
+  if (item.module !== "練習") return [item];
+
+  if (item.category.includes("會話聆聽")) {
+    return [{
+      ...item,
+      module: "會話聆聽",
+      category: item.category.replace(" · 練習 · 會話聆聽", " · 會話聆聽")
+    }];
+  }
+
+  if (item.category.includes("討論")) {
+    return [{
+      ...item,
+      module: "討論",
+      category: item.category.replace(" · 練習 · 討論", " · 討論")
+    }];
+  }
+
+  return [];
+});
 
 
 window.STUDY_ITEMS.forEach((item) => {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>粤语语音复习</title>
-    <link rel="stylesheet" href="styles.css?v=20260708-day-sections" />
+    <link rel="stylesheet" href="styles.css?v=20260723-listening-title-original-size" />
   </head>
   <body>
     <div id="app" class="app-shell">
@@ -122,8 +122,8 @@
           </div>
         </header>
 
-        <section class="quiz-grid">
-          <article class="quiz-card" aria-live="polite">
+        <section id="quizGrid" class="quiz-grid">
+          <article id="quizCard" class="quiz-card" aria-live="polite">
             <div class="quiz-meta">
               <span id="quizCategory">类别</span>
               <span id="quizType">题型</span>
@@ -138,7 +138,53 @@
             </div>
           </article>
 
-          <aside class="study-panel">
+          <section id="listeningPractice" class="listening-practice" aria-labelledby="listeningTitle" hidden>
+            <header class="listening-header">
+              <div>
+                <p class="eyebrow">自测听辨</p>
+                <h2 id="listeningTitle">听力练习</h2>
+              </div>
+              <div class="listening-progress" aria-label="听力练习进度">
+                <strong id="listeningKnownCount">已认得 0 / 0</strong>
+                <span id="listeningUnfamiliarCount">待巩固 0</span>
+              </div>
+            </header>
+
+            <div class="listening-card">
+              <p class="listening-prompt">只听声音，想一想它的意思和粤拼。</p>
+              <div class="listening-primary-actions">
+                <button id="listeningPlayBtn" class="secondary-button listening-play-button" type="button" aria-label="播放当前粤语听力题" data-idle-label="▶ 播放粤语" data-playing-label="■ 播放中">
+                  ▶ 播放粤语
+                </button>
+                <button id="listeningRevealBtn" class="primary-button" type="button">显示答案</button>
+              </div>
+
+              <dl id="listeningAnswer" class="listening-answer" hidden>
+                <div>
+                  <dt>普通话</dt>
+                  <dd id="listeningMandarin"></dd>
+                </div>
+                <div>
+                  <dt>粤语</dt>
+                  <dd id="listeningCantonese"></dd>
+                </div>
+                <div>
+                  <dt>粤拼</dt>
+                  <dd id="listeningJyutping"></dd>
+                </div>
+              </dl>
+
+              <div id="listeningActions" class="listening-actions" hidden>
+                <button id="listeningAgainBtn" class="secondary-button" type="button">未熟</button>
+                <button id="listeningKnownBtn" class="primary-button" type="button">认得</button>
+              </div>
+
+              <p id="listeningStatus" class="listening-status" role="status" aria-live="polite"></p>
+              <button id="listeningResetBtn" class="ghost-button listening-reset-button" type="button">重置本 Day 听力进度</button>
+            </div>
+          </section>
+
+          <aside id="studyPanel" class="study-panel">
             <section class="panel">
               <div class="panel-title">卡片资料</div>
               <dl class="fact-list">
@@ -167,7 +213,8 @@
       </main>
     </div>
 
-    <script src="data.js?v=20260708-progress-tools"></script>
-    <script src="app.js?v=20260708-day-sections"></script>
+    <script src="data.js?v=20260720-lower-listening-discussion"></script>
+    <script src="listening-practice.js?v=20260723-listening-sidebar"></script>
+    <script src="app.js?v=20260723-listening-sidebar"></script>
   </body>
 </html>

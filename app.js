@@ -38,7 +38,8 @@ const DAY_SECTIONS = [
   { id: "section-lower", label: "下编", start: 22, end: null }
 ];
 const DEFAULT_MODULE_ORDER = ["全部內容", "聲母", "韻母", "聲調", "常用字表", "句子"];
-const CHAPTER_BOOK_MODULE_ORDER = ["全部內容", "課文", "重點詞彙", "補充語彙", "重點理解", "講解", "傳意項目介紹", "練習", "粵字辨認", "短文朗讀"];
+const CHAPTER_BOOK_MODULE_ORDER = ["全部內容", "課文", "重點詞彙", "補充語彙", "重點理解", "講解", "傳意項目介紹", "練習", "會話聆聽", "討論", "粵字辨認", "短文朗讀"];
+const LISTENING_MODULE = "听力练习";
 const TYPE_LABELS = {
   jyutping: "粤拼识别",
   meaning: "普通话释义",
@@ -167,10 +168,13 @@ let homeMode = true;
 let expandedHomeCard = null;
 
 const items = window.STUDY_ITEMS;
+const listeningPractice = window.CantoneseListening;
+if (!listeningPractice) throw new Error("听力练习引擎未载入");
 const byId = new Map(items.map((item) => [item.id, item]));
 state = loadState();
 const sentenceAudio = new Audio();
 let speechUtterance = null;
+let activeAudioButton = null;
 const TRADITIONAL_TO_SIMPLIFIED = {
   粵: "粤",
   語: "语",
@@ -575,6 +579,8 @@ const TRADITIONAL_TO_SIMPLIFIED = {
   普: "普",
   通: "通",
   話: "话",
+  討: "讨",
+  論: "论",
   釋: "释",
   義: "义",
   反: "反",
@@ -1104,6 +1110,9 @@ const els = {
   resetTodayBtn: document.querySelector("#resetTodayBtn"),
   wrongOnlyBtn: document.querySelector("#wrongOnlyBtn"),
   shuffleBtn: document.querySelector("#shuffleBtn"),
+  quizGrid: document.querySelector("#quizGrid"),
+  quizCard: document.querySelector("#quizCard"),
+  studyPanel: document.querySelector("#studyPanel"),
   quizCategory: document.querySelector("#quizCategory"),
   quizType: document.querySelector("#quizType"),
   questionPrompt: document.querySelector("#questionPrompt"),
@@ -1119,7 +1128,21 @@ const els = {
   factJyutping: document.querySelector("#factJyutping"),
   factMandarin: document.querySelector("#factMandarin"),
   examplesBlock: document.querySelector("#examplesBlock"),
-  wrongList: document.querySelector("#wrongList")
+  wrongList: document.querySelector("#wrongList"),
+  listeningPractice: document.querySelector("#listeningPractice"),
+  listeningKnownCount: document.querySelector("#listeningKnownCount"),
+  listeningUnfamiliarCount: document.querySelector("#listeningUnfamiliarCount"),
+  listeningPlayBtn: document.querySelector("#listeningPlayBtn"),
+  listeningRevealBtn: document.querySelector("#listeningRevealBtn"),
+  listeningAnswer: document.querySelector("#listeningAnswer"),
+  listeningMandarin: document.querySelector("#listeningMandarin"),
+  listeningCantonese: document.querySelector("#listeningCantonese"),
+  listeningJyutping: document.querySelector("#listeningJyutping"),
+  listeningActions: document.querySelector("#listeningActions"),
+  listeningAgainBtn: document.querySelector("#listeningAgainBtn"),
+  listeningKnownBtn: document.querySelector("#listeningKnownBtn"),
+  listeningStatus: document.querySelector("#listeningStatus"),
+  listeningResetBtn: document.querySelector("#listeningResetBtn")
 };
 
 function toSimplified(value) {
@@ -1134,10 +1157,18 @@ function loadState() {
       wrong: parsed.wrong || {},
       retry: parsed.retry || {},
       familiarity: parsed.familiarity || {},
-      sessions: parsed.sessions || {}
+      sessions: parsed.sessions || {},
+      listening: listeningPractice.sanitizeState(parsed.listening, items, DAY_ORDER.map((day) => day.id))
     };
   } catch {
-    return { done: {}, wrong: {}, retry: {}, familiarity: {}, sessions: {} };
+    return {
+      done: {},
+      wrong: {},
+      retry: {},
+      familiarity: {},
+      sessions: {},
+      listening: listeningPractice.emptyState()
+    };
   }
 }
 
@@ -1199,30 +1230,66 @@ function cleanSessions(value) {
   );
 }
 
+function cleanListeningState(value) {
+  return listeningPractice.sanitizeState(value, items, DAY_ORDER.map((day) => day.id));
+}
+
+function mergeListeningState(currentValue, importedValue) {
+  const current = cleanListeningState(currentValue);
+  const imported = cleanListeningState(importedValue);
+  const known = { ...current.known, ...imported.known };
+  const unfamiliar = { ...current.unfamiliar, ...imported.unfamiliar };
+  const retry = { ...current.retry, ...imported.retry };
+
+  Object.keys(imported.known).forEach((id) => {
+    delete unfamiliar[id];
+    delete retry[id];
+  });
+  Object.keys(imported.unfamiliar).forEach((id) => {
+    delete known[id];
+  });
+  Object.keys(imported.retry).forEach((id) => {
+    delete known[id];
+    unfamiliar[id] = true;
+  });
+
+  return cleanListeningState({
+    known,
+    unfamiliar,
+    retry,
+    sessions: { ...current.sessions, ...imported.sessions }
+  });
+}
+
 function sanitizeProgressState(value) {
   return {
     done: cleanBooleanMap(value?.done),
     wrong: cleanBooleanMap(value?.wrong),
     retry: cleanRetry(value?.retry),
     familiarity: cleanFamiliarity(value?.familiarity),
-    sessions: cleanSessions(value?.sessions)
+    sessions: cleanSessions(value?.sessions),
+    listening: cleanListeningState(value?.listening)
   };
 }
 
 function mergeProgressState(current, imported) {
-  return sanitizeProgressState({
+  const merged = sanitizeProgressState({
     done: { ...current.done, ...imported.done },
     wrong: { ...current.wrong, ...imported.wrong },
     retry: { ...current.retry, ...imported.retry },
     familiarity: { ...current.familiarity, ...imported.familiarity },
-    sessions: { ...current.sessions, ...imported.sessions }
+    sessions: { ...current.sessions, ...imported.sessions },
+    listening: listeningPractice.emptyState()
   });
+  merged.listening = mergeListeningState(current.listening, imported.listening);
+  return merged;
 }
 
 function progressSummary(progressState = state) {
   const done = Object.keys(progressState.done || {}).filter(validItemId).length;
   const wrong = Object.keys(progressState.wrong || {}).filter(validItemId).length;
-  return { done, wrong };
+  const listening = listeningPractice.progress(cleanListeningState(progressState.listening), items);
+  return { done, wrong, listeningKnown: listening.known, listeningUnfamiliar: listening.unfamiliar };
 }
 
 function setProgressToolStatus(message, tone = "info") {
@@ -1245,7 +1312,7 @@ function downloadTextFile(filename, text, type = "application/json") {
 
 async function exportProgress() {
   const payload = {
-    version: 1,
+    version: 2,
     exportedAt: new Date().toISOString(),
     source: location.href,
     storageKey: STORAGE_KEY,
@@ -1275,13 +1342,23 @@ function importProgressFile(file) {
     try {
       const imported = parseImportedProgress(String(reader.result || ""));
       const summary = progressSummary(imported);
-      if (!summary.done && !summary.wrong && !Object.keys(imported.sessions).length) {
+      if (
+        !summary.done
+        && !summary.wrong
+        && !Object.keys(imported.sessions).length
+        && !summary.listeningKnown
+        && !summary.listeningUnfamiliar
+        && !Object.keys(imported.listening.sessions).length
+      ) {
         throw new Error("empty-progress");
       }
       state = mergeProgressState(state, imported);
       saveState();
       render();
-      setProgressToolStatus(`已恢复 ${summary.done} 个已完成项目，错题 ${summary.wrong} 个。`, "ok");
+      setProgressToolStatus(
+        `已恢复原测验 ${summary.done} 个已完成项目、错题 ${summary.wrong} 个；听力已认得 ${summary.listeningKnown} 个、待巩固 ${summary.listeningUnfamiliar} 个。`,
+        "ok"
+      );
     } catch {
       setProgressToolStatus("这个文件不是可用的粤语复习进度 JSON。", "error");
     } finally {
@@ -1297,7 +1374,7 @@ function itemDay(item) {
 
 function filteredItems() {
   let pool = items.filter((item) => itemDay(item) === activeDay);
-  if (activeModule !== "全部內容") {
+  if (activeModule !== "全部內容" && activeModule !== LISTENING_MODULE) {
     pool = pool.filter((item) => item.module === activeModule);
   }
   if (wrongOnly) {
@@ -1428,6 +1505,7 @@ function navigateHome() {
 }
 
 function syncRoute() {
+  stopItemAudio();
   const routedDay = dayFromHash();
   homeMode = !routedDay;
 
@@ -1627,6 +1705,7 @@ function buildModules() {
     button.type = "button";
     button.innerHTML = `<span>${escapeHtml(toSimplified(module))}</span><span class="module-count">${count}</span>`;
     button.addEventListener("click", () => {
+      stopItemAudio();
       saveState();
       activeModule = module;
       wrongOnly = false;
@@ -1635,6 +1714,20 @@ function buildModules() {
     });
     els.moduleNav.append(button);
   });
+
+  const listeningButton = document.createElement("button");
+  listeningButton.className = `module-button${activeModule === LISTENING_MODULE ? " active" : ""}`;
+  listeningButton.type = "button";
+  listeningButton.innerHTML = `<span>${LISTENING_MODULE}</span><span class="module-count">${listeningPool().length}</span>`;
+  listeningButton.addEventListener("click", () => {
+    stopItemAudio();
+    saveState();
+    activeModule = LISTENING_MODULE;
+    wrongOnly = false;
+    els.wrongOnlyBtn.classList.remove("active");
+    render();
+  });
+  els.moduleNav.append(listeningButton);
 }
 
 function getModuleOrder(dayItems, dayId = activeDay) {
@@ -1934,34 +2027,58 @@ function createAudioButton(item) {
 
 function setAudioButtonPlaying(button, playing) {
   button.classList.toggle("playing", playing);
-  button.textContent = playing ? "■" : "▶";
+  button.textContent = playing
+    ? (button.dataset.playingLabel || "■")
+    : (button.dataset.idleLabel || "▶");
 }
 
-function playItemAudio(item, button) {
+function clearActiveAudioButton(button) {
+  setAudioButtonPlaying(button, false);
+  if (activeAudioButton === button) activeAudioButton = null;
+}
+
+function stopItemAudio() {
+  sentenceAudio.onended = null;
+  sentenceAudio.onerror = null;
   sentenceAudio.pause();
   sentenceAudio.currentTime = 0;
+  if (speechUtterance) {
+    speechUtterance.onend = null;
+    speechUtterance.onerror = null;
+  }
   window.speechSynthesis?.cancel();
+  speechUtterance = null;
+  if (activeAudioButton) clearActiveAudioButton(activeAudioButton);
+}
+
+function showMainAudioError(message) {
+  els.feedback.textContent = message;
+  els.feedback.hidden = false;
+}
+
+function playItemAudio(item, button, onError = showMainAudioError) {
+  stopItemAudio();
+  activeAudioButton = button;
   setAudioButtonPlaying(button, true);
 
-  if (!item.questionTypes.includes("sentenceJyutping")) {
-    playSynthesizedCantonese(item, button);
+  if (!item.questionTypes?.includes("sentenceJyutping")) {
+    playSynthesizedCantonese(item, button, onError);
     return;
   }
 
   sentenceAudio.src = `audio/sentences/${item.id}.m4a`;
   sentenceAudio.onended = () => {
-    setAudioButtonPlaying(button, false);
+    clearActiveAudioButton(button);
   };
   sentenceAudio.play().catch(() => {
-    playSynthesizedCantonese(item, button);
+    playSynthesizedCantonese(item, button, onError);
   });
 }
 
-function playSynthesizedCantonese(item, button) {
+function playSynthesizedCantonese(item, button, onError = showMainAudioError) {
   if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-    setAudioButtonPlaying(button, false);
-    els.feedback.textContent = "当前浏览器暂不支持语音播放。";
-    els.feedback.hidden = false;
+    clearActiveAudioButton(button);
+    onError("当前浏览器暂不支持语音播放。");
     return;
   }
 
@@ -1973,13 +2090,129 @@ function playSynthesizedCantonese(item, button) {
     || voices.find((voice) => /^zh-HK$/i.test(voice.lang))
     || voices.find((voice) => /sinji|cantonese|hong kong/i.test(voice.name))
     || null;
-  speechUtterance.onend = () => setAudioButtonPlaying(button, false);
+  speechUtterance.onend = () => clearActiveAudioButton(button);
   speechUtterance.onerror = () => {
-    setAudioButtonPlaying(button, false);
-    els.feedback.textContent = "粤语语音暂时无法播放，请检查系统语音设置。";
-    els.feedback.hidden = false;
+    clearActiveAudioButton(button);
+    onError("粤语语音暂时无法播放，请检查系统语音设置。");
   };
   window.speechSynthesis.speak(speechUtterance);
+}
+
+function listeningPool(dayId = activeDay) {
+  return listeningPractice.itemsForDay(items, dayId);
+}
+
+function currentListeningItem(dayId = activeDay) {
+  const session = listeningPractice.ensureSession(state.listening, dayId);
+  const item = byId.get(session.currentItemId);
+  return item && itemDay(item) === dayId && listeningPractice.isEligibleItem(item) ? item : null;
+}
+
+function setListeningStatus(message = "", tone = "info") {
+  els.listeningStatus.textContent = message;
+  if (message) els.listeningStatus.dataset.tone = tone;
+  else delete els.listeningStatus.dataset.tone;
+}
+
+function renderListeningFactPanel(item, revealed, progress) {
+  els.examplesBlock.innerHTML = "";
+
+  if (!item) {
+    els.factTraditionalLabel.textContent = "听力练习";
+    els.factJyutpingLabel.textContent = "进度";
+    els.factMandarinLabel.textContent = "提示";
+    els.factTraditional.textContent = "暂无内容";
+    els.factJyutping.textContent = "已认得 0 / 0 · 待巩固 0";
+    els.factMandarin.textContent = "请切换到其他 Day";
+    return;
+  }
+
+  if (!revealed) {
+    els.factTraditionalLabel.textContent = "听力练习";
+    els.factJyutpingLabel.textContent = "进度";
+    els.factMandarinLabel.textContent = "提示";
+    els.factTraditional.textContent = "答案尚未显示";
+    els.factJyutping.textContent = `已认得 ${progress.known} / ${progress.total} · 待巩固 ${progress.unfamiliar}`;
+    els.factMandarin.textContent = "播放后判断“认得”或“未熟”";
+    return;
+  }
+
+  els.factTraditionalLabel.textContent = "普通话";
+  els.factJyutpingLabel.textContent = "粤语";
+  els.factMandarinLabel.textContent = "粤拼";
+  els.factTraditional.textContent = toSimplified(item.mandarin);
+  els.factJyutping.textContent = getDisplayText(item);
+  els.factMandarin.textContent = item.jyutping;
+}
+
+function renderListeningPractice({ preserveStatus = false } = {}) {
+  const pool = listeningPool();
+  const item = listeningPractice.nextItem({
+    state: state.listening,
+    pool,
+    dayId: activeDay
+  });
+  const session = listeningPractice.ensureSession(state.listening, activeDay);
+  const progress = listeningPractice.progress(state.listening, pool);
+
+  els.listeningKnownCount.textContent = `已认得 ${progress.known} / ${progress.total}`;
+  els.listeningUnfamiliarCount.textContent = `待巩固 ${progress.unfamiliar}`;
+  els.listeningPlayBtn.disabled = !item;
+  els.listeningRevealBtn.disabled = !item;
+  els.listeningResetBtn.disabled = !pool.length;
+
+  if (!preserveStatus) setListeningStatus();
+
+  if (!item) {
+    els.listeningRevealBtn.hidden = false;
+    els.listeningAnswer.hidden = true;
+    els.listeningActions.hidden = true;
+    els.listeningMandarin.textContent = "";
+    els.listeningCantonese.textContent = "";
+    els.listeningJyutping.textContent = "";
+    renderListeningFactPanel(null, false, progress);
+    setListeningStatus("本 Day 暂无可用的听力内容。", "error");
+    saveState();
+    return;
+  }
+
+  const revealed = Boolean(session.answerRevealed);
+  els.listeningRevealBtn.hidden = revealed;
+  els.listeningAnswer.hidden = !revealed;
+  els.listeningActions.hidden = !session.assessmentReady;
+  renderListeningFactPanel(item, revealed, progress);
+
+  if (revealed) {
+    els.listeningMandarin.textContent = toSimplified(item.mandarin);
+    els.listeningCantonese.textContent = getDisplayText(item);
+    els.listeningJyutping.textContent = item.jyutping;
+  } else {
+    els.listeningMandarin.textContent = "";
+    els.listeningCantonese.textContent = "";
+    els.listeningJyutping.textContent = "";
+  }
+
+  saveState();
+}
+
+function advanceListeningPractice(markAsKnown) {
+  const item = currentListeningItem();
+  const session = listeningPractice.ensureSession(state.listening, activeDay);
+  if (!item || !session.assessmentReady) return;
+
+  stopItemAudio();
+  if (markAsKnown) listeningPractice.markKnown(state.listening, item.id);
+  else listeningPractice.markUnfamiliar(state.listening, item.id);
+
+  listeningPractice.nextItem({
+    state: state.listening,
+    pool: listeningPool(),
+    dayId: activeDay,
+    advance: true,
+    skipItemId: markAsKnown ? null : item.id
+  });
+  saveState();
+  renderListeningPractice();
 }
 
 function answer(selected, correct) {
@@ -2055,6 +2288,19 @@ function render() {
   buildModules();
   const dayLabel = DAY_ORDER.find((day) => day.id === activeDay)?.label || activeDay;
   els.activeModuleLabel.textContent = wrongOnly ? `${dayLabel} · 错题本` : `${dayLabel} · ${toSimplified(activeModule)}`;
+  const listeningMode = activeModule === LISTENING_MODULE;
+  els.quizCard.hidden = listeningMode;
+  els.listeningPractice.hidden = !listeningMode;
+  els.wrongOnlyBtn.hidden = listeningMode;
+  els.shuffleBtn.hidden = listeningMode;
+
+  if (listeningMode) {
+    renderProgress();
+    renderWrongList();
+    renderListeningPractice();
+    return;
+  }
+
   makeQuestion();
   renderQuestion();
   renderProgress();
@@ -2123,6 +2369,39 @@ els.resetTodayBtn.addEventListener("click", () => {
   delete state.sessions[studyContextKey()];
   saveState();
   render();
+});
+
+els.listeningPlayBtn.addEventListener("click", () => {
+  const item = currentListeningItem();
+  if (!item) return;
+  setListeningStatus();
+  listeningPractice.enableAssessment(state.listening, activeDay);
+  saveState();
+  renderListeningPractice({ preserveStatus: true });
+  playItemAudio(item, els.listeningPlayBtn, (message) => setListeningStatus(message, "error"));
+});
+
+els.listeningRevealBtn.addEventListener("click", () => {
+  if (!currentListeningItem()) return;
+  listeningPractice.revealAnswer(state.listening, activeDay);
+  saveState();
+  renderListeningPractice({ preserveStatus: true });
+});
+
+els.listeningKnownBtn.addEventListener("click", () => {
+  advanceListeningPractice(true);
+});
+
+els.listeningAgainBtn.addEventListener("click", () => {
+  advanceListeningPractice(false);
+});
+
+els.listeningResetBtn.addEventListener("click", () => {
+  stopItemAudio();
+  listeningPractice.resetDay(state.listening, activeDay, listeningPool());
+  saveState();
+  renderListeningPractice();
+  setListeningStatus("本 Day 听力进度已重置。", "ok");
 });
 
 els.exportProgressBtn.addEventListener("click", exportProgress);
