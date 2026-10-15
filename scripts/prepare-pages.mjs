@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, rmSync } from "node:fs";
+import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -17,4 +17,5 @@ for (const entry of [
     filter: (source) => path.basename(source) !== ".DS_Store",
   });
 }
-console.log("Sites static files prepared in dist/.");
+writeFileSync(path.join(output, ".nojekyll"), "");
+console.log("GitHub Pages static files prepared in dist/.");

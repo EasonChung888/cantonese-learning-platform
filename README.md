@@ -12,6 +12,23 @@ A dependency-free, offline-capable web app for structured Cantonese study. It or
 - Persistent progress in `localStorage`, with JSON import and export
 - Responsive, accessible interface built without a framework
 
+## Live Website and Deployment
+
+Website: <https://easonchung888.github.io/cantonese-learning-platform/>
+
+Hosting uses the existing public GitHub repository and GitHub Pages, compatible with GitHub Free. Every push to `main` runs `.github/workflows/pages.yml`, audits the lessons and audio, and publishes only the application files in `dist/`. You can also run it from the Actions tab using **Run workflow**.
+
+Prepare the same deployment locally:
+
+```bash
+node scripts/audit-listening.js
+node scripts/prepare-pages.mjs
+```
+
+The deployment excludes backup ZIPs, scripts, and internal documents. GitHub Pages must have **Settings → Pages → Build and deployment → Source → GitHub Actions** selected.
+
+When moving from the old OpenAI address, use **导出进度** on the old site and **导入旧进度** on the new site. Browser `localStorage` belongs to each origin and does not move automatically.
+
 ## Run Locally
 
 No build step or package installation is required. Serve the repository with any static HTTP server, for example:
